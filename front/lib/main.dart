@@ -55,8 +55,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   final List<Widget> _children = [
     HomeScreen(),
-    AddEcgScreen(), // Replace with your actual Add ECG screen
-    parameterScreen(), // Replace with your actual Settings screen
+    AddEcgScreen(),
+    parameterScreen(),
   ];
 
   void _onTap(int index) {
@@ -69,10 +69,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
       body: IndexedStack(
         index: _currentIndex,
         children: _children,
