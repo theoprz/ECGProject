@@ -1,8 +1,8 @@
 class Tag {
-  int id;
+  String id;
   String name;
   String type;
-  int parentId;
+  String parentId;
 
   Tag(this.id, this.name, this.type, this.parentId);
 }

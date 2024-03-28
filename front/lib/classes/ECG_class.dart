@@ -1,13 +1,12 @@
 import 'dart:convert';
-import 'dart:io';
-
+import 'package:flutter/services.dart' show rootBundle;
 import 'Tag.dart';
 
 class ECG {
   String title;
   String description;
   int patientAge;
-  int patientSex; // 0 or 1
+  String patientSex; // 0 or 1
   List<Tag> tags = [];
 
   ECG(this.title, this.description, this.patientAge, this.patientSex, this.tags);
@@ -16,11 +15,8 @@ class ECG {
     //À dev quand on a le côté back
   }
 
-  void setECGFromJson(String filePath) async {
-    final file = File(filePath);
-    String jsonString = await file.readAsString();
-
-
+  Future<void> setECGFromJson() async {
+    String jsonString = await rootBundle.loadString('assets/test.json');
     Map<String, dynamic> jsonData = jsonDecode(jsonString);
 
     title = jsonData['page_title'];

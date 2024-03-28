@@ -12,6 +12,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
 
+
+  /*
   final List<ECG> items = List<ECG>.generate(100, (i) => ECG("Titre $i", "Description $i", 55, 0, [])); //Génère une liste de 100 objets pour l'exemple
 
   @override
@@ -32,28 +34,26 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+*/
 
 
-  /*
-  late Future<List<ECG>> items;
+  late List<ECG> items;
 
   @override
   void initState() {
     super.initState();
-    items = generateFakeECGList();
+    generateFakeECGList().then((value) => items = value);
   }
 
   Future<List<ECG>> generateFakeECGList() async {
-    List<ECG> fakeECGList = [];
+    List<ECG> ecgList = [];
     for (int i = 0; i < 20; i++) {
-      ECG generatedECG = ECG("Titre $i", "Description $i", 55, 0, []);
-      await generatedECG.setECGFromJson('assets/test.json');
-      fakeECGList.add(generatedECG);
+      ECG ecg = ECG("Title $i", "Description $i", i, "1", []);
+      await ecg.setECGFromJson();
+      ecgList.add(ecg);
     }
-    return fakeECGList;
+    return ecgList;
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
         } else if (snapshot.hasError) {
           return Text('Error: ${snapshot.error}'); // Show error message if something went wrong
         } else {
-          items = snapshot.data! as Future<List<ECG>>; // Assign the data to items when it's loaded
+          items = snapshot.data!; // Assign the data to items when it's loaded
           return ListView.separated(
             itemCount: snapshot.data!.length,
             itemBuilder: (context, index) {
@@ -79,5 +79,4 @@ class _HomeScreenState extends State<HomeScreen> {
       },
     );
   }
-  */
 }
