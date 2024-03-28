@@ -1,0 +1,90 @@
+{
+  "ecg_id": "524",
+  "ecg_filename": "64a667f6d9e29.png",
+  "ecg_contexte": "",
+  "ecg_comment": "",
+  "ecg_age": "0",
+  "ecg_sexe": "0",
+  "ecg_posted_by": "5",
+  "ecg_validated_by": "6",
+  "ecg_created": "1688627605\ufffd\ufffd\ufffd\ufffd",
+  "ecg_validated": "1688647674\ufffd\ufffd\ufffd\ufffd",
+  "ecg_pixels_cm": "127.9",
+  "ecg_speed": "25",
+  "ecg_gain": "10",
+  "ecg_quality": "4",
+  "page_title": "Stim_atriale_et_ventriculaire",
+  "ecg_poster_name": "Samuel Boudet",
+  "ecg_personne": "Sexe inconnu, \u00e2ge inconnu",
+  "tags": [
+    {
+      "etag_id": "755",
+      "etag_name": "Electro-entrainement / Pacemaker / D\u00e9fibrillateur (stimulation)",
+      "etag_type": "Normal",
+      "etag_parent_id": "168"
+    },
+    {
+      "etag_id": "756",
+      "etag_name": "Stimulation atriale",
+      "etag_type": "Normal",
+      "etag_parent_id": "755"
+    },
+    {
+      "etag_id": "758",
+      "etag_name": "Stimulation ventriculaire",
+      "etag_type": "Normal",
+      "etag_parent_id": "755"
+    },
+    {
+      "etag_id": "759",
+      "etag_name": "Stimulation ventriculaire droite",
+      "etag_type": "Normal",
+      "etag_parent_id": "758"
+    },
+    {
+      "etag_id": "773",
+      "etag_name": "Dysfonction de pacemaker",
+      "etag_type": "Normal",
+      "etag_parent_id": "168"
+    },
+    {
+      "etag_id": "778",
+      "etag_name": "D\u00e9faut de capture",
+      "etag_type": "Normal",
+      "etag_parent_id": "773"
+    },
+    {
+      "etag_id": "779",
+      "etag_name": "Artefact (spike) de stimulation sans capture atriale",
+      "etag_type": "Normal",
+      "etag_parent_id": "778"
+    },
+    {
+      "etag_id": "781",
+      "etag_name": "Artefact (spike) de stimulation sans capture ventriculaire",
+      "etag_type": "Normal",
+      "etag_parent_id": "778"
+    },
+    {
+      "etag_id": "831",
+      "etag_name": "QRS larges",
+      "etag_type": "Normal",
+      "etag_parent_id": "821"
+    },
+    {
+      "etag_id": "964",
+      "etag_name": "Anomalie de repolarisation secondaire \u00e0 un QRS large (discordance appropri\u00e9e)",
+      "etag_type": "Normal",
+      "etag_parent_id": "856"
+    }
+  ],
+  "tagsHTML": "<li  class='ecg-tag parent-tag'>Electro-entrainement / Pacemaker / D\u00e9fibrillateur (stimulation)</li><li  class='ecg-tag'>Stimulation atriale</li><li  class='ecg-tag parent-tag'>Stimulation ventriculaire</li><li  class='ecg-tag'>Stimulation ventriculaire droite</li><li  class='ecg-tag parent-tag'>Dysfonction de pacemaker</li><li  class='ecg-tag parent-tag'>D\u00e9faut de capture</li><li  class='ecg-tag'>Artefact (spike) de stimulation sans capture atriale</li><li  class='ecg-tag'>Artefact (spike) de stimulation sans capture ventriculaire</li><li  class='ecg-tag'>QRS larges</li><li  class='ecg-tag'>Anomalie de repolarisation secondaire \u00e0 un QRS large (discordance appropri\u00e9e)</li>",
+  "emdl_list": [
+    {
+      "eqz_id": "525",
+      "emdl_id": "523",
+      "emdl_name": "Externe",
+      "quizz_name": "Item_Stimulation_1"
+    }
+  ]
+}

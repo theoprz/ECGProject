@@ -2,10 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:front/screens/home_screen.dart';
 
-class ECGDisplayer extends StatelessWidget {
-  final ExampleObject exampleObject;
+import '../classes/ECG_class.dart';
 
-  ECGDisplayer({required this.exampleObject});
+class ECGDisplayer extends StatelessWidget {
+  final ECG ecg;
+
+  ECGDisplayer({required this.ecg});
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +22,9 @@ class ECGDisplayer extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text(exampleObject.title, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              Text(ecg.title, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               SizedBox(height: 10),
-              Text(exampleObject.description),
+              Text(ecg.description),
             ],
           ),
         ),

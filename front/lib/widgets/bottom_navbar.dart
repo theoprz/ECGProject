@@ -13,15 +13,15 @@ class BottomNavBar extends StatelessWidget {
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
-          label: 'Home',
+          label: 'Accueil',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.camera_alt),
-          label: 'Add ECG',
+          label: 'Ajouter un ECG',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.person),
-          label: 'Settings',
+          label: 'Paramètres',
         ),
       ],
       currentIndex: currentIndex,
