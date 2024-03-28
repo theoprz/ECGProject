@@ -46,12 +46,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _currentIndex = 0;
 
-  void _incrementCounter() {
-    setState(() {
-      print("Deprecated function, but i want to keep the button to do some tests");
-    });
-  }
-
 
   final List<Widget> _children = [
     HomeScreen(),
@@ -76,11 +70,6 @@ class _MyHomePageState extends State<MyHomePage> {
       bottomNavigationBar: BottomNavBar(
         currentIndex: _currentIndex,
         onTap: _onTap,
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }

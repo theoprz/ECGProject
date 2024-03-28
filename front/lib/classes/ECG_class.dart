@@ -30,4 +30,13 @@ class ECG {
       tags.add(tag);
     }
   }
+
+
+  String getStringOfAllTags(){
+    String result = "";
+    for (Tag tag in tags){
+      result += tag.name + "                  ";
+    }
+    return result;
+  }
 }

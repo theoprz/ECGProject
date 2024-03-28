@@ -13,30 +13,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
 
 
-  /*
-  final List<ECG> items = List<ECG>.generate(100, (i) => ECG("Titre $i", "Description $i", 55, 0, [])); //Génère une liste de 100 objets pour l'exemple
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey[200],
-      appBar: AppBar(
-        title: Text('Mes ECG'),
-      ),
-      body: ListView.separated(
-        itemCount: items.length,
-        itemBuilder: (context, index) {
-          return ECGDisplayer(ecg: items[index]);
-        },
-        separatorBuilder: (context, index) {
-          return SizedBox(height: 10);
-        },
-      ),
-    );
-  }
-*/
-
-
   late List<ECG> items;
 
   @override
@@ -57,26 +33,29 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: generateFakeECGList(),
-      builder: (BuildContext context, AsyncSnapshot<List<ECG>> snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return CircularProgressIndicator(); // Show loading spinner while waiting for data
-        } else if (snapshot.hasError) {
-          return Text('Error: ${snapshot.error}'); // Show error message if something went wrong
-        } else {
-          items = snapshot.data!; // Assign the data to items when it's loaded
-          return ListView.separated(
-            itemCount: snapshot.data!.length,
-            itemBuilder: (context, index) {
-              return ECGDisplayer(ecg: snapshot.data![index]);
-            },
-            separatorBuilder: (context, index) {
-              return SizedBox(height: 10);
-            },
-          );
-        }
-      },
+    return Container(
+      color: Colors.grey.shade200, // Remplacez 'Colors.red' par la couleur de votre choix
+      child: FutureBuilder(
+        future: generateFakeECGList(),
+        builder: (BuildContext context, AsyncSnapshot<List<ECG>> snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return CircularProgressIndicator(); // Show loading spinner while waiting for data
+          } else if (snapshot.hasError) {
+            return Text('Error: ${snapshot.error}'); // Show error message if something went wrong
+          } else {
+            items = snapshot.data!; // Assign the data to items when it's loaded
+            return ListView.separated(
+              itemCount: snapshot.data!.length,
+              itemBuilder: (context, index) {
+                return ECGDisplayer(ecg: snapshot.data![index]);
+              },
+              separatorBuilder: (context, index) {
+                return SizedBox(height: 10);
+              },
+            );
+          }
+        },
+      ),
     );
   }
 }
