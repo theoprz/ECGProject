@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:front/screens/home_screen.dart';
 import 'package:marquee/marquee.dart';
 
 import '../classes/ECG_class.dart';
@@ -39,7 +38,7 @@ class ECGDisplayer extends StatelessWidget {
                   scrollAxis: Axis.horizontal,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   blankSpace: 20.0,
-                  velocity: 50.0,
+                  velocity: 60.0,
                   startPadding: 10.0,
                 ),
               ),
