@@ -1,15 +1,21 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:front/screens/add_ecg_screen.dart';
 import 'package:front/screens/home_screen.dart';
 import 'package:front/screens/Profile/profile_screen.dart';
 import 'package:front/widgets/bottom_navbar.dart';
 
-void main() {
-  runApp(const MainApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final cameras = await availableCameras();
+  final firstCamera = cameras.first;
+  runApp(MainApp(camera: firstCamera));
 }
 
 class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+  final CameraDescription camera;
+
+  const MainApp({super.key, required this.camera});
 
   // Root of the application
   @override
@@ -20,24 +26,17 @@ class MainApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal.shade600),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'We will delete this topbar later on'),
+      home: MyHomePage(title: 'We will delete this topbar later on', camera: camera,),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
   final String title;
+  final CameraDescription camera;
+
+  const MyHomePage({super.key, required this.title, required this.camera});
+
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -45,13 +44,17 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _currentIndex = 0;
+  late List<Widget> _children;
 
-
-  final List<Widget> _children = [
-    HomeScreen(),
-    AddEcgScreen(),
-    ProfileScreen(),
-  ];
+  @override
+  void initState() {
+    super.initState();
+    _children = [
+      HomeScreen(),
+      AddECGScreen(camera: widget.camera),
+      ProfileScreen(),
+    ];
+  }
 
   void _onTap(int index) {
     setState(() {
