@@ -35,7 +35,7 @@ class ECG {
   String getStringOfAllTags(){
     String result = "";
     for (Tag tag in tags){
-      result += tag.name + "                  ";
+      result += "${tag.name}                  ";
     }
     return result;
   }

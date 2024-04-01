@@ -3,8 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class ProfilePic extends StatelessWidget {
   const ProfilePic({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class ProfilePic extends StatelessWidget {
                     borderRadius: BorderRadius.circular(50),
                     side: const BorderSide(color: Colors.white),
                   ),
-                  backgroundColor: Color.fromARGB(255, 245, 245, 255),
+                  backgroundColor: const Color.fromARGB(255, 245, 245, 255),
                 ),
                 onPressed: () {},
                 child: SvgPicture.asset("assets/icons/Camera Icon.svg"),

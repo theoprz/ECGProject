@@ -50,16 +50,15 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     _children = [
-      HomeScreen(),
+      const HomeScreen(),
       AddECGScreen(camera: widget.camera),
-      ProfileScreen(),
+      const ProfileScreen(),
     ];
   }
 
   void _onTap(int index) {
     setState(() {
       _currentIndex = index;
-      print('Current index $index');
     });
   }
 

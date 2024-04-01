@@ -1,13 +1,12 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:camera/camera.dart';
 
 
 class AddECGScreen extends StatefulWidget {
   final CameraDescription camera;
 
-  const AddECGScreen({Key? key, required this.camera}) : super(key: key);
+  const AddECGScreen({super.key, required this.camera});
 
   @override
   _AddECGScreenState createState() => _AddECGScreenState();
@@ -63,7 +62,7 @@ class _AddECGScreenState extends State<AddECGScreen> {
                 },
               ),
               const SizedBox(height: 20),
-              Container(
+              SizedBox(
                 width: MediaQuery.of(context).size.width, // largeur de l'écran
                 height: MediaQuery.of(context).size.width / _controller.value.aspectRatio, // hauteur de la fenêtre de prévisualisation
                 child: AspectRatio(
@@ -75,7 +74,7 @@ class _AddECGScreenState extends State<AddECGScreen> {
                 onPressed: _selectedImage != null ? () {
                   // Naviguer vers l'écran suivant lorsque le bouton est appuyé
                 } : null,
-                child: Text("Confirmer la photo"),
+                child: const Text("Confirmer la photo"),
               ),
               const SizedBox(height: 20),
               _selectedImage != null
@@ -96,7 +95,7 @@ class _AddECGScreenState extends State<AddECGScreen> {
         _selectedImage = File(picture.path);
       });
     } catch (e) {
-      print("Erreur lors de la prise de la photo: $e");
+      //print("Erreur lors de la prise de la photo: $e");
     }
   }
 

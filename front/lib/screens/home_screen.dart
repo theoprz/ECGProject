@@ -4,7 +4,7 @@ import 'package:front/widgets/ECGDisplayer.dart';
 import '../classes/ECG_class.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -39,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
         future: generateFakeECGList(),
         builder: (BuildContext context, AsyncSnapshot<List<ECG>> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return CircularProgressIndicator(); // Show loading spinner while waiting for data
+            return const CircularProgressIndicator(); // Show loading spinner while waiting for data
           } else if (snapshot.hasError) {
             return Text('Error: ${snapshot.error}'); // Show error message if something went wrong
           } else {
@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 return ECGDisplayer(ecg: snapshot.data![index]);
               },
               separatorBuilder: (context, index) {
-                return SizedBox(height: 10);
+                return const SizedBox(height: 10);
               },
             );
           }
