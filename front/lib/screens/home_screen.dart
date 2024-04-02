@@ -34,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.grey.shade200, // Remplacez 'Colors.red' par la couleur de votre choix
+      color: Colors.grey.shade200, //Background color
       child: FutureBuilder(
         future: generateFakeECGList(),
         builder: (BuildContext context, AsyncSnapshot<List<ECG>> snapshot) {

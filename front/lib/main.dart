@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:front/screens/add_ecg_screen.dart';
 import 'package:front/screens/home_screen.dart';
 import 'package:front/screens/Profile/profile_screen.dart';
+import 'package:front/screens/login_screen.dart';
 import 'package:front/widgets/bottom_navbar.dart';
 
 void main() async {
@@ -21,12 +22,12 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'ECG App',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal.shade600),
         useMaterial3: true,
       ),
-      home: MyHomePage(title: 'We will delete this topbar later on', camera: camera,),
+      home: LoginScreen(camera: camera), //Lance l'application sur cet écran
     );
   }
 }
@@ -44,30 +45,43 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _currentIndex = 0;
-  late List<Widget> _children;
+  late PageController _pageController;
 
   @override
   void initState() {
     super.initState();
-    _children = [
-      const HomeScreen(),
-      AddECGScreen(camera: widget.camera),
-      const ProfileScreen(),
-    ];
+    _pageController = PageController();
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
   }
 
   void _onTap(int index) {
-    setState(() {
-      _currentIndex = index;
-    });
+    _pageController.animateToPage(
+      index,
+      duration: const Duration(milliseconds: 100),
+      curve: Curves.easeInOut,
+    ); // Naviguer vers la page lorsque l'élément de la barre de navigation est appuyé
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(
-        index: _currentIndex,
-        children: _children,
+      body: PageView(
+        controller: _pageController,
+        onPageChanged: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        }, // Mettre à jour l'index lorsque la page change
+        children: [
+          const HomeScreen(),
+          AddECGScreen(camera: widget.camera),
+          const ProfileScreen(),
+        ],
       ),
       bottomNavigationBar: BottomNavBar(
         currentIndex: _currentIndex,

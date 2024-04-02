@@ -6,43 +6,47 @@ class ProfileScreen extends StatelessWidget {
   static String routeName = "/profile";
 
   const ProfileScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-      ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(vertical: 20),
-        child: Column(
-          children: [
-           const ProfilePic(),
-            const SizedBox(height: 20),
-            ProfileMenu(
-              text: "Mon compte",
-              icon: "assets/icons/User Icon.svg",
-              press: () => {},
+      body: Container(
+          color: Colors.grey.shade200,
+        child: Center(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.symmetric(vertical: 20),
+            child: Column(
+              children: [
+               const ProfilePic(),
+                const SizedBox(height: 20),
+                ProfileMenu(
+                  text: "Mon compte",
+                  icon: "assets/icons/User Icon.svg",
+                  press: () => {},
+                ),
+                //ProfileMenu(
+                  //text: "Notifications",
+                  //icon: "assets/icons/Bell.svg",
+                  //press: () {},
+                //),
+                ProfileMenu(
+                  text: "Paramètres",
+                  icon: "assets/icons/Settings.svg",
+                  press: () {},
+                ),
+                ProfileMenu(
+                  text: "Informations",
+                  icon: "assets/icons/Question mark.svg",
+                  press: () {},
+                ),
+                ProfileMenu(
+                  text: "Déconnexion",
+                  icon: "assets/icons/Log out.svg",
+                  press: () {},
+                ),
+              ],
             ),
-            //ProfileMenu(
-              //text: "Notifications",
-              //icon: "assets/icons/Bell.svg",
-              //press: () {},
-            //),
-            ProfileMenu(
-              text: "Paramètres",
-              icon: "assets/icons/Settings.svg",
-              press: () {},
-            ),
-            ProfileMenu(
-              text: "Informations",
-              icon: "assets/icons/Question mark.svg",
-              press: () {},
-            ),
-            ProfileMenu(
-              text: "Déconnexion",
-              icon: "assets/icons/Log out.svg",
-              press: () {},
-            ),
-          ],
+          ),
         ),
       ),
     );
