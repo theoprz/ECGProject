@@ -12,4 +12,4 @@ To fix it, please do this in the front folder (root of the front part)
 flutter --no-color pub get
 ````
 
-This will generate the files you are lacking
+This will generate the files you are lacking.
