@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import '../classes/ECG_class.dart';
+import '../screens/ecg_details_page.dart';
 
 class ECGDisplayer extends StatefulWidget {
   final ECG ecg;
@@ -42,58 +43,62 @@ class _ECGDisplayerState extends State<ECGDisplayer> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: SizedBox(
-        width: MediaQuery.of(context).size.width *
-            0.95, // Set the width to the value you want
-        child: Container(
-          padding: const EdgeInsets.all(20),
-          decoration: const BoxDecoration(
-            color: Colors.white,
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ECGDetailsPage(ecg: widget.ecg),
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text(widget.ecg.title,
-                  style: const TextStyle(
-                      fontSize: 18, fontWeight: FontWeight.bold)),
-              const SizedBox(height: 10),
-              Text(widget.ecg.description),
-              const SizedBox(height: 10),
-              Text("Age: ${widget.ecg.patientAge}"),
-              const SizedBox(height: 10),
-              Text("Sex: ${widget.ecg.patientSex}"),
-              const SizedBox(height: 10),
-              SizedBox(
-                height: 30, // Adjust height as needed
-                child: ListView.builder(
-                  controller: _scrollController,
-                  scrollDirection: Axis.horizontal,
-                  itemCount: widget.ecg.tags.length * 3, // To mimic infinite scrolling
-                  itemBuilder: (context, index) {
-                    final itemIndex = index % widget.ecg.tags.length;
-                    return Padding(
-                      padding: const EdgeInsets.only(right: 10),
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        decoration: BoxDecoration(
-                          color: Colors.red.shade100,
-                          borderRadius: BorderRadius.circular(15),
-                          border: Border.all(color: Colors.red.shade700, width: 2),
-                        ),
-                        child: Center(
-                          child: Text(
-                            widget.ecg
-                                .getListOfAllTagsNamesAsStrings()[itemIndex],
-                            style: TextStyle(fontSize: 14),
+        );
+      },
+      child: Center(
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width * 0.95, // Set the width to the value you want
+          child: Container(
+            padding: const EdgeInsets.all(20),//Padding autour des éléments du tags
+            decoration: const BoxDecoration(
+              color: Colors.white,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(widget.ecg.title,
+                    style: const TextStyle(
+                        fontSize: 18, fontWeight: FontWeight.bold)),
+                const SizedBox(height: 5),
+                Text(widget.ecg.description),
+                const SizedBox(height: 5),
+                SizedBox(
+                  height: 30, // Adjust height as needed
+                  child: ListView.builder(
+                    controller: _scrollController,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: widget.ecg.tags.length * 3, // To mimic infinite scrolling
+                    itemBuilder: (context, index) {
+                      final itemIndex = index % widget.ecg.tags.length;
+                      return Padding(
+                        padding: const EdgeInsets.only(right: 40),//Padding entre les tags
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 12),
+                          decoration: BoxDecoration(
+                            color: Colors.red.shade100,
+                            borderRadius: BorderRadius.circular(15),
+                            border: Border.all(color: Colors.red.shade700, width: 2),
                           ),
-                        )
-                    )
-                    );
-                  },
+                          child: Center(
+                            child: Text(
+                              widget.ecg.getListOfAllTagsNamesAsStrings()[itemIndex],
+                              style: TextStyle(fontSize: 14),
+                            ),
+                          )
+                      )
+                      );
+                    },
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
@@ -106,6 +111,4 @@ class _ECGDisplayerState extends State<ECGDisplayer> {
     super.dispose();
   }
 }
-//TODO: ENHANCE TAGS LOOK AND DISPLAY
-//TODO: DISPLAY LESS INFORMATION ON THE CARD
-//TODO: ALLOW USER TO CLICK ON THE CARD TO SEE MORE INFORMATION
+
