@@ -8,8 +8,9 @@ class ECG {
   int patientAge;
   String patientSex; // 0 or 1
   List<Tag> tags = [];
+  int id;
 
-  ECG(this.title, this.description, this.patientAge, this.patientSex, this.tags);
+  ECG(this.title, this.description, this.patientAge, this.patientSex, this.tags, this.id);
 
   void setECGFromQuery(){
     //À dev quand on a le côté back
@@ -23,6 +24,7 @@ class ECG {
     description = jsonData['ecg_comment'];
     patientAge = int.parse(jsonData['ecg_age']);
     patientSex = jsonData['ecg_sexe'];
+    id = int.parse(jsonData['ecg_id']);
 
     tags.clear();
     for (var tagData in jsonData['tags']) {

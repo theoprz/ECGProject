@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import '../classes/ECG_class.dart';
-import '../widgets/TagDisplayer.dart'; // Assurez-vous d'importer TagDisplayer
+import '../widgets/TagDisplayer.dart';
 
 class ECGDetailsPage extends StatelessWidget {
   final ECG ecg;
@@ -11,8 +12,23 @@ class ECGDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title:  Text('${ecg.title}'),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(75.0),
+        child: AppBar(
+          title: Text('ECG Details'),
+          centerTitle: true,
+          bottom: PreferredSize(
+            preferredSize: Size.fromHeight(50.0), // Set this value to your needed height
+            child: Container(
+              color: Colors.red,
+              child: SingleChildScrollView(
+                child: Center(
+                  child: Text(' ECG ID : ${ecg.id}'),
+                ),
+              ),
+            ),
+          ),
+        ),
       ),
       body: Center(
         child: Container(
@@ -20,6 +36,7 @@ class ECGDetailsPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Text('${ecg.title}'),
               Text('Description: ${ecg.description}'),
               Text('Patient Age: ${ecg.patientAge}'),
               Text('Patient Sex: ${ecg.patientSex}'),
@@ -41,3 +58,5 @@ class ECGDetailsPage extends StatelessWidget {
     );
   }
 }
+
+//TODO ENHANCE TOPBAR

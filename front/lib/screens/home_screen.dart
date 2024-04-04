@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<List<ECG>> generateFakeECGList() async {
     List<ECG> ecgList = [];
     for (int i = 0; i < 20; i++) {
-      ECG ecg = ECG("Title $i", "Description $i", i, "1", []);
+      ECG ecg = ECG("Title $i", "Description $i", i, "1", [], i);
       await ecg.setECGFromJson();
       ecgList.add(ecg);
     }
@@ -59,3 +59,6 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+//TODO TOPBAR RESTANT AFFICHÉE EN HAUT
+//TODO BARRE DE RECHERCHE DANS LE TOPBAR (pas encore implémenter la recherche)
