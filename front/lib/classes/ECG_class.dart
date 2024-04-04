@@ -23,7 +23,7 @@ class ECG {
     title = jsonData['page_title'];
     description = jsonData['ecg_comment'];
     patientAge = int.parse(jsonData['ecg_age']);
-    patientSex = jsonData['ecg_sexe'];
+    patientSex = transformSexe(jsonData['ecg_sexe']);
     id = int.parse(jsonData['ecg_id']);
 
     tags.clear();
@@ -50,5 +50,15 @@ class ECG {
   }
 
 
+}
+
+String transformSexe(String sexe){
+  if (sexe == "0"){
+    return "Homme";
+  } else if (sexe == "1"){
+    return "Femme";
+  } else {
+    return "Non renseigné";
+  }
 }
 
