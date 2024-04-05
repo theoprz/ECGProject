@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'components/compte_screen.dart';
 import 'components/informations_screen.dart';
 import 'components/profile_menu.dart';
