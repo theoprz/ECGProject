@@ -8,7 +8,8 @@ class ProfileMenu extends StatelessWidget {
     super.key,
     required this.text,
     required this.icon,
-    this.press,
+    this.press, 
+    required Icon next,
   });
 
   final String text, icon;
@@ -20,7 +21,7 @@ class ProfileMenu extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: TextButton(
         style: TextButton.styleFrom(
-          foregroundColor: kPrimaryColor, padding: const EdgeInsets.all(20),
+          foregroundColor: kPrimaryColor, padding: const EdgeInsets.all(30),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
           backgroundColor: const Color(0xFFF5F6F9),
@@ -33,7 +34,7 @@ class ProfileMenu extends StatelessWidget {
               color: kPrimaryColor,
               width: 22,
             ),
-            const SizedBox(width: 20),
+            const SizedBox(width: 50),
             Expanded(child: Text(text)),
             const Icon(Icons.arrow_forward_ios),
           ],
