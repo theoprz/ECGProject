@@ -40,21 +40,7 @@ class ProfileScreen extends StatelessWidget {
               icon: "assets/icons/Mail.svg",
               next: const Icon(Icons.navigate_next),
               press: () async {
-                String? encodeQueryParameters(Map<String, String> params) {
-  return params.entries
-      .map((MapEntry<String, String> e) =>
-          '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
-      .join('&');
-}
-                final Uri _emailLaunchUri = Uri(
-                  scheme: 'mailto',
-                  path: 'notremail@institution.com',
-                );
-                if (await canLaunchUrl(_emailLaunchUri)) {
-                  await launchUrl(_emailLaunchUri);
-                } else {
-                  throw 'Could not launch $_emailLaunchUri';
-                }
+                //TODO :  REDIRIGER VERS UNE PAGE DE CONTACT AVEC UN MAILTO DEDANS
                 },
             ),
              ProfileMenu(

@@ -58,3 +58,5 @@ class InformationScreen extends StatelessWidget {
     );
   }
 }
+
+//TODO : METTRE UNE APPBAR AVEC UN BOUTON DE RETOUR
