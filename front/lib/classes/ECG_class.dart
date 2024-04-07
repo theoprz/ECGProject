@@ -28,7 +28,7 @@ class ECG {
 
     tags.clear();
     for (var tagData in jsonData['tags']) {
-      Tag tag = Tag(tagData['etag_id'], tagData['etag_name'], tagData['etag_type'], tagData['etag_parent_id']);
+      Tag tag = Tag(tagData['etag_id'], tagData['etag_name'],  tagData['etag_parent_id']);
       tags.add(tag);
     }
   }

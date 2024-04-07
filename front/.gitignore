@@ -33,6 +33,7 @@ migrate_working_dir/
 **/lib/generated_plugin_registrant.dart
 **/ios/Flutter/flutter_export_environment.sh
 **/android/gradle-wrapper.jar
+**/generated_plugins/
 
 # Symbolication related
 app.*.symbols

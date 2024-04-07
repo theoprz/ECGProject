@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../main.dart';
+import '../widgets/tag_selection_page.dart'; // Assurez-vous d'importer la page de test
 
 class LoginScreen extends StatelessWidget {
   final CameraDescription camera;
@@ -13,22 +14,38 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: MaterialButton(
-          color: Colors.blue,
-          textColor: Colors.white,
-          child: Text('Connexion'),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => MyHomePage(title: 'ECG APP', camera: camera),
-              ),
-            );
-          },
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            MaterialButton(
+              color: Colors.blue,
+              textColor: Colors.white,
+              child: Text('Connexion'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MyHomePage(title: 'ECG APP', camera: camera),
+                  ),
+                );
+              },
+            ),
+            MaterialButton(
+              color: Colors.green,
+              textColor: Colors.white,
+              child: Text('Page de test'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => TagSelectionPage(),
+                  ),
+                );
+              },
+            ),
+          ],
         ),
       ),
     );
   }
 }
-
-//TODO: PREVENT USER FROM GOING BACK TO LOGIN SCREEN AFTER LOGGING IN

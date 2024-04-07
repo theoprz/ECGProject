@@ -1,0 +1,5087 @@
+[
+    {
+        "name": "Anomalie de la qualit\u00e9 du trac\u00e9",
+        "id": "156",
+        "parent_id": null
+    },
+    {
+        "name": "Art\u00e9facts",
+        "id": "157",
+        "parent_id": "156"
+    },
+    {
+        "name": "Inversion d'\u00e9lectrodes",
+        "id": "158",
+        "parent_id": "156"
+    },
+    {
+        "name": "frontales",
+        "id": "159",
+        "parent_id": "158"
+    },
+    {
+        "name": "pr\u00e9cordiales",
+        "id": "160",
+        "parent_id": "158"
+    },
+    {
+        "name": "onde P et QRS n\u00e9gatif DI",
+        "id": "161",
+        "parent_id": "158"
+    },
+    {
+        "name": "trac\u00e9 plat en DI, DII ou DIII",
+        "id": "162",
+        "parent_id": "158"
+    },
+    {
+        "name": "onde P, QRS et T n\u00e9gatif en DIII",
+        "id": "163",
+        "parent_id": "158"
+    },
+    {
+        "name": "ECG reconstruit",
+        "id": "164",
+        "parent_id": "156"
+    },
+    {
+        "name": "Algorithme EASI",
+        "id": "165",
+        "parent_id": "164"
+    },
+    {
+        "name": "Algorithme GE",
+        "id": "166",
+        "parent_id": "164"
+    },
+    {
+        "name": "Algorithme autre/inconnu",
+        "id": "167",
+        "parent_id": "164"
+    },
+    {
+        "name": "Rythme",
+        "id": "168",
+        "parent_id": null
+    },
+    {
+        "name": "Rythme sinusal normal (Activit\u00e9 sinusale conduite aux ventricules)",
+        "id": "169",
+        "parent_id": "168"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "169"
+    },
+    {
+        "name": "Activit\u00e9 sinusale (onde P sinusale)",
+        "id": "171",
+        "parent_id": "168"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "171"
+    },
+    {
+        "name": "Anomalie de conduction",
+        "id": "173",
+        "parent_id": "168"
+    },
+    {
+        "name": "Bradycardie (FC < 60 bpm)",
+        "id": "174",
+        "parent_id": "173"
+    },
+    {
+        "name": "Bradycardie sinusale",
+        "id": "175",
+        "parent_id": "174"
+    },
+    {
+        "name": "appropri\u00e9e \u00e0 la clinique",
+        "id": "176",
+        "parent_id": "175"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "175"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "174"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "174"
+    },
+    {
+        "name": "Asystole",
+        "id": "179",
+        "parent_id": "173"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "179"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "179"
+    },
+    {
+        "name": "Dysfonction sinusale / Bloc sino atrial (BSA)",
+        "id": "182",
+        "parent_id": "173"
+    },
+    {
+        "name": "Bradycardie sinusale pathologique",
+        "id": "183",
+        "parent_id": "182"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "183"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "183"
+    },
+    {
+        "name": "Bloc sino atrial (BSA) de type 1",
+        "id": "186",
+        "parent_id": "182"
+    },
+    {
+        "name": "Bloc sino atrial (BSA) de type 2 (onde P manquante)",
+        "id": "188",
+        "parent_id": "182"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "188"
+    },
+    {
+        "name": "Bloc sino atrial (BSA) de type 3 (onde P inexistante) ou paralysie sinusale",
+        "id": "191",
+        "parent_id": "182"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "191"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "191"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "191"
+    },
+    {
+        "name": "Pause sinusale (> 3 sec)",
+        "id": "194",
+        "parent_id": "182"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "194"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "194"
+    },
+    {
+        "name": "Pause post r\u00e9duction de tachycardie",
+        "id": "198",
+        "parent_id": "182"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "198"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "198"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "182"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "182"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "182"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "182"
+    },
+    {
+        "name": "Anomalie de la conduction AV",
+        "id": "204",
+        "parent_id": "173"
+    },
+    {
+        "name": "BAV 1",
+        "id": "205",
+        "parent_id": "204"
+    },
+    {
+        "name": "BAV 2 Mobitz 1",
+        "id": "206",
+        "parent_id": "204"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "206"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "206"
+    },
+    {
+        "name": "BAV 2 : 1",
+        "id": "209",
+        "parent_id": "204"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "209"
+    },
+    {
+        "name": "BAV 2 Mobitz 2 (onde P bloqu\u00e9e inopin\u00e9e)",
+        "id": "211",
+        "parent_id": "204"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "211"
+    },
+    {
+        "name": "BAV 3 : 1 ou plus ou FA tr\u00e8s lente",
+        "id": "213",
+        "parent_id": "204"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "213"
+    },
+    {
+        "name": "BAV 3 / complet",
+        "id": "215",
+        "parent_id": "204"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "215"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "215"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "215"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "215"
+    },
+    {
+        "name": "Bloc de branche",
+        "id": "220",
+        "parent_id": "173"
+    },
+    {
+        "name": "Bloc de branche droit (BBD) incomplet",
+        "id": "221",
+        "parent_id": "220"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "221"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "221"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "221"
+    },
+    {
+        "name": "Bloc de branche droit (BBD) complet",
+        "id": "225",
+        "parent_id": "220"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "225"
+    },
+    {
+        "name": "Bloc fasciculaire ant\u00e9rieur gauche (BFAG ou HBAG)",
+        "id": "227",
+        "parent_id": "220"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "227"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "227"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "227"
+    },
+    {
+        "name": "Bloc fasciculaire post\u00e9rieur gauche (BFPG ou HBPG)",
+        "id": "231",
+        "parent_id": "220"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "231"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "231"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "231"
+    },
+    {
+        "name": "Bloc de branche gauche incomplet",
+        "id": "235",
+        "parent_id": "220"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "235"
+    },
+    {
+        "name": "Bloc de branche gauche complet (BBG)",
+        "id": "237",
+        "parent_id": "220"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "237"
+    },
+    {
+        "name": "Bloc indiff\u00e9renci\u00e9",
+        "id": "239",
+        "parent_id": "220"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "239"
+    },
+    {
+        "name": "Bloc bifasciculaire",
+        "id": "241",
+        "parent_id": "220"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "241"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "241"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "241"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "241"
+    },
+    {
+        "name": "Bloc alternant",
+        "id": "246",
+        "parent_id": "220"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "246"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "220"
+    },
+    {
+        "name": "PR court",
+        "id": "249",
+        "parent_id": "173"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "249"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "249"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "249"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "249"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "249"
+    },
+    {
+        "name": "Pr\u00e9-excitation",
+        "id": "255",
+        "parent_id": "249"
+    },
+    {
+        "name": "ant\u00e9ro-lat\u00e9rale gauche",
+        "id": "259",
+        "parent_id": "255"
+    },
+    {
+        "name": "post\u00e9ro-lat\u00e9rale gauche",
+        "id": "263",
+        "parent_id": "255"
+    },
+    {
+        "name": "post\u00e9ro-septale gauche",
+        "id": "267",
+        "parent_id": "255"
+    },
+    {
+        "name": "post\u00e9ro-septale droite",
+        "id": "271",
+        "parent_id": "255"
+    },
+    {
+        "name": "ant\u00e9ro-septale droite",
+        "id": "275",
+        "parent_id": "255"
+    },
+    {
+        "name": "post\u00e9ro-lat\u00e9rale droite",
+        "id": "279",
+        "parent_id": "255"
+    },
+    {
+        "name": "ant\u00e9ro-lat\u00e9rale droite",
+        "id": "283",
+        "parent_id": "255"
+    },
+    {
+        "name": "de type Mahaim",
+        "id": "287",
+        "parent_id": "255"
+    },
+    {
+        "name": "Anomalie de rythme",
+        "id": "290",
+        "parent_id": "168"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "290"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "290"
+    },
+    {
+        "name": "Tachycardie (FC > 100 bpm)",
+        "id": "291",
+        "parent_id": "290"
+    },
+    {
+        "name": "Tachycardie sinusale",
+        "id": "292",
+        "parent_id": "291"
+    },
+    {
+        "name": "appropri\u00e9e \u00e0 la clinique",
+        "id": "293",
+        "parent_id": "292"
+    },
+    {
+        "name": "inappropri\u00e9e \u00e0 la clinique",
+        "id": "294",
+        "parent_id": "292"
+    },
+    {
+        "name": "Tachycardie \u00e0 QRS fins r\u00e9guliers",
+        "id": "295",
+        "parent_id": "291"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "295"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "295"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "295"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "295"
+    },
+    {
+        "name": "Tachycardie \u00e0 QRS fins irr\u00e9guliers",
+        "id": "302",
+        "parent_id": "291"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "302"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "302"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "302"
+    },
+    {
+        "name": "Tachycardie \u00e0 QRS larges r\u00e9guliers monomorphes",
+        "id": "308",
+        "parent_id": "291"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "308"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "308"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "308"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "308"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "308"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "308"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "308"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "308"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "308"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "308"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "308"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "308"
+    },
+    {
+        "name": "Tachycardie \u00e0 QRS larges irr\u00e9guliers monomorphes",
+        "id": "323",
+        "parent_id": "291"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "323"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "323"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "323"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "323"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "323"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "323"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "323"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "323"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "323"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "323"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "323"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "323"
+    },
+    {
+        "name": "Tachycardie \u00e0 QRS larges irr\u00e9guliers polymorphes",
+        "id": "338",
+        "parent_id": "291"
+    },
+    {
+        "name": "Fibrillation ventriculaire",
+        "id": "345",
+        "parent_id": "338"
+    },
+    {
+        "name": "Torsade de pointe",
+        "id": "346",
+        "parent_id": "338"
+    },
+    {
+        "name": "SuperWolf (Fibrillation atriale + pr\u00e9-excitation)",
+        "id": "347",
+        "parent_id": "338"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "347"
+    },
+    {
+        "name": "Tachycardie ventriculaire (TV) polymorphe",
+        "id": "1856",
+        "parent_id": "338"
+    },
+    {
+        "name": "Tachycardie ventriculaire bidirectionnelle",
+        "id": "1857",
+        "parent_id": "338"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "291"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "291"
+    },
+    {
+        "name": "Flutter atrial",
+        "id": "351",
+        "parent_id": "290"
+    },
+    {
+        "name": "Flutter atrial typique",
+        "id": "352",
+        "parent_id": "351"
+    },
+    {
+        "name": "Flutter anti-horaire (commun)",
+        "id": "353",
+        "parent_id": "352"
+    },
+    {
+        "name": "conduction 1/1",
+        "id": "354",
+        "parent_id": "353"
+    },
+    {
+        "name": "conduction 2/1",
+        "id": "355",
+        "parent_id": "353"
+    },
+    {
+        "name": "conduction variable",
+        "id": "356",
+        "parent_id": "353"
+    },
+    {
+        "name": "conduction lente",
+        "id": "357",
+        "parent_id": "353"
+    },
+    {
+        "name": "Flutter horaire",
+        "id": "362",
+        "parent_id": "352"
+    },
+    {
+        "name": "conduction 1/1",
+        "id": "363",
+        "parent_id": "362"
+    },
+    {
+        "name": "conduction 2/1",
+        "id": "364",
+        "parent_id": "362"
+    },
+    {
+        "name": "conduction variable",
+        "id": "365",
+        "parent_id": "362"
+    },
+    {
+        "name": "conduction lente",
+        "id": "366",
+        "parent_id": "362"
+    },
+    {
+        "name": "conduction 1/1",
+        "id": "371",
+        "parent_id": "352"
+    },
+    {
+        "name": "conduction 2/1",
+        "id": "372",
+        "parent_id": "352"
+    },
+    {
+        "name": "conduction variable",
+        "id": "373",
+        "parent_id": "352"
+    },
+    {
+        "name": "Flutter atrial atypique",
+        "id": "379",
+        "parent_id": "351"
+    },
+    {
+        "name": "conduction 1/1",
+        "id": "380",
+        "parent_id": "379"
+    },
+    {
+        "name": "conduction 2/1",
+        "id": "381",
+        "parent_id": "379"
+    },
+    {
+        "name": "conduction variable",
+        "id": "382",
+        "parent_id": "379"
+    },
+    {
+        "name": "conduction lente",
+        "id": "383",
+        "parent_id": "379"
+    },
+    {
+        "name": "p\u00e9ri-cicatriciel post chirurgie cardiaque",
+        "id": "1425",
+        "parent_id": "379"
+    },
+    {
+        "name": "p\u00e9ri-mitral",
+        "id": "1426",
+        "parent_id": "379"
+    },
+    {
+        "name": "du toit de l'OG",
+        "id": "1427",
+        "parent_id": "379"
+    },
+    {
+        "name": "Flutter atypique droit",
+        "id": "391",
+        "parent_id": "379"
+    },
+    {
+        "name": "conduction 1/1",
+        "id": "392",
+        "parent_id": "391"
+    },
+    {
+        "name": "conduction 2/1",
+        "id": "393",
+        "parent_id": "391"
+    },
+    {
+        "name": "conduction variable",
+        "id": "394",
+        "parent_id": "391"
+    },
+    {
+        "name": "conduction lente",
+        "id": "395",
+        "parent_id": "391"
+    },
+    {
+        "name": "p\u00e9ri-cicatriciel post chirurgie cardiaque",
+        "id": "1428",
+        "parent_id": "391"
+    },
+    {
+        "name": "Flutter atypique gauche",
+        "id": "403",
+        "parent_id": "379"
+    },
+    {
+        "name": "conduction 1/1",
+        "id": "404",
+        "parent_id": "403"
+    },
+    {
+        "name": "conduction 2/1",
+        "id": "405",
+        "parent_id": "403"
+    },
+    {
+        "name": "conduction variable",
+        "id": "406",
+        "parent_id": "403"
+    },
+    {
+        "name": "conduction lente",
+        "id": "407",
+        "parent_id": "403"
+    },
+    {
+        "name": "p\u00e9ri-cicatriciel post chirurgie cardiaque",
+        "id": "1429",
+        "parent_id": "403"
+    },
+    {
+        "name": "p\u00e9ri-mitral",
+        "id": "1430",
+        "parent_id": "403"
+    },
+    {
+        "name": "du toit de l'OG",
+        "id": "1431",
+        "parent_id": "403"
+    },
+    {
+        "name": "conduction 1/1",
+        "id": "415",
+        "parent_id": "351"
+    },
+    {
+        "name": "conduction 2/1",
+        "id": "416",
+        "parent_id": "351"
+    },
+    {
+        "name": "conduction variable",
+        "id": "417",
+        "parent_id": "351"
+    },
+    {
+        "name": "conduction lente",
+        "id": "418",
+        "parent_id": "351"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "351"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "351"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "351"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "351"
+    },
+    {
+        "name": "Tachycardie atriale",
+        "id": "423",
+        "parent_id": "290"
+    },
+    {
+        "name": "conduction 1/1",
+        "id": "424",
+        "parent_id": "423"
+    },
+    {
+        "name": "conduction 2/1",
+        "id": "425",
+        "parent_id": "423"
+    },
+    {
+        "name": "conduction variable",
+        "id": "426",
+        "parent_id": "423"
+    },
+    {
+        "name": "conduction lente",
+        "id": "427",
+        "parent_id": "423"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "423"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "423"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "423"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "423"
+    },
+    {
+        "name": "Fibrillation atriale (FA)",
+        "id": "432",
+        "parent_id": "290"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "432"
+    },
+    {
+        "name": "grosses mailles",
+        "id": "434",
+        "parent_id": "432"
+    },
+    {
+        "name": "petites mailles",
+        "id": "435",
+        "parent_id": "432"
+    },
+    {
+        "name": "conduction lente",
+        "id": "436",
+        "parent_id": "432"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "432"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "432"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "432"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "432"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "432"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "432"
+    },
+    {
+        "name": "Tachycardie jonctionnelle",
+        "id": "443",
+        "parent_id": "290"
+    },
+    {
+        "name": "Tachycardie par r\u00e9entr\u00e9e intranodale",
+        "id": "444",
+        "parent_id": "443"
+    },
+    {
+        "name": "slow fast",
+        "id": "445",
+        "parent_id": "444"
+    },
+    {
+        "name": "slow slow",
+        "id": "446",
+        "parent_id": "444"
+    },
+    {
+        "name": "fast slow",
+        "id": "447",
+        "parent_id": "444"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "444"
+    },
+    {
+        "name": "Tachycardie par r\u00e9entr\u00e9e sur voie accessoire \u00e0 conduction d\u00e9cr\u00e9mentielle (de Coumel)",
+        "id": "452",
+        "parent_id": "443"
+    },
+    {
+        "name": "Tachycardie par r\u00e9entr\u00e9e sur voie accessoire \u00e0 conduction d\u00e9cr\u00e9mentielle (sur fibre de Mahaim)",
+        "id": "456",
+        "parent_id": "443"
+    },
+    {
+        "name": "Tachycardie par r\u00e9entr\u00e9e sur voie accessoire orthodromique",
+        "id": "460",
+        "parent_id": "443"
+    },
+    {
+        "name": "Tachycardie par r\u00e9entr\u00e9e sur voie accessoire antidromique",
+        "id": "464",
+        "parent_id": "443"
+    },
+    {
+        "name": "Tachycardie jonctionnelle ectopique (JET) ou tachycardie automatique",
+        "id": "468",
+        "parent_id": "443"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "443"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "443"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "443"
+    },
+    {
+        "name": "Double r\u00e9ponse ventriculaire (double conduction nodale)",
+        "id": "471",
+        "parent_id": "290"
+    },
+    {
+        "name": "Tachycardie ventriculaire (TV)",
+        "id": "472",
+        "parent_id": "290"
+    },
+    {
+        "name": "gauche",
+        "id": "522",
+        "parent_id": "472"
+    },
+    {
+        "name": "droite",
+        "id": "523",
+        "parent_id": "472"
+    },
+    {
+        "name": "basale",
+        "id": "524",
+        "parent_id": "472"
+    },
+    {
+        "name": "m\u00e9diane",
+        "id": "525",
+        "parent_id": "472"
+    },
+    {
+        "name": "apicale",
+        "id": "526",
+        "parent_id": "472"
+    },
+    {
+        "name": "inf\u00e9rieure",
+        "id": "527",
+        "parent_id": "472"
+    },
+    {
+        "name": "ant\u00e9rieure",
+        "id": "528",
+        "parent_id": "472"
+    },
+    {
+        "name": "septale",
+        "id": "529",
+        "parent_id": "472"
+    },
+    {
+        "name": "lat\u00e9rale",
+        "id": "530",
+        "parent_id": "472"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "472"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "472"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "472"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "472"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "472"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "472"
+    },
+    {
+        "name": "Tachycardie ventriculaire (TV) sur s\u00e9quelle de n\u00e9crose",
+        "id": "473",
+        "parent_id": "472"
+    },
+    {
+        "name": "gauche",
+        "id": "474",
+        "parent_id": "473"
+    },
+    {
+        "name": "droite",
+        "id": "475",
+        "parent_id": "473"
+    },
+    {
+        "name": "basale",
+        "id": "476",
+        "parent_id": "473"
+    },
+    {
+        "name": "m\u00e9diane",
+        "id": "477",
+        "parent_id": "473"
+    },
+    {
+        "name": "apicale",
+        "id": "478",
+        "parent_id": "473"
+    },
+    {
+        "name": "inf\u00e9rieure",
+        "id": "479",
+        "parent_id": "473"
+    },
+    {
+        "name": "ant\u00e9rieure",
+        "id": "480",
+        "parent_id": "473"
+    },
+    {
+        "name": "septale",
+        "id": "481",
+        "parent_id": "473"
+    },
+    {
+        "name": "lat\u00e9rale",
+        "id": "482",
+        "parent_id": "473"
+    },
+    {
+        "name": "Tachycardie ventriculaire (TV) sur coeur sain",
+        "id": "483",
+        "parent_id": "472"
+    },
+    {
+        "name": "infundibulaire",
+        "id": "484",
+        "parent_id": "483"
+    },
+    {
+        "name": "fasciculaire",
+        "id": "485",
+        "parent_id": "483"
+    },
+    {
+        "name": "de pillier",
+        "id": "486",
+        "parent_id": "483"
+    },
+    {
+        "name": "croix du coeur",
+        "id": "487",
+        "parent_id": "483"
+    },
+    {
+        "name": "p\u00e9ri-hissienne",
+        "id": "488",
+        "parent_id": "483"
+    },
+    {
+        "name": "gauche",
+        "id": "489",
+        "parent_id": "483"
+    },
+    {
+        "name": "droite",
+        "id": "490",
+        "parent_id": "483"
+    },
+    {
+        "name": "basale",
+        "id": "491",
+        "parent_id": "483"
+    },
+    {
+        "name": "m\u00e9diane",
+        "id": "492",
+        "parent_id": "483"
+    },
+    {
+        "name": "apicale",
+        "id": "493",
+        "parent_id": "483"
+    },
+    {
+        "name": "inf\u00e9rieure",
+        "id": "494",
+        "parent_id": "483"
+    },
+    {
+        "name": "ant\u00e9rieure",
+        "id": "495",
+        "parent_id": "483"
+    },
+    {
+        "name": "septale",
+        "id": "496",
+        "parent_id": "483"
+    },
+    {
+        "name": "lat\u00e9rale",
+        "id": "497",
+        "parent_id": "483"
+    },
+    {
+        "name": "Tachycardie ventriculaire (TV) sur cardiopathie non isch\u00e9mique",
+        "id": "498",
+        "parent_id": "472"
+    },
+    {
+        "name": "de branche \u00e0 branche",
+        "id": "499",
+        "parent_id": "498"
+    },
+    {
+        "name": "epicardique",
+        "id": "500",
+        "parent_id": "498"
+    },
+    {
+        "name": "gauche",
+        "id": "501",
+        "parent_id": "498"
+    },
+    {
+        "name": "droite",
+        "id": "502",
+        "parent_id": "498"
+    },
+    {
+        "name": "basale",
+        "id": "503",
+        "parent_id": "498"
+    },
+    {
+        "name": "m\u00e9diane",
+        "id": "504",
+        "parent_id": "498"
+    },
+    {
+        "name": "apicale",
+        "id": "505",
+        "parent_id": "498"
+    },
+    {
+        "name": "inf\u00e9rieure",
+        "id": "506",
+        "parent_id": "498"
+    },
+    {
+        "name": "ant\u00e9rieure",
+        "id": "507",
+        "parent_id": "498"
+    },
+    {
+        "name": "septale",
+        "id": "508",
+        "parent_id": "498"
+    },
+    {
+        "name": "lat\u00e9rale",
+        "id": "509",
+        "parent_id": "498"
+    },
+    {
+        "name": "Flutter ventriculaire",
+        "id": "510",
+        "parent_id": "472"
+    },
+    {
+        "name": "gauche",
+        "id": "511",
+        "parent_id": "510"
+    },
+    {
+        "name": "droite",
+        "id": "512",
+        "parent_id": "510"
+    },
+    {
+        "name": "basale",
+        "id": "513",
+        "parent_id": "510"
+    },
+    {
+        "name": "m\u00e9diane",
+        "id": "514",
+        "parent_id": "510"
+    },
+    {
+        "name": "apicale",
+        "id": "515",
+        "parent_id": "510"
+    },
+    {
+        "name": "inf\u00e9rieure",
+        "id": "516",
+        "parent_id": "510"
+    },
+    {
+        "name": "ant\u00e9rieure",
+        "id": "517",
+        "parent_id": "510"
+    },
+    {
+        "name": "septale",
+        "id": "518",
+        "parent_id": "510"
+    },
+    {
+        "name": "lat\u00e9rale",
+        "id": "519",
+        "parent_id": "510"
+    },
+    {
+        "name": "Tachycardie ventriculaire (TV) bidirectionnelle",
+        "id": "520",
+        "parent_id": "472"
+    },
+    {
+        "name": "Tachycardie ventriculaire (TV) polymorphe",
+        "id": "521",
+        "parent_id": "472"
+    },
+    {
+        "name": "Tachycardie ventriculaire non soutenue (TVNS)",
+        "id": "537",
+        "parent_id": "290"
+    },
+    {
+        "name": "monomorphe",
+        "id": "538",
+        "parent_id": "537"
+    },
+    {
+        "name": "polymorphe",
+        "id": "539",
+        "parent_id": "537"
+    },
+    {
+        "name": "gauche",
+        "id": "540",
+        "parent_id": "537"
+    },
+    {
+        "name": "droite",
+        "id": "541",
+        "parent_id": "537"
+    },
+    {
+        "name": "basale",
+        "id": "542",
+        "parent_id": "537"
+    },
+    {
+        "name": "m\u00e9diane",
+        "id": "543",
+        "parent_id": "537"
+    },
+    {
+        "name": "apicale",
+        "id": "544",
+        "parent_id": "537"
+    },
+    {
+        "name": "inf\u00e9rieure",
+        "id": "545",
+        "parent_id": "537"
+    },
+    {
+        "name": "ant\u00e9rieure",
+        "id": "546",
+        "parent_id": "537"
+    },
+    {
+        "name": "septale",
+        "id": "547",
+        "parent_id": "537"
+    },
+    {
+        "name": "lat\u00e9rale",
+        "id": "548",
+        "parent_id": "537"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "537"
+    },
+    {
+        "name": "Rythme idioventriculaire acc\u00e9l\u00e9r\u00e9 (RIVA)",
+        "id": "550",
+        "parent_id": "290"
+    },
+    {
+        "name": "Rythme idioventriculaire acc\u00e9l\u00e9r\u00e9 (RIVA) post reperfusion coronaire",
+        "id": "551",
+        "parent_id": "550"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "550"
+    },
+    {
+        "name": "Rythme idiojonctionnel acc\u00e9l\u00e9r\u00e9 (RIJA)",
+        "id": "554",
+        "parent_id": "290"
+    },
+    {
+        "name": "Rythme idiojonctionnel acc\u00e9l\u00e9r\u00e9 (RIJA) post ablation de la voie lente",
+        "id": "555",
+        "parent_id": "554"
+    },
+    {
+        "name": "Rythme idiojonctionnel acc\u00e9l\u00e9r\u00e9 (RIJA) induit par cath\u00e9cholamine",
+        "id": "557",
+        "parent_id": "554"
+    },
+    {
+        "name": "Rythme idiojonctionnel acc\u00e9l\u00e9r\u00e9 (RIJA) post reperfusion coronaire",
+        "id": "559",
+        "parent_id": "554"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "554"
+    },
+    {
+        "name": "Extrasystoles supraventriculaires (ESSV)",
+        "id": "562",
+        "parent_id": "290"
+    },
+    {
+        "name": "big\u00e9minisme",
+        "id": "1316",
+        "parent_id": "562"
+    },
+    {
+        "name": "trig\u00e9minisme",
+        "id": "1317",
+        "parent_id": "562"
+    },
+    {
+        "name": "doublet",
+        "id": "1318",
+        "parent_id": "562"
+    },
+    {
+        "name": "triplet",
+        "id": "1319",
+        "parent_id": "562"
+    },
+    {
+        "name": "salve",
+        "id": "1320",
+        "parent_id": "562"
+    },
+    {
+        "name": "bloqu\u00e9e",
+        "id": "1321",
+        "parent_id": "562"
+    },
+    {
+        "name": "Extrasystoles atrial (ESA)",
+        "id": "563",
+        "parent_id": "562"
+    },
+    {
+        "name": "big\u00e9minisme",
+        "id": "1322",
+        "parent_id": "563"
+    },
+    {
+        "name": "trig\u00e9minisme",
+        "id": "1323",
+        "parent_id": "563"
+    },
+    {
+        "name": "doublet",
+        "id": "1324",
+        "parent_id": "563"
+    },
+    {
+        "name": "triplet",
+        "id": "1325",
+        "parent_id": "563"
+    },
+    {
+        "name": "salve",
+        "id": "1326",
+        "parent_id": "563"
+    },
+    {
+        "name": "bloqu\u00e9e",
+        "id": "1327",
+        "parent_id": "563"
+    },
+    {
+        "name": "Extrasystoles jonctionnelles (ESJ)",
+        "id": "570",
+        "parent_id": "562"
+    },
+    {
+        "name": "big\u00e9minisme",
+        "id": "1328",
+        "parent_id": "570"
+    },
+    {
+        "name": "trig\u00e9minisme",
+        "id": "1329",
+        "parent_id": "570"
+    },
+    {
+        "name": "doublet",
+        "id": "1330",
+        "parent_id": "570"
+    },
+    {
+        "name": "triplet",
+        "id": "1331",
+        "parent_id": "570"
+    },
+    {
+        "name": "salve",
+        "id": "1332",
+        "parent_id": "570"
+    },
+    {
+        "name": "bloqu\u00e9e",
+        "id": "1333",
+        "parent_id": "570"
+    },
+    {
+        "name": "Extrasystoles ventriculaires (ESV)",
+        "id": "583",
+        "parent_id": "290"
+    },
+    {
+        "name": "big\u00e9minisme",
+        "id": "1271",
+        "parent_id": "583"
+    },
+    {
+        "name": "trig\u00e9minisme",
+        "id": "1272",
+        "parent_id": "583"
+    },
+    {
+        "name": "doublet",
+        "id": "1273",
+        "parent_id": "583"
+    },
+    {
+        "name": "triplet",
+        "id": "1274",
+        "parent_id": "583"
+    },
+    {
+        "name": "salve",
+        "id": "1275",
+        "parent_id": "583"
+    },
+    {
+        "name": "couplage court",
+        "id": "740",
+        "parent_id": "583"
+    },
+    {
+        "name": "couplage long",
+        "id": "741",
+        "parent_id": "583"
+    },
+    {
+        "name": "ph\u00e9nom\u00e8ne R sur T",
+        "id": "1551",
+        "parent_id": "583"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "583"
+    },
+    {
+        "name": "gauche",
+        "id": "744",
+        "parent_id": "583"
+    },
+    {
+        "name": "droite",
+        "id": "745",
+        "parent_id": "583"
+    },
+    {
+        "name": "basale",
+        "id": "746",
+        "parent_id": "583"
+    },
+    {
+        "name": "m\u00e9diane",
+        "id": "747",
+        "parent_id": "583"
+    },
+    {
+        "name": "apicale",
+        "id": "748",
+        "parent_id": "583"
+    },
+    {
+        "name": "inf\u00e9rieure",
+        "id": "749",
+        "parent_id": "583"
+    },
+    {
+        "name": "ant\u00e9rieure",
+        "id": "750",
+        "parent_id": "583"
+    },
+    {
+        "name": "septale",
+        "id": "751",
+        "parent_id": "583"
+    },
+    {
+        "name": "lat\u00e9rale",
+        "id": "752",
+        "parent_id": "583"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "583"
+    },
+    {
+        "name": "Extrasystoles ventriculaires (ESV) infundibulaire VD",
+        "id": "584",
+        "parent_id": "583"
+    },
+    {
+        "name": "big\u00e9minisme",
+        "id": "1276",
+        "parent_id": "584"
+    },
+    {
+        "name": "trig\u00e9minisme",
+        "id": "1277",
+        "parent_id": "584"
+    },
+    {
+        "name": "doublet",
+        "id": "1278",
+        "parent_id": "584"
+    },
+    {
+        "name": "triplet",
+        "id": "1279",
+        "parent_id": "584"
+    },
+    {
+        "name": "salve",
+        "id": "1280",
+        "parent_id": "584"
+    },
+    {
+        "name": "couplage court",
+        "id": "589",
+        "parent_id": "584"
+    },
+    {
+        "name": "couplage long",
+        "id": "590",
+        "parent_id": "584"
+    },
+    {
+        "name": "ph\u00e9nom\u00e8ne R sur T",
+        "id": "1554",
+        "parent_id": "584"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "584"
+    },
+    {
+        "name": "Extrasystoles ventriculaires (ESV) du ventricule droit (autre que infundibulaire)",
+        "id": "603",
+        "parent_id": "583"
+    },
+    {
+        "name": "big\u00e9minisme",
+        "id": "1281",
+        "parent_id": "603"
+    },
+    {
+        "name": "trig\u00e9minisme",
+        "id": "1282",
+        "parent_id": "603"
+    },
+    {
+        "name": "doublet",
+        "id": "1283",
+        "parent_id": "603"
+    },
+    {
+        "name": "triplet",
+        "id": "1284",
+        "parent_id": "603"
+    },
+    {
+        "name": "salve",
+        "id": "1285",
+        "parent_id": "603"
+    },
+    {
+        "name": "couplage court",
+        "id": "608",
+        "parent_id": "603"
+    },
+    {
+        "name": "couplage long",
+        "id": "609",
+        "parent_id": "603"
+    },
+    {
+        "name": "basale",
+        "id": "614",
+        "parent_id": "603"
+    },
+    {
+        "name": "m\u00e9diane",
+        "id": "615",
+        "parent_id": "603"
+    },
+    {
+        "name": "apicale",
+        "id": "616",
+        "parent_id": "603"
+    },
+    {
+        "name": "inf\u00e9rieure",
+        "id": "617",
+        "parent_id": "603"
+    },
+    {
+        "name": "ant\u00e9rieure",
+        "id": "618",
+        "parent_id": "603"
+    },
+    {
+        "name": "septale",
+        "id": "619",
+        "parent_id": "603"
+    },
+    {
+        "name": "lat\u00e9rale",
+        "id": "620",
+        "parent_id": "603"
+    },
+    {
+        "name": "ph\u00e9nom\u00e8ne R sur T",
+        "id": "1556",
+        "parent_id": "603"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "603"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "603"
+    },
+    {
+        "name": "Extrasystoles ventriculaires (ESV) de pillier",
+        "id": "622",
+        "parent_id": "583"
+    },
+    {
+        "name": "big\u00e9minisme",
+        "id": "1286",
+        "parent_id": "622"
+    },
+    {
+        "name": "trig\u00e9minisme",
+        "id": "1287",
+        "parent_id": "622"
+    },
+    {
+        "name": "doublet",
+        "id": "1288",
+        "parent_id": "622"
+    },
+    {
+        "name": "triplet",
+        "id": "1289",
+        "parent_id": "622"
+    },
+    {
+        "name": "salve",
+        "id": "1290",
+        "parent_id": "622"
+    },
+    {
+        "name": "couplage court",
+        "id": "627",
+        "parent_id": "622"
+    },
+    {
+        "name": "couplage long",
+        "id": "628",
+        "parent_id": "622"
+    },
+    {
+        "name": "ph\u00e9nom\u00e8ne R sur T",
+        "id": "1559",
+        "parent_id": "622"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "622"
+    },
+    {
+        "name": "septale",
+        "id": "638",
+        "parent_id": "622"
+    },
+    {
+        "name": "lat\u00e9rale",
+        "id": "639",
+        "parent_id": "622"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "622"
+    },
+    {
+        "name": "Extrasystoles ventriculaires (ESV) infundibulaire VG (de cusp)",
+        "id": "641",
+        "parent_id": "583"
+    },
+    {
+        "name": "big\u00e9minisme",
+        "id": "1291",
+        "parent_id": "641"
+    },
+    {
+        "name": "trig\u00e9minisme",
+        "id": "1292",
+        "parent_id": "641"
+    },
+    {
+        "name": "doublet",
+        "id": "1293",
+        "parent_id": "641"
+    },
+    {
+        "name": "triplet",
+        "id": "1294",
+        "parent_id": "641"
+    },
+    {
+        "name": "salve",
+        "id": "1295",
+        "parent_id": "641"
+    },
+    {
+        "name": "couplage court",
+        "id": "646",
+        "parent_id": "641"
+    },
+    {
+        "name": "couplage long",
+        "id": "647",
+        "parent_id": "641"
+    },
+    {
+        "name": "ph\u00e9nom\u00e8ne R sur T",
+        "id": "1562",
+        "parent_id": "641"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "641"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "641"
+    },
+    {
+        "name": "Extrasystoles ventriculaires (ESV) de la jonction mitro-aortique",
+        "id": "660",
+        "parent_id": "583"
+    },
+    {
+        "name": "big\u00e9minisme",
+        "id": "1296",
+        "parent_id": "660"
+    },
+    {
+        "name": "trig\u00e9minisme",
+        "id": "1297",
+        "parent_id": "660"
+    },
+    {
+        "name": "doublet",
+        "id": "1298",
+        "parent_id": "660"
+    },
+    {
+        "name": "triplet",
+        "id": "1299",
+        "parent_id": "660"
+    },
+    {
+        "name": "salve",
+        "id": "1300",
+        "parent_id": "660"
+    },
+    {
+        "name": "couplage court",
+        "id": "665",
+        "parent_id": "660"
+    },
+    {
+        "name": "couplage long",
+        "id": "666",
+        "parent_id": "660"
+    },
+    {
+        "name": "ph\u00e9nom\u00e8ne R sur T",
+        "id": "1565",
+        "parent_id": "660"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "660"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "660"
+    },
+    {
+        "name": "Extrasystoles ventriculaires (ESV) fasciculaire",
+        "id": "679",
+        "parent_id": "583"
+    },
+    {
+        "name": "big\u00e9minisme",
+        "id": "1301",
+        "parent_id": "679"
+    },
+    {
+        "name": "trig\u00e9minisme",
+        "id": "1302",
+        "parent_id": "679"
+    },
+    {
+        "name": "doublet",
+        "id": "1303",
+        "parent_id": "679"
+    },
+    {
+        "name": "triplet",
+        "id": "1304",
+        "parent_id": "679"
+    },
+    {
+        "name": "salve",
+        "id": "1305",
+        "parent_id": "679"
+    },
+    {
+        "name": "couplage court",
+        "id": "684",
+        "parent_id": "679"
+    },
+    {
+        "name": "couplage long",
+        "id": "685",
+        "parent_id": "679"
+    },
+    {
+        "name": "ph\u00e9nom\u00e8ne R sur T",
+        "id": "1568",
+        "parent_id": "679"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "679"
+    },
+    {
+        "name": "ant\u00e9rieure",
+        "id": "694",
+        "parent_id": "679"
+    },
+    {
+        "name": "post\u00e9rieure",
+        "id": "695",
+        "parent_id": "679"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "679"
+    },
+    {
+        "name": "Extrasystoles ventriculaires (ESV) du Purkinje",
+        "id": "698",
+        "parent_id": "583"
+    },
+    {
+        "name": "big\u00e9minisme",
+        "id": "1306",
+        "parent_id": "698"
+    },
+    {
+        "name": "trig\u00e9minisme",
+        "id": "1307",
+        "parent_id": "698"
+    },
+    {
+        "name": "doublet",
+        "id": "1308",
+        "parent_id": "698"
+    },
+    {
+        "name": "triplet",
+        "id": "1309",
+        "parent_id": "698"
+    },
+    {
+        "name": "salve",
+        "id": "1310",
+        "parent_id": "698"
+    },
+    {
+        "name": "couplage court",
+        "id": "703",
+        "parent_id": "698"
+    },
+    {
+        "name": "couplage long",
+        "id": "704",
+        "parent_id": "698"
+    },
+    {
+        "name": "ph\u00e9nom\u00e8ne R sur T",
+        "id": "1571",
+        "parent_id": "698"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "698"
+    },
+    {
+        "name": "gauche",
+        "id": "707",
+        "parent_id": "698"
+    },
+    {
+        "name": "droite",
+        "id": "708",
+        "parent_id": "698"
+    },
+    {
+        "name": "basale",
+        "id": "709",
+        "parent_id": "698"
+    },
+    {
+        "name": "m\u00e9diane",
+        "id": "710",
+        "parent_id": "698"
+    },
+    {
+        "name": "apicale",
+        "id": "711",
+        "parent_id": "698"
+    },
+    {
+        "name": "inf\u00e9rieure",
+        "id": "712",
+        "parent_id": "698"
+    },
+    {
+        "name": "ant\u00e9rieure",
+        "id": "713",
+        "parent_id": "698"
+    },
+    {
+        "name": "septale",
+        "id": "714",
+        "parent_id": "698"
+    },
+    {
+        "name": "lat\u00e9rale",
+        "id": "715",
+        "parent_id": "698"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "698"
+    },
+    {
+        "name": "Extrasystoles ventriculaires (ESV) du sommet du VG",
+        "id": "717",
+        "parent_id": "583"
+    },
+    {
+        "name": "big\u00e9minisme",
+        "id": "1311",
+        "parent_id": "717"
+    },
+    {
+        "name": "trig\u00e9minisme",
+        "id": "1312",
+        "parent_id": "717"
+    },
+    {
+        "name": "doublet",
+        "id": "1313",
+        "parent_id": "717"
+    },
+    {
+        "name": "triplet",
+        "id": "1314",
+        "parent_id": "717"
+    },
+    {
+        "name": "salve",
+        "id": "1315",
+        "parent_id": "717"
+    },
+    {
+        "name": "couplage court",
+        "id": "722",
+        "parent_id": "717"
+    },
+    {
+        "name": "couplage long",
+        "id": "723",
+        "parent_id": "717"
+    },
+    {
+        "name": "ph\u00e9nom\u00e8ne R sur T",
+        "id": "1574",
+        "parent_id": "717"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "717"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "717"
+    },
+    {
+        "name": "Wandering pacemaker",
+        "id": "754",
+        "parent_id": "290"
+    },
+    {
+        "name": "Electro-entrainement / Pacemaker / D\u00e9fibrillateur (stimulation)",
+        "id": "755",
+        "parent_id": "168"
+    },
+    {
+        "name": "Stimulation atriale",
+        "id": "756",
+        "parent_id": "755"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "756"
+    },
+    {
+        "name": "Stimulation ventriculaire",
+        "id": "758",
+        "parent_id": "755"
+    },
+    {
+        "name": "Stimulation ventriculaire droite",
+        "id": "759",
+        "parent_id": "758"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "759"
+    },
+    {
+        "name": "Stimulation ventriculaire gauche",
+        "id": "760",
+        "parent_id": "758"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "760"
+    },
+    {
+        "name": "Stimulation de resynchronisation biventriculaire",
+        "id": "761",
+        "parent_id": "758"
+    },
+    {
+        "name": "n\u00e9gativit\u00e9 DI",
+        "id": "762",
+        "parent_id": "761"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "761"
+    },
+    {
+        "name": "Stimulation hissienne s\u00e9lective",
+        "id": "764",
+        "parent_id": "758"
+    },
+    {
+        "name": "Stimulation hissienne non s\u00e9lective",
+        "id": "765",
+        "parent_id": "758"
+    },
+    {
+        "name": "Stimulation de branche gauche s\u00e9lective",
+        "id": "766",
+        "parent_id": "758"
+    },
+    {
+        "name": "Stimulation de branche gauche non s\u00e9lective",
+        "id": "767",
+        "parent_id": "758"
+    },
+    {
+        "name": "Stimulation septal profonde",
+        "id": "768",
+        "parent_id": "758"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "758"
+    },
+    {
+        "name": "Cardioversion",
+        "id": "770",
+        "parent_id": "755"
+    },
+    {
+        "name": "Cardioversion TSV inefficace",
+        "id": "771",
+        "parent_id": "770"
+    },
+    {
+        "name": "Cardioversion TV/FV inefficace",
+        "id": "772",
+        "parent_id": "770"
+    },
+    {
+        "name": "Dysfonction de pacemaker",
+        "id": "773",
+        "parent_id": "168"
+    },
+    {
+        "name": "Tachycardie electroentrain\u00e9e",
+        "id": "774",
+        "parent_id": "773"
+    },
+    {
+        "name": "Tachycardie par r\u00e9entr\u00e9e electronique",
+        "id": "775",
+        "parent_id": "774"
+    },
+    {
+        "name": "Tachycardie par d\u00e9faut de repli",
+        "id": "776",
+        "parent_id": "774"
+    },
+    {
+        "name": "Tachycardie electroentrain\u00e9e sur suivi d'une TSV lente",
+        "id": "777",
+        "parent_id": "774"
+    },
+    {
+        "name": "D\u00e9faut de capture",
+        "id": "778",
+        "parent_id": "773"
+    },
+    {
+        "name": "Artefact (spike) de stimulation sans capture atriale",
+        "id": "779",
+        "parent_id": "778"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "779"
+    },
+    {
+        "name": "Artefact (spike) de stimulation sans capture ventriculaire",
+        "id": "781",
+        "parent_id": "778"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "781"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "778"
+    },
+    {
+        "name": "Bradycardie en pr\u00e9sence d'un stimulateur cardiaque",
+        "id": "784",
+        "parent_id": "773"
+    },
+    {
+        "name": "Surd\u00e9tection",
+        "id": "785",
+        "parent_id": "784"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "785"
+    },
+    {
+        "name": "Algorithme de conservation de la conduction",
+        "id": "787",
+        "parent_id": "784"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "787"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "784"
+    },
+    {
+        "name": "Exc\u00e8s de stimulation",
+        "id": "790",
+        "parent_id": "773"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "790"
+    },
+    {
+        "name": "D\u00e9faut d'\u00e9coute",
+        "id": "792",
+        "parent_id": "790"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "792"
+    },
+    {
+        "name": "Stimulation en fen\u00eatre de s\u00e9curit\u00e9",
+        "id": "794",
+        "parent_id": "790"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "794"
+    },
+    {
+        "name": "Rythme d'\u00e9chappement",
+        "id": "796",
+        "parent_id": "168"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "796"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "796"
+    },
+    {
+        "name": "Echappement atrial",
+        "id": "799",
+        "parent_id": "796"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "799"
+    },
+    {
+        "name": "Echappement jonctionnel",
+        "id": "801",
+        "parent_id": "796"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "801"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "801"
+    },
+    {
+        "name": "Echappement ventriculaire",
+        "id": "804",
+        "parent_id": "796"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "804"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "804"
+    },
+    {
+        "name": "Anomalie de la morphologie onde P",
+        "id": "807",
+        "parent_id": null
+    },
+    {
+        "name": "Hypertrophie atriale",
+        "id": "808",
+        "parent_id": "807"
+    },
+    {
+        "name": "Hypertrophie atriale gauche (HAG)",
+        "id": "809",
+        "parent_id": "808"
+    },
+    {
+        "name": "Hypertrophie atriale droite (HAD)",
+        "id": "812",
+        "parent_id": "808"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "808"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "808"
+    },
+    {
+        "name": "Bloc de conduction intra-atrial",
+        "id": "817",
+        "parent_id": "807"
+    },
+    {
+        "name": "Activit\u00e9 atriale basse (onde P non positive en DII-VF)",
+        "id": "818",
+        "parent_id": "807"
+    },
+    {
+        "name": "Rythme du sinus coronaire",
+        "id": "819",
+        "parent_id": "818"
+    },
+    {
+        "name": "Onde P r\u00e9trograde",
+        "id": "820",
+        "parent_id": "807"
+    },
+    {
+        "name": "Anomalie de la morphologie QRS",
+        "id": "821",
+        "parent_id": null
+    },
+    {
+        "name": "Onde Q pathologique",
+        "id": "822",
+        "parent_id": "821"
+    },
+    {
+        "name": "ant\u00e9rieure",
+        "id": "823",
+        "parent_id": "822"
+    },
+    {
+        "name": "septale (V1-V2)",
+        "id": "824",
+        "parent_id": "822"
+    },
+    {
+        "name": "apicale (V3-V4)",
+        "id": "825",
+        "parent_id": "822"
+    },
+    {
+        "name": "lat\u00e9rale bas (V5-V6)",
+        "id": "826",
+        "parent_id": "822"
+    },
+    {
+        "name": "lat\u00e9rale haut (DI-aVL)",
+        "id": "827",
+        "parent_id": "822"
+    },
+    {
+        "name": "inf\u00e9rieure (DIII-VF-DII)",
+        "id": "828",
+        "parent_id": "822"
+    },
+    {
+        "name": "post\u00e9ro-basale (V7-V8-V9)",
+        "id": "829",
+        "parent_id": "822"
+    },
+    {
+        "name": "droite (V3R V4R)",
+        "id": "830",
+        "parent_id": "822"
+    },
+    {
+        "name": "QRS larges",
+        "id": "831",
+        "parent_id": "821"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "831"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "831"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "831"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "831"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "831"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "831"
+    },
+    {
+        "name": "Modification isch\u00e9mique aigu\u00eb des QRS",
+        "id": "838",
+        "parent_id": "821"
+    },
+    {
+        "name": "fragmentation",
+        "id": "839",
+        "parent_id": "838"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "838"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "838"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "838"
+    },
+    {
+        "name": "Amplitude anormale des QRS",
+        "id": "843",
+        "parent_id": "821"
+    },
+    {
+        "name": "Hypertrophie ventriculaire gauche (HVG)",
+        "id": "844",
+        "parent_id": "843"
+    },
+    {
+        "name": "Indice de Sokolow > 35 mm (> 45 mm avant 40 ans)",
+        "id": "845",
+        "parent_id": "844"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "845"
+    },
+    {
+        "name": "Indice de Cornell > 28 mm (H); > 20 mm (F)",
+        "id": "847",
+        "parent_id": "844"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "847"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "844"
+    },
+    {
+        "name": "Hypertrophie ventriculaire droite (HVD)",
+        "id": "850",
+        "parent_id": "843"
+    },
+    {
+        "name": "Microvoltage",
+        "id": "851",
+        "parent_id": "843"
+    },
+    {
+        "name": "Microvoltage diffus",
+        "id": "852",
+        "parent_id": "851"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "851"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "851"
+    },
+    {
+        "name": "Rabotage/\u00e9cr\u00eatage des ondes R en ant\u00e9rieur",
+        "id": "855",
+        "parent_id": "843"
+    },
+    {
+        "name": "Axe des QRS",
+        "id": "2860",
+        "parent_id": "821"
+    },
+    {
+        "name": "Axe droit",
+        "id": "11",
+        "parent_id": "2860"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "11"
+    },
+    {
+        "name": "Axe extr\u00eame",
+        "id": "12",
+        "parent_id": "2860"
+    },
+    {
+        "name": "Axe gauche",
+        "id": "13",
+        "parent_id": "2860"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "13"
+    },
+    {
+        "name": "Axe normal",
+        "id": "14",
+        "parent_id": "2860"
+    },
+    {
+        "name": "Anomalie de repolarisation du point J ou du segment ST",
+        "id": "856",
+        "parent_id": null
+    },
+    {
+        "name": "Variante de la normale",
+        "id": "857",
+        "parent_id": "856"
+    },
+    {
+        "name": "Sus-d\u00e9calage physiologique ant\u00e9rieur",
+        "id": "858",
+        "parent_id": "857"
+    },
+    {
+        "name": "septal (V1-V2)",
+        "id": "859",
+        "parent_id": "858"
+    },
+    {
+        "name": "apical (V3-V4)",
+        "id": "860",
+        "parent_id": "858"
+    },
+    {
+        "name": "Repolarisation pr\u00e9coce (Point J sur\u00e9lev\u00e9 avec aspect de rebond dans les d\u00e9rivations inf\u00e9rieures et/ou lat\u00e9rales)",
+        "id": "861",
+        "parent_id": "856"
+    },
+    {
+        "name": "inf\u00e9rieur (DII-DIII-aVF)",
+        "id": "862",
+        "parent_id": "861"
+    },
+    {
+        "name": "lat\u00e9ral bas (V5-V6)",
+        "id": "863",
+        "parent_id": "861"
+    },
+    {
+        "name": "lat\u00e9ral haut (DI aVL)",
+        "id": "864",
+        "parent_id": "861"
+    },
+    {
+        "name": "\u00e9tendu",
+        "id": "2685",
+        "parent_id": "861"
+    },
+    {
+        "name": "syndrome de repolarisation pr\u00e9coce",
+        "id": "865",
+        "parent_id": "861"
+    },
+    {
+        "name": "Sus-d\u00e9calage ST (ST+) pathologique",
+        "id": "866",
+        "parent_id": "856"
+    },
+    {
+        "name": "ant\u00e9rieur (V1-V6)",
+        "id": "3504",
+        "parent_id": "866"
+    },
+    {
+        "name": "septal (V1-V2)",
+        "id": "3505",
+        "parent_id": "866"
+    },
+    {
+        "name": "apical (V3-V4)",
+        "id": "3506",
+        "parent_id": "866"
+    },
+    {
+        "name": "lat\u00e9ral bas (V5-V6)",
+        "id": "3507",
+        "parent_id": "866"
+    },
+    {
+        "name": "lat\u00e9ral haut (DI-VL)",
+        "id": "3508",
+        "parent_id": "866"
+    },
+    {
+        "name": "inf\u00e9rieur (DIII-VF-DII)",
+        "id": "3509",
+        "parent_id": "866"
+    },
+    {
+        "name": "post\u00e9ro-basal (V7-V8-V9)",
+        "id": "3510",
+        "parent_id": "866"
+    },
+    {
+        "name": "droite (V3R-V4R)",
+        "id": "3511",
+        "parent_id": "866"
+    },
+    {
+        "name": "Sus-d\u00e9calage ST \u00e9vocateur d'occlusion coronaire/syndrome coronaire aig\u00fc (SCA)",
+        "id": "867",
+        "parent_id": "866"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "867"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "867"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "867"
+    },
+    {
+        "name": "ant\u00e9rieur (V1-V6)",
+        "id": "871",
+        "parent_id": "867"
+    },
+    {
+        "name": "septal (V1-V2)",
+        "id": "872",
+        "parent_id": "867"
+    },
+    {
+        "name": "apical (V3-V4)",
+        "id": "873",
+        "parent_id": "867"
+    },
+    {
+        "name": "lat\u00e9ral bas (V5-V6)",
+        "id": "874",
+        "parent_id": "867"
+    },
+    {
+        "name": "lat\u00e9ral haut (DI-VL)",
+        "id": "875",
+        "parent_id": "867"
+    },
+    {
+        "name": "inf\u00e9rieur (DIII-VF-DII)",
+        "id": "876",
+        "parent_id": "867"
+    },
+    {
+        "name": "post\u00e9ro-basal (V7-V8-V9)",
+        "id": "877",
+        "parent_id": "867"
+    },
+    {
+        "name": "droite (V3R-V4R)",
+        "id": "878",
+        "parent_id": "867"
+    },
+    {
+        "name": "Sus-d\u00e9calage ST \u00e9vocateur de p\u00e9ricardite/myocardite",
+        "id": "879",
+        "parent_id": "866"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "879"
+    },
+    {
+        "name": "ant\u00e9rieur (V1-V6)",
+        "id": "881",
+        "parent_id": "879"
+    },
+    {
+        "name": "septal (V1-V2)",
+        "id": "882",
+        "parent_id": "879"
+    },
+    {
+        "name": "apical (V3-V4)",
+        "id": "883",
+        "parent_id": "879"
+    },
+    {
+        "name": "lat\u00e9ral bas (V5-V6)",
+        "id": "884",
+        "parent_id": "879"
+    },
+    {
+        "name": "lat\u00e9ral haut (DI-VL)",
+        "id": "885",
+        "parent_id": "879"
+    },
+    {
+        "name": "inf\u00e9rieur (DIII-VF-DII)",
+        "id": "886",
+        "parent_id": "879"
+    },
+    {
+        "name": "post\u00e9ro-basal (V7-V8-V9)",
+        "id": "887",
+        "parent_id": "879"
+    },
+    {
+        "name": "droite (V3R-V4R)",
+        "id": "888",
+        "parent_id": "879"
+    },
+    {
+        "name": "Sus-d\u00e9calage ST \u00e9vocateur de Brugada",
+        "id": "889",
+        "parent_id": "866"
+    },
+    {
+        "name": "Sus-d\u00e9calage ST typique de Brugada (Point J sur\u00e9lev\u00e9 avec Sus-d\u00e9calage ST \u2265 2 mm en V1 ou V2 en d\u00f4me ou triangle)",
+        "id": "890",
+        "parent_id": "889"
+    },
+    {
+        "name": "Sus-d\u00e9calage ST atypique en V1",
+        "id": "891",
+        "parent_id": "889"
+    },
+    {
+        "name": "Sus-d\u00e9calage ST \u00e9vocateur de Takotsubo",
+        "id": "892",
+        "parent_id": "866"
+    },
+    {
+        "name": "ant\u00e9rieur (V1-V6)",
+        "id": "893",
+        "parent_id": "892"
+    },
+    {
+        "name": "septal (V1-V2)",
+        "id": "894",
+        "parent_id": "892"
+    },
+    {
+        "name": "apical (V3-V4)",
+        "id": "895",
+        "parent_id": "892"
+    },
+    {
+        "name": "lat\u00e9ral bas (V5-V6)",
+        "id": "896",
+        "parent_id": "892"
+    },
+    {
+        "name": "lat\u00e9ral haut (DI-VL)",
+        "id": "897",
+        "parent_id": "892"
+    },
+    {
+        "name": "inf\u00e9rieur (DIII-VF-DII)",
+        "id": "898",
+        "parent_id": "892"
+    },
+    {
+        "name": "post\u00e9ro-basal (V7-V8-V9)",
+        "id": "899",
+        "parent_id": "892"
+    },
+    {
+        "name": "droite (V3R-V4R)",
+        "id": "900",
+        "parent_id": "892"
+    },
+    {
+        "name": "Sus-d\u00e9calage ST \u00e9vocateur d'an\u00e9vrysme ventriculaire",
+        "id": "901",
+        "parent_id": "866"
+    },
+    {
+        "name": "ant\u00e9rieur (V1-V6)",
+        "id": "902",
+        "parent_id": "901"
+    },
+    {
+        "name": "septal (V1-V2)",
+        "id": "903",
+        "parent_id": "901"
+    },
+    {
+        "name": "apical (V3-V4)",
+        "id": "904",
+        "parent_id": "901"
+    },
+    {
+        "name": "lat\u00e9ral bas (V5-V6)",
+        "id": "905",
+        "parent_id": "901"
+    },
+    {
+        "name": "lat\u00e9ral haut (DI-VL)",
+        "id": "906",
+        "parent_id": "901"
+    },
+    {
+        "name": "inf\u00e9rieur (DIII-VF-DII)",
+        "id": "907",
+        "parent_id": "901"
+    },
+    {
+        "name": "post\u00e9ro-basal (V7-V8-V9)",
+        "id": "908",
+        "parent_id": "901"
+    },
+    {
+        "name": "droite (V3R-V4R)",
+        "id": "909",
+        "parent_id": "901"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "866"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "866"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "866"
+    },
+    {
+        "name": "Sous-d\u00e9calage ST pathologique",
+        "id": "913",
+        "parent_id": "856"
+    },
+    {
+        "name": "diffus",
+        "id": "3321",
+        "parent_id": "913"
+    },
+    {
+        "name": "ant\u00e9rieur",
+        "id": "3322",
+        "parent_id": "913"
+    },
+    {
+        "name": "septal (V1-V2)",
+        "id": "3323",
+        "parent_id": "913"
+    },
+    {
+        "name": "apical (V3-V4)",
+        "id": "3324",
+        "parent_id": "913"
+    },
+    {
+        "name": "lat\u00e9ral bas (V5-V6)",
+        "id": "3325",
+        "parent_id": "913"
+    },
+    {
+        "name": "lat\u00e9ral haut (DI-VL)",
+        "id": "3326",
+        "parent_id": "913"
+    },
+    {
+        "name": "inf\u00e9rieur (DIII-VF-DII)",
+        "id": "3327",
+        "parent_id": "913"
+    },
+    {
+        "name": "basal (V7-V8-V9)",
+        "id": "3328",
+        "parent_id": "913"
+    },
+    {
+        "name": "droite (V3R V4R)",
+        "id": "3329",
+        "parent_id": "913"
+    },
+    {
+        "name": "Sous-d\u00e9calage ST \u00e9vocateur d'une pathologie coronaire (SCA)",
+        "id": "914",
+        "parent_id": "913"
+    },
+    {
+        "name": "diffus",
+        "id": "915",
+        "parent_id": "914"
+    },
+    {
+        "name": "ant\u00e9rieur",
+        "id": "916",
+        "parent_id": "914"
+    },
+    {
+        "name": "septal (V1-V2)",
+        "id": "917",
+        "parent_id": "914"
+    },
+    {
+        "name": "apical (V3-V4)",
+        "id": "918",
+        "parent_id": "914"
+    },
+    {
+        "name": "lat\u00e9ral bas (V5-V6)",
+        "id": "919",
+        "parent_id": "914"
+    },
+    {
+        "name": "lat\u00e9ral haut (DI-VL)",
+        "id": "920",
+        "parent_id": "914"
+    },
+    {
+        "name": "inf\u00e9rieur (DIII-VF-DII)",
+        "id": "921",
+        "parent_id": "914"
+    },
+    {
+        "name": "basal (V7-V8-V9)",
+        "id": "922",
+        "parent_id": "914"
+    },
+    {
+        "name": "droite (V3R V4R)",
+        "id": "923",
+        "parent_id": "914"
+    },
+    {
+        "name": "Sous-d\u00e9calage ST \u00e9vocateur d'une isch\u00e9mie fonctionnelle",
+        "id": "924",
+        "parent_id": "913"
+    },
+    {
+        "name": "diffus",
+        "id": "926",
+        "parent_id": "924"
+    },
+    {
+        "name": "ant\u00e9rieur",
+        "id": "927",
+        "parent_id": "924"
+    },
+    {
+        "name": "septal (V1-V2)",
+        "id": "928",
+        "parent_id": "924"
+    },
+    {
+        "name": "apical (V3-V4)",
+        "id": "929",
+        "parent_id": "924"
+    },
+    {
+        "name": "lat\u00e9ral bas (V5-V6)",
+        "id": "930",
+        "parent_id": "924"
+    },
+    {
+        "name": "lat\u00e9ral haut (DI-VL)",
+        "id": "931",
+        "parent_id": "924"
+    },
+    {
+        "name": "inf\u00e9rieur (DIII-VF-DII)",
+        "id": "932",
+        "parent_id": "924"
+    },
+    {
+        "name": "basal (V7-V8-V9)",
+        "id": "933",
+        "parent_id": "924"
+    },
+    {
+        "name": "droite (V3R V4R)",
+        "id": "934",
+        "parent_id": "924"
+    },
+    {
+        "name": "Sous-d\u00e9calage ST secondaire \u00e0 une hypertrophie ventriculaire",
+        "id": "935",
+        "parent_id": "913"
+    },
+    {
+        "name": "Sous-d\u00e9calage ST \u00e9vocateur d'une anomalie m\u00e9tabolique",
+        "id": "936",
+        "parent_id": "913"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "936"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "936"
+    },
+    {
+        "name": "diffus",
+        "id": "939",
+        "parent_id": "936"
+    },
+    {
+        "name": "Sous-d\u00e9calage ST \u00e9vocateur d'origine m\u00e9dicamenteuse",
+        "id": "940",
+        "parent_id": "913"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "940"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "940"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "940"
+    },
+    {
+        "name": "diffus",
+        "id": "944",
+        "parent_id": "940"
+    },
+    {
+        "name": "Sous-d\u00e9calage ST miroir d'un ST+",
+        "id": "945",
+        "parent_id": "913"
+    },
+    {
+        "name": "ant\u00e9rieur",
+        "id": "946",
+        "parent_id": "945"
+    },
+    {
+        "name": "septal (V1-V2)",
+        "id": "947",
+        "parent_id": "945"
+    },
+    {
+        "name": "apical (V3-V4)",
+        "id": "948",
+        "parent_id": "945"
+    },
+    {
+        "name": "lat\u00e9ral bas (V5-V6)",
+        "id": "949",
+        "parent_id": "945"
+    },
+    {
+        "name": "lat\u00e9ral haut (DI-VL)",
+        "id": "950",
+        "parent_id": "945"
+    },
+    {
+        "name": "inf\u00e9rieur (DIII-VF-DII)",
+        "id": "951",
+        "parent_id": "945"
+    },
+    {
+        "name": "basal (V7-V8-V9)",
+        "id": "952",
+        "parent_id": "945"
+    },
+    {
+        "name": "droite (V3R V4R)",
+        "id": "953",
+        "parent_id": "945"
+    },
+    {
+        "name": "Sous-d\u00e9calage ST \u00e9vocateur d'une p\u00e9ricardite/myocardite",
+        "id": "954",
+        "parent_id": "913"
+    },
+    {
+        "name": "ant\u00e9rieur",
+        "id": "955",
+        "parent_id": "954"
+    },
+    {
+        "name": "septal (V1-V2)",
+        "id": "956",
+        "parent_id": "954"
+    },
+    {
+        "name": "apical (V3-V4)",
+        "id": "957",
+        "parent_id": "954"
+    },
+    {
+        "name": "lat\u00e9ral bas (V5-V6)",
+        "id": "958",
+        "parent_id": "954"
+    },
+    {
+        "name": "lat\u00e9ral haut (DI-VL)",
+        "id": "959",
+        "parent_id": "954"
+    },
+    {
+        "name": "inf\u00e9rieur (DIII-VF-DII)",
+        "id": "960",
+        "parent_id": "954"
+    },
+    {
+        "name": "basal (V7-V8-V9)",
+        "id": "961",
+        "parent_id": "954"
+    },
+    {
+        "name": "droite (V3R V4R)",
+        "id": "962",
+        "parent_id": "954"
+    },
+    {
+        "name": "Anomalie de repolarisation secondaire \u00e0 une tachycardie",
+        "id": "2045",
+        "parent_id": "856"
+    },
+    {
+        "name": "Anomalie de repolarisation secondaire \u00e0 un QRS large (discordance appropri\u00e9e)",
+        "id": "964",
+        "parent_id": "856"
+    },
+    {
+        "name": "Anomalie de repolarisation avec QRS large \u00e9vocatrices d'isch\u00e9mie myocardique (SCA)",
+        "id": "963",
+        "parent_id": "856"
+    },
+    {
+        "name": "Anomalie de l'Onde T",
+        "id": "965",
+        "parent_id": null
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "965"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "965"
+    },
+    {
+        "name": "Onde T invers\u00e9e (discordante avec la polarit\u00e9 du QRS)",
+        "id": "966",
+        "parent_id": "965"
+    },
+    {
+        "name": "ant\u00e9rieure \u00e9tendue",
+        "id": "1007",
+        "parent_id": "966"
+    },
+    {
+        "name": "septale (V1-V2)",
+        "id": "1008",
+        "parent_id": "966"
+    },
+    {
+        "name": "apicale (V3-V4)",
+        "id": "1009",
+        "parent_id": "966"
+    },
+    {
+        "name": "lat\u00e9rale (V5-V6 Di aVL)",
+        "id": "1010",
+        "parent_id": "966"
+    },
+    {
+        "name": "inf\u00e9rieure (DII DIII avF)",
+        "id": "1011",
+        "parent_id": "966"
+    },
+    {
+        "name": "post\u00e9rieure (V7-V8-V9)",
+        "id": "1012",
+        "parent_id": "966"
+    },
+    {
+        "name": "droite (V3R V4R)",
+        "id": "1013",
+        "parent_id": "966"
+    },
+    {
+        "name": "Onde T invers\u00e9e physiologique",
+        "id": "967",
+        "parent_id": "966"
+    },
+    {
+        "name": "isol\u00e9e en DIII",
+        "id": "968",
+        "parent_id": "967"
+    },
+    {
+        "name": "en V2-V3 (repolarisation de l'apex)",
+        "id": "969",
+        "parent_id": "967"
+    },
+    {
+        "name": "V1-V4 chez l'athl\u00e8te d'origine africaine",
+        "id": "970",
+        "parent_id": "967"
+    },
+    {
+        "name": "Onde T invers\u00e9e \u00e9vocatrice d'effet Chatterjee",
+        "id": "971",
+        "parent_id": "966"
+    },
+    {
+        "name": "ant\u00e9rieure \u00e9tendue",
+        "id": "972",
+        "parent_id": "971"
+    },
+    {
+        "name": "septale (V1-V2)",
+        "id": "973",
+        "parent_id": "971"
+    },
+    {
+        "name": "apicale (V3-V4)",
+        "id": "974",
+        "parent_id": "971"
+    },
+    {
+        "name": "lat\u00e9rale (V5-V6 Di aVL)",
+        "id": "975",
+        "parent_id": "971"
+    },
+    {
+        "name": "inf\u00e9rieure (DII DIII avF)",
+        "id": "976",
+        "parent_id": "971"
+    },
+    {
+        "name": "post\u00e9rieure (V7-V8-V9)",
+        "id": "977",
+        "parent_id": "971"
+    },
+    {
+        "name": "droite (V3R V4R)",
+        "id": "978",
+        "parent_id": "971"
+    },
+    {
+        "name": "diffuse",
+        "id": "979",
+        "parent_id": "971"
+    },
+    {
+        "name": "Onde T invers\u00e9e \u00e9vocatrice d'une cardiopathie",
+        "id": "980",
+        "parent_id": "966"
+    },
+    {
+        "name": "ant\u00e9rieure \u00e9tendue",
+        "id": "981",
+        "parent_id": "980"
+    },
+    {
+        "name": "septale (V1-V2)",
+        "id": "982",
+        "parent_id": "980"
+    },
+    {
+        "name": "apicale (V3-V4)",
+        "id": "983",
+        "parent_id": "980"
+    },
+    {
+        "name": "lat\u00e9rale (V5-V6 Di aVL)",
+        "id": "984",
+        "parent_id": "980"
+    },
+    {
+        "name": "inf\u00e9rieure (DII DIII avF)",
+        "id": "985",
+        "parent_id": "980"
+    },
+    {
+        "name": "post\u00e9rieure (V7-V8-V9)",
+        "id": "986",
+        "parent_id": "980"
+    },
+    {
+        "name": "droite (V3R V4R)",
+        "id": "987",
+        "parent_id": "980"
+    },
+    {
+        "name": "diffuse",
+        "id": "988",
+        "parent_id": "980"
+    },
+    {
+        "name": "Onde T invers\u00e9e \u00e9covatrice d'une pathologie coronaire (SCA)",
+        "id": "989",
+        "parent_id": "966"
+    },
+    {
+        "name": "ant\u00e9rieure \u00e9tendue",
+        "id": "990",
+        "parent_id": "989"
+    },
+    {
+        "name": "septale (V1-V2)",
+        "id": "991",
+        "parent_id": "989"
+    },
+    {
+        "name": "apicale (V3-V4)",
+        "id": "992",
+        "parent_id": "989"
+    },
+    {
+        "name": "lat\u00e9rale (V5-V6 Di aVL)",
+        "id": "993",
+        "parent_id": "989"
+    },
+    {
+        "name": "inf\u00e9rieure (DII DIII avF)",
+        "id": "994",
+        "parent_id": "989"
+    },
+    {
+        "name": "post\u00e9rieure (V7-V8-V9)",
+        "id": "995",
+        "parent_id": "989"
+    },
+    {
+        "name": "droite (V3R V4R)",
+        "id": "996",
+        "parent_id": "989"
+    },
+    {
+        "name": "diffuse",
+        "id": "997",
+        "parent_id": "989"
+    },
+    {
+        "name": "Onde T invers\u00e9e \u00e9vocatrice d'une isch\u00e9mie fonctionnelle",
+        "id": "2232",
+        "parent_id": "966"
+    },
+    {
+        "name": "secondaire \u00e0 une tachycardie",
+        "id": "2500",
+        "parent_id": "2232"
+    },
+    {
+        "name": "ant\u00e9rieure \u00e9tendue",
+        "id": "2501",
+        "parent_id": "2232"
+    },
+    {
+        "name": "septale (V1-V2)",
+        "id": "2503",
+        "parent_id": "2232"
+    },
+    {
+        "name": "apicale (V3-V4)",
+        "id": "2504",
+        "parent_id": "2232"
+    },
+    {
+        "name": "lat\u00e9rale bas (V5-V6)",
+        "id": "2505",
+        "parent_id": "2232"
+    },
+    {
+        "name": "lat\u00e9rale haut (DI-VL)",
+        "id": "2506",
+        "parent_id": "2232"
+    },
+    {
+        "name": "inf\u00e9rieure (DIII-VF-DII)",
+        "id": "2507",
+        "parent_id": "2232"
+    },
+    {
+        "name": "basale (V7-V8-V9)",
+        "id": "2508",
+        "parent_id": "2232"
+    },
+    {
+        "name": "droite (V3R V4R)",
+        "id": "2509",
+        "parent_id": "2232"
+    },
+    {
+        "name": "diffuse",
+        "id": "2510",
+        "parent_id": "2232"
+    },
+    {
+        "name": "Onde T invers\u00e9e \u00e9covatrice d'une anomalie m\u00e9tabolique",
+        "id": "998",
+        "parent_id": "966"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "998"
+    },
+    {
+        "name": "Onde T invers\u00e9e \u00e9covatrice d'origine m\u00e9dicamenteuse",
+        "id": "1000",
+        "parent_id": "966"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1000"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1000"
+    },
+    {
+        "name": "Onde T invers\u00e9e \u00e9covatrice d'un Tako-tsubo",
+        "id": "1003",
+        "parent_id": "966"
+    },
+    {
+        "name": "Onde T invers\u00e9e \u00e9covatrice d'un \u00e9panchement p\u00e9ricardique",
+        "id": "1004",
+        "parent_id": "966"
+    },
+    {
+        "name": "Onde T invers\u00e9e \u00e9covatrice d'une embolie pulmonaire",
+        "id": "1005",
+        "parent_id": "966"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "966"
+    },
+    {
+        "name": "Onde T n\u00e9gative",
+        "id": "1014",
+        "parent_id": "965"
+    },
+    {
+        "name": "ant\u00e9rieure \u00e9tendue",
+        "id": "1017",
+        "parent_id": "1014"
+    },
+    {
+        "name": "septale (V1-V2)",
+        "id": "1018",
+        "parent_id": "1014"
+    },
+    {
+        "name": "apicale (V3-V4)",
+        "id": "1019",
+        "parent_id": "1014"
+    },
+    {
+        "name": "lat\u00e9rale (V5-V6 Di aVL)",
+        "id": "1020",
+        "parent_id": "1014"
+    },
+    {
+        "name": "inf\u00e9rieure (DII DIII avF)",
+        "id": "1021",
+        "parent_id": "1014"
+    },
+    {
+        "name": "post\u00e9rieure (V7-V8-V9)",
+        "id": "1022",
+        "parent_id": "1014"
+    },
+    {
+        "name": "droite (V3R V4R)",
+        "id": "1023",
+        "parent_id": "1014"
+    },
+    {
+        "name": "Onde T n\u00e9gative physiologique",
+        "id": "1015",
+        "parent_id": "1014"
+    },
+    {
+        "name": "V1-V3 chez le jeune adulte (pas d'onde T invers\u00e9e)",
+        "id": "1016",
+        "parent_id": "1015"
+    },
+    {
+        "name": "Onde T bifide",
+        "id": "1024",
+        "parent_id": "965"
+    },
+    {
+        "name": "Onde T ample",
+        "id": "1025",
+        "parent_id": "965"
+    },
+    {
+        "name": "Onde T plate",
+        "id": "1026",
+        "parent_id": "965"
+    },
+    {
+        "name": "Onde U anormale (Onde U > onde T)",
+        "id": "1027",
+        "parent_id": "965"
+    },
+    {
+        "name": "secondaire \u00e0 une tachycardie",
+        "id": "2233",
+        "parent_id": "965"
+    },
+    {
+        "name": "ant\u00e9rieure \u00e9tendue",
+        "id": "2234",
+        "parent_id": "965"
+    },
+    {
+        "name": "septale (V1-V2)",
+        "id": "2235",
+        "parent_id": "965"
+    },
+    {
+        "name": "apicale (V3-V4)",
+        "id": "2236",
+        "parent_id": "965"
+    },
+    {
+        "name": "lat\u00e9rale (V5-V6 Di aVL)",
+        "id": "2237",
+        "parent_id": "965"
+    },
+    {
+        "name": "inf\u00e9rieure (DII DIII avF)",
+        "id": "2238",
+        "parent_id": "965"
+    },
+    {
+        "name": "post\u00e9rieure (V7-V8-V9)",
+        "id": "2239",
+        "parent_id": "965"
+    },
+    {
+        "name": "droite (V3R V4R)",
+        "id": "2240",
+        "parent_id": "965"
+    },
+    {
+        "name": "diffuse",
+        "id": "2241",
+        "parent_id": "965"
+    },
+    {
+        "name": "Anomalie de la dur\u00e9e du QT",
+        "id": "1028",
+        "parent_id": null
+    },
+    {
+        "name": "QT long",
+        "id": "1029",
+        "parent_id": "1028"
+    },
+    {
+        "name": "QT long secondaire",
+        "id": "1030",
+        "parent_id": "1029"
+    },
+    {
+        "name": "QT long d'origine m\u00e9dicamenteuse",
+        "id": "1031",
+        "parent_id": "1030"
+    },
+    {
+        "name": "QT long d'origine m\u00e9tabolique",
+        "id": "1034",
+        "parent_id": "1030"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1034"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1034"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1034"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1034"
+    },
+    {
+        "name": "QT long secondaire \u00e0 une bradycardie",
+        "id": "1041",
+        "parent_id": "1030"
+    },
+    {
+        "name": "QT long cong\u00e9nital",
+        "id": "1046",
+        "parent_id": "1029"
+    },
+    {
+        "name": "QT long cong\u00e9nital de type 1",
+        "id": "1049",
+        "parent_id": "1046"
+    },
+    {
+        "name": "QT long cong\u00e9nital de type 2",
+        "id": "1052",
+        "parent_id": "1046"
+    },
+    {
+        "name": "QT long cong\u00e9nital de type 3",
+        "id": "1055",
+        "parent_id": "1046"
+    },
+    {
+        "name": "QT long cong\u00e9nital de type > 3",
+        "id": "1058",
+        "parent_id": "1046"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1029"
+    },
+    {
+        "name": "ph\u00e9nom\u00e8ne R sur T",
+        "id": "1769",
+        "parent_id": "1029"
+    },
+    {
+        "name": "QT court (QTc \u2264 320 ms)",
+        "id": "1063",
+        "parent_id": "1028"
+    },
+    {
+        "name": "Anomalie m\u00e9tabolique",
+        "id": "1064",
+        "parent_id": null
+    },
+    {
+        "name": "Hypokali\u00e9mie",
+        "id": "1065",
+        "parent_id": "1064"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1065"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1065"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1065"
+    },
+    {
+        "name": "Hyperkali\u00e9mie",
+        "id": "1069",
+        "parent_id": "1064"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1069"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1069"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1069"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1069"
+    },
+    {
+        "name": "Hypocalc\u00e9mie",
+        "id": "1074",
+        "parent_id": "1064"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1074"
+    },
+    {
+        "name": "Hypercalc\u00e9mie",
+        "id": "1076",
+        "parent_id": "1064"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1076"
+    },
+    {
+        "name": "sus-d\u00e9calage ST pathologique",
+        "id": "1078",
+        "parent_id": "1076"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1076"
+    },
+    {
+        "name": "Hypothermie",
+        "id": "1080",
+        "parent_id": "1064"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1080"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1080"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1080"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1080"
+    },
+    {
+        "name": "Onde J d'osborn",
+        "id": "1085",
+        "parent_id": "1080"
+    },
+    {
+        "name": "M\u00e9dicamenteux / toxique",
+        "id": "1086",
+        "parent_id": null
+    },
+    {
+        "name": "Antiarythmique de classe 1 (bloqueurs sodiques)",
+        "id": "1087",
+        "parent_id": "1086"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1087"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1087"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1087"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1087"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1087"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1087"
+    },
+    {
+        "name": "surdosage",
+        "id": "1094",
+        "parent_id": "1087"
+    },
+    {
+        "name": "impr\u00e9gnation",
+        "id": "1095",
+        "parent_id": "1087"
+    },
+    {
+        "name": "Antiarythmique de classe 2 (b\u00e9tabloquants)",
+        "id": "1096",
+        "parent_id": "1086"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1096"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1096"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1096"
+    },
+    {
+        "name": "surdosage",
+        "id": "1100",
+        "parent_id": "1096"
+    },
+    {
+        "name": "impr\u00e9gnation",
+        "id": "1101",
+        "parent_id": "1096"
+    },
+    {
+        "name": "Antiarythmique de classe 3 (bloqueurs potassiques)",
+        "id": "1102",
+        "parent_id": "1086"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1102"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1102"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1102"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1102"
+    },
+    {
+        "name": "surdosage",
+        "id": "1107",
+        "parent_id": "1102"
+    },
+    {
+        "name": "impr\u00e9gnation",
+        "id": "1108",
+        "parent_id": "1102"
+    },
+    {
+        "name": "Antiarythmique de classe 4 (bloqueurs calciques)",
+        "id": "1109",
+        "parent_id": "1086"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1109"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1109"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1109"
+    },
+    {
+        "name": "surdosage",
+        "id": "1113",
+        "parent_id": "1109"
+    },
+    {
+        "name": "impr\u00e9gnation",
+        "id": "1114",
+        "parent_id": "1109"
+    },
+    {
+        "name": "Digitaliques",
+        "id": "1115",
+        "parent_id": "1086"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1115"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1115"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1115"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1115"
+    },
+    {
+        "name": "surdosage",
+        "id": "1120",
+        "parent_id": "1115"
+    },
+    {
+        "name": "impr\u00e9gnation",
+        "id": "1121",
+        "parent_id": "1115"
+    },
+    {
+        "name": "Stabilisateurs de membrane",
+        "id": "1122",
+        "parent_id": "1086"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1122"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1122"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1122"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1122"
+    },
+    {
+        "name": "Inhibiteurs de la recapture de la s\u00e9rotonine",
+        "id": "1127",
+        "parent_id": "1086"
+    },
+    {
+        "name": "surdosage",
+        "id": "1128",
+        "parent_id": "1127"
+    },
+    {
+        "name": "impr\u00e9gnation",
+        "id": "1129",
+        "parent_id": "1127"
+    },
+    {
+        "name": "Neuroleptiques",
+        "id": "1130",
+        "parent_id": "1086"
+    },
+    {
+        "name": "surdosage",
+        "id": "1131",
+        "parent_id": "1130"
+    },
+    {
+        "name": "impr\u00e9gnation",
+        "id": "1132",
+        "parent_id": "1130"
+    },
+    {
+        "name": "Anti-d\u00e9presseurs tricycliques",
+        "id": "1133",
+        "parent_id": "1086"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1133"
+    },
+    {
+        "name": "surdosage",
+        "id": "1135",
+        "parent_id": "1133"
+    },
+    {
+        "name": "impr\u00e9gnation",
+        "id": "1136",
+        "parent_id": "1133"
+    },
+    {
+        "name": "M\u00e9dicamenteux autre",
+        "id": "1137",
+        "parent_id": "1086"
+    },
+    {
+        "name": "Cardiopathie / contexte",
+        "id": "1138",
+        "parent_id": null
+    },
+    {
+        "name": "Absence de cardiopathie (coeur sain)",
+        "id": "1139",
+        "parent_id": "1138"
+    },
+    {
+        "name": "Amylose",
+        "id": "1140",
+        "parent_id": "1138"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1140"
+    },
+    {
+        "name": "Athl\u00e8te / sportif",
+        "id": "1142",
+        "parent_id": "1138"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1142"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1142"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1142"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1142"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1142"
+    },
+    {
+        "name": "Cardiomyopathie dilat\u00e9e",
+        "id": "1147",
+        "parent_id": "1138"
+    },
+    {
+        "name": "Cardiomyopathie hypertrophique",
+        "id": "1148",
+        "parent_id": "1138"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1148"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1148"
+    },
+    {
+        "name": "ST- secondaire \u00e0 une hypertrophie ventriculaire",
+        "id": "1151",
+        "parent_id": "1148"
+    },
+    {
+        "name": "Cardiomyopathie restrictive",
+        "id": "1152",
+        "parent_id": "1138"
+    },
+    {
+        "name": "Cardiopathie arythmog\u00e8ne (dont dysplasie arythmog\u00e8ne du ventricule droit: DAVD)",
+        "id": "1153",
+        "parent_id": "1138"
+    },
+    {
+        "name": "Onde Epsilon",
+        "id": "1154",
+        "parent_id": "1153"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1153"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1153"
+    },
+    {
+        "name": "Cardiopathie autre",
+        "id": "1157",
+        "parent_id": "1138"
+    },
+    {
+        "name": "Cardiopathie cong\u00e9nitale",
+        "id": "1158",
+        "parent_id": "1138"
+    },
+    {
+        "name": "T\u00e9trallogie de Fallot",
+        "id": "1159",
+        "parent_id": "1158"
+    },
+    {
+        "name": "Transposition des gros vaisceaux",
+        "id": "1162",
+        "parent_id": "1158"
+    },
+    {
+        "name": "Communication inter-ventriculaire",
+        "id": "1165",
+        "parent_id": "1158"
+    },
+    {
+        "name": "Communication inter-auriculaire",
+        "id": "1168",
+        "parent_id": "1158"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1168"
+    },
+    {
+        "name": "Double discordance",
+        "id": "1172",
+        "parent_id": "1158"
+    },
+    {
+        "name": "Ventricule unique",
+        "id": "1175",
+        "parent_id": "1158"
+    },
+    {
+        "name": "Maladie d'Ebstein",
+        "id": "1178",
+        "parent_id": "1158"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1158"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1158"
+    },
+    {
+        "name": "Cardiopathie isch\u00e9mique",
+        "id": "1183",
+        "parent_id": "1138"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1183"
+    },
+    {
+        "name": "Cardiopathie rythmique",
+        "id": "1185",
+        "parent_id": "1138"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1185"
+    },
+    {
+        "name": "Cardiopathie toxique",
+        "id": "1187",
+        "parent_id": "1138"
+    },
+    {
+        "name": "Cardiopathie aux anthracyclines",
+        "id": "1188",
+        "parent_id": "1187"
+    },
+    {
+        "name": "Cardiopathie chimioth\u00e9rapie autre",
+        "id": "1189",
+        "parent_id": "1187"
+    },
+    {
+        "name": "Cardiopathie alcoolique",
+        "id": "1190",
+        "parent_id": "1187"
+    },
+    {
+        "name": "Coeur pulmonaire aig\u00fc (embolie pulmonaire)",
+        "id": "1191",
+        "parent_id": "1138"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1191"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1191"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1191"
+    },
+    {
+        "name": "Coeur pulmonaire chronique",
+        "id": "1196",
+        "parent_id": "1138"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1196"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1196"
+    },
+    {
+        "name": "Dysjonction annulaire mitrale",
+        "id": "1199",
+        "parent_id": "1138"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1199"
+    },
+    {
+        "name": "Epanchement p\u00e9ricardique",
+        "id": "1201",
+        "parent_id": "1138"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1201"
+    },
+    {
+        "name": "H\u00e9mochromatose",
+        "id": "1203",
+        "parent_id": "1138"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1203"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1203"
+    },
+    {
+        "name": "Hypertension art\u00e9rielle pulmonaire (HTAP)",
+        "id": "1205",
+        "parent_id": "1138"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1205"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1205"
+    },
+    {
+        "name": "Insuffisance aortique",
+        "id": "1208",
+        "parent_id": "1138"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1208"
+    },
+    {
+        "name": "Insuffisance mitrale",
+        "id": "1210",
+        "parent_id": "1138"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1210"
+    },
+    {
+        "name": "Laminopathies",
+        "id": "1212",
+        "parent_id": "1138"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1212"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1212"
+    },
+    {
+        "name": "Maladie de Danon",
+        "id": "1215",
+        "parent_id": "1138"
+    },
+    {
+        "name": "Maladie de Fabry",
+        "id": "1216",
+        "parent_id": "1138"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1216"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1216"
+    },
+    {
+        "name": "Myocardite",
+        "id": "1218",
+        "parent_id": "1138"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1218"
+    },
+    {
+        "name": "sus-d\u00e9calage ST pathologique",
+        "id": "1219",
+        "parent_id": "1218"
+    },
+    {
+        "name": "Myopathie de Steinert",
+        "id": "1221",
+        "parent_id": "1138"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1221"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1221"
+    },
+    {
+        "name": "R\u00e9tr\u00e9cissement aortique",
+        "id": "1224",
+        "parent_id": "1138"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1224"
+    },
+    {
+        "name": "R\u00e9tr\u00e9cissement mitral",
+        "id": "1226",
+        "parent_id": "1138"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1226"
+    },
+    {
+        "name": "Tako-tsubo",
+        "id": "1228",
+        "parent_id": "1138"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1228"
+    },
+    {
+        "name": "sus-d\u00e9calage ST pathologique",
+        "id": "1230",
+        "parent_id": "1228"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1228"
+    },
+    {
+        "name": "Tamponnade",
+        "id": "1232",
+        "parent_id": "1138"
+    },
+    {
+        "name": "Alternance electrique",
+        "id": "1233",
+        "parent_id": "1232"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1232"
+    },
+    {
+        "name": "Transplantation cardiaque",
+        "id": "1235",
+        "parent_id": "1138"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1235"
+    },
+    {
+        "name": "Autre",
+        "id": "1",
+        "parent_id": null
+    },
+    {
+        "name": "Aberration de conduction",
+        "id": "2",
+        "parent_id": "1"
+    },
+    {
+        "name": "Amiodarone",
+        "id": "3",
+        "parent_id": "1"
+    },
+    {
+        "name": "Artefact (spike) de stimulation atriale",
+        "id": "7",
+        "parent_id": "1"
+    },
+    {
+        "name": "Artefact (spike) de stimulation ventriculaire",
+        "id": "8",
+        "parent_id": "1"
+    },
+    {
+        "name": "Arythmie respiratoire",
+        "id": "9",
+        "parent_id": "1"
+    },
+    {
+        "name": "Aspect S1Q3",
+        "id": "10",
+        "parent_id": "1"
+    },
+    {
+        "name": "Bruit",
+        "id": "18",
+        "parent_id": "1"
+    },
+    {
+        "name": "Coeur sain",
+        "id": "19",
+        "parent_id": "1"
+    },
+    {
+        "name": "Complexe de capture",
+        "id": "20",
+        "parent_id": "1"
+    },
+    {
+        "name": "Complexe de fusion",
+        "id": "21",
+        "parent_id": "1"
+    },
+    {
+        "name": "Concordance n\u00e9gative",
+        "id": "22",
+        "parent_id": "1"
+    },
+    {
+        "name": "Concordance positive",
+        "id": "23",
+        "parent_id": "1"
+    },
+    {
+        "name": "Cupule digitalique",
+        "id": "31",
+        "parent_id": "1"
+    },
+    {
+        "name": "D\u00e9placement de sonde",
+        "id": "34",
+        "parent_id": "1"
+    },
+    {
+        "name": "Dissociation atrio-ventriculaire",
+        "id": "35",
+        "parent_id": "1"
+    },
+    {
+        "name": "Dissociation isorythmique",
+        "id": "36",
+        "parent_id": "1"
+    },
+    {
+        "name": "Distorsion terminale",
+        "id": "37",
+        "parent_id": "1"
+    },
+    {
+        "name": "Dualit\u00e9 nodale",
+        "id": "40",
+        "parent_id": "1"
+    },
+    {
+        "name": "Elevation point J",
+        "id": "42",
+        "parent_id": "1"
+    },
+    {
+        "name": "Fibre atrio-fasciculaire",
+        "id": "51",
+        "parent_id": "1"
+    },
+    {
+        "name": "Fibre atrio-ventriculaire",
+        "id": "52",
+        "parent_id": "1"
+    },
+    {
+        "name": "Fibre nodo-fasciculaire",
+        "id": "53",
+        "parent_id": "1"
+    },
+    {
+        "name": "Fibre nodo-ventriculaire",
+        "id": "54",
+        "parent_id": "1"
+    },
+    {
+        "name": "Flutter Fl\u00e9cainide",
+        "id": "56",
+        "parent_id": "1"
+    },
+    {
+        "name": "Hypomagn\u00e9s\u00e9mie",
+        "id": "64",
+        "parent_id": "1"
+    },
+    {
+        "name": "Lithium",
+        "id": "70",
+        "parent_id": "1"
+    },
+    {
+        "name": "Man\u0153uvres vagales",
+        "id": "71",
+        "parent_id": "1"
+    },
+    {
+        "name": "Onde delta",
+        "id": "75",
+        "parent_id": "1"
+    },
+    {
+        "name": "Onde U",
+        "id": "96",
+        "parent_id": "1"
+    },
+    {
+        "name": "P\u00e9riode de Luciani-Wenckebach",
+        "id": "98",
+        "parent_id": "1"
+    },
+    {
+        "name": "QRS fins",
+        "id": "103",
+        "parent_id": "1"
+    },
+    {
+        "name": "Quinidine",
+        "id": "105",
+        "parent_id": "1"
+    },
+    {
+        "name": "Resynchronisation \u00e9picardique chirurgicale",
+        "id": "106",
+        "parent_id": "1"
+    },
+    {
+        "name": "Sous-d\u00e9calage segment PQ",
+        "id": "112",
+        "parent_id": "1"
+    },
+    {
+        "name": "Syndrome coronaire aig\u00fc (SCA)",
+        "id": "139",
+        "parent_id": "1"
+    },
+    {
+        "name": "Tachycardie supra-ventriculaire (TSV)",
+        "id": "145",
+        "parent_id": "1"
+    },
+    {
+        "name": "Test \u00e0 l'ad\u00e9nosine",
+        "id": "148",
+        "parent_id": "1"
+    },
+    {
+        "name": "Manoeuvres vagales",
+        "id": "3789",
+        "parent_id": "1"
+    },
+    {
+        "name": "Arr\u00eat anomalie de rythme",
+        "id": "3138",
+        "parent_id": null
+    },
+    {
+        "name": "D\u00e9but anomalie de rythme",
+        "id": "3139",
+        "parent_id": null
+    },
+    {
+        "name": "ECG normal",
+        "id": "1237",
+        "parent_id": null
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1237"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1237"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1237"
+    },
+    {
+        "name": "",
+        "id": "",
+        "parent_id": "1237"
+    }
+]

@@ -4,6 +4,7 @@ import 'package:front/screens/add_ecg_screen.dart';
 import 'package:front/screens/home_screen.dart';
 import 'package:front/screens/Profile/profile_screen.dart';
 import 'package:front/screens/login_screen.dart';
+import 'package:front/widgets/TagSelector.dart';
 import 'package:front/widgets/bottom_navbar.dart';
 
 void main() async {

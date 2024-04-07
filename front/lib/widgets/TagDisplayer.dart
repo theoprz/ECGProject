@@ -42,8 +42,6 @@ class _TagDisplayerState extends State<TagDisplayer> {
               const SizedBox(height: 5),
               Text("parentId :${widget.tag.parentId}"),
               const SizedBox(height: 5),
-              Text("type :${widget.tag.type}"),
-              const SizedBox(height: 5),
             ],
           ),
         ),
