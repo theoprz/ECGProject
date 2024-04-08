@@ -26,7 +26,7 @@ class TagSelector {
   print("Tags loaded");
 }
 
-  List<TagNode> buildTagTree(List<Tag> tags) {
+List<TagNode> buildTagTree(List<Tag> tags) {
   Map<String, TagNode> tagNodeMap = {};
 
   for (var tag in tags) {
@@ -39,7 +39,9 @@ class TagSelector {
     if (tagNode.tag.parentId == "EMPTY") {
       roots.add(tagNode);
     } else if (tagNodeMap.containsKey(tagNode.tag.parentId)) {
-      tagNodeMap[tagNode.tag.parentId]!.children.add(tagNode);
+      TagNode parentNode = tagNodeMap[tagNode.tag.parentId]!;
+      parentNode.children.add(tagNode);
+      tagNode.parent = parentNode; //On garde le lien vers le parent pour pouvoir remonter dans l'arbre
     }
   }
 

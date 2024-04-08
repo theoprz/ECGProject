@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:front/widgets/tag_utils.dart';
 
 import '../classes/TagNode.dart';
 
@@ -10,29 +11,21 @@ class ChildTagSelectionPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var sortedChildren = List<TagNode>.from(parent.children);
+    sortedChildren.sort((a, b) => a.tag.name.toLowerCase().compareTo(b.tag.name.toLowerCase())); // Tri alphabétique sans distinction entre majuscules et minuscules
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('Child Tags of ${parent.tag.name}'),
+        title: Text(' ${parent.tag.name}'),
+        backgroundColor: Colors.white,
+        scrolledUnderElevation: 0,
       ),
       body: ListView(
-        children: parent.children.map((child) => buildTagNode(context, child, 0)).toList(),
+        children: sortedChildren.map((child) => buildTagNode(context, child)).toList(),
       ),
     );
   }
 
-  Widget buildTagNode(BuildContext context, TagNode node, int depth) {
-    return ListTile(
-      title: Text('${'-' * depth} ${node.tag.name}'),
-      subtitle: Text('ID: ${node.tag.id}, Parent ID: ${node.tag.parentId}'),
-      trailing: node.children.isNotEmpty ? Icon(Icons.arrow_forward_ios) : null,
-      onTap: () {
-        if (node.children.isNotEmpty) {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => ChildTagSelectionPage(parent: node)),
-          );
-        }
-      },
-    );
-  }
+
+
 }

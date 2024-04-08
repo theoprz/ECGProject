@@ -82,8 +82,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 decoration: BoxDecoration(
                   border: Border(
                     bottom: BorderSide(
-                      color: Colors.grey.shade600, // Change this color to change the color of the border
-                      width: 2.0, // Change this value to change the width of the border
+                      color: Colors.grey.shade600, //Couleur de la bordure
+                      width: 2.0, // Largeur de la bordure
                     ),
                   ),
                 ),
