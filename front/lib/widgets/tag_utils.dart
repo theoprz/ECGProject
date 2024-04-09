@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 import '../classes/TagNode.dart';
 import 'child_tag_selection_page.dart';
 
+
+List<TagNode> globalSelectedTags = [];
+
 List<TagNode> selectTagAndAncestors(TagNode node) {
   List<TagNode> selectedTags = [node];
 
@@ -28,6 +31,13 @@ Widget buildTagNode(BuildContext context, TagNode node) {
         // Print all selected tags
         selectedTags.forEach((tagNode) {
           print("Selected tag: ${tagNode.tag.name}");
+        });
+
+        // Add selected tags to globalSelectedTags
+        globalSelectedTags.addAll(selectedTags);
+
+        globalSelectedTags.forEach((tagNode) {
+          print("Global selected tag: ${tagNode.tag.name}");
         });
 
         // Retour à l'écran des tags racine

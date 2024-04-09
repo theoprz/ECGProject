@@ -12,13 +12,13 @@ class TagSelectionPage extends StatefulWidget {
 class _TagSelectionPageState extends State<TagSelectionPage> {
   TagSelector tagSelector = TagSelector();
   Future<void>? loadTagsFuture;
-  List<TagNode> selectedTags = [];
 
   @override
   void initState() {
     super.initState();
     loadTagsFuture = tagSelector.loadTags();
   }
+
 
 @override
 Widget build(BuildContext context) {
@@ -47,7 +47,7 @@ Widget build(BuildContext context) {
                 height: 50,
                 width: MediaQuery.of(context).size.width * 0.80,
                 child: Column(
-                  children: selectedTags.map((tagNode) => Text('Selected tag: ${tagNode.tag.name}')).toList(),
+                  children: globalSelectedTags.map((tagNode) => Text('Selected tag: ${tagNode.tag.name}')).toList(),
                 )
               ),
               Container(
