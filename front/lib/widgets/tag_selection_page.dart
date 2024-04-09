@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:front/widgets/tag_utils.dart';
 import '../classes/TagNode.dart';
 import 'TagSelector.dart';
-import 'child_tag_selection_page.dart';
+
 
 class TagSelectionPage extends StatefulWidget {
   @override
@@ -34,7 +34,6 @@ Widget build(BuildContext context) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Center(child: CircularProgressIndicator());
         } else if (snapshot.hasError) {
-          print(snapshot.error); //Affichage de l'erreur dans la console (À supprimer)
           return Center(child: Text('Erreur de chargement des tags'));
         } else {
           List<TagNode> roots = tagSelector.buildTagTree(tagSelector.tags);
@@ -46,26 +45,34 @@ Widget build(BuildContext context) {
                 stream: globalSelectedTagsController.stream,
                 builder: (context, snapshot) {
                   return ConstrainedBox(
-                    constraints: BoxConstraints(maxHeight: 180), // Définissez la hauteur maximale que vous voulez ici
+                    constraints: BoxConstraints(maxHeight: 180), //Hauteur maximale de la liste
                     child: SingleChildScrollView(
                       child: Container(
                         padding: const EdgeInsets.only(top: 0, left: 8, right: 8, bottom: 8),
                         child: Wrap(
-                          spacing: 8, // space between the tags
-                          runSpacing: 4, // space between the lines
+                          spacing: 8, //space between the tags
+                          runSpacing: 4, //space between the lines
                           children: snapshot.data?.map((tagNode) {
-                            return Container(
-                              width: 180,
-                              padding: const EdgeInsets.symmetric(horizontal: 12),
-                              decoration: BoxDecoration(
-                                color: Colors.red.shade100,
-                                borderRadius: BorderRadius.circular(15),
-                                border: Border.all(color: Colors.red.shade700, width: 2),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  '${tagNode.tag.name}',
-                                  style: TextStyle(fontSize: 14),
+                            return InkWell(
+                              onTap: () {
+                                setState(() {
+                                  globalSelectedTags.remove(tagNode);
+                                  globalSelectedTagsController.add(globalSelectedTags);
+                                });
+                              },
+                              child: Container(
+                                width: 180,
+                                padding: const EdgeInsets.symmetric(horizontal: 12),
+                                decoration: BoxDecoration(
+                                  color: Colors.red.shade100,
+                                  borderRadius: BorderRadius.circular(15),
+                                  border: Border.all(color: Colors.red.shade700, width: 2),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    '${tagNode.tag.name}',
+                                    style: TextStyle(fontSize: 14),
+                                  ),
                                 ),
                               ),
                             );
@@ -96,15 +103,44 @@ Widget build(BuildContext context) {
         }
       },
     ),
+    floatingActionButton: FloatingActionButton.extended(
+      backgroundColor: Colors.blue.shade300,
+      onPressed: () {
+        globalSelectedTags.forEach((tagNode) {
+          print("Selected tag: ${tagNode.tag.name}");
+        });
+      },
+      label: Row(
+        children: [
+          Text('Confirmer les'),
+          SizedBox(width: 5), //Espace entre texte et cercle
+          StreamBuilder<List<TagNode>>(
+            stream: globalSelectedTagsController.stream,
+            builder: (context, snapshot) {
+              return Container(
+                padding: EdgeInsets.all(4),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.white, //Couleur du cercle
+                ),
+                child: Text('${globalSelectedTags.length}'),
+              );
+            },
+          ),
+          SizedBox(width: 5), //Espace entre texte et cercle
+          Text('tags'),
+        ],
+      ),
+    ),
   );
 }
 
 }
 
-
-//TODO DISPLAY SELECTED TAGS IN A LIST ABOVE THE TAGS LIST
 //TODO EMPTY LIST WHEN USER QUITS TAG SELECTION
-//TODO ADD A DELETE BUTTON ON TAGS IN THE LIST
-//TODO ADD A CLEAR BUTTON TO EMPTY THE LIST
-//TODO ADD A VALIDATE BUTTON TO VALIDATE THE SELECTION
-//TODO RETIRER LES DOUBLONS DANS LA LISTE DES TAGS SÉLECTIONNÉS
+
+//TODO DELETE PRINTS
+
+//TODO FIX BUG ALLOWING TO ADD DUPLICATES IN THE LIST WHEN DELETING AN ELEMENT
+
+//TODO VALIDATING SELECTION ADD ALL TAGS SELECTED TO THE ECG OBJECT, GOES FORWARD IN SCREENS AND THEN EMPTY TAG LIST

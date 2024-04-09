@@ -36,10 +36,13 @@ Widget buildTagNode(BuildContext context, TagNode node) {
           print("Selected tag: ${tagNode.tag.name}");
         });
 
-        // Add selected tags to globalSelectedTags
-        globalSelectedTags.addAll(selectedTags);
+        //Add selected tags to globalSelectedTags if they are not already in the list
+        for (TagNode tag in selectedTags) {
+          if (!globalSelectedTags.contains(tag)) {
+            globalSelectedTags.add(tag);
+          }
+        }
         globalSelectedTagsController.add(globalSelectedTags);
-
         globalSelectedTags.forEach((tagNode) {
           print("Global selected tag: ${tagNode.tag.name}");
         });
