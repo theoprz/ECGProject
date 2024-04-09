@@ -1,4 +1,6 @@
 // tag_utils.dart
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -6,6 +8,7 @@ import '../classes/TagNode.dart';
 import 'child_tag_selection_page.dart';
 
 
+StreamController<List<TagNode>> globalSelectedTagsController = StreamController<List<TagNode>>.broadcast();
 List<TagNode> globalSelectedTags = [];
 
 List<TagNode> selectTagAndAncestors(TagNode node) {
@@ -35,6 +38,7 @@ Widget buildTagNode(BuildContext context, TagNode node) {
 
         // Add selected tags to globalSelectedTags
         globalSelectedTags.addAll(selectedTags);
+        globalSelectedTagsController.add(globalSelectedTags);
 
         globalSelectedTags.forEach((tagNode) {
           print("Global selected tag: ${tagNode.tag.name}");

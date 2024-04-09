@@ -42,13 +42,39 @@ Widget build(BuildContext context) {
           return Column(//Sous l'appbar
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                padding: const EdgeInsets.only(top: 4, left: 8, right: 8),
-                height: 50,
-                width: MediaQuery.of(context).size.width * 0.80,
-                child: Column(
-                  children: globalSelectedTags.map((tagNode) => Text('Selected tag: ${tagNode.tag.name}')).toList(),
-                )
+              StreamBuilder<List<TagNode>>(
+                stream: globalSelectedTagsController.stream,
+                builder: (context, snapshot) {
+                  return ConstrainedBox(
+                    constraints: BoxConstraints(maxHeight: 180), // Définissez la hauteur maximale que vous voulez ici
+                    child: SingleChildScrollView(
+                      child: Container(
+                        padding: const EdgeInsets.only(top: 0, left: 8, right: 8, bottom: 8),
+                        child: Wrap(
+                          spacing: 8, // space between the tags
+                          runSpacing: 4, // space between the lines
+                          children: snapshot.data?.map((tagNode) {
+                            return Container(
+                              width: 180,
+                              padding: const EdgeInsets.symmetric(horizontal: 12),
+                              decoration: BoxDecoration(
+                                color: Colors.red.shade100,
+                                borderRadius: BorderRadius.circular(15),
+                                border: Border.all(color: Colors.red.shade700, width: 2),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  '${tagNode.tag.name}',
+                                  style: TextStyle(fontSize: 14),
+                                ),
+                              ),
+                            );
+                          }).toList() ?? [],
+                        ),
+                      ),
+                    ),
+                  );
+                },
               ),
               Container(
                 decoration: BoxDecoration(
@@ -77,3 +103,8 @@ Widget build(BuildContext context) {
 
 
 //TODO DISPLAY SELECTED TAGS IN A LIST ABOVE THE TAGS LIST
+//TODO EMPTY LIST WHEN USER QUITS TAG SELECTION
+//TODO ADD A DELETE BUTTON ON TAGS IN THE LIST
+//TODO ADD A CLEAR BUTTON TO EMPTY THE LIST
+//TODO ADD A VALIDATE BUTTON TO VALIDATE THE SELECTION
+//TODO RETIRER LES DOUBLONS DANS LA LISTE DES TAGS SÉLECTIONNÉS
