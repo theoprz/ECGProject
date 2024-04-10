@@ -70,19 +70,9 @@
         "parent_id": "168"
     },
     {
-        "name": "",
-        "id": "",
-        "parent_id": "169"
-    },
-    {
         "name": "Activit\u00e9 sinusale (onde P sinusale)",
         "id": "171",
         "parent_id": "168"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "171"
     },
     {
         "name": "Anomalie de conduction",
@@ -105,34 +95,9 @@
         "parent_id": "175"
     },
     {
-        "name": "",
-        "id": "",
-        "parent_id": "175"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "174"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "174"
-    },
-    {
         "name": "Asystole",
         "id": "179",
         "parent_id": "173"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "179"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "179"
     },
     {
         "name": "Dysfonction sinusale / Bloc sino atrial (BSA)",
@@ -145,16 +110,6 @@
         "parent_id": "182"
     },
     {
-        "name": "",
-        "id": "",
-        "parent_id": "183"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "183"
-    },
-    {
         "name": "Bloc sino atrial (BSA) de type 1",
         "id": "186",
         "parent_id": "182"
@@ -165,29 +120,9 @@
         "parent_id": "182"
     },
     {
-        "name": "",
-        "id": "",
-        "parent_id": "188"
-    },
-    {
         "name": "Bloc sino atrial (BSA) de type 3 (onde P inexistante) ou paralysie sinusale",
         "id": "191",
         "parent_id": "182"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "191"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "191"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "191"
     },
     {
         "name": "Pause sinusale (> 3 sec)",
@@ -195,48 +130,8 @@
         "parent_id": "182"
     },
     {
-        "name": "",
-        "id": "",
-        "parent_id": "194"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "194"
-    },
-    {
         "name": "Pause post r\u00e9duction de tachycardie",
         "id": "198",
-        "parent_id": "182"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "198"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "198"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "182"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "182"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "182"
-    },
-    {
-        "name": "",
-        "id": "",
         "parent_id": "182"
     },
     {
@@ -255,24 +150,9 @@
         "parent_id": "204"
     },
     {
-        "name": "",
-        "id": "",
-        "parent_id": "206"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "206"
-    },
-    {
         "name": "BAV 2 : 1",
         "id": "209",
         "parent_id": "204"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "209"
     },
     {
         "name": "BAV 2 Mobitz 2 (onde P bloqu\u00e9e inopin\u00e9e)",
@@ -280,44 +160,14 @@
         "parent_id": "204"
     },
     {
-        "name": "",
-        "id": "",
-        "parent_id": "211"
-    },
-    {
         "name": "BAV 3 : 1 ou plus ou FA tr\u00e8s lente",
         "id": "213",
         "parent_id": "204"
     },
     {
-        "name": "",
-        "id": "",
-        "parent_id": "213"
-    },
-    {
         "name": "BAV 3 / complet",
         "id": "215",
         "parent_id": "204"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "215"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "215"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "215"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "215"
     },
     {
         "name": "Bloc de branche",
@@ -330,29 +180,9 @@
         "parent_id": "220"
     },
     {
-        "name": "",
-        "id": "",
-        "parent_id": "221"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "221"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "221"
-    },
-    {
         "name": "Bloc de branche droit (BBD) complet",
         "id": "225",
         "parent_id": "220"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "225"
     },
     {
         "name": "Bloc fasciculaire ant\u00e9rieur gauche (BFAG ou HBAG)",
@@ -360,39 +190,9 @@
         "parent_id": "220"
     },
     {
-        "name": "",
-        "id": "",
-        "parent_id": "227"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "227"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "227"
-    },
-    {
         "name": "Bloc fasciculaire post\u00e9rieur gauche (BFPG ou HBPG)",
         "id": "231",
         "parent_id": "220"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "231"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "231"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "231"
     },
     {
         "name": "Bloc de branche gauche incomplet",
@@ -400,19 +200,9 @@
         "parent_id": "220"
     },
     {
-        "name": "",
-        "id": "",
-        "parent_id": "235"
-    },
-    {
         "name": "Bloc de branche gauche complet (BBG)",
         "id": "237",
         "parent_id": "220"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "237"
     },
     {
         "name": "Bloc indiff\u00e9renci\u00e9",
@@ -420,34 +210,9 @@
         "parent_id": "220"
     },
     {
-        "name": "",
-        "id": "",
-        "parent_id": "239"
-    },
-    {
         "name": "Bloc bifasciculaire",
         "id": "241",
         "parent_id": "220"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "241"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "241"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "241"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "241"
     },
     {
         "name": "Bloc alternant",
@@ -455,44 +220,9 @@
         "parent_id": "220"
     },
     {
-        "name": "",
-        "id": "",
-        "parent_id": "246"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "220"
-    },
-    {
         "name": "PR court",
         "id": "249",
         "parent_id": "173"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "249"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "249"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "249"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "249"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "249"
     },
     {
         "name": "Pr\u00e9-excitation",
@@ -545,16 +275,6 @@
         "parent_id": "168"
     },
     {
-        "name": "",
-        "id": "",
-        "parent_id": "290"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "290"
-    },
-    {
         "name": "Tachycardie (FC > 100 bpm)",
         "id": "291",
         "parent_id": "290"
@@ -580,44 +300,9 @@
         "parent_id": "291"
     },
     {
-        "name": "",
-        "id": "",
-        "parent_id": "295"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "295"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "295"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "295"
-    },
-    {
         "name": "Tachycardie \u00e0 QRS fins irr\u00e9guliers",
         "id": "302",
         "parent_id": "291"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "302"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "302"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "302"
     },
     {
         "name": "Tachycardie \u00e0 QRS larges r\u00e9guliers monomorphes",
@@ -635,119 +320,9 @@
         "parent_id": "308"
     },
     {
-        "name": "",
-        "id": "",
-        "parent_id": "308"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "308"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "308"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "308"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "308"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "308"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "308"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "308"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "308"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "308"
-    },
-    {
         "name": "Tachycardie \u00e0 QRS larges irr\u00e9guliers monomorphes",
         "id": "323",
         "parent_id": "291"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "323"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "323"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "323"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "323"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "323"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "323"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "323"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "323"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "323"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "323"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "323"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "323"
     },
     {
         "name": "Tachycardie \u00e0 QRS larges irr\u00e9guliers polymorphes",
@@ -770,11 +345,6 @@
         "parent_id": "338"
     },
     {
-        "name": "",
-        "id": "",
-        "parent_id": "347"
-    },
-    {
         "name": "Tachycardie ventriculaire (TV) polymorphe",
         "id": "1856",
         "parent_id": "338"
@@ -783,16 +353,6 @@
         "name": "Tachycardie ventriculaire bidirectionnelle",
         "id": "1857",
         "parent_id": "338"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "291"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "291"
     },
     {
         "name": "Flutter atrial",
@@ -1000,26 +560,6 @@
         "parent_id": "351"
     },
     {
-        "name": "",
-        "id": "",
-        "parent_id": "351"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "351"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "351"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "351"
-    },
-    {
         "name": "Tachycardie atriale",
         "id": "423",
         "parent_id": "290"
@@ -1045,34 +585,9 @@
         "parent_id": "423"
     },
     {
-        "name": "",
-        "id": "",
-        "parent_id": "423"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "423"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "423"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "423"
-    },
-    {
         "name": "Fibrillation atriale (FA)",
         "id": "432",
         "parent_id": "290"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "432"
     },
     {
         "name": "grosses mailles",
@@ -1087,36 +602,6 @@
     {
         "name": "conduction lente",
         "id": "436",
-        "parent_id": "432"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "432"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "432"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "432"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "432"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "432"
-    },
-    {
-        "name": "",
-        "id": "",
         "parent_id": "432"
     },
     {
@@ -1145,11 +630,6 @@
         "parent_id": "444"
     },
     {
-        "name": "",
-        "id": "",
-        "parent_id": "444"
-    },
-    {
         "name": "Tachycardie par r\u00e9entr\u00e9e sur voie accessoire \u00e0 conduction d\u00e9cr\u00e9mentielle (de Coumel)",
         "id": "452",
         "parent_id": "443"
@@ -1172,21 +652,6 @@
     {
         "name": "Tachycardie jonctionnelle ectopique (JET) ou tachycardie automatique",
         "id": "468",
-        "parent_id": "443"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "443"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "443"
-    },
-    {
-        "name": "",
-        "id": "",
         "parent_id": "443"
     },
     {
@@ -1242,36 +707,6 @@
     {
         "name": "lat\u00e9rale",
         "id": "530",
-        "parent_id": "472"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "472"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "472"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "472"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "472"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "472"
-    },
-    {
-        "name": "",
-        "id": "",
         "parent_id": "472"
     },
     {
@@ -1580,11 +1015,6 @@
         "parent_id": "537"
     },
     {
-        "name": "",
-        "id": "",
-        "parent_id": "537"
-    },
-    {
         "name": "Rythme idioventriculaire acc\u00e9l\u00e9r\u00e9 (RIVA)",
         "id": "550",
         "parent_id": "290"
@@ -1592,11 +1022,6 @@
     {
         "name": "Rythme idioventriculaire acc\u00e9l\u00e9r\u00e9 (RIVA) post reperfusion coronaire",
         "id": "551",
-        "parent_id": "550"
-    },
-    {
-        "name": "",
-        "id": "",
         "parent_id": "550"
     },
     {
@@ -1617,11 +1042,6 @@
     {
         "name": "Rythme idiojonctionnel acc\u00e9l\u00e9r\u00e9 (RIJA) post reperfusion coronaire",
         "id": "559",
-        "parent_id": "554"
-    },
-    {
-        "name": "",
-        "id": "",
         "parent_id": "554"
     },
     {
@@ -1775,11 +1195,6 @@
         "parent_id": "583"
     },
     {
-        "name": "",
-        "id": "",
-        "parent_id": "583"
-    },
-    {
         "name": "gauche",
         "id": "744",
         "parent_id": "583"
@@ -1825,11 +1240,6 @@
         "parent_id": "583"
     },
     {
-        "name": "",
-        "id": "",
-        "parent_id": "583"
-    },
-    {
         "name": "Extrasystoles ventriculaires (ESV) infundibulaire VD",
         "id": "584",
         "parent_id": "583"
@@ -1872,11 +1282,6 @@
     {
         "name": "ph\u00e9nom\u00e8ne R sur T",
         "id": "1554",
-        "parent_id": "584"
-    },
-    {
-        "name": "",
-        "id": "",
         "parent_id": "584"
     },
     {
@@ -1960,16 +1365,6 @@
         "parent_id": "603"
     },
     {
-        "name": "",
-        "id": "",
-        "parent_id": "603"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "603"
-    },
-    {
         "name": "Extrasystoles ventriculaires (ESV) de pillier",
         "id": "622",
         "parent_id": "583"
@@ -2015,11 +1410,6 @@
         "parent_id": "622"
     },
     {
-        "name": "",
-        "id": "",
-        "parent_id": "622"
-    },
-    {
         "name": "septale",
         "id": "638",
         "parent_id": "622"
@@ -2027,11 +1417,6 @@
     {
         "name": "lat\u00e9rale",
         "id": "639",
-        "parent_id": "622"
-    },
-    {
-        "name": "",
-        "id": "",
         "parent_id": "622"
     },
     {
@@ -2080,16 +1465,6 @@
         "parent_id": "641"
     },
     {
-        "name": "",
-        "id": "",
-        "parent_id": "641"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "641"
-    },
-    {
         "name": "Extrasystoles ventriculaires (ESV) de la jonction mitro-aortique",
         "id": "660",
         "parent_id": "583"
@@ -2132,16 +1507,6 @@
     {
         "name": "ph\u00e9nom\u00e8ne R sur T",
         "id": "1565",
-        "parent_id": "660"
-    },
-    {
-        "name": "",
-        "id": "",
-        "parent_id": "660"
-    },
-    {
-        "name": "",
-        "id": "",
         "parent_id": "660"
     },
     {

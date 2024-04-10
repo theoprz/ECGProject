@@ -28,10 +28,6 @@ class ChildTagSelectionPage extends StatelessWidget {
               onPressed: () {
                 //FUNCTION TO ADD FROM THIS TAG WITHOUT CHILDREN
                 List<TagNode> selectedTags = selectTagAndAncestors(parent);
-                // Print all selected tags
-                selectedTags.forEach((tagNode) {
-                  print("Selected tag: ${tagNode.tag.name}");
-                });
 
                 //Add selected tags to globalSelectedTags if they are not already in the list
                 for (TagNode tag in selectedTags) {
@@ -39,10 +35,11 @@ class ChildTagSelectionPage extends StatelessWidget {
                     globalSelectedTags.add(tag);
                   }
                 }
+                //2nd step verification to avoid duplicates
+                globalSelectedTags = globalSelectedTags.toSet().toList();
+
                 globalSelectedTagsController.add(globalSelectedTags);
-                globalSelectedTags.forEach((tagNode) {
-                  print("Global selected tag: ${tagNode.tag.name}");
-                });
+
 
                 // Retour à l'écran des tags racine
                 for(int i = 0; i < selectedTags.length ; i++){

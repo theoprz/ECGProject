@@ -106,9 +106,7 @@ Widget build(BuildContext context) {
     floatingActionButton: FloatingActionButton.extended(
       backgroundColor: Colors.blue.shade300,
       onPressed: () {
-        globalSelectedTags.forEach((tagNode) {
-          print("Selected tag: ${tagNode.tag.name}");
-        });
+        //Fonction pour confirmer les tags sélectionnés
       },
       label: Row(
         children: [
@@ -137,10 +135,5 @@ Widget build(BuildContext context) {
 
 }
 
-//TODO EMPTY LIST WHEN USER QUITS TAG SELECTION
-
-//TODO DELETE PRINTS
-
-//TODO FIX BUG ALLOWING TO ADD DUPLICATES IN THE LIST WHEN DELETING AN ELEMENT
 
 //TODO VALIDATING SELECTION ADD ALL TAGS SELECTED TO THE ECG OBJECT, GOES FORWARD IN SCREENS AND THEN EMPTY TAG LIST

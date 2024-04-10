@@ -31,10 +31,6 @@ Widget buildTagNode(BuildContext context, TagNode node) {
     onTap: () {
       if (node.children.isEmpty) {
         List<TagNode> selectedTags = selectTagAndAncestors(node);
-        // Print all selected tags
-        selectedTags.forEach((tagNode) {
-          print("Selected tag: ${tagNode.tag.name}");
-        });
 
         //Add selected tags to globalSelectedTags if they are not already in the list
         for (TagNode tag in selectedTags) {
@@ -42,10 +38,11 @@ Widget buildTagNode(BuildContext context, TagNode node) {
             globalSelectedTags.add(tag);
           }
         }
+
+        //2nd step verification to avoid duplicates
+        globalSelectedTags = globalSelectedTags.toSet().toList();
+
         globalSelectedTagsController.add(globalSelectedTags);
-        globalSelectedTags.forEach((tagNode) {
-          print("Global selected tag: ${tagNode.tag.name}");
-        });
 
         // Retour à l'écran des tags racine
         for(int i = 0; i < selectedTags.length -1; i++){
