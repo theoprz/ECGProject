@@ -18,10 +18,13 @@ class TagSelector {
     String parentId = tagData['parent_id'] == null || tagData['parent_id'].isEmpty ? "EMPTY" : tagData['parent_id'];
 
     Tag tag = Tag(id, name, parentId);
-    tags.add(tag);
+
+    if(tag.id != "EMPTY" && tag.name != "EMPTY"){
+      tags.add(tag);
+    }
   }
 
-  List<TagNode> roots = buildTagTree(tags);
+  buildTagTree(tags);
 
   print("Tags loaded");
 }
