@@ -1,5 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:intl/date_symbol_data_file.dart';
+import 'package:intl/intl.dart';
 import 'Tag.dart';
 
 class ECG {
@@ -9,6 +11,7 @@ class ECG {
   String patientSex; // 0 or 1
   List<Tag> tags = [];
   int id;
+  String? date;
 
   ECG(this.title, this.description, this.patientAge, this.patientSex, this.tags, this.id);
 
@@ -25,6 +28,14 @@ class ECG {
     patientAge = int.parse(jsonData['ecg_age']);
     patientSex = transformSexe(jsonData['ecg_sexe']);
     id = int.parse(jsonData['ecg_id']);
+
+
+    String ecgCreated = jsonData['ecg_created'];
+
+    ecgCreated = ecgCreated.replaceAll('\ufffd', '');//On retire les caractères de remplacement qui pourraient être présents
+    int epochDate = int.parse(ecgCreated);//On convertit le string en int
+
+    date = DateFormat.yMMMMd().format(DateTime.fromMillisecondsSinceEpoch(epochDate * 1000));//On convertit l'epoch en date
 
     tags.clear();
     for (var tagData in jsonData['tags']) {
@@ -60,5 +71,14 @@ String transformSexe(String sexe){
   } else {
     return "Non renseigné";
   }
+
+}
+
+String epochToFrenchDate(int epochTime) {
+  // Convert epoch time to DateTime
+  DateTime date = DateTime.fromMillisecondsSinceEpoch(epochTime * 1000);//En dart l'epoch fonctionne en ms et pas en s donc je multiplie par 1000
+
+
+  return "";
 }
 

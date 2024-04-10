@@ -33,6 +33,7 @@ dependencies:
   marquee: ^2.1.1
   image_picker: ^0.8.6
   camera: ^0.9.4+5
+  intl: ^0.17.0
 
 
   # The following adds the Cupertino Icons font to your application.

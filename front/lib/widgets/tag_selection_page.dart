@@ -64,9 +64,9 @@ Widget build(BuildContext context) {
                                 width: 180,
                                 padding: const EdgeInsets.symmetric(horizontal: 12),
                                 decoration: BoxDecoration(
-                                  color: Colors.red.shade100,
+                                  color: Colors.blue.shade50,
                                   borderRadius: BorderRadius.circular(15),
-                                  border: Border.all(color: Colors.red.shade700, width: 2),
+                                  border: Border.all(color: Colors.blue.shade200, width: 2),
                                 ),
                                 child: Center(
                                   child: Text(

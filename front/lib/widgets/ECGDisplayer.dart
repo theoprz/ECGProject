@@ -22,6 +22,7 @@ class _ECGDisplayerState extends State<ECGDisplayer> {
   void initState() {
     super.initState();
 
+
     //scrolling animation
     Timer.periodic(const Duration(milliseconds: 1000), (timer) { //Plus les duration sont élevées, plus le défilement est fluide (jusqu'à un certain point)
       if(_scrollController.position.userScrollDirection == ScrollDirection.idle) {
@@ -56,45 +57,66 @@ class _ECGDisplayerState extends State<ECGDisplayer> {
         child: SizedBox(
           width: MediaQuery.of(context).size.width * 0.95, // Set the width to the value you want
           child: Container(
-            padding: const EdgeInsets.all(20),//Padding autour des éléments du tags
+            padding: const EdgeInsets.only(top: 20,left: 20, right: 8, bottom: 20),//Padding autour des éléments du tags
             decoration: const BoxDecoration(
               color: Colors.white,
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(widget.ecg.title,
-                    style: const TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.bold)),
-                const SizedBox(height: 5),
-                Text(widget.ecg.description),
-                const SizedBox(height: 5),
-                SizedBox(
-                  height: 30, // Adjust height as needed
-                  child: ListView.builder(
-                    controller: _scrollController,
-                    scrollDirection: Axis.horizontal,
-                    itemCount: widget.ecg.tags.length * 3, // To mimic infinite scrolling
-                    itemBuilder: (context, index) {
-                      final itemIndex = index % widget.ecg.tags.length;
-                      return Padding(
-                        padding: const EdgeInsets.only(right: 40),//Padding entre les tags
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 12),
-                          decoration: BoxDecoration(
-                            color: Colors.red.shade100,
-                            borderRadius: BorderRadius.circular(15),
-                            border: Border.all(color: Colors.red.shade700, width: 2),
-                          ),
-                          child: Center(
-                            child: Text(
-                              widget.ecg.getListOfAllTagsNamesAsStrings()[itemIndex],
-                              style: TextStyle(fontSize: 14),
-                            ),
-                          )
-                      )
-                      );
-                    },
+            child: Row(
+              children: [
+                      Container(
+                        child: Row(
+
+                          children: [
+                            Container(
+                              width: 40,
+                              child: Column(
+                                children: [
+                                  Text(widget.ecg.date ?? '', style: const TextStyle(fontSize: 10)),
+                                ],
+                              ),
+                            )
+                      ],
+                ),
+              ),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(widget.ecg.title,
+                          style: const TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold)),
+                      const SizedBox(height: 3),
+                      Text(widget.ecg.description),
+                      const SizedBox(height: 5),
+                      SizedBox(
+                        height: 26, //Hauteur encadré des tags
+                        child: ListView.builder(
+                          controller: _scrollController,
+                          scrollDirection: Axis.horizontal,
+                          itemCount: widget.ecg.tags.length * 3, // To mimic infinite scrolling
+                          itemBuilder: (context, index) {
+                            final itemIndex = index % widget.ecg.tags.length;
+                            return Padding(
+                                padding: const EdgeInsets.only(right: 20),//Padding entre les tags
+                                child: Container(
+                                    padding: const EdgeInsets.symmetric(horizontal: 12),
+                                    decoration: BoxDecoration(
+                                      color: Colors.blue.shade50,
+                                      borderRadius: BorderRadius.circular(15),
+                                      border: Border.all(color: Colors.blue.shade200, width: 2),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        widget.ecg.getListOfAllTagsNamesAsStrings()[itemIndex],
+                                        style: TextStyle(fontSize: 13),
+                                      ),
+                                    )
+                                )
+                            );
+                          },
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
