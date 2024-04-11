@@ -56,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(50.0),
         child: AppBar(
-          title: Text('Mes ECG'),
+          title: Text('Électrocardiogrammes'),
           centerTitle: true,
           backgroundColor: Colors.white,
           scrolledUnderElevation: 0,
@@ -71,26 +71,50 @@ class _HomeScreenState extends State<HomeScreen> {
               Container(
                 padding: const EdgeInsets.only(top: 4, left: 8, right: 8),
                 height: 50,
-                width: MediaQuery.of(context).size.width * 0.80,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
-                    child: TextField(
-                      controller: _controller,
-                      decoration: InputDecoration(
-                        labelText: 'Rechercher un ECG',
-                        prefixIcon: Icon(Icons.search),
-                        suffixIcon: IconButton(
-                          icon: Icon(Icons.clear),
-                          onPressed: () {
-                            _controller.clear();
-                          },
-                        ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
+                width: MediaQuery.of(context).size.width * 0.97,
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 0, right: 10, bottom: 10),
+                        child: TextField(
+                          controller: _controller,
+                          decoration: InputDecoration(
+                            labelText: 'Rechercher un ECG',
+                            prefixIcon: Icon(Icons.search),
+                            suffixIcon: IconButton(
+                              icon: Icon(Icons.clear),
+                              onPressed: () {
+                                _controller.clear();
+                              },
+                            ),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
                         ),
                       ),
                     ),
-                  )
+                    Padding(
+                      padding: const EdgeInsets.only(left: 0, right: 0, bottom: 10),
+                      child: OutlinedButton(
+                        onPressed: () {
+                          // TODO:AJOUTER FILTRAGE PAR UTILISATEUR
+                        },
+                        style: OutlinedButton.styleFrom(
+                          foregroundColor: Colors.black,
+                          backgroundColor: Colors.blue.shade300,
+                          side: BorderSide(color: Colors.blue.shade300, width: 2),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          minimumSize: const Size(50, 35), // This is the size of the button
+                        ),
+                        child: const Text('Mes ECG'),
+                      ),
+                    ),
+                  ],
+                ),
               ),
               Container(
                 decoration: BoxDecoration(
