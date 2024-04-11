@@ -13,11 +13,25 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   late List<ECG> items;
   final TextEditingController _controller = TextEditingController();
+  List<ECG> filteredItems = [];
 
   @override
   void initState() {
     super.initState();
-    generateFakeECGList().then((value) => items = value);
+    generateFakeECGList().then((value) {
+      items = value;
+      filteredItems = List.from(items);
+    });
+    _controller.addListener(() {
+      setState(() {
+        filteredItems = items
+            .where((ecg) =>
+            ecg.title.toLowerCase().contains(_controller.text.toLowerCase()) ||//Recherche par titre
+            ecg.tags.any((tag) => tag.name.toLowerCase().contains(_controller.text.toLowerCase()))//Recherche par tag
+          )
+            .toList();
+      });
+    });
   }
 
   @override
@@ -102,9 +116,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         items = snapshot.data!; // Assign the data to items when it's loaded
                         return ListView.separated(
                           padding: const EdgeInsets.only(top: 10, bottom: 10),
-                          itemCount: snapshot.data!.length,
+                          itemCount: filteredItems.length,
                           itemBuilder: (context, index) {
-                            return ECGDisplayer(ecg: snapshot.data![index]);
+                            return ECGDisplayer(ecg: filteredItems[index]);
                           },
                           separatorBuilder: (context, index) {
                             return const SizedBox(height: 10);
