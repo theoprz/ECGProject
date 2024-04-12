@@ -31,7 +31,10 @@ class MainApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal.shade600),
         useMaterial3: true,
       ),
-      home: LoginScreen(camera: camera), //Lance l'application sur cet écran
+      initialRoute: '/',
+      routes: {
+        '/': (context) => LoginScreen(camera: camera),
+      }
     );
   }
 }
