@@ -31,9 +31,11 @@ dependencies:
   flutter:
     sdk: flutter
   marquee: ^2.1.1
-  image_picker: ^0.8.6
   camera: ^0.9.4+5
   intl: ^0.17.0
+  image_picker: ^0.8.4+4
+  image_cropper: ^1.4.0
+  flutter_dialogs: ^2.1.1
 
 
   # The following adds the Cupertino Icons font to your application.
