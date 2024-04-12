@@ -1,6 +1,7 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:front/classes/ECG_class.dart';
 
 import '../main.dart';
 import '../widgets/tag_selection_page.dart'; // Assurez-vous d'importer la page de test
@@ -38,7 +39,7 @@ class LoginScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => TagSelectionPage(),
+                    builder: (context) => TagSelectionPage(ecg: new ECG("Titre", "Description", 0, "Masculin", [], 0)),
                   ),
                 );
               },

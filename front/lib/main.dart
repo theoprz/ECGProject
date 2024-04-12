@@ -14,6 +14,9 @@ void main() async {
   runApp(MainApp(camera: firstCamera));
 }
 
+//Gestion du popup de la caméra
+bool hasShownPopup = false;
+
 class MainApp extends StatelessWidget {
   final CameraDescription camera;
 
