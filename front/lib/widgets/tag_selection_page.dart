@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:front/screens/home_screen.dart';
 import 'package:front/widgets/tag_utils.dart';
 import '../classes/ECG_class.dart';
 import '../classes/Tag.dart';
@@ -120,7 +121,8 @@ Widget build(BuildContext context) {
         print(widget.ecg.getStringOfAllTags());
 
         //TODO ADD THIS ECG TO THE LIST OF ECGS AND GO BACK TO HOMESCREEN
-
+        //TODO FAIRE UN ROUTAGE
+        Navigator.popUntil(context, ModalRoute.withName('/'));
 
       },
       label: Row(
