@@ -15,6 +15,11 @@ class ECG {
 
   ECG(this.title, this.description, this.patientAge, this.patientSex, this.tags, this.id);
 
+  @override
+  String toString() {
+    return 'ECG{title: $title, description: $description, patientAge: $patientAge, patientSex: $patientSex, tags: $tags, id: $id}';
+  }
+
   void setECGFromQuery(){
     //À dev quand on a le côté back
   }
@@ -60,6 +65,9 @@ class ECG {
     return result;
   }
 
+  void setTags(List<Tag> tags){
+    this.tags = tags;
+  }
 
 }
 

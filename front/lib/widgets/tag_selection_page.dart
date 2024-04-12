@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:front/widgets/tag_utils.dart';
+import '../classes/ECG_class.dart';
+import '../classes/Tag.dart';
 import '../classes/TagNode.dart';
 import 'TagSelector.dart';
 
 
 class TagSelectionPage extends StatefulWidget {
+  ECG ecg;
+
+  TagSelectionPage({required this.ecg});
+
   @override
   _TagSelectionPageState createState() => _TagSelectionPageState();
 }
@@ -17,6 +23,7 @@ class _TagSelectionPageState extends State<TagSelectionPage> {
   void initState() {
     super.initState();
     loadTagsFuture = tagSelector.loadTags();
+    print(widget.ecg);
   }
 
 
@@ -107,6 +114,14 @@ Widget build(BuildContext context) {
       backgroundColor: Colors.blue.shade300,
       onPressed: () {
         //Fonction pour confirmer les tags sélectionnés
+        List<Tag> tagList = globalSelectedTags.map((tagNode) => tagNode.tag).toList();
+        widget.ecg.setTags(tagList);
+        print(widget.ecg);
+        print(widget.ecg.getStringOfAllTags());
+
+        //TODO ADD THIS ECG TO THE LIST OF ECGS AND GO BACK TO HOMESCREEN
+
+
       },
       label: Row(
         children: [
