@@ -55,9 +55,9 @@ class _ECGDisplayerState extends State<ECGDisplayer> {
       },
       child: Center(
         child: SizedBox(
-          width: MediaQuery.of(context).size.width * 0.95, // Set the width to the value you want
+          width: MediaQuery.of(context).size.width * 0.96, // Set the width to the value you want
           child: Container(
-            padding: const EdgeInsets.only(top: 20,left: 20, right: 8, bottom: 20),//Padding autour des éléments du tags
+            padding: const EdgeInsets.only(top: 20,left: 6, right: 6, bottom: 20),//Padding autour des éléments du tags
             decoration: const BoxDecoration(
               color: Colors.white,
             ),
@@ -67,11 +67,11 @@ class _ECGDisplayerState extends State<ECGDisplayer> {
                         child: Row(
 
                           children: [
-                            Container(
-                              width: 40,
+                            Container(//TODO METTRE UNE BARRE VERTICALE DE SEPARATION ENTRE DATE ET ETOILE ET LE RESTE
+                              width: 60,
                               child: Column(
                                 children: [
-                                  Text(widget.ecg.date ?? '', style: const TextStyle(fontSize: 10)),
+                                  Text(widget.ecg.date ?? '', style: const TextStyle(fontSize: 10), textAlign: TextAlign.center),
                                 ],
                               ),
                             )

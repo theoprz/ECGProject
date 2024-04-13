@@ -40,7 +40,7 @@ class ECG {
     ecgCreated = ecgCreated.replaceAll('\ufffd', '');//On retire les caractères de remplacement qui pourraient être présents
     int epochDate = int.parse(ecgCreated);//On convertit le string en int
 
-    date = DateFormat.yMMMMd().format(DateTime.fromMillisecondsSinceEpoch(epochDate * 1000));//On convertit l'epoch en date
+    date = epochToFrenchDate(epochDate);//On convertit l'epoch en date lisible
 
     tags.clear();
     for (var tagData in jsonData['tags']) {
@@ -87,6 +87,10 @@ String epochToFrenchDate(int epochTime) {
   DateTime date = DateTime.fromMillisecondsSinceEpoch(epochTime * 1000);//En dart l'epoch fonctionne en ms et pas en s donc je multiplie par 1000
 
 
-  return "";
+  List<String> monthNames = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];//On définit le nom des mois
+
+  String monthName = monthNames[date.month - 1];//On récupère le nom du mois
+
+  return '${date.day}\n$monthName\n${date.year}';
 }
 
