@@ -1,5 +1,6 @@
 import 'dart:ffi';
 import 'dart:io';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:image_cropper/image_cropper.dart';
@@ -71,7 +72,7 @@ class _AddECGScreenState extends State<AddECGScreen> {
         title: const Text("Ajouter un ECG"),
       ),
       body: _controller.value.isInitialized
-          ? Column(
+          ? Column(//REGLER LE PROBLEME D ETIREMENT DE L IMAGE
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
                 Expanded(
@@ -107,6 +108,7 @@ class _AddECGScreenState extends State<AddECGScreen> {
               ),
             ),
           ),
+              SizedBox(height: 20),
         ],
       )
           : Center(
@@ -177,7 +179,10 @@ class PhotoPreviewPage extends StatefulWidget {
 
 class _PhotoPreviewPageState extends State<PhotoPreviewPage> {
   String? _selectedSex;
-  int? _selectedAge;//ATTENTION C EST UN STRING DONC IL FAUT CONVERTIR EN INT SI ON A UNE VALEUR NUMÉRIQUE ET PAS "INCONNU"
+  int? _selectedAge;
+  final titleController = TextEditingController();
+  final descriptionController = TextEditingController();
+  //TODO appliquer filtre anti injection sql sur les champs de texte
 
   @override
   Widget build(BuildContext context) {
@@ -191,48 +196,80 @@ class _PhotoPreviewPageState extends State<PhotoPreviewPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              height: MediaQuery.of(context).size.height * 0.5,
+              height: MediaQuery.of(context).size.height * 0.45,
               width: MediaQuery.of(context).size.width * 0.9,
               child: Image.file(widget.imageFile, fit: BoxFit.contain), // Change BoxFit.cover to BoxFit.contain
             ),
-            SizedBox(height: 20),
-            DropdownButton<int>(
-              hint: Text('Age'),
-              value: _selectedAge,
-              items: <int>[
-                for (var i = 0; i <= 140; i += 1) i,
-              ].map((int value) {
-                return DropdownMenuItem<int>(
-                  value: value,
-                  child: Text(value.toString()),
-                );
-              }).toList(),
-              onChanged: (newValue) {
-                setState(() {
-                  _selectedAge = newValue;
-                });
-              },
+            const SizedBox(height: 20),
+            TextField(
+              controller: titleController,
+              decoration: const InputDecoration(
+                hintText: "Titre",
+                labelText: "Titre",
+              ),
+              maxLength: 24,//Limite de caractères, potientiellement à ajuster
             ),
-            SizedBox(height: 10),
-            DropdownButton<String>(
-              hint: Text('Sexe'),
-              value: _selectedSex,
-              items: <String>['Masculin', 'Féminin', 'Inconnu'].map((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(value),
-                );
-              }).toList(),
-              onChanged: (newValue) {
-                setState(() {
-                  _selectedSex = newValue;
-                });
-              },
+            const SizedBox(height: 10),
+            TextField(
+              controller: descriptionController,
+              decoration: const InputDecoration(
+                hintText: "Description",
+                labelText: "Description",
+              ),
+              maxLength: 400,//Limite de caractères, potientiellement à ajuster
             ),
+            const SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                DropdownButton<int>(
+                  hint: const Text('Age'),
+                  value: _selectedAge,
+                  items: <int>[
+                    for (var i = 0; i <= 140; i += 1) i,
+                  ].map((int value) {
+                    return DropdownMenuItem<int>(
+                      value: value,
+                      child: Text(value.toString()),
+                    );
+                  }).toList(),
+                  onChanged: (newValue) {
+                    setState(() {
+                      _selectedAge = newValue;
+                    });
+                  },
+                ),
+                const Padding(padding: EdgeInsets.only(left: 50)),
+                DropdownButton<String>(
+                  hint: const Text('Sexe'),
+                  value: _selectedSex,
+                  items: <String>['Masculin', 'Féminin', 'Inconnu'].map((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                  onChanged: (newValue) {
+                    setState(() {
+                      _selectedSex = newValue;
+                    });
+                  },
+                ),
+              ],
+            ),
+
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                ECG tmpECG = ECG("Titre", "Description", _selectedAge ?? 0, _selectedSex ?? "Inconnu", [], 0);
+                if(titleController.text.isEmpty) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text("Veuillez entrer un titre"),
+                    ),
+                  );
+                  return;
+                }
+                ECG tmpECG = ECG(titleController.text, descriptionController.text, _selectedAge ?? 0, _selectedSex ?? "Inconnu", [], 0);
                 print(tmpECG);
 
                 Navigator.push(
@@ -258,6 +295,14 @@ class _PhotoPreviewPageState extends State<PhotoPreviewPage> {
         ),
       ),
     );
+  }
+
+
+  @override
+  void dispose() {
+    titleController.dispose();
+    descriptionController.dispose();
+    super.dispose();
   }
 
 
