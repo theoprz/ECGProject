@@ -1,7 +1,5 @@
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:intl/date_symbol_data_file.dart';
-import 'package:intl/intl.dart';
 import 'Tag.dart';
 
 class ECG {
@@ -12,12 +10,17 @@ class ECG {
   List<Tag> tags = [];
   int id;
   String? date;
+  String quality = "Non renseignée";
+  int vitesse = 0;
+  int gain = 0;
 
-  ECG(this.title, this.description, this.patientAge, this.patientSex, this.tags, this.id);
+  ECG(this.title, this.description, this.patientAge, this.patientSex, this.tags, this.id);//Constructeur de base
+
+  ECG.withQualitySpeedGain(this.title, this.description, this.patientAge, this.patientSex, this.tags, this.id, this.quality, this.vitesse, this.gain);//Constructeur avec les paramètres de qualité, vitesse et gain
 
   @override
   String toString() {
-    return 'ECG{title: $title, description: $description, patientAge: $patientAge, patientSex: $patientSex, tags: $tags, id: $id}';
+    return 'ECG{title: $title, description: $description, patientAge: $patientAge, patientSex: $patientSex, tags: $tags, id: $id, quality: $quality, vitesse: $vitesse, gain: $gain}';
   }
 
   void setECGFromQuery(){
@@ -29,10 +32,15 @@ class ECG {
     Map<String, dynamic> jsonData = jsonDecode(jsonString);
 
     title = jsonData['page_title'];
-    description = jsonData['ecg_comment'];
+    description = jsonData['ecg_contexte'];
     patientAge = int.parse(jsonData['ecg_age']);
     patientSex = transformSexe(jsonData['ecg_sexe']);
     id = int.parse(jsonData['ecg_id']);
+
+    quality = handleQuality(int.parse(jsonData['ecg_quality'])); //On transforme le int de la qualité en string
+    vitesse = int.parse(jsonData['ecg_speed']);
+    gain = int.parse(jsonData['ecg_gain']);
+
 
 
     String ecgCreated = jsonData['ecg_created'];
@@ -92,5 +100,20 @@ String epochToFrenchDate(int epochTime) {
   String monthName = monthNames[date.month - 1];//On récupère le nom du mois
 
   return '${date.day}\n$monthName\n${date.year}';
+}
+
+String handleQuality(int quality) {
+  switch (quality) {
+    case 1:
+      return 'Mauvaise';
+    case 2:
+      return 'Moyenne';
+    case 3:
+      return 'Bonne';
+    case 4:
+      return 'Très bonne';
+    default:
+      return 'Non renseignée';
+  }
 }
 

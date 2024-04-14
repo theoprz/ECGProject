@@ -1,8 +1,8 @@
-import 'dart:ffi';
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
+import 'package:flutter/services.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:flutter_dialogs/flutter_dialogs.dart';
 
@@ -50,7 +50,7 @@ class _AddECGScreenState extends State<AddECGScreen> {
         context: context,
         builder: (_) => BasicDialogAlert(
           title: const Text("Attention"),
-          content: const Text("Merci de garantir l'anonymat du patient, en prenant une photo qui ne présente aucune information personnelle"),
+          content: const Text("Merci de garantir l'anonymat du patient, en prenant une photo ne présentant aucune information personnelle"),
           actions: <Widget>[
             BasicDialogAction(
               onPressed: () {
@@ -179,9 +179,12 @@ class PhotoPreviewPage extends StatefulWidget {
 
 class _PhotoPreviewPageState extends State<PhotoPreviewPage> {
   String? _selectedSex;
-  int? _selectedAge;
   final titleController = TextEditingController();
   final descriptionController = TextEditingController();
+  final ageController = TextEditingController();
+  final vitesseController = TextEditingController();
+  final gainController = TextEditingController();
+  String? _imageQuality;
   //TODO appliquer filtre anti injection sql sur les champs de texte
 
   @override
@@ -196,7 +199,7 @@ class _PhotoPreviewPageState extends State<PhotoPreviewPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              height: MediaQuery.of(context).size.height * 0.45,
+              height: MediaQuery.of(context).size.height * 0.51,
               width: MediaQuery.of(context).size.width * 0.9,
               child: Image.file(widget.imageFile, fit: BoxFit.contain), // Change BoxFit.cover to BoxFit.contain
             ),
@@ -213,8 +216,8 @@ class _PhotoPreviewPageState extends State<PhotoPreviewPage> {
             TextField(
               controller: descriptionController,
               decoration: const InputDecoration(
-                hintText: "Description",
-                labelText: "Description",
+                hintText: "Contexte",
+                labelText: "Contexte",
               ),
               maxLength: 400,//Limite de caractères, potientiellement à ajuster
             ),
@@ -222,24 +225,20 @@ class _PhotoPreviewPageState extends State<PhotoPreviewPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                DropdownButton<int>(
-                  hint: const Text('Age'),
-                  value: _selectedAge,
-                  items: <int>[
-                    for (var i = 0; i <= 140; i += 1) i,
-                  ].map((int value) {
-                    return DropdownMenuItem<int>(
-                      value: value,
-                      child: Text(value.toString()),
-                    );
-                  }).toList(),
-                  onChanged: (newValue) {
-                    setState(() {
-                      _selectedAge = newValue;
-                    });
-                  },
+                Container(
+                  width: 60,
+                  child: TextField(
+                    controller: ageController,
+                    decoration: const InputDecoration(
+                      hintText: "Âge",
+                      labelText: "Âge",
+                    ),
+                    keyboardType: TextInputType.number, //Clavier numérique
+                    inputFormatters: [FilteringTextInputFormatter.digitsOnly], //Permet de filtrer les caractères pour n'avoir que des chiffres
+                    maxLength: 3,
+                  ),
                 ),
-                const Padding(padding: EdgeInsets.only(left: 50)),
+                const Padding(padding: EdgeInsets.only(left: 30)),
                 DropdownButton<String>(
                   hint: const Text('Sexe'),
                   value: _selectedSex,
@@ -255,21 +254,73 @@ class _PhotoPreviewPageState extends State<PhotoPreviewPage> {
                     });
                   },
                 ),
+                const Padding(padding: EdgeInsets.only(left: 30)),
+                DropdownButton<String>(
+                  hint: const Text('Qualité ECG'),
+                  value: _imageQuality,
+                  items: <String>['Mauvaise', 'Moyenne', 'Bonne', 'Très bonne'].map((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                  onChanged: (newValue) {
+                    setState(() {
+                      _imageQuality = newValue;
+                    });
+                  },
+                ),
               ],
             ),
 
-            SizedBox(height: 20),
+            SizedBox(height: 10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+
+                SizedBox(width: 10),
+                Container(
+                  width: 140,
+                  child: TextField(
+                  controller: vitesseController,
+                  decoration: const InputDecoration(
+                  hintText: "Vitesse (mm/s)",
+                  labelText: "Vitesse (mm/s)",
+                  ),
+                  keyboardType: TextInputType.number, //Clavier numérique
+                    inputFormatters: [FilteringTextInputFormatter.digitsOnly], //Permet de filtrer les caractères pour n'avoir que des chiffres
+                  maxLength: 4,
+                  ),
+                ),
+              SizedBox(width: 50),
+                Container(
+                  width: 140,
+                  child: TextField(
+                    controller: gainController,
+                    decoration: const InputDecoration(
+                      hintText: "Gain (mm/mV)",
+                      labelText: "Gain (mm/mV)",
+                    ),
+                    keyboardType: TextInputType.number, //Clavier numérique
+                    inputFormatters: [FilteringTextInputFormatter.digitsOnly], //Permet de filtrer les caractères pour n'avoir que des chiffres
+                    maxLength: 4,
+                  ),
+                ),
+              ],
+            ),
+
+            const SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {
-                if(titleController.text.isEmpty) {
+                if(titleController.text.isEmpty || _imageQuality == null || vitesseController.text.isEmpty || gainController.text.isEmpty) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
-                      content: Text("Veuillez entrer un titre"),
+                      content: Text("Veuillez entrer au moins un titre, la qualité de l'image, la vitesse et le gain de l'ECG"),
                     ),
                   );
                   return;
                 }
-                ECG tmpECG = ECG(titleController.text, descriptionController.text, _selectedAge ?? 0, _selectedSex ?? "Inconnu", [], 0);
+                ECG tmpECG = ECG.withQualitySpeedGain(titleController.text, descriptionController.text, ageController.text.isEmpty ? 0 : int.parse(ageController.text), _selectedSex ?? "Inconnu", [], 0, _imageQuality ?? "Non renseignée", int.parse(vitesseController.text), int.parse(gainController.text));
                 print(tmpECG);
 
                 Navigator.push(
