@@ -65,7 +65,6 @@ class _ECGDisplayerState extends State<ECGDisplayer> {
               children: [
                       Container(
                         child: Row(
-
                           children: [
                             Container(//TODO METTRE UNE BARRE VERTICALE DE SEPARATION ENTRE DATE ET ETOILE ET LE RESTE
                               width: 60,
