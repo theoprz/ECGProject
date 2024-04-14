@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:front/screens/home_screen.dart';
 import 'package:front/widgets/tag_utils.dart';
 import '../classes/ECG_class.dart';
 import '../classes/Tag.dart';
@@ -119,6 +118,10 @@ Widget build(BuildContext context) {
         widget.ecg.setTags(tagList);
         print(widget.ecg);
         print(widget.ecg.getStringOfAllTags());
+
+
+        globalSelectedTags.clear();
+        globalSelectedTagsController.add(globalSelectedTags);
 
         //TODO ADD THIS ECG TO THE LIST OF ECGS AND GO BACK TO HOMESCREEN
         //TODO FAIRE UN ROUTAGE
