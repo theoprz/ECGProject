@@ -1,5 +1,7 @@
 import 'dart:convert';
+import 'dart:io';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:http/http.dart' as http;
 import 'Tag.dart';
 
 class ECG {
@@ -7,53 +9,63 @@ class ECG {
   String description;
   int patientAge;
   String patientSex; // 0 or 1
+  int patientSexId = 0;
   List<Tag> tags = [];
-  int id;
+  String id;
   String? date;
   String quality = "Non renseignée";
+  int qualityId = 0;
   int vitesse = 0;
   int gain = 0;
+  File photo;
 
-  ECG(this.title, this.description, this.patientAge, this.patientSex, this.tags, this.id);//Constructeur de base
+  ECG(this.title, this.description, this.patientAge, this.patientSex, this.tags, this.id, this.photo);//Constructeur de base
 
-  ECG.withQualitySpeedGain(this.title, this.description, this.patientAge, this.patientSex, this.tags, this.id, this.quality, this.vitesse, this.gain);//Constructeur avec les paramètres de qualité, vitesse et gain
+  ECG.withQualitySpeedGain(this.title, this.description, this.patientAge, this.patientSex, this.tags, this.id, this.quality, this.vitesse, this.gain, this.photo);//Constructeur avec les paramètres de qualité, vitesse et gain
 
   @override
   String toString() {
     return 'ECG{title: $title, description: $description, patientAge: $patientAge, patientSex: $patientSex, tags: $tags, id: $id, quality: $quality, vitesse: $vitesse, gain: $gain}';
   }
 
-  void setECGFromQuery(){
-    //À dev quand on a le côté back
-  }
+  Future<void> setECGFromQuery(i) async {
+    var url = Uri.parse('http://173.212.207.124:3333/api/v1/ecg');
 
-  Future<void> setECGFromJson() async {
-    String jsonString = await rootBundle.loadString('assets/test.json');
-    Map<String, dynamic> jsonData = jsonDecode(jsonString);
+    try {
+      var response = await http.get(url);
 
-    title = jsonData['page_title'];
-    description = jsonData['ecg_contexte'];
-    patientAge = int.parse(jsonData['ecg_age']);
-    patientSex = transformSexe(jsonData['ecg_sexe']);
-    id = int.parse(jsonData['ecg_id']);
+      if (response.statusCode == 200) {
+        List<dynamic> dataList = jsonDecode(response.body)['content'];
 
-    quality = handleQuality(int.parse(jsonData['ecg_quality'])); //On transforme le int de la qualité en string
-    vitesse = int.parse(jsonData['ecg_speed']);
-    gain = int.parse(jsonData['ecg_gain']);
+        title = dataList[i]['title'];
+        description = dataList[i]['comment'];
+        patientAge = dataList[i]['age'];
+        patientSex = transformSexe(dataList[i]['sexe']);
+        patientSexId = dataList[i]['sexe'];
+        id = dataList[i]['id'];
+        date = "test";
+        quality = handleQuality(dataList[i]['quality']);
+        qualityId = dataList[i]['quality'];
+        if(dataList[i]['filename'] == ""){
+          photo = File('assets/images/noimg.jpg');
+        } else {
+          photo = File(dataList[i]['filename']);
+        }
 
+        vitesse = dataList[i]['speed'];
+        gain = dataList[i]['gain'];
 
-
-    String ecgCreated = jsonData['ecg_created'];
-
-    ecgCreated = ecgCreated.replaceAll('\ufffd', '');//On retire les caractères de remplacement qui pourraient être présents
-    int epochDate = int.parse(ecgCreated);//On convertit le string en int
-
-    date = epochToFrenchDate(epochDate);//On convertit l'epoch en date lisible
-
-    tags.clear();
-    for (var tagData in jsonData['tags']) {
-      Tag tag = Tag(tagData['etag_id'], tagData['etag_name'],  tagData['etag_parent_id']);
-      tags.add(tag);
+        tags.clear();
+        int tagLength = dataList[i]['tags'].length;
+        for (int j = 0; j < tagLength; j++) {
+          Tag tag = Tag(dataList[i]['tags'][j]['id'].toString(), dataList[i]['tags'][j]['name'].toString(), dataList[i]['tags'][j]['parentId'].toString());
+          tags.add(tag);
+        }
+      } else {
+        print('Erreur: ${response.statusCode}');
+      }
+    } catch (e) {
+      print('Exception lors de la requête: $e');
     }
   }
 
@@ -79,10 +91,10 @@ class ECG {
 
 }
 
-String transformSexe(String sexe){
-  if (sexe == "0"){
+String transformSexe(int sexe){
+  if (sexe == 0){
     return "Homme";
-  } else if (sexe == "1"){
+  } else if (sexe == 1){
     return "Femme";
   } else {
     return "Non renseigné";

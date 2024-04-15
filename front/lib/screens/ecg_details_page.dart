@@ -30,7 +30,7 @@ class ECGDetailsPage extends StatelessWidget {
             children: [
               Container(
                 padding: const EdgeInsets.only(top: 4, left: 8, right: 8),
-                child: Text('${ecg.description}, de plus, il y a un retour à la ligne qui se fait automatiquement, la taille est adaptative en fonction du texte et il y a un padding autour du texte'),
+                child: Text('${ecg.description}'),
               ),
               Container(
                 decoration: BoxDecoration(
@@ -65,10 +65,10 @@ class ECGDetailsPage extends StatelessWidget {
                         return GestureDetector(
                           onTap: () {
                             Navigator.push(context, MaterialPageRoute(builder: (_) {
-                              return FullscreenImage(imagePath: 'assets/images/ecg_examples.png'); //TODO SET ECG IMAGE PATH
+                              return FullscreenImage(imagePath: 'assets/images/noimg.jpg'); //TODO SET ECG IMAGE PATH
                             }));
                           },
-                          child: Image.asset('assets/images/ecg_examples.png', width: 300, height: 200),
+                          child: Image.asset('assets/images/noimg.jpg', width: 300, height: 200),
                         );
                       } else {
                         // Otherwise, return the TagDisplayer

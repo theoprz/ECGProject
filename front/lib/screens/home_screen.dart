@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:front/widgets/ECGDisplayer.dart';
+import 'package:http/http.dart' as http;
 
 import '../classes/ECG_class.dart';
 
@@ -41,11 +44,26 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Future<List<ECG>> generateFakeECGList() async {
+
+    var url = Uri.parse('http://173.212.207.124:3333/api/v1/ecg/count');
+
     List<ECG> ecgList = [];
-    for (int i = 0; i < 20; i++) {
-      ECG ecg = ECG("Title $i", "Description $i", i, "1", [], i);
-      await ecg.setECGFromJson();
-      ecgList.add(ecg);
+
+    try {
+      var response = await http.get(url);
+
+      if (response.statusCode == 200) {
+        for(int i = 0; i < int.parse(response.body); i++){
+          ECG ecg = ECG("Titre", "Description", 0, "1", [], "0", File(''));
+          await ecg.setECGFromQuery(i);
+          ecgList.add(ecg);
+        }
+
+      } else {
+        print('Erreur: ${response.statusCode}');
+      }
+    } catch (e) {
+      print('Exception lors de la requête: $e');
     }
     return ecgList;
   }

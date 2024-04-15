@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:front/widgets/tag_utils.dart';
 import '../classes/ECG_class.dart';
 import '../classes/Tag.dart';
@@ -23,7 +26,6 @@ class _TagSelectionPageState extends State<TagSelectionPage> {
   void initState() {
     super.initState();
     loadTagsFuture = tagSelector.loadTags();
-    print(widget.ecg);
   }
 
 
@@ -112,21 +114,78 @@ Widget build(BuildContext context) {
     ),
     floatingActionButton: FloatingActionButton.extended(
       backgroundColor: Colors.blue.shade300,
-      onPressed: () {
-        //Fonction pour confirmer les tags sélectionnés
+      onPressed: () async {
+        // Fonction pour confirmer les tags sélectionnés
         List<Tag> tagList = globalSelectedTags.map((tagNode) => tagNode.tag).toList();
         widget.ecg.setTags(tagList);
-        print(widget.ecg);
-        print(widget.ecg.getStringOfAllTags());
-
 
         globalSelectedTags.clear();
         globalSelectedTagsController.add(globalSelectedTags);
 
-        //TODO ADD THIS ECG TO THE LIST OF ECGS AND GO BACK TO HOMESCREEN
-        //TODO FAIRE UN ROUTAGE
-        Navigator.popUntil(context, ModalRoute.withName('/'));
+        // Création de l'objet Ecg à envoyer
 
+        Map<String, dynamic> ecgData = {
+          "title": widget.ecg.title,
+          "contexte": widget.ecg.description,
+          "comment": "No comment yet.",
+          "age": widget.ecg.patientAge,
+          "sexe": widget.ecg.patientSexId,
+          "filename": "test",
+          "postedBy": "1",
+          "validatedBy": "1",
+          "created": "e28ec3a5-25b3-4d82-a5cc-dfc0cd91cd33",
+          "validated": "e28ec3a5-25b3-4d82-a5cc-dfc0cd91cd33",
+          "pixelsCm": "0",
+          "speed": widget.ecg.vitesse,
+          "gain": widget.ecg.gain,
+          "quality": widget.ecg.qualityId,
+          "tags": tagList.map((tag) => tag.id).toList(), // Supposant que l'id de chaque tag est requis
+        };
+
+        Uri url = Uri.parse('http://173.212.207.124:3333/api/v1/ecg');
+
+        try {
+          var response = await http.post(
+            url,
+            body: json.encode(ecgData),
+            headers: {'Content-Type': 'application/json'},
+          );
+
+          // Vérification de la réponse de l'API
+          if (response.statusCode == 201) {
+            print('Ecg envoyé avec succès');
+            // Naviguer vers l'écran d'accueil ou effectuer toute autre action nécessaire
+            Navigator.popUntil(context, ModalRoute.withName('/'));
+          } else {
+            print('Erreur lors de l\'envoi de l\'Ecg : ${response.statusCode}');
+            // Gérer l'erreur en conséquence
+          }
+        } catch (error) {
+          print('Erreur lors de la requête : $error');
+          // Gérer l'erreur en conséquence
+        }
+/*
+          // Créer une requête multipart
+          var request = http.MultipartRequest('POST', Uri.parse('http://173.212.207.124:3333/api/v1/ecg/upload/file'));
+
+          // Ajouter le fichier à la requête
+          var fileStream = http.ByteStream(widget.ecg.photo.openRead());
+          var length = await widget.ecg.photo.length();
+          var multipartFile = http.MultipartFile('file', fileStream, length,
+              filename: widget.ecg.photo.path.split('/').last); // Déterminez le nom du fichier à partir du chemin
+
+          request.files.add(multipartFile);
+
+          // Envoyer la requête
+          var response = await request.send();
+
+          // Lire la réponse
+          if (response.statusCode == 200) {
+            print('File uploaded successfully');
+          } else {
+            print('Error uploading file: ${response.statusCode}');
+          }
+          */
       },
       label: Row(
         children: [
