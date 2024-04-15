@@ -1,7 +1,8 @@
 import type { HttpContext } from '@adonisjs/core/http'
 import Ecg from '#models/ecg'
-import { v4 as uuidv4 } from 'uuid'
 import * as fs from 'node:fs'
+import path, { join } from 'node:path'
+import * as url from 'node:url'
 
 export default class EcgsController {
   /**
@@ -136,24 +137,49 @@ export default class EcgsController {
       return response.status(400).send('No file uploaded')
     }
 
-    const uuid = uuidv4() // Générez un UUID
-    const filename = uuid + '.jpg' // Nom du fichier avec UUID et extension
+    const ecgId = request.input('ecgId')
+    const filename = ecgId + '.jpg' // Nom du fichier avec UUID et extension
 
     // Créez un dossier s'il n'existe pas déjà
-    if (!fs.existsSync('imgECGs')) {
-      fs.mkdirSync('imgECGs')
+    if (!fs.existsSync('./public/imgECGs')) {
+      fs.mkdirSync('./public/imgECGs')
     }
 
     // Déplacez le fichier téléchargé vers le dossier imgECGs avec le nom de fichier UUID
-    await imageFile.move('imgECGs', {
+    await imageFile.move('./public/imgECGs', {
       name: filename,
       overwrite: true, // Si le fichier existe déjà, remplacez-le
     })
 
     // Enregistrez l'UUID dans la base de données avec l'ID de l'ECG correspondant
-    const ecgId = request.input('ecgId') // Supposons que l'ID de l'ECG est envoyé dans la requête
-    await Ecg.query().where('id', ecgId).update({ filename: uuid })
+    //await Ecg.query().where('id', ecgId).update({ filename: ecgId })
 
     return response.status(200).send(filename)
+  }
+
+  async getImage({ request, response }: HttpContext) {
+    const ecgId = request.input('ecgId')
+
+    const imagePath = join(
+      path.dirname(url.fileURLToPath(import.meta.url)),
+      '..',
+      '..',
+      'public',
+      'imgECGs',
+      ecgId + '.jpg'
+    )
+
+    // Vérifier si le fichier existe
+    const exists = await fs.promises
+      .access(imagePath, fs.constants.F_OK)
+      .then(() => true)
+      .catch(() => false)
+
+    if (!exists) {
+      return response.status(404).send('Image not found')
+    }
+
+    // Retourne le chemin d'accès de l'image dans la réponse
+    return response.download(imagePath)
   }
 }

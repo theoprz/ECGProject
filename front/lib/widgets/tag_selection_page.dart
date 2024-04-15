@@ -47,6 +47,7 @@ class _TagSelectionPageState extends State<TagSelectionPage> {
 
     request.files.add(multipartFile);
     request.fields['ecgId'] = ecgId;
+    print("ecgId: $ecgId");
 
     var response = await http.Response.fromStream(await request.send());
 
@@ -160,12 +161,12 @@ Widget build(BuildContext context) {
           "comment": "No comment yet.",
           "age": widget.ecg.patientAge,
           "sexe": widget.ecg.patientSexId,
-          "filename": "test",
-          "postedBy": "1",
-          "validatedBy": "1",
+          "filename": "test.jpg",
+          "posted_by": "1",
+          "validated_by": "1",
           "created": "e28ec3a5-25b3-4d82-a5cc-dfc0cd91cd33",
           "validated": "e28ec3a5-25b3-4d82-a5cc-dfc0cd91cd33",
-          "pixelsCm": "0",
+          "pixels_cm": "0",
           "speed": widget.ecg.vitesse,
           "gain": widget.ecg.gain,
           "quality": widget.ecg.qualityId,
@@ -174,6 +175,7 @@ Widget build(BuildContext context) {
 
         Uri url = Uri.parse('http://173.212.207.124:3333/api/v1/ecg');
 
+        print(ecgData);
         try {
           var response = await http.post(
             url,
@@ -184,10 +186,11 @@ Widget build(BuildContext context) {
           // Vérification de la réponse de l'API
           if (response.statusCode == 201) {
             print('Ecg envoyé avec succès');
+            print('Réponse: ${response.body}');
             // Naviguer vers l'écran d'accueil ou effectuer toute autre action nécessaire
             Navigator.popUntil(context, ModalRoute.withName('/'));
           } else {
-            print('Erreur lors de l\'envoi de l\'Ecg : ${response.statusCode}');
+            print('Erreur lors de l\'envoi de l\'Ecg : ${response.statusCode} ${response.body}');
             // Gérer l'erreur en conséquence
           }
         } catch (error) {
@@ -197,6 +200,7 @@ Widget build(BuildContext context) {
 
         // Envoi de la photo
         if (widget.ecg.photo.path != 'assets/images/noimg.jpg') {
+          print(widget.ecg.id);
           await uploadPhoto(widget.ecg.photo, widget.ecg.id);
         }
 
