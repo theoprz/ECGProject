@@ -8,10 +8,17 @@ test.group('Ecg get', () => {
     response.assertBodyContains({ description: 'Ecg records found' })
   })
 
-  test('Get one', async ({ client }) => {
-    const response = await client.get('/api/v1/ecg/01901107-504b-4837-b39a-e9362678e7f7')
+  test('Get one success', async ({ client }) => {
+    const response = await client.get('/api/v1/ecg/ecg_id_for_testing')
 
     response.assertStatus(200)
     response.assertBodyContains({ description: 'Ecg record found' })
+  })
+
+  test('Get one not found', async ({ client }) => {
+    const response = await client.get('/api/v1/ecg/ecg_id_for_testing_not_found')
+
+    response.assertStatus(404)
+    response.assertBody({ description: 'Ecg record not found', content: null })
   })
 })

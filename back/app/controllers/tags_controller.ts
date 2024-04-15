@@ -19,12 +19,16 @@ export default class TagsController {
    * Handle form submission for the create action
    */
   async store({ request, response }: HttpContext) {
-    const tag = await Tag.create(request.body())
+    if (request.input('name') && request.input('main') && request.input('weight')) {
+      const tag = await Tag.create(request.body())
 
-    if (tag) {
-      return response.status(201).json({ description: 'Tag created', content: tag })
+      if (tag) {
+        return response.status(201).json({ description: 'Tag created', content: tag })
+      } else {
+        return response.status(400).json({ description: 'Tag not created', content: null })
+      }
     } else {
-      return response.status(400).json({ description: 'Tag not created', content: null })
+      return response.status(400).json({ description: 'Missing required fields', content: null })
     }
   }
 
@@ -32,7 +36,7 @@ export default class TagsController {
    * Show individual record
    */
   async show({ params, response }: HttpContext) {
-    const tag = await Tag.query().where('id', params.id).firstOrFail()
+    const tag = await Tag.query().where('id', params.id).first()
 
     if (tag) {
       return response.status(200).json({ description: 'Tag found', content: tag })
@@ -45,13 +49,18 @@ export default class TagsController {
    * Handle form submission for the edit action
    */
   async update({ params, request, response }: HttpContext) {
-    const tag = await Tag.findOrFail(params.id)
-    tag.merge(request.body())
-    await tag.save()
+    const tag = await Tag.find(params.id)
     if (tag) {
-      return response.status(200).json({ description: 'Tag updated', content: tag })
+      tag.merge(request.body())
+      await tag.save()
+
+      if (tag) {
+        return response.status(200).json({ description: 'Tag updated', content: tag })
+      } else {
+        return response.status(400).json({ description: 'Tag not updated', content: null })
+      }
     } else {
-      return response.status(400).json({ description: 'Tag not updated', content: null })
+      return response.status(404).json({ description: 'Tag not found', content: null })
     }
   }
 
@@ -59,9 +68,9 @@ export default class TagsController {
    * Delete record
    */
   async destroy({ params, response }: HttpContext) {
-    const tag = await Tag.findOrFail(params.id)
+    const tag = await Tag.find(params.id)
 
-    if (tag !== null) {
+    if (tag) {
       await tag.delete()
       return response.status(200).json({ description: 'Tag deleted', content: null })
     } else {

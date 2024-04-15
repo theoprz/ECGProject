@@ -20,4 +20,14 @@ test.group('Tag delete', () => {
       weight: 1.5,
     })
   })
+
+  test('Delete one not found', async ({ client }) => {
+    const response = await client.delete('/api/v1/tag/delete_one_not_found')
+
+    response.assertStatus(404)
+    response.assertBody({
+      description: 'Tag not found',
+      content: null,
+    })
+  })
 })

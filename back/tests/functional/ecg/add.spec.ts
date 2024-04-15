@@ -67,8 +67,8 @@ test.group('Ecg add', () => {
     const response = await client.post('/api/v1/ecg')
 
     response.assertStatus(400)
-    response.assertBodyContains({
-      description: 'Ecg record not created',
+    response.assertBody({
+      description: 'Missing required fields',
       content: null,
     })
   })

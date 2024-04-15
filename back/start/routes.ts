@@ -24,6 +24,7 @@ router
       return response.status(200).json({ description: 'Welcome to the ECG API', content: null })
     })
     router.get('/ecg/count', [EcgsController, 'count'])
+    router.post('/ecg/upload/file', [EcgsController, 'uploadFile'])
     router.resource('/ecg', EcgsController).apiOnly()
     router.resource('/tag', TagsController).apiOnly()
   })

@@ -45,4 +45,19 @@ test.group('Ecg update', () => {
       const ecg = await Ecg.findByOrFail('title', 'updated_one')
       if (ecg) await ecg.delete()
     })
+
+  test('Update one not found', async ({ client }) => {
+    const response = await client.put('/api/v1/ecg/update_one_not_found').json({
+      title: 'updated_one',
+      filename: 'updated_one',
+      contexte: 'updated_one',
+      comment: 'updated_one',
+    })
+
+    response.assertStatus(404)
+    response.assertBodyContains({
+      description: 'Ecg record not found',
+      content: null,
+    })
+  })
 })

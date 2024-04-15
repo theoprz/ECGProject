@@ -10,7 +10,7 @@ test.group('Tag get', () => {
     })
   })
 
-  test('Get one', async ({ client }) => {
+  test('Get one success', async ({ client }) => {
     const response = await client.get('/api/v1/tag/1')
 
     response.assertStatus(200)
@@ -24,6 +24,15 @@ test.group('Tag get', () => {
         refTagId: null,
         weight: 1.5,
       },
+    })
+  })
+
+  test('Get one not found', async ({ client }) => {
+    const response = await client.get('/api/v1/tag/tag_id_for_testing_not_found')
+
+    response.assertStatus(404)
+    response.assertBodyContains({
+      description: 'Tag not found',
     })
   })
 })

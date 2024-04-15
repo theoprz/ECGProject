@@ -30,4 +30,14 @@ test.group('Ecg delete', () => {
     })
     await ecg.related('tags').attach([1, 2])
   })
+
+  test('Delete one not found', async ({ client }) => {
+    const response = await client.delete('/api/v1/ecg/delete_one_not_found')
+
+    response.assertStatus(404)
+    response.assertBody({
+      description: 'Ecg record not found',
+      content: null,
+    })
+  })
 })

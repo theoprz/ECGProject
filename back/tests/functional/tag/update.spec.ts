@@ -33,4 +33,14 @@ test.group('Tag update', () => {
       const tag = await Tag.findByOrFail('name', 'updated_one')
       if (tag) await tag.delete()
     })
+
+  test('Update one not found', async ({ client }) => {
+    const response = await client.put('/api/v1/tag/update_one_not_found')
+
+    response.assertStatus(404)
+    response.assertBodyContains({
+      description: 'Tag not found',
+      content: null,
+    })
+  })
 })
