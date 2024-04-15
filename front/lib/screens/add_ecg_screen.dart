@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:http/http.dart' as http;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
@@ -320,8 +321,7 @@ class _PhotoPreviewPageState extends State<PhotoPreviewPage> {
                   );
                   return;
                 }
-                ECG tmpECG = ECG.withQualitySpeedGain(titleController.text, descriptionController.text, ageController.text.isEmpty ? 0 : int.parse(ageController.text), _selectedSex ?? "Inconnu", [], 0, _imageQuality ?? "Non renseignée", int.parse(vitesseController.text), int.parse(gainController.text));
-                print(tmpECG);
+                ECG tmpECG = ECG.withQualitySpeedGain(titleController.text, descriptionController.text, ageController.text.isEmpty ? 0 : int.parse(ageController.text), _selectedSex ?? "Inconnu", [], "0", _imageQuality ?? "Non renseignée", int.parse(vitesseController.text), int.parse(gainController.text), widget.imageFile);
 
                 Navigator.push(
                   context,

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +43,7 @@ class LoginScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => TagSelectionPage(ecg: new ECG("Titre", "Description", 0, "Masculin", [], 0)),
+                    builder: (context) => TagSelectionPage(ecg: ECG("Titre", "Description", 0, "Masculin", [], "0", File(''))),
                   ),
                 );
               },
