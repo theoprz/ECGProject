@@ -4,6 +4,13 @@ import Tag from '#models/tag'
 export default class extends BaseSeeder {
   datas = [
     {
+      id: 999999,
+      name: 'tag_name_for_testing',
+      parentId: null,
+      main: 10,
+      weight: 10,
+    },
+    {
       id: 1,
       name: 'Autre',
       parentId: null,

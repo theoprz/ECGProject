@@ -4,7 +4,25 @@ import Ecg from '#models/ecg'
 export default class extends BaseSeeder {
   datas = [
     {
-      filename: '64a667f6d9e29.png',
+      id: 'ecg_id_for_testing',
+      filename: 'ecg_filename_for_testing',
+      title: 'ecg_title_for_testing',
+      contexte: 'ecg_contexte_for_testing',
+      comment: 'ecg_comment_for_testing',
+      age: 1,
+      sexe: 18,
+      postedBy: 1,
+      validatedBy: 1,
+      created: Buffer.from([48]),
+      validated: Buffer.from([48]),
+      pixelsCm: 100,
+      speed: 10,
+      gain: 1,
+      quality: 4,
+      tags: [999999],
+    },
+    {
+      filename: '',
       title: 'Stim_atriale_et_ventriculaire',
       contexte: '',
       comment: '',
@@ -21,7 +39,7 @@ export default class extends BaseSeeder {
       tags: [755, 756, 758, 759, 773, 778, 779, 781, 831, 964],
     },
     {
-      filename: '64a6737a9e6ca.png',
+      filename: '',
       title: 'Tachycardie_sinusale_162_bpm,_homme_65_ans',
       contexte: 'Sepsis',
       comment: '',
@@ -38,7 +56,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 292, 2045],
     },
     {
-      filename: '64a6759c30baa.jpg',
+      filename: '',
       title: 'Hyperkaliémie_8,7_mmol/l',
       contexte: 'Femme 68 ans, ne va plus en dialyse, état de choc froid, confusion',
       comment: '',
@@ -55,7 +73,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 205, 831, 964, 1069],
     },
     {
-      filename: '64a67639042a5.png',
+      filename: '',
       title: 'BAV_3_et_QT_long',
       contexte: 'Dysfonction de pacemaker',
       comment: '',
@@ -72,7 +90,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 204, 215, 796, 801, 966, 1009, 1010, 1011, 1029, 1030, 35],
     },
     {
-      filename: '64a676e9bc02e.png',
+      filename: '',
       title: 'SCA_ST+_antérieur_1._Pardee_antéro_septo_apical',
       contexte: '',
       comment: '',
@@ -89,7 +107,7 @@ export default class extends BaseSeeder {
       tags: [866, 867, 872, 873, 913, 945, 139],
     },
     {
-      filename: '64a67794f28d8.png',
+      filename: '',
       title: 'Hypothermie_sévère',
       contexte: 'Hypothermie',
       comment: '',
@@ -106,7 +124,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 796, 804, 964, 1080, 1085],
     },
     {
-      filename: '64a67fe50f34f.png',
+      filename: '',
       title: 'Infarctus_non_ST+',
       contexte: 'Douleur thoracique',
       comment: '',
@@ -123,7 +141,7 @@ export default class extends BaseSeeder {
       tags: [173, 182, 796, 801, 913, 914, 916, 920],
     },
     {
-      filename: '64a6815669aa4.jpg',
+      filename: '',
       title: "Tachycardie_RP'_supérieur_P'R_et_épanchement_péricardique",
       contexte: 'Femme 50 ans, dyspnée, cancer du sein',
       comment: '',
@@ -140,7 +158,7 @@ export default class extends BaseSeeder {
       tags: [290, 423, 424, 843, 851, 852, 1232, 1233],
     },
     {
-      filename: '64a681fa70e13.png',
+      filename: '',
       title: 'Maladie_pulmonaire_(emphysème)',
       contexte: 'Emphysème pulmonaire',
       comment: '',
@@ -157,7 +175,7 @@ export default class extends BaseSeeder {
       tags: [169, 173, 220, 221, 290, 562, 563, 583, 2860, 11, 1196],
     },
     {
-      filename: '64ac04a0bd7df.png',
+      filename: '',
       title: 'Fibrillation_atriale_avec_ischémie_fonctionnelle',
       contexte: 'Douleur thoracique et palpitation',
       comment: '',
@@ -174,7 +192,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 432, 2045, 103],
     },
     {
-      filename: '64ac4331b4754.png',
+      filename: '',
       title: 'Artefacts_électriques_rapides',
       contexte: 'ECG de repos, asymptomatique',
       comment: '',
@@ -191,7 +209,7 @@ export default class extends BaseSeeder {
       tags: [157],
     },
     {
-      filename: '64acdb0323e59.png',
+      filename: '',
       title: 'QT_long_(498_ms,_QTcF_505_ms)',
       contexte: 'ECG après syncope ',
       comment: 'QT long',
@@ -208,7 +226,7 @@ export default class extends BaseSeeder {
       tags: [1029, 1046],
     },
     {
-      filename: '64ad8837385a3.png',
+      filename: '',
       title: 'Repolarisation_masculine._1',
       contexte: 'ECG annuel',
       comment: '',
@@ -225,7 +243,7 @@ export default class extends BaseSeeder {
       tags: [857, 858, 1025],
     },
     {
-      filename: '64ad8feda673f.png',
+      filename: '',
       title: 'RIVA',
       contexte: 'Palpitations, coeur sain',
       comment: '',
@@ -242,7 +260,7 @@ export default class extends BaseSeeder {
       tags: [290, 550, 20],
     },
     {
-      filename: '64b01d3f3b35c.png',
+      filename: '',
       title: 'Ischémie_coronaire_(T_inversées)',
       contexte: 'Angor',
       comment:
@@ -260,7 +278,7 @@ export default class extends BaseSeeder {
       tags: [966, 1007, 989],
     },
     {
-      filename: '64b01f0e54f6e.png',
+      filename: '',
       title: 'SCA_non_ST+_diffus_à_haut_risque',
       contexte: 'Fond douloureux rétrosternale prolongée au repos',
       comment: '',
@@ -277,7 +295,7 @@ export default class extends BaseSeeder {
       tags: [913, 3321, 914],
     },
     {
-      filename: '64b020f4c95bc.png',
+      filename: '',
       title: 'SCA_ST+_inférieur',
       contexte: 'Douleur thoracique postérieure',
       comment: '',
@@ -294,7 +312,7 @@ export default class extends BaseSeeder {
       tags: [866, 3509, 867],
     },
     {
-      filename: '64b0e2168abd4.png',
+      filename: '',
       title: 'Séquelle_de_nécrose_inféro-latérale',
       contexte: 'ECG 2 jours après angioplastie',
       comment: '',
@@ -311,7 +329,7 @@ export default class extends BaseSeeder {
       tags: [822, 826, 828, 866, 3507, 3509, 1014, 1021],
     },
     {
-      filename: '64b0e74bf3e9a.png',
+      filename: '',
       title: 'SuperWolf_(Fibrillation_atriale_+_préexcitation)',
       contexte: '',
       comment: '',
@@ -328,7 +346,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 338, 347],
     },
     {
-      filename: '64b0e9cbc3069.png',
+      filename: '',
       title: 'Tachycardie_jonctionnelle_type_RIN',
       contexte: 'Palpitations\r\nECG avant adénosine',
       comment: '',
@@ -345,7 +363,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 295, 443, 444, 445],
     },
     {
-      filename: '64b3fe9dadf00.png',
+      filename: '',
       title: 'FA_préexcitée_-_Super_Wolf',
       contexte: 'Palpitations puis perte de connaissance chez un patient de 23 ans.',
       comment: '',
@@ -362,7 +380,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 338, 347],
     },
     {
-      filename: '64b40135160e3.png',
+      filename: '',
       title: 'Fibrillation_atriale',
       contexte: 'Palpitations.',
       comment: '',
@@ -379,7 +397,7 @@ export default class extends BaseSeeder {
       tags: [290, 432, 2860, 14, 103],
     },
     {
-      filename: '64b405d6afcce.png',
+      filename: '',
       title: 'Fibrillation_atriale_et_trouble_conductif_de_haut_grade',
       contexte: 'Syncope',
       comment: '',
@@ -396,7 +414,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 204, 215, 290, 432, 435, 796, 804],
     },
     {
-      filename: '64b4078232fc8.png',
+      filename: '',
       title: "Inversion_d'électrodes",
       contexte: 'non précisé',
       comment: '',
@@ -413,7 +431,7 @@ export default class extends BaseSeeder {
       tags: [158, 159],
     },
     {
-      filename: '64b408229b9cf.png',
+      filename: '',
       title: 'Flutter_atrial,_conduction_lente_et_variable',
       contexte: "Bilan systématique d'AIT",
       comment: '',
@@ -430,7 +448,7 @@ export default class extends BaseSeeder {
       tags: [290, 351, 352, 353, 356, 357, 2860, 14, 103],
     },
     {
-      filename: '64b40bab5b793.png',
+      filename: '',
       title: 'HVG,_HAG,_HAD',
       contexte: '',
       comment: '',
@@ -447,7 +465,7 @@ export default class extends BaseSeeder {
       tags: [808, 809, 812, 843, 844, 845, 847, 966, 980, 984],
     },
     {
-      filename: '64b40db47e6ff.png',
+      filename: '',
       title: 'Bloc_fasciculaire_antérieur_gauche',
       contexte: '',
       comment: '',
@@ -464,7 +482,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 227],
     },
     {
-      filename: '64b40e2817884.png',
+      filename: '',
       title: 'Hypokaliémie._1',
       contexte: '',
       comment: '',
@@ -481,7 +499,7 @@ export default class extends BaseSeeder {
       tags: [1029, 1030, 1034, 1065],
     },
     {
-      filename: '64b40ecdd5580.png',
+      filename: '',
       title: 'Amylose_cardiaque_-_Microvoltage',
       contexte: '',
       comment: '',
@@ -498,7 +516,7 @@ export default class extends BaseSeeder {
       tags: [290, 562, 563, 822, 843, 851, 855, 1140],
     },
     {
-      filename: '64b40ffcd383c.png',
+      filename: '',
       title: 'Péricardite_aiguë',
       contexte: '',
       comment: '',
@@ -515,7 +533,7 @@ export default class extends BaseSeeder {
       tags: [866, 879, 881, 882, 883, 884, 885, 886, 112],
     },
     {
-      filename: '64b5ad26a7fe9.png',
+      filename: '',
       title: 'Hyperkaliémie_6.9',
       contexte: 'Asthénie, dyspnée, pâleur',
       comment: '',
@@ -532,7 +550,7 @@ export default class extends BaseSeeder {
       tags: [290, 432, 831, 1069],
     },
     {
-      filename: '64b5b31ba2917.png',
+      filename: '',
       title: 'Anévrysme_ventriculaire_antéroseptal',
       contexte: 'Patient vu en consultation 3 mois après un SCA ST sus sur l&#039;IVA. ',
       comment: '',
@@ -549,7 +567,7 @@ export default class extends BaseSeeder {
       tags: [822, 824, 825, 866, 901, 903, 904],
     },
     {
-      filename: '64b5b6d0bbbb1.png',
+      filename: '',
       title: 'Anévrysme_ventriculaire_antéro-septal',
       contexte: 'J5 d&#039;un infarctus antérieur revascularisé à h+24h',
       comment: '',
@@ -566,7 +584,7 @@ export default class extends BaseSeeder {
       tags: [822, 824, 825, 866, 3505, 3506, 901, 966, 1008, 1009, 989],
     },
     {
-      filename: '64b5c8d855221.png',
+      filename: '',
       title: 'Arythmie_respiratoire',
       contexte: 'ECG réalisé dans le cadre d&#039;un dépistage à l&#039;institut Pasteur',
       comment: '',
@@ -583,7 +601,7 @@ export default class extends BaseSeeder {
       tags: [9],
     },
     {
-      filename: '64b5cae8a2206.png',
+      filename: '',
       title: 'Arythmie_respiratoire_(2)',
       contexte:
         'Patient consultant aux urgences pour douleur latéro-thoracique à type de coup de poignard durant 1 seconde',
@@ -601,7 +619,7 @@ export default class extends BaseSeeder {
       tags: [9],
     },
     {
-      filename: '64b5cce731f92.png',
+      filename: '',
       title: 'Arythmie_respiratoire_T_neg_V1-V3',
       contexte: 'Douleur thoracique atypique',
       comment: '',
@@ -618,7 +636,7 @@ export default class extends BaseSeeder {
       tags: [966, 1008, 1009, 9],
     },
     {
-      filename: '64b5cedb4ac98.png',
+      filename: '',
       title: 'BAV1_BBDt_HBPG',
       contexte: 'Patiente consultant aux urgences pour syncope',
       comment: '',
@@ -635,7 +653,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 205, 220, 225, 231, 964],
     },
     {
-      filename: '64b5d4a992a99.png',
+      filename: '',
       title: 'BAV1_BBDt_HBAG',
       contexte: 'Patient avec BPCO asymptomatique',
       comment: '',
@@ -652,7 +670,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 205, 220, 225, 227],
     },
     {
-      filename: '64b5d9b0d3bf4.png',
+      filename: '',
       title: 'BAV_1_BBG',
       contexte: 'Patient ayant présenté 2 lipothymies récentes',
       comment: '',
@@ -669,7 +687,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 205, 220, 237, 964],
     },
     {
-      filename: '64b6394607c68.png',
+      filename: '',
       title: 'Tachycardie_à_QRS_fins_type_TRIN_(suite)_cardioversion_par_adénosine',
       contexte: 'Palpitations (voir ECG précédent)\r\nECG per adénosine ',
       comment: '',
@@ -686,7 +704,7 @@ export default class extends BaseSeeder {
       tags: [290, 443, 444, 445, 148],
     },
     {
-      filename: '64b6a738d34de.png',
+      filename: '',
       title: 'Artéfacts',
       contexte: 'Consultation anesthésie. Pas de pathologie cardiaque connue.',
       comment: '',
@@ -703,7 +721,7 @@ export default class extends BaseSeeder {
       tags: [157, 169],
     },
     {
-      filename: '64c290600cf0f.png',
+      filename: '',
       title: 'BAV_2_conduction_3/1',
       contexte: 'Asthénie ',
       comment: '',
@@ -720,7 +738,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 204, 213, 220, 225, 227],
     },
     {
-      filename: '64c292d25ecd9.png',
+      filename: '',
       title: 'BAV_complet_avec_échappement_jonctionnel',
       contexte: 'Syncope et asthénie intense',
       comment: '',
@@ -737,7 +755,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 204, 215, 796, 801, 966, 1008, 1009, 1010, 35],
     },
     {
-      filename: '64c29a0dc331e.png',
+      filename: '',
       title: 'Syndrome_de_Brugada',
       contexte: 'Dépistage chez un cardiologue avant le sport',
       comment: '',
@@ -754,7 +772,7 @@ export default class extends BaseSeeder {
       tags: [866, 889, 890],
     },
     {
-      filename: '64c29c747d9c8.png',
+      filename: '',
       title: 'ECG_normal',
       contexte: 'Consultation pour une douleur thoracique à type de pointe passant en un éclair',
       comment: '',
@@ -771,7 +789,7 @@ export default class extends BaseSeeder {
       tags: [1237],
     },
     {
-      filename: '64c750bf53bef.png',
+      filename: '',
       title: 'QT_long_hypokaliémie',
       contexte: "Diurétique de l'anse et diarrhée",
       comment: '',
@@ -788,7 +806,7 @@ export default class extends BaseSeeder {
       tags: [1027, 1029, 1030, 1034, 1065],
     },
     {
-      filename: '64c751c5ab574.png',
+      filename: '',
       title: 'QT_long_sur_hypokaliémie',
       contexte: 'Perte de connaissance avec traumatisme',
       comment: '',
@@ -805,7 +823,7 @@ export default class extends BaseSeeder {
       tags: [966, 998, 1029, 1030, 1031, 1065],
     },
     {
-      filename: '64c7ef910b72b.png',
+      filename: '',
       title: 'Repolarisation_masculine._2',
       contexte: 'Asymptomatique',
       comment: '',
@@ -822,7 +840,7 @@ export default class extends BaseSeeder {
       tags: [857, 858, 1025],
     },
     {
-      filename: '64ca5720dc2f7.png',
+      filename: '',
       title: 'QT_long_avec_T_inversées',
       contexte: 'douleur thoracique régressive chez un homme de 55 ans',
       comment: '',
@@ -839,7 +857,7 @@ export default class extends BaseSeeder {
       tags: [843, 855, 966, 1007, 989, 1029, 1183],
     },
     {
-      filename: '64ca589366228.png',
+      filename: '',
       title: 'Repolarisation_précoce_discrete_homme_jeune',
       contexte: 'ECG systématique',
       comment:
@@ -857,7 +875,7 @@ export default class extends BaseSeeder {
       tags: [861, 2685],
     },
     {
-      filename: '64ca824437195.png',
+      filename: '',
       title: 'Repolarisation_précoce_typique',
       contexte: '',
       comment: '',
@@ -874,7 +892,7 @@ export default class extends BaseSeeder {
       tags: [857, 861, 2685],
     },
     {
-      filename: '64cb9f86ccde0.png',
+      filename: '',
       title: 'RIVA_en_salve_sur_cœur_sain',
       contexte: '',
       comment: '',
@@ -891,7 +909,7 @@ export default class extends BaseSeeder {
       tags: [290, 550],
     },
     {
-      filename: '64ce796a305f0.png',
+      filename: '',
       title: 'RIVA_en_compétition_avec_rythme_sinusal_avec_dissociation_AV',
       contexte: 'Pas de contexte particulier, palpitations',
       comment: '',
@@ -908,7 +926,7 @@ export default class extends BaseSeeder {
       tags: [290, 550],
     },
     {
-      filename: '64d4b1ac4d97d.png',
+      filename: '',
       title: 'Rythme_du_sinus_coronaire_1.',
       contexte: 'asymptomatique',
       comment:
@@ -926,7 +944,7 @@ export default class extends BaseSeeder {
       tags: [173, 249, 290, 583, 603, 818, 819],
     },
     {
-      filename: '64d4b3152fde8.png',
+      filename: '',
       title: 'Rythme_du_sinus_coronaire_2.',
       contexte: 'asymptomatique',
       comment:
@@ -944,7 +962,7 @@ export default class extends BaseSeeder {
       tags: [818, 819],
     },
     {
-      filename: '64d749cf197a8.png',
+      filename: '',
       title: 'SCA_ondes_T_inversées_1.',
       contexte: 'Gêne thoracique à l&#039;effort et au repos',
       comment:
@@ -962,7 +980,7 @@ export default class extends BaseSeeder {
       tags: [966, 1011, 989],
     },
     {
-      filename: '64d74ae88f29d.png',
+      filename: '',
       title: 'SCA_avec_ST-_diffus_et_ST+_aVR',
       contexte: 'œdème pulmonaire avec oppression thoracique',
       comment:
@@ -980,7 +998,7 @@ export default class extends BaseSeeder {
       tags: [913, 3322, 3326, 3327, 914],
     },
     {
-      filename: '64d74cc334cee.png',
+      filename: '',
       title: 'SCA_ondes_T_inversees_profondes_QT_long_ischemie_ou_takotsubo',
       contexte: 'ECG post syncope, tableau d&#039;insuffisance cardiaque à bas débit',
       comment:
@@ -998,7 +1016,7 @@ export default class extends BaseSeeder {
       tags: [966, 1003, 1029, 1030],
     },
     {
-      filename: '64da49be60a4a.png',
+      filename: '',
       title: 'SCA_ondes_T_inversées_3._diffuses',
       contexte: 'Douleur thoracique infarctoïde il y a 48. ECG de suivi post angioplastie',
       comment:
@@ -1016,7 +1034,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 175, 966, 1007, 1008, 1009, 1010, 1011, 989],
     },
     {
-      filename: '64e0846862a74.png',
+      filename: '',
       title: 'Dysfonction_sinusale',
       contexte: 'Exploration d&#039;une bradycardie chez un homme de 60 ans',
       comment:
@@ -1034,7 +1052,7 @@ export default class extends BaseSeeder {
       tags: [173, 182, 183, 796, 801],
     },
     {
-      filename: '64e330de26158.png',
+      filename: '',
       title: 'SCA_ondes_T_inversées_3._syndrome_de_Wellens',
       contexte: 'Suspicion d&#039;angor d&#039;effort depuis plusieurs jours',
       comment:
@@ -1052,7 +1070,7 @@ export default class extends BaseSeeder {
       tags: [966, 1007, 1008, 1009, 989],
     },
     {
-      filename: '64e3397fa4f95.png',
+      filename: '',
       title: 'SCA_ST+_antérieur_3._étendu_avec_miroir_inférieur',
       contexte: 'Douleur thoracique antérieur avec irradiation postérieure',
       comment:
@@ -1070,7 +1088,7 @@ export default class extends BaseSeeder {
       tags: [822, 866, 3504, 3508, 867, 913, 3327, 945, 139],
     },
     {
-      filename: '64e45592e391d.png',
+      filename: '',
       title: 'SCA_ST+_antérieur_3._V1-V4_et_DI-VL',
       contexte: 'Douleur thoracique H6',
       comment:
@@ -1088,7 +1106,7 @@ export default class extends BaseSeeder {
       tags: [817, 866, 3505, 3506, 3508, 867, 913, 945],
     },
     {
-      filename: '64e457e4ce618.png',
+      filename: '',
       title: 'SCA_ST+_inférieur_et_V3-V6_avec_bradycardie_sévère',
       contexte: 'Douleur thoracique infarctoïde, état de choc froid',
       comment:
@@ -1109,7 +1127,7 @@ export default class extends BaseSeeder {
       ],
     },
     {
-      filename: '64e45ce9534cc.png',
+      filename: '',
       title: 'SCA_ST+_inférieur_avec_ondes_Q_inféro-latérales',
       contexte: 'Malaise médio-nocturne avec sueurs, angoisse peristant jusqu&#039;au matin (H6)',
       comment:
@@ -1127,7 +1145,7 @@ export default class extends BaseSeeder {
       tags: [822, 826, 828, 866, 3509, 867, 913, 3326, 945],
     },
     {
-      filename: '64e7030241912.png',
+      filename: '',
       title: 'Séquelle_de_nécrose_antéroseptale',
       contexte: 'Diabétique. Examen annuel',
       comment:
@@ -1145,7 +1163,7 @@ export default class extends BaseSeeder {
       tags: [822, 824, 825, 838],
     },
     {
-      filename: '64e7044a6a2eb.png',
+      filename: '',
       title: 'Séquelles_de_nécrose_inferobasale',
       contexte: 'Coronarien. Bilan annuel',
       comment:
@@ -1163,7 +1181,7 @@ export default class extends BaseSeeder {
       tags: [822, 828],
     },
     {
-      filename: '64e7097f68657.png',
+      filename: '',
       title: 'FA_préexcitée_(super-Wolff)',
       contexte: 'Palpitations, malaise',
       comment:
@@ -1181,7 +1199,7 @@ export default class extends BaseSeeder {
       tags: [173, 249, 255, 290, 291, 338, 347, 432],
     },
     {
-      filename: '64eb1262cc3c7.png',
+      filename: '',
       title: 'Stimulation_atriale_permanente',
       contexte:
         'Consultation cardiologique de suivi. Patient porteur d&#039;un stimulateur cardiaque.',
@@ -1200,7 +1218,7 @@ export default class extends BaseSeeder {
       tags: [755, 756, 7],
     },
     {
-      filename: '64eb221ef3730.png',
+      filename: '',
       title: 'Stimulation_duale_atriale_et_ventriculaire',
       contexte:
         'Consultation de suivi d&#039;une patiente implanté d&#039;un stimulateur cardiaque pour troubles conductifs de haut grade.',
@@ -1219,7 +1237,7 @@ export default class extends BaseSeeder {
       tags: [755, 756, 758, 759, 7, 8],
     },
     {
-      filename: '64ee19a29f1e8.png',
+      filename: '',
       title: 'Stimulation_atriale_et_ventriculaire_à_gros_spikes',
       contexte: 'Consultation de suivi d&#039;un patient porteur d&#039;un stimulateur cardiaque.',
       comment: 'Double entrainement atrial et ventriculaire.',
@@ -1236,7 +1254,7 @@ export default class extends BaseSeeder {
       tags: [755, 756, 758, 759],
     },
     {
-      filename: '64ee1b2d4eb99.png',
+      filename: '',
       title: 'Stimulation_ventriculaire_en_FA',
       contexte:
         'Patient de 57 ans, suivi cardiologique habituel comprenant le suivi de son stimulateur cardiaque.',
@@ -1255,7 +1273,7 @@ export default class extends BaseSeeder {
       tags: [290, 432, 435, 755, 758],
     },
     {
-      filename: '64ee1c8c89b9e.png',
+      filename: '',
       title: 'Stimulation_atriale_et_ventriculaire_bipolaire',
       contexte: 'Consultation de suivi de son stimulateur cardiaque.',
       comment:
@@ -1273,7 +1291,7 @@ export default class extends BaseSeeder {
       tags: [755, 756, 758, 759, 7, 8],
     },
     {
-      filename: '64eedbb3203af.png',
+      filename: '',
       title: 'Tachycardie_sinusale_1',
       contexte: 'Fièvre.',
       comment:
@@ -1291,7 +1309,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 292],
     },
     {
-      filename: '64eedc303a7f2.png',
+      filename: '',
       title: 'Tachycardie_sinusale_2',
       contexte: 'Crise d&#039;angoisse.',
       comment:
@@ -1309,7 +1327,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 292],
     },
     {
-      filename: '64eedc982d6bd.png',
+      filename: '',
       title: 'Tachycardie_sinusale_3',
       contexte: 'Fièvre.',
       comment:
@@ -1327,7 +1345,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 292],
     },
     {
-      filename: '64f0c7df46955.png',
+      filename: '',
       title: 'Tachycardie_QRS_fins_TRIN_avant_adenosine',
       contexte: 'Palpitations.',
       comment:
@@ -1345,7 +1363,7 @@ export default class extends BaseSeeder {
       tags: [290, 443, 444, 445, 145],
     },
     {
-      filename: '64f0c8e4e1bd0.png',
+      filename: '',
       title: 'Tachycardie_QRS_fins_TRIN_suite_avec_cardioversion_par_adenosine',
       contexte: 'Cardioversion par adénosine d&#039;une TSV type TRIN (suite)',
       comment: '',
@@ -1362,7 +1380,7 @@ export default class extends BaseSeeder {
       tags: [290, 443, 444, 445, 755, 770, 145, 148],
     },
     {
-      filename: '64f35d0d294fb.png',
+      filename: '',
       title: 'Tachycardie_QRS_fins_2_TRIN_fast_slow',
       contexte: 'Palpitations',
       comment:
@@ -1380,7 +1398,7 @@ export default class extends BaseSeeder {
       tags: [290, 443, 444, 447, 103],
     },
     {
-      filename: '64f600806aa78.png',
+      filename: '',
       title: 'Tachycardie_QRS_fins_3a_TRIN_slow_fast_avant_ATP_1',
       contexte: '',
       comment:
@@ -1398,7 +1416,7 @@ export default class extends BaseSeeder {
       tags: [290, 443, 444, 445],
     },
     {
-      filename: '64f6018ae4bc8.png',
+      filename: '',
       title: 'Tachycardie_QRS_fins_3b_TRIN_slow-fast_cardioversion_adénosine',
       contexte: 'Administration d&#039;adenosine IV pour une TSV ',
       comment:
@@ -1416,7 +1434,7 @@ export default class extends BaseSeeder {
       tags: [290, 443, 444, 445, 755, 770, 148],
     },
     {
-      filename: '64f73cbab08aa.png',
+      filename: '',
       title: 'Tachycardie_QRS_fins_4a_TRIN_slow_fast_140_bpm',
       contexte: 'Palpitations.',
       comment:
@@ -1434,7 +1452,7 @@ export default class extends BaseSeeder {
       tags: [290, 443, 444, 445, 145],
     },
     {
-      filename: '64f73e05bb241.png',
+      filename: '',
       title: 'Tachycardie_QRS_fins_4b_TRIN_manoeuvres_vagales_et_debut_cardioversion_dernier_QRS',
       contexte: 'Tachycardie régulière à QRS fins. Manoeuvre vagale en cours.',
       comment:
@@ -1452,7 +1470,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 295, 443, 444, 445, 755, 770],
     },
     {
-      filename: '64f742409f66e.png',
+      filename: '',
       title: 'Tachycardie_à_QRS_fins_4c_TRIN_cardioversion_par_adénosine',
       contexte: '',
       comment:
@@ -1470,7 +1488,7 @@ export default class extends BaseSeeder {
       tags: [290, 443, 444, 445, 755, 770, 71],
     },
     {
-      filename: '64f743eb26383.png',
+      filename: '',
       title: "Tachycardie_régulière_à_QRS_fins_avec_RP'_sup._90_ms",
       contexte: 'Palpitations',
       comment:
@@ -1488,7 +1506,7 @@ export default class extends BaseSeeder {
       tags: [290, 443, 460, 145],
     },
     {
-      filename: '64f9e3db57759.png',
+      filename: '',
       title: 'Tachycardie_sinusale',
       contexte: '',
       comment: 'Tachycardie sinusale',
@@ -1505,7 +1523,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 292, 857, 858, 859],
     },
     {
-      filename: '64fac698d11c7.png',
+      filename: '',
       title: 'Tachycardie_QRS_larges_1_BBD',
       contexte: '',
       comment:
@@ -1523,7 +1541,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 225, 290, 291, 308],
     },
     {
-      filename: '64fac7b069909.png',
+      filename: '',
       title: 'Tachycardie_QRS_larges_2_BBG_flutter_1_pour_1_sous_flécainide',
       contexte: 'Homme 65 ans traité pour des accès de fibrillation atriale par flécaïnide',
       comment:
@@ -1541,7 +1559,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 237, 290, 291, 308, 56],
     },
     {
-      filename: '64ff1fb50fe20.png',
+      filename: '',
       title: 'BAV_1_et_BBG',
       contexte: '',
       comment: '',
@@ -1558,7 +1576,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 205, 220, 237, 964],
     },
     {
-      filename: '64ff39f395d6c.png',
+      filename: '',
       title: 'Séquelle_de_nécrose_V1V2',
       contexte: 'Dyspnée d&#039;effort',
       comment:
@@ -1576,7 +1594,7 @@ export default class extends BaseSeeder {
       tags: [822, 824, 843, 855, 913, 3327, 966, 1010, 1183],
     },
     {
-      filename: '64ff4dd2be31d.png',
+      filename: '',
       title: 'BAV_1',
       contexte: '',
       comment: '',
@@ -1593,7 +1611,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 205],
     },
     {
-      filename: '64ff522678000.png',
+      filename: '',
       title: 'BAV_1_(2)',
       contexte: '',
       comment: '',
@@ -1610,7 +1628,7 @@ export default class extends BaseSeeder {
       tags: [157, 173, 204, 205, 290, 291, 292, 293],
     },
     {
-      filename: '64ff594205e71.png',
+      filename: '',
       title: 'BAV_1_(3)',
       contexte: '',
       comment: '',
@@ -1627,7 +1645,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 205, 290, 562, 563],
     },
     {
-      filename: '64ff5acc70f24.png',
+      filename: '',
       title: 'BAV_2_de_type_1',
       contexte: 'Asthénie',
       comment: '',
@@ -1644,7 +1662,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 206],
     },
     {
-      filename: '64ff5dfaae74a.png',
+      filename: '',
       title: 'BAV_2_mobitz_1_et_BFAG',
       contexte: '',
       comment: '',
@@ -1661,7 +1679,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 206, 220, 831, 2860, 13],
     },
     {
-      filename: '64ff6153a0cf4.png',
+      filename: '',
       title: 'BAV_2_pour_1',
       contexte: '',
       comment: '',
@@ -1678,7 +1696,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 209],
     },
     {
-      filename: '64ff642beae0f.png',
+      filename: '',
       title: 'BAV_2_pour_1_(2)',
       contexte: '',
       comment: '',
@@ -1695,7 +1713,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 209, 220, 225],
     },
     {
-      filename: '64ff66a303989.png',
+      filename: '',
       title: 'BAV_2_pour_1_(3)',
       contexte: '',
       comment: '',
@@ -1712,7 +1730,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 209],
     },
     {
-      filename: '64ff683721ec8.png',
+      filename: '',
       title: 'BAV_complet',
       contexte: '',
       comment: '',
@@ -1729,7 +1747,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 204, 215, 796, 801, 35],
     },
     {
-      filename: '64ff8c85b6375.png',
+      filename: '',
       title: 'BAV_complet_avec_échappement_purkinje_gauche',
       contexte: 'Asthénie sévère',
       comment: '',
@@ -1746,7 +1764,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 204, 215, 796, 804, 964, 35],
     },
     {
-      filename: '64ff8e327265b.png',
+      filename: '',
       title: 'BAV_complet_avec_échappement_jonctionnel_(2)',
       contexte: '',
       comment: '',
@@ -1763,7 +1781,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 204, 215, 796, 801],
     },
     {
-      filename: '64ff916be7a45.png',
+      filename: '',
       title: 'BAV_1_(4)',
       contexte: '',
       comment: '',
@@ -1780,7 +1798,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 205],
     },
     {
-      filename: '64ff91e88bdd0.png',
+      filename: '',
       title: 'BAV_1_BBG_(2)',
       contexte: '',
       comment: '',
@@ -1797,7 +1815,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 205, 220, 237, 964],
     },
     {
-      filename: '64ff93b03c448.png',
+      filename: '',
       title: 'BBDt_et_HVD',
       contexte: 'BPCO sévère',
       comment: '',
@@ -1814,7 +1832,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 225, 808, 812, 843, 850, 964],
     },
     {
-      filename: '64ff95dcb85fd.png',
+      filename: '',
       title: 'BBDt_et_BFAG',
       contexte: '',
       comment: '',
@@ -1831,7 +1849,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 225, 227, 2860, 13, 964],
     },
     {
-      filename: '64ff986480826.png',
+      filename: '',
       title: 'BBDt_complet',
       contexte: '',
       comment: '',
@@ -1848,7 +1866,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 221],
     },
     {
-      filename: '6501e786ade88.png',
+      filename: '',
       title: 'BBDt_et_BFAG_(2)',
       contexte: 'Patient asymptomatique',
       comment: '',
@@ -1865,7 +1883,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 225, 227, 964],
     },
     {
-      filename: '6502c285d0de9.png',
+      filename: '',
       title: 'BBDt_BFAG_BAV_1_et_ESA_bigéminées',
       contexte: 'consultation chez les cardiologue pour palpitations',
       comment: '',
@@ -1882,7 +1900,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 205, 220, 225, 227, 290, 562, 563, 1322, 964],
     },
     {
-      filename: '6502e046dc41e.png',
+      filename: '',
       title: 'BBDt_HBAG_PR_très_long',
       contexte: 'Asthénie',
       comment: '',
@@ -1899,7 +1917,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 205, 220, 225, 227, 964],
     },
     {
-      filename: '6502e2a709e43.png',
+      filename: '',
       title: 'BBDt_et_BFAG_(3)',
       contexte: 'Asymptomatique',
       comment: '',
@@ -1916,7 +1934,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 225, 227],
     },
     {
-      filename: '6503099001840.png',
+      filename: '',
       title: 'BBDt_BFPG',
       contexte: 'Syncope',
       comment: '',
@@ -1933,7 +1951,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 225, 231],
     },
     {
-      filename: '65030be929ae8.png',
+      filename: '',
       title: 'BBDt_et_BFPG_et_BAV_1_(2)',
       contexte: 'syncope',
       comment: '',
@@ -1950,7 +1968,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 205, 220, 225, 231],
     },
     {
-      filename: '65030fb006314.png',
+      filename: '',
       title: 'BBDt_incomplet',
       contexte: 'Asymptomatique',
       comment: '',
@@ -1967,7 +1985,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 221],
     },
     {
-      filename: '650310b2a9de1.png',
+      filename: '',
       title: 'BBDt_incomplet_(2)',
       contexte: 'Asymptomatique',
       comment: '',
@@ -1984,7 +2002,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 221],
     },
     {
-      filename: '65031174698a5.png',
+      filename: '',
       title: 'BBDt_incomplet_(3)',
       contexte: 'Aymptomatique',
       comment: '',
@@ -2001,7 +2019,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 221],
     },
     {
-      filename: '6503135fd7b55.png',
+      filename: '',
       title: 'BBDt_complet_(2)',
       contexte: 'BPCO',
       comment: '',
@@ -2018,7 +2036,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 225],
     },
     {
-      filename: '6503145a55dbd.png',
+      filename: '',
       title: 'BBG_(2)',
       contexte: 'Essouflement et OMI',
       comment: '',
@@ -2035,7 +2053,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 237],
     },
     {
-      filename: '6503159e89488.png',
+      filename: '',
       title: 'BBG',
       contexte: 'Syncope',
       comment: '',
@@ -2052,7 +2070,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 237],
     },
     {
-      filename: '650316bad64b0.png',
+      filename: '',
       title: 'BBG_(3)',
       contexte: 'Fatigue',
       comment: '',
@@ -2069,7 +2087,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 237],
     },
     {
-      filename: '65031821c9b58.png',
+      filename: '',
       title: 'BBDt_complet_(3)',
       contexte: 'ATCD tuberculose',
       comment: '',
@@ -2086,7 +2104,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 225],
     },
     {
-      filename: '65031a8aa9f4b.png',
+      filename: '',
       title: 'Bradycardie_sinusale_et_aspect_rsr',
       contexte: 'Patient très sportif',
       comment: '',
@@ -2103,7 +2121,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 175],
     },
     {
-      filename: '65031be8e129f.png',
+      filename: '',
       title: 'Bradycardie_sinusale',
       contexte: 'Asthénie',
       comment: '',
@@ -2120,7 +2138,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 175],
     },
     {
-      filename: '65031dd432b26.png',
+      filename: '',
       title: 'Bradycardie_sinusale_(2)',
       contexte: 'Asthénie',
       comment: '',
@@ -2137,7 +2155,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 175],
     },
     {
-      filename: '6503274ecd84d.png',
+      filename: '',
       title: 'Brugada_(2)',
       contexte: 'asymtomatique',
       comment: '',
@@ -2154,7 +2172,7 @@ export default class extends BaseSeeder {
       tags: [866, 889, 890],
     },
     {
-      filename: '6503290d751ce.png',
+      filename: '',
       title: 'Brugada_(3)',
       contexte: 'Hyperthermie aux urgences',
       comment: '',
@@ -2171,7 +2189,7 @@ export default class extends BaseSeeder {
       tags: [866, 889, 890],
     },
     {
-      filename: '65045eb7e5c27.png',
+      filename: '',
       title: 'FA_et_BAV_3',
       contexte: 'Patient de 84 ans, admis aux urgences pour syncope',
       comment:
@@ -2189,7 +2207,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 204, 215, 290, 432, 435, 796, 804],
     },
     {
-      filename: '650462374b9f2.png',
+      filename: '',
       title: 'FA,_BBD_et_BFPG',
       contexte:
         'Patient de 82 ans, admis aux urgences pour plusieurs épisodes de perte de connaissance sur les derniers jours',
@@ -2207,7 +2225,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 225, 231, 290, 432, 2],
     },
     {
-      filename: '650467274a8bc.png',
+      filename: '',
       title: 'Fibrillation_atriale_et_BBG',
       contexte:
         'Patient de 57 ans, symptomatologie d&#039;insuffisance cardiaque. Découverte d&#039;une cardiopathie dilatée hypokinétique.',
@@ -2226,7 +2244,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 237, 290, 432],
     },
     {
-      filename: '65046a0b989b0.png',
+      filename: '',
       title: 'Fibrillation_atriale_87/min',
       contexte: 'Patiente de 58 ans hypertendu, consulte pour palpitations.',
       comment: 'Aspect QS V1-V3 à explorer... Possible séquelle de nécrose',
@@ -2243,7 +2261,7 @@ export default class extends BaseSeeder {
       tags: [290, 432, 435, 822, 823],
     },
     {
-      filename: '65046ca688722.png',
+      filename: '',
       title: 'Fibrillation_atriale_148/min',
       contexte:
         'Patiente de 57 ans, ECG fait aux urgences dans un contexte d&#039;accident ischémique transitoire.',
@@ -2262,7 +2280,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 302, 432, 435],
     },
     {
-      filename: '65047241d47bb.png',
+      filename: '',
       title: 'Fibrillation_atriale_rapide',
       contexte: 'Patient de 72 ans, hospitalisé pour insuffisance cardiaque.',
       comment: '',
@@ -2279,7 +2297,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 302, 432],
     },
     {
-      filename: '65047e7676dec.png',
+      filename: '',
       title: "Brugada_test_à_l'ajmaline",
       contexte: 'Test à l&#039;ajmaline dans le cadre d&#039;un dépistage après une syncope',
       comment: '',
@@ -2296,7 +2314,7 @@ export default class extends BaseSeeder {
       tags: [866, 889, 890],
     },
     {
-      filename: '65048bd6605ff.png',
+      filename: '',
       title: 'Fibrillation_atriale_et_BAV_III_(3)',
       contexte:
         'Patiente de 84 ans, hospitalisée pour altération de l&#039;état de l&#039;état général. ECG réalisé devant la constatation d&#039;une bradycardie lors de la prise de constantes.',
@@ -2314,7 +2332,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 204, 215, 290, 423, 427, 796, 801],
     },
     {
-      filename: '650493f5e32a2.png',
+      filename: '',
       title: 'Fibrillation_atriale_et_bloc_de_branche',
       contexte: 'Patiente de 81 ans, consulte aux urgences pour dyspnée.',
       comment:
@@ -2332,7 +2350,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 220, 225, 290, 432, 435],
     },
     {
-      filename: '650498cbafa13.png',
+      filename: '',
       title: 'Fibrillation_atriale,_QRS_fins,_fréquence_cardiaque_normale',
       contexte: 'Palpitations.',
       comment: '',
@@ -2349,7 +2367,7 @@ export default class extends BaseSeeder {
       tags: [290, 432, 435],
     },
     {
-      filename: '65049b3a563a7.png',
+      filename: '',
       title: 'FA_rapidement_conduite',
       contexte: 'Patient de 83 ans, hospitalisé pour un épisode de décompensation cardiaque.',
       comment: '',
@@ -2366,7 +2384,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 302, 432, 434, 2860, 11],
     },
     {
-      filename: '65049d547efe5.png',
+      filename: '',
       title: 'Fibrillation_atriale_et_BBD',
       contexte: 'Palpitations',
       comment: '',
@@ -2383,7 +2401,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 220, 225, 290, 432, 435],
     },
     {
-      filename: '6504b8738e652.png',
+      filename: '',
       title: 'Fibrillation_atriale_et_BBG_2',
       contexte:
         'Patient de 56 ans, découverte d&#039;une insuffisance cardiaque à fraction d&#039;éjection ventriculaire gauche basse',
@@ -2402,7 +2420,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 237, 290, 291, 323, 432],
     },
     {
-      filename: '6504bc91a4377.png',
+      filename: '',
       title: 'Fibrillation_ventriculaire',
       contexte: 'Patient qui s&#039;écroule aux urgences',
       comment: '',
@@ -2419,7 +2437,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 338, 345],
     },
     {
-      filename: '6504be7f9859d.png',
+      filename: '',
       title: 'Fibrillation_ventriculaire_2',
       contexte: 'Perte de connaissance durant la réalisation de l&#039;ECG',
       comment:
@@ -2437,7 +2455,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 338, 345],
     },
     {
-      filename: '6504c03c6ffee.png',
+      filename: '',
       title: 'Fluttet_atrial_1',
       contexte: 'Palpitations',
       comment:
@@ -2455,7 +2473,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 351, 352, 353, 355, 583],
     },
     {
-      filename: '6504c676ca5c9.png',
+      filename: '',
       title: 'Flutter_atrial_2',
       contexte: 'Patient de 61 ans, consulte pour palpitations',
       comment: 'Flutter typique en dents de scie avec conduction AV 2:1',
@@ -2472,7 +2490,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 351, 352, 353, 355],
     },
     {
-      filename: '650557a50335b.png',
+      filename: '',
       title: 'Flutter_atrial_et_BAV_complet',
       contexte: 'Patient amené aux urgences par les pompiers. Syncope au domicile.',
       comment: '',
@@ -2489,7 +2507,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 290, 351, 379, 383, 796, 804, 964, 966],
     },
     {
-      filename: '65055d2c1aa04.png',
+      filename: '',
       title: 'Flutter_atrial_à_conduction_variable',
       contexte: 'ECG réalisé devant une découverte fortuite d&#039;irrégularité du pouls.',
       comment:
@@ -2507,7 +2525,7 @@ export default class extends BaseSeeder {
       tags: [290, 351, 352, 353, 356],
     },
     {
-      filename: '65055fc63020c.png',
+      filename: '',
       title: 'Flutter_atrial_3',
       contexte: 'Patiente ayant fait un AVC récemment. ECG lors de l&#039;hospitalisation.',
       comment: '',
@@ -2524,7 +2542,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 351, 352, 353, 355],
     },
     {
-      filename: '650589ef057ed.png',
+      filename: '',
       title: 'Flutter_atrial_4',
       contexte: 'Palpitations.',
       comment: '',
@@ -2541,7 +2559,7 @@ export default class extends BaseSeeder {
       tags: [290, 351, 352, 353, 357],
     },
     {
-      filename: '650718bc1cb19.png',
+      filename: '',
       title: 'Flutter_atrial_5',
       contexte: 'Patient consultant pour palpitations.',
       comment: '',
@@ -2558,7 +2576,7 @@ export default class extends BaseSeeder {
       tags: [290, 351, 352, 353, 356, 357],
     },
     {
-      filename: '65071a2dbb2d1.png',
+      filename: '',
       title: 'Flutter_atrial_6',
       contexte: 'Découverte d&#039;insuffisance cardiaque',
       comment: '',
@@ -2575,7 +2593,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 351, 352, 353, 355],
     },
     {
-      filename: '65071d6b9cc12.png',
+      filename: '',
       title: 'BFAG_2',
       contexte:
         'ECG fait à titre systématique en consultation de cardiologie en bilan pré-opératoire.',
@@ -2593,7 +2611,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 227],
     },
     {
-      filename: '6507232bae22e.png',
+      filename: '',
       title: 'BFAG_3',
       contexte: 'ECG en suivi de dyslipidémie traitée.',
       comment: 'PR long et BFAG. Anomalies secondaires de la repolarisation ',
@@ -2610,7 +2628,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 205, 220, 227, 964, 966],
     },
     {
-      filename: '65073d6c4ba60.png',
+      filename: '',
       title: 'HVD_HAD',
       contexte: 'Pathologie pulmonaire chronique. Palpitations.',
       comment:
@@ -2628,7 +2646,7 @@ export default class extends BaseSeeder {
       tags: [808, 812, 843, 850, 2860, 11, 966, 1009],
     },
     {
-      filename: '650740d0157e9.png',
+      filename: '',
       title: 'HVD_HTAP',
       contexte:
         'Patient suivi pour insuffisance rénale chronique. ECG pour majoration de la dyspnée.',
@@ -2647,7 +2665,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 292, 583, 808, 812, 843, 850],
     },
     {
-      filename: '6507436d97012.png',
+      filename: '',
       title: 'HVD_2',
       contexte: 'Bilan de dyspnée chronique',
       comment:
@@ -2665,7 +2683,7 @@ export default class extends BaseSeeder {
       tags: [169, 843, 850, 2860, 11],
     },
     {
-      filename: '6507459d430a8.png',
+      filename: '',
       title: 'HVD_3',
       contexte: 'Bilan de dyspnée chronique.',
       comment: 'HVD typique. l&#039;onde Q en V1-V3 est un signe de sévérité de l&#039;HVD.',
@@ -2682,7 +2700,7 @@ export default class extends BaseSeeder {
       tags: [169, 173, 220, 225, 843, 850, 964, 966, 9],
     },
     {
-      filename: '650747f056cf5.png',
+      filename: '',
       title: 'HVD_4',
       contexte: 'Femme de 82 ans, bronchopneumopathie chronique obstructive',
       comment:
@@ -2700,7 +2718,7 @@ export default class extends BaseSeeder {
       tags: [169, 843, 850],
     },
     {
-      filename: '650749cfdea28.png',
+      filename: '',
       title: 'Hyperexcitabilité_atriale',
       contexte: 'Palpitations',
       comment: 'tres nombreuses ESA en salve altèrent le rythme sinusal. Risque fort de FA',
@@ -2717,7 +2735,7 @@ export default class extends BaseSeeder {
       tags: [169, 290, 562],
     },
     {
-      filename: '65074e9607079.png',
+      filename: '',
       title: 'HVG_2',
       contexte: 'Bilan de dyspnée',
       comment:
@@ -2735,7 +2753,7 @@ export default class extends BaseSeeder {
       tags: [169, 843, 844, 913, 935],
     },
     {
-      filename: '6507513c0d788.png',
+      filename: '',
       title: 'Hypokaliémie_2',
       contexte:
         'ECG réalisé en USIC. Patiente en cours de déplétion pour un épisode de décompensation cardiaque.',
@@ -2753,7 +2771,7 @@ export default class extends BaseSeeder {
       tags: [169, 913, 936, 1029, 1030, 1034, 1065],
     },
     {
-      filename: '650754f548a9d.png',
+      filename: '',
       title: 'Hypokaliémie_3',
       contexte: 'Perte de connaissance. ECG réalisé aux urgences',
       comment:
@@ -2771,7 +2789,7 @@ export default class extends BaseSeeder {
       tags: [169, 913, 936, 1029, 1030, 1034, 1065],
     },
     {
-      filename: '6507f974acef7.png',
+      filename: '',
       title: 'ECG_normal_(2)',
       contexte: 'ECG réalisé au centre pasteur pour bilan de santé',
       comment: '',
@@ -2788,7 +2806,7 @@ export default class extends BaseSeeder {
       tags: [1237],
     },
     {
-      filename: '6507fb3b711ef.png',
+      filename: '',
       title: 'ECG_normal_(3)',
       contexte: 'ECG pour douleur thoracique atypique du jeune ',
       comment: '',
@@ -2805,7 +2823,7 @@ export default class extends BaseSeeder {
       tags: [1237],
     },
     {
-      filename: '6508576267fb2.png',
+      filename: '',
       title: 'Tachycardie_sinusale_(3)',
       contexte: 'Hyperthermie à 40',
       comment: '',
@@ -2822,7 +2840,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 292, 293],
     },
     {
-      filename: '650858b6844f8.png',
+      filename: '',
       title: 'Hyperkaliémie_6.7',
       contexte: 'Patient avec anurie depuis 72h',
       comment: '',
@@ -2839,7 +2857,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 182, 796, 801, 820, 1069],
     },
     {
-      filename: '65087970ce0ea.png',
+      filename: '',
       title: 'Microvoltage_1',
       contexte: 'Patient de 81 ans, vient aux urgences pour dyspnée d&#039;aggravation rapide.',
       comment:
@@ -2857,7 +2875,7 @@ export default class extends BaseSeeder {
       tags: [169, 808, 809, 822, 828, 843, 851, 852],
     },
     {
-      filename: '65087c12d45ef.png',
+      filename: '',
       title: 'Microvoltage_2',
       contexte: 'Patiente de 77 ans, adressée pour tableau d&#039;insuffisance cardiaque.',
       comment: '',
@@ -2874,7 +2892,7 @@ export default class extends BaseSeeder {
       tags: [169, 843, 851, 852, 855],
     },
     {
-      filename: '65087e8699bc8.png',
+      filename: '',
       title: 'Pause_post_réductionnelle',
       contexte:
         'ECG enregistré sur la télémétrie du service de cardiologie. Patient hospitalisé pour une fibrillation atriale symptomatique',
@@ -2892,7 +2910,7 @@ export default class extends BaseSeeder {
       tags: [173, 182, 198, 220, 225, 290, 432, 434],
     },
     {
-      filename: '6508823826e8a.png',
+      filename: '',
       title: 'Péricardite_1',
       contexte: 'Patiente de 19 ans, douleur thoracique.',
       comment: '',
@@ -2909,7 +2927,7 @@ export default class extends BaseSeeder {
       tags: [169, 866, 879, 112],
     },
     {
-      filename: '650889884286f.png',
+      filename: '',
       title: 'Péricardite_phase_tardive',
       contexte:
         'Patiente de 31 ans, douleur thoracique il y a quelques semaines, consultation de suivi',
@@ -2928,7 +2946,7 @@ export default class extends BaseSeeder {
       tags: [169, 966, 1007, 1004],
     },
     {
-      filename: '65088befc627b.png',
+      filename: '',
       title: 'Péricardite_2',
       contexte: 'Douleur thoracique aiguë.',
       comment: 'Je pense plutot à un infarctus (PT) qu&#039;à une péricardite',
@@ -2945,7 +2963,7 @@ export default class extends BaseSeeder {
       tags: [822, 824, 866, 879, 881, 886],
     },
     {
-      filename: '650892bff323a.png',
+      filename: '',
       title: 'Péricardite_3',
       contexte: 'Patient de 21 ans, douleur thoracique depuis quelques heures.',
       comment:
@@ -2963,7 +2981,7 @@ export default class extends BaseSeeder {
       tags: [866, 879, 112],
     },
     {
-      filename: '65089a83214db.png',
+      filename: '',
       title: 'Preexcitation_ventriculaire',
       contexte:
         'ECG pour certificat de non contre-indication à la pratique de la course à pied pour un trail.',
@@ -2982,7 +3000,7 @@ export default class extends BaseSeeder {
       tags: [173, 249, 255, 267],
     },
     {
-      filename: '65089dfe36765.png',
+      filename: '',
       title: 'Preexcitation_2',
       contexte: 'Patient de 27 ans ayant fait une syncope à l&#039;effort',
       comment:
@@ -3000,7 +3018,7 @@ export default class extends BaseSeeder {
       tags: [173, 249, 255],
     },
     {
-      filename: '6508a065c83d5.png',
+      filename: '',
       title: 'Préexcitation_3',
       contexte: 'Patient consultant pour palpitations',
       comment:
@@ -3018,7 +3036,7 @@ export default class extends BaseSeeder {
       tags: [173, 249, 255, 263],
     },
     {
-      filename: '6508a3e0dc664.png',
+      filename: '',
       title: 'TVNS_et_BAV3',
       contexte: 'Syncope.',
       comment: '',
@@ -3035,7 +3053,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 215, 290, 291, 338, 346, 537, 583, 1273, 1029, 1030],
     },
     {
-      filename: '6508a7102cabd.png',
+      filename: '',
       title: 'TVNS',
       contexte: 'Palpitations. Antécédent de cardiopathie dilatée.',
       comment: '',
@@ -3052,7 +3070,7 @@ export default class extends BaseSeeder {
       tags: [171, 290, 537, 808, 809, 2860, 13],
     },
     {
-      filename: '65098e340464e.png',
+      filename: '',
       title: 'HTA_sévère_Strain_Pattern',
       contexte: 'Crise hypertensive',
       comment: '',
@@ -3069,7 +3087,7 @@ export default class extends BaseSeeder {
       tags: [843, 844],
     },
     {
-      filename: '650b5270f1685.png',
+      filename: '',
       title: 'ECG_normal_20_mV_par_mm',
       contexte:
         'Patient vient pour bilan chez le médecin généraliste qui en profite pour ressortir son ECG non utilisé depuis longtemps',
@@ -3087,7 +3105,7 @@ export default class extends BaseSeeder {
       tags: [1237],
     },
     {
-      filename: '650b560f30372.png',
+      filename: '',
       title: 'ECG_normal_défilé_50_mm_sec',
       contexte: 'Externe qui fait son ECG pour la première fois lui même',
       comment: '',
@@ -3104,7 +3122,7 @@ export default class extends BaseSeeder {
       tags: [1237],
     },
     {
-      filename: '650b580e384cb.png',
+      filename: '',
       title: 'ECG_normal_avec_défilement_de_50_mm/seconde',
       contexte: 'Infirmière intérimaire qui utilise pour la première fois l&#039;appareil à ECG',
       comment: '',
@@ -3121,7 +3139,7 @@ export default class extends BaseSeeder {
       tags: [1237],
     },
     {
-      filename: '650b5979c6547.png',
+      filename: '',
       title: 'ESSV',
       contexte: 'Sensations de raté du coeur',
       comment: '',
@@ -3138,7 +3156,7 @@ export default class extends BaseSeeder {
       tags: [290, 562],
     },
     {
-      filename: '650b5b8197c6d.png',
+      filename: '',
       title: 'ESV_bigéminées_(4)',
       contexte: 'Sensation de pause cardiaque ',
       comment: '',
@@ -3155,7 +3173,7 @@ export default class extends BaseSeeder {
       tags: [290, 583, 744, 749],
     },
     {
-      filename: '650d45a02552b.png',
+      filename: '',
       title: 'Inversion_electrodes_1_BG_et_BD',
       contexte: 'Asymptomatique',
       comment:
@@ -3173,7 +3191,7 @@ export default class extends BaseSeeder {
       tags: [158, 161],
     },
     {
-      filename: '650d47f2e8adc.png',
+      filename: '',
       title: 'Inversion_electrodes_2._BD_et_JD',
       contexte: 'palpitations, dyspnée',
       comment:
@@ -3191,7 +3209,7 @@ export default class extends BaseSeeder {
       tags: [158, 162, 290, 291, 302, 432, 435],
     },
     {
-      filename: '650d4be91e1a9.png',
+      filename: '',
       title: 'Inversion_electrodes_des_poignets._3',
       contexte: 'Cardiopathie ischémique',
       comment:
@@ -3209,7 +3227,7 @@ export default class extends BaseSeeder {
       tags: [158, 161],
     },
     {
-      filename: '650e6ed368e0a.png',
+      filename: '',
       title: 'Torsade_de_pointes_1._typique_QT_long.png',
       contexte: 'Pertes de connaissance itératives',
       comment:
@@ -3227,7 +3245,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 338, 346, 1029, 1030],
     },
     {
-      filename: '650e713135988.png',
+      filename: '',
       title: 'Torsade_de_pointes_2',
       contexte: 'Surdosage neuroleptique',
       comment:
@@ -3245,7 +3263,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 338, 346, 1027, 1029, 1030, 1031, 1130],
     },
     {
-      filename: '650e7841e86f5.png',
+      filename: '',
       title: 'Torsades_de_pointes_3',
       contexte: 'Perte de connaissance',
       comment:
@@ -3263,7 +3281,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 338, 346, 1029, 1046],
     },
     {
-      filename: '650ef4a992240.png',
+      filename: '',
       title: 'Hyperkaliémie_9.2_et_pacemaker',
       contexte: 'Tétraparésie, acidose 7.10 mtabolique sur IRA avec capnie 40. Patient comateux',
       comment: '',
@@ -3280,7 +3298,7 @@ export default class extends BaseSeeder {
       tags: [755, 758, 759, 1069, 7, 8],
     },
     {
-      filename: '650ef574dc6a0.png',
+      filename: '',
       title: "Dissociation_d'une_oreillette_de_l'autre_et_du_ventricule",
       contexte: 'asthénie',
       comment: 'Dissociation interatriale',
@@ -3297,7 +3315,7 @@ export default class extends BaseSeeder {
       tags: [173, 182, 35],
     },
     {
-      filename: '650f2bab9773e.png',
+      filename: '',
       title: 'ECG_normal_(4)',
       contexte: 'Bilan à pasteur',
       comment: '',
@@ -3314,7 +3332,7 @@ export default class extends BaseSeeder {
       tags: [1237],
     },
     {
-      filename: '650f2c199abac.png',
+      filename: '',
       title: 'ESV_bigéminées',
       contexte: 'sensation de raté du coeur',
       comment: '',
@@ -3331,7 +3349,7 @@ export default class extends BaseSeeder {
       tags: [290, 583, 584, 1276],
     },
     {
-      filename: '650f2d735b675.png',
+      filename: '',
       title: 'ESV_bigéminées_(2)',
       contexte: 'Asthénie',
       comment: '',
@@ -3348,7 +3366,7 @@ export default class extends BaseSeeder {
       tags: [290, 583, 1271],
     },
     {
-      filename: '650f2e7392c31.png',
+      filename: '',
       title: 'ESV_bigéminées_(3)',
       contexte: 'Dyspnée d&#039;effort',
       comment: '',
@@ -3365,7 +3383,7 @@ export default class extends BaseSeeder {
       tags: [290, 583, 1271, 584],
     },
     {
-      filename: '650f2fb56a819.png',
+      filename: '',
       title: 'ESV_isolée_monomorphe_(2)',
       contexte: 'sensation de raté du coeur',
       comment: '',
@@ -3382,7 +3400,7 @@ export default class extends BaseSeeder {
       tags: [290, 583],
     },
     {
-      filename: '650f31d040db7.png',
+      filename: '',
       title: 'ESV_isolée_monomorphe_(3)',
       contexte: 'Sensation de raté du coeur',
       comment: '',
@@ -3399,7 +3417,7 @@ export default class extends BaseSeeder {
       tags: [290, 583, 584],
     },
     {
-      filename: '650f32e66735f.png',
+      filename: '',
       title: 'ESV_trigéminée',
       contexte: 'sensation de raté du coeur, ATCD d&#039;infarctus',
       comment: '',
@@ -3416,7 +3434,7 @@ export default class extends BaseSeeder {
       tags: [290, 583, 822, 824, 825, 866, 3505, 3506, 901],
     },
     {
-      filename: '650f3f8145a1e.png',
+      filename: '',
       title: 'ESV_Triplet',
       contexte: 'Palpitation et syncope',
       comment: '',
@@ -3433,7 +3451,7 @@ export default class extends BaseSeeder {
       tags: [290, 583, 1274],
     },
     {
-      filename: '650f43152b0c0.png',
+      filename: '',
       title: 'ESV_et_bradycardie',
       contexte: 'asthénie',
       comment: '',
@@ -3450,7 +3468,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 175, 290, 583],
     },
     {
-      filename: '650f4444ceaf1.png',
+      filename: '',
       title: 'TV_avec_dissociation_AV',
       contexte: 'Choc cardiogénique',
       comment: '',
@@ -3467,7 +3485,7 @@ export default class extends BaseSeeder {
       tags: [290, 472, 522, 524, 528, 530],
     },
     {
-      filename: '650f466a6a1c7.png',
+      filename: '',
       title: 'Tachycardie_ventriculaire_avec_fusion_captures',
       contexte: 'choc cardiogénique.',
       comment: '',
@@ -3484,7 +3502,7 @@ export default class extends BaseSeeder {
       tags: [290, 472, 20, 21, 35],
     },
     {
-      filename: '650f474d33ed8.png',
+      filename: '',
       title: 'ECG_normal_20_mm_par_mV',
       contexte: '',
       comment: '',
@@ -3501,7 +3519,7 @@ export default class extends BaseSeeder {
       tags: [1237],
     },
     {
-      filename: '650f4782ade5c.png',
+      filename: '',
       title: 'ECG_normal_20_mm_par_mV_(2)',
       contexte: 'RAS',
       comment: '',
@@ -3518,7 +3536,7 @@ export default class extends BaseSeeder {
       tags: [1237],
     },
     {
-      filename: '650f47b4c29c2.png',
+      filename: '',
       title: 'ECG_normal_avec_défilement_de_50_mm/seconde_(2)',
       contexte: 'Asymptomatique',
       comment: '',
@@ -3535,7 +3553,7 @@ export default class extends BaseSeeder {
       tags: [1237],
     },
     {
-      filename: '650f4818b501b.png',
+      filename: '',
       title: 'Tachycardie_par_réentrée_électronique',
       contexte: 'Palpitions, pose récente de pace maker',
       comment: '',
@@ -3552,7 +3570,7 @@ export default class extends BaseSeeder {
       tags: [773, 774, 775, 820],
     },
     {
-      filename: '650f491a57514.png',
+      filename: '',
       title: 'Tachycardie_QRS_large',
       contexte: 'pré-syncopal',
       comment: '',
@@ -3569,7 +3587,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 308],
     },
     {
-      filename: '650f4aef018de.png',
+      filename: '',
       title: 'Tachycardie_QRS_large_(2)',
       contexte: 'palpitations',
       comment: '',
@@ -3586,7 +3604,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 225, 227, 290, 443, 444, 831],
     },
     {
-      filename: '650f4dabeff4b.png',
+      filename: '',
       title: 'TJ_à_QRS_larges',
       contexte: 'Palpitations et dyspnée',
       comment: '',
@@ -3603,7 +3621,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 237, 290, 443],
     },
     {
-      filename: '650f4df1f257e.png',
+      filename: '',
       title: 'Tachycardie_jonctionnelle_QRS_large_arrêt_sur_manoeuvres_vagale_/_adénosine',
       contexte: 'palpitation  =&gt; adénosine',
       comment: '',
@@ -3620,7 +3638,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 237, 290, 443, 148, 3138],
     },
     {
-      filename: '650f4e37162b9.png',
+      filename: '',
       title: 'TV_sur_coeur_sain',
       contexte: 'Palpiations bien tolérées depuis plusieurs heures',
       comment: '',
@@ -3637,7 +3655,7 @@ export default class extends BaseSeeder {
       tags: [290, 472, 483],
     },
     {
-      filename: '650fe7853476e.png',
+      filename: '',
       title: 'Embolie_pulmonaire_1_typique_FC_110',
       contexte:
         'Dyspnée depuis quelques jours. Pas de douleur thoracique. Auscultation normale. Saturation en oxygène 95%. Hémodynamique conservée. Cancer du sein guérit il y a 4 ans.',
@@ -3656,7 +3674,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 292, 293, 562, 563, 2860, 11, 966, 1005, 10],
     },
     {
-      filename: '650fec591ba48.png',
+      filename: '',
       title: 'Embolie_pulmonaire_2',
       contexte: 'Homme 73 ans, malaises x 2 avec dyspnée et saturation O2 à 95%',
       comment:
@@ -3674,7 +3692,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 292, 293, 295, 966, 1005, 10],
     },
     {
-      filename: '650ff124c1915.png',
+      filename: '',
       title: 'Embolie_pulmonaire_3',
       contexte:
         'Dyspnée majeure depuis plusieurs jours avec sat 88%. Examen normal. Voyage en Namibie récent.',
@@ -3693,7 +3711,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 292, 293, 913, 3327, 966, 1008, 1009, 1005],
     },
     {
-      filename: '651809e534130.png',
+      filename: '',
       title: 'Bradycardie_sinusale_2',
       contexte:
         'ECG systématique dans le cadre de la rédaction d&#039;un certificat de non contre-indication à la pratique d&#039;une activité sportive',
@@ -3711,7 +3729,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 175, 204, 205, 220, 239],
     },
     {
-      filename: '651811d6ee69c.png',
+      filename: '',
       title: 'ESA_bigéminées',
       contexte: 'Palpitations',
       comment: '',
@@ -3728,7 +3746,7 @@ export default class extends BaseSeeder {
       tags: [290, 562, 563, 1322],
     },
     {
-      filename: '65181621d7d49.png',
+      filename: '',
       title: 'Extrasystoles_trigéminées_et_en_courtes_salves',
       contexte: 'Palpitations',
       comment: '',
@@ -3745,7 +3763,7 @@ export default class extends BaseSeeder {
       tags: [290, 562, 563, 1323, 1326],
     },
     {
-      filename: '651818a84bf3a.png',
+      filename: '',
       title: 'Salve_supraventriculaire',
       contexte: 'Palpitations',
       comment: '',
@@ -3762,7 +3780,7 @@ export default class extends BaseSeeder {
       tags: [169, 290, 562, 563, 1326, 583],
     },
     {
-      filename: '6519455a75642.png',
+      filename: '',
       title: 'ESA_isolées_2',
       contexte: 'Palpitations',
       comment: '',
@@ -3779,7 +3797,7 @@ export default class extends BaseSeeder {
       tags: [169, 290, 562, 563],
     },
     {
-      filename: '6519494a03287.png',
+      filename: '',
       title: 'Salves_ESA_2',
       contexte: 'Palpitations',
       comment: 'Il faudrait ajouter rythme sinusal ?',
@@ -3796,7 +3814,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 239, 290, 562, 563, 1326, 808, 809],
     },
     {
-      filename: '65194f99da3c9.png',
+      filename: '',
       title: 'Doublets_ESA_3',
       contexte: 'Palpitations',
       comment: '',
@@ -3813,7 +3831,7 @@ export default class extends BaseSeeder {
       tags: [290, 562, 563, 1324],
     },
     {
-      filename: '651b067c84b0f.png',
+      filename: '',
       title: 'ESA_4',
       contexte: 'Palpitations',
       comment: 'annotez rythme sinusal ?',
@@ -3830,7 +3848,7 @@ export default class extends BaseSeeder {
       tags: [290, 562, 563],
     },
     {
-      filename: '65689d6fdadb2.png',
+      filename: '',
       title: 'BSA_échappement_jonctionnel',
       contexte: 'Asthénie',
       comment: '',
@@ -3847,7 +3865,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 182, 191, 796, 801, 820],
     },
     {
-      filename: '65689f16bfb7d.png',
+      filename: '',
       title: 'BSA_avec_échappement_ventriculaire',
       contexte: 'Fatigue',
       comment: '',
@@ -3864,7 +3882,7 @@ export default class extends BaseSeeder {
       tags: [173, 182, 191, 796, 804, 820],
     },
     {
-      filename: '656ee32b552a7.png',
+      filename: '',
       title: 'Tachychardie_atriale_focale',
       contexte: 'Essouflé',
       comment: '',
@@ -3881,7 +3899,7 @@ export default class extends BaseSeeder {
       tags: [290, 423, 426, 103],
     },
     {
-      filename: '65758790571d9.png',
+      filename: '',
       title: 'Inversion_électrodes_231210',
       contexte: 'Certificat de non contre-indication à la course à pied',
       comment: '',
@@ -3898,7 +3916,7 @@ export default class extends BaseSeeder {
       tags: [158],
     },
     {
-      filename: '65758a17aa150.png',
+      filename: '',
       title: 'BAV_2_de_type_1_(LW)',
       contexte: 'Venu aux urgences après une syncope.',
       comment:
@@ -3916,7 +3934,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 206, 220, 225, 227, 2860, 13],
     },
     {
-      filename: '65758eb52fa64.png',
+      filename: '',
       title: 'Bloc_alternant',
       contexte: 'Syncope.',
       comment: '',
@@ -3933,7 +3951,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 225, 237, 246],
     },
     {
-      filename: '657590b575be7.png',
+      filename: '',
       title: 'BSA_avec_echappement_jonctionnel_231210',
       contexte: 'Dyspnée.',
       comment: '',
@@ -3950,7 +3968,7 @@ export default class extends BaseSeeder {
       tags: [171, 173, 182, 191, 796],
     },
     {
-      filename: '657592ff1d245.png',
+      filename: '',
       title: 'Cmh_septale_et_syncope',
       contexte: 'Syncope.',
       comment:
@@ -3968,7 +3986,7 @@ export default class extends BaseSeeder {
       tags: [843, 844, 847, 966, 1007, 1010],
     },
     {
-      filename: '6575969b2f3f4.png',
+      filename: '',
       title: 'FA_et_BAV3_231210',
       contexte: 'Syncope.',
       comment:
@@ -3986,7 +4004,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 213, 220, 227, 290, 432, 434, 436, 822, 824, 825, 2860, 13],
     },
     {
-      filename: '65759ad1ce663.png',
+      filename: '',
       title: 'FV_unipiste_231210',
       contexte: 'Adressé aux urgences pour syncope',
       comment:
@@ -4004,7 +4022,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 338, 345],
     },
     {
-      filename: '65759be3837e8.jpg',
+      filename: '',
       title: 'FV_unipiste_231210-2',
       contexte: 'Revue d&#039;un tracé d&#039;un patient ayant fait une mort subite',
       comment:
@@ -4022,7 +4040,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 338, 345],
     },
     {
-      filename: '658334e50e3cb.png',
+      filename: '',
       title: 'Anevrisme_ST+_et_T-_en_V4-V6',
       contexte: 'F 93 ans, découverte fortuite d&#039;un vieil infarctus avec anevrisme',
       comment: 'Découverte fortuite d&#039;une séquelle de nécrose avec anévrisme en echo coeur',
@@ -4039,7 +4057,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 227, 290, 291, 292, 822, 823, 866, 3504, 901],
     },
     {
-      filename: '658340c61c039.png',
+      filename: '',
       title: 'Doublet_ESV_(cardiopathie_ischémique)',
       contexte: '',
       comment: '',
@@ -4056,7 +4074,7 @@ export default class extends BaseSeeder {
       tags: [],
     },
     {
-      filename: '6584012493eca.png',
+      filename: '',
       title: 'Sous-décalage_de_ST_(SCA)._2',
       contexte: 'Homme 81 ans, ECG préoperatoire ',
       comment:
@@ -4074,7 +4092,7 @@ export default class extends BaseSeeder {
       tags: [913, 3322, 914],
     },
     {
-      filename: '658405de7853e.png',
+      filename: '',
       title: 'Sous_décalage_de_ST._3',
       contexte: 'Homme 81 ans, HTA, gêne thoracique à l&#039;effort (ST- 2) puis gêne connue',
       comment:
@@ -4092,7 +4110,7 @@ export default class extends BaseSeeder {
       tags: [822, 828, 913, 3322, 914],
     },
     {
-      filename: '65841173c55de.png',
+      filename: '',
       title: 'Repolarisation_précoce_3._typique',
       contexte: 'H 28 ans, origine africaine. Patient asymptomatique',
       comment: 'Repolarisation précoce antérieure latérale et inférieure tres marquée. ',
@@ -4109,7 +4127,7 @@ export default class extends BaseSeeder {
       tags: [861],
     },
     {
-      filename: '6584144dc8849.png',
+      filename: '',
       title: 'Rythme_du_sinus_coronaire_3.',
       contexte:
         'Bilan systématique. Homme asymptomatique, chef d&#039;entreprise. Activité physique +',
@@ -4128,7 +4146,7 @@ export default class extends BaseSeeder {
       tags: [818, 819],
     },
     {
-      filename: '6584177925db5.png',
+      filename: '',
       title: 'Epanchement_péricardique_1._Néoplasie',
       contexte:
         'Femme 50 ans, dyspnée, pesanteur thoracique depuis plusieurs jours. contexte néoplasique',
@@ -4146,7 +4164,7 @@ export default class extends BaseSeeder {
       tags: [290, 432, 435, 843, 851, 852, 866, 3504, 879, 881, 1201],
     },
     {
-      filename: '65841beeb56a9.png',
+      filename: '',
       title: 'Repolarisation_masculine._3',
       contexte: 'Homme jeune, fièvre inexpliquée',
       comment:
@@ -4164,7 +4182,7 @@ export default class extends BaseSeeder {
       tags: [857, 858, 1025],
     },
     {
-      filename: '658c0bb1ea7f3.png',
+      filename: '',
       title: 'Epanchement_péricardique_2._Traumatique',
       contexte: 'Homme 50 ans, Trauma thoracique. Douleur dyspnée',
       comment: 'Les signes ECG s&#039;explique par l&#039;épanchement péricardique',
@@ -4181,7 +4199,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 292, 293, 843, 851, 852, 1201],
     },
     {
-      filename: '658d56b8ba0f0.png',
+      filename: '',
       title: 'Pause_sinusale_2',
       contexte: 'Massage sino-carotidien',
       comment: '',
@@ -4198,7 +4216,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 175, 182, 194, 3789],
     },
     {
-      filename: '658da2d21d712.jpg',
+      filename: '',
       title: 'ESA_bloquée_1',
       contexte: 'Asymptomatique',
       comment: '',
@@ -4215,7 +4233,7 @@ export default class extends BaseSeeder {
       tags: [290, 562, 563, 1327],
     },
     {
-      filename: '658da6dfb6411.png',
+      filename: '',
       title: 'ESA_bloquée_2',
       contexte: 'Asthénie',
       comment: '',
@@ -4232,7 +4250,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 175, 290, 562, 1321, 563],
     },
     {
-      filename: '658daaa8e3f6c.png',
+      filename: '',
       title: 'ESA_bloquée_3',
       contexte: 'Asymptomatique',
       comment: '',
@@ -4249,7 +4267,7 @@ export default class extends BaseSeeder {
       tags: [290, 562, 1321, 563],
     },
     {
-      filename: '658dade8ceb58.png',
+      filename: '',
       title: 'Pause_sinusale_4',
       contexte: 'Syncope',
       comment: '',
@@ -4266,7 +4284,7 @@ export default class extends BaseSeeder {
       tags: [173, 182, 194],
     },
     {
-      filename: '658db0ac5dc6d.png',
+      filename: '',
       title: 'Pause_sinusale_5',
       contexte: 'Syncope',
       comment: '',
@@ -4283,7 +4301,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 175, 182, 194],
     },
     {
-      filename: '6592614fbd5c8.png',
+      filename: '',
       title: 'Epanchement_péricardique_3._Lymphome',
       contexte: 'Lymphome, dyspnée',
       comment:
@@ -4301,7 +4319,7 @@ export default class extends BaseSeeder {
       tags: [843, 851, 852, 1026, 1201],
     },
     {
-      filename: '6598e26e49461.png',
+      filename: '',
       title: 'BSA_2_type_1',
       contexte: 'Femme 75 ans, sensations lipothymiques',
       comment:
@@ -4319,7 +4337,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 182, 183, 188],
     },
     {
-      filename: '6598ed4c9d666.png',
+      filename: '',
       title: 'BSA_2_type_2_FC_42_bpm',
       contexte: 'malaise, syncope',
       comment: 'BSA 2 type 2 avec [P-P] lors du BSA 2 = 2 [P-P]',
@@ -4336,7 +4354,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 175, 182, 188],
     },
     {
-      filename: '6598fc846d4f6.png',
+      filename: '',
       title: 'BSA_2_(infarctus)',
       contexte: 'Douleur thoracique (SCA)',
       comment:
@@ -4354,7 +4372,7 @@ export default class extends BaseSeeder {
       tags: [173, 182, 188, 204, 205, 866, 3509, 867],
     },
     {
-      filename: '6599073bf095a.png',
+      filename: '',
       title: 'Bloc_de_branche_alternant_(Mobitz_2)',
       contexte: '',
       comment: '',
@@ -4371,7 +4389,7 @@ export default class extends BaseSeeder {
       tags: [],
     },
     {
-      filename: '6599ae9718b24.png',
+      filename: '',
       title: 'Tachy_QRS_fins_et_manoeuvres_vagales',
       contexte: 'Palpitations et dyspnée',
       comment: '',
@@ -4388,7 +4406,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 209, 290, 291, 295, 2045, 71, 148, 3138],
     },
     {
-      filename: '6599b1d3bb101.png',
+      filename: '',
       title: 'BAV_2_de_type_2',
       contexte: 'Syncope et asthénie',
       comment: '',
@@ -4405,7 +4423,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 204, 211, 220, 237, 964],
     },
     {
-      filename: '6599b3a52b47e.png',
+      filename: '',
       title: 'BAV_2_de_type_2_avec_BAV_3_parox',
       contexte: 'Syncope',
       comment: '',
@@ -4422,7 +4440,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 204, 211, 215, 220, 237, 964],
     },
     {
-      filename: '6599bcaaab756.png',
+      filename: '',
       title: 'FA_et_BAV_3_(2)',
       contexte: 'Asthénie, dyspnée',
       comment: '',
@@ -4439,7 +4457,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 204, 215, 290, 432, 796, 801],
     },
     {
-      filename: '6599be4587350.png',
+      filename: '',
       title: 'FA_et_BAV_3_(3)',
       contexte: 'Dyspnée',
       comment: '',
@@ -4456,7 +4474,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 204, 215, 290, 432, 796, 804],
     },
     {
-      filename: '6599bfdad0595.png',
+      filename: '',
       title: 'Salve_atriale_(2)',
       contexte: 'Palpitations',
       comment: '',
@@ -4473,7 +4491,7 @@ export default class extends BaseSeeder {
       tags: [290, 562, 1320, 563],
     },
     {
-      filename: '6599c0b5df2e4.png',
+      filename: '',
       title: 'ESA_en_salve_(3)',
       contexte: 'Asymptomatique',
       comment: '',
@@ -4490,7 +4508,7 @@ export default class extends BaseSeeder {
       tags: [290, 562, 1320, 563, 1326],
     },
     {
-      filename: '6599c25960cd4.png',
+      filename: '',
       title: 'Stimulation_ventriculaire_bipolaire',
       contexte: 'Porteur d&#039;un stimulateur cardiaque',
       comment: '',
@@ -4507,7 +4525,7 @@ export default class extends BaseSeeder {
       tags: [755, 758, 759, 964, 8],
     },
     {
-      filename: '6599c430e3931.png',
+      filename: '',
       title: 'Stimulation_ventriculaire_(2)',
       contexte: 'Porteur d&#039;un stimulateur cardiaque',
       comment: '',
@@ -4524,7 +4542,7 @@ export default class extends BaseSeeder {
       tags: [755, 758, 759, 964, 8],
     },
     {
-      filename: '6599c8572a9d7.png',
+      filename: '',
       title: 'Bloc_alternant_(2)',
       contexte: 'Syncope',
       comment: '',
@@ -4541,7 +4559,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 246, 964],
     },
     {
-      filename: '6599c88dda912.png',
+      filename: '',
       title: 'Bloc_alternant_(3)',
       contexte: 'Syncope',
       comment: '',
@@ -4558,7 +4576,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 246, 964],
     },
     {
-      filename: '6599ca72d690c.png',
+      filename: '',
       title: 'Tachycardie_et_adénosine',
       contexte: 'Palpitations',
       comment: '',
@@ -4575,7 +4593,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 295, 443, 148],
     },
     {
-      filename: '6599cbd12ffa2.png',
+      filename: '',
       title: 'TV_avec_manœuvres_vagales',
       contexte: 'Palpitations mal tolérées chez un homme avec séquelle d&#039;infarctus',
       comment: '',
@@ -4592,7 +4610,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 308, 35, 148],
     },
     {
-      filename: '6599cec5d16f1.png',
+      filename: '',
       title: 'Tachy_QRS_fin_et_adénosine',
       contexte: 'Palpitations',
       comment: '',
@@ -4609,7 +4627,7 @@ export default class extends BaseSeeder {
       tags: [290, 443, 148],
     },
     {
-      filename: '6599cf1d838b5.png',
+      filename: '',
       title: 'SCA_avec_sous_ST',
       contexte: 'Douleur thoracique',
       comment: '',
@@ -4626,7 +4644,7 @@ export default class extends BaseSeeder {
       tags: [913, 3324, 3325, 3326, 3327, 914],
     },
     {
-      filename: '6599da484545a.png',
+      filename: '',
       title: 'Flutter_2_pour_1_et_Massage_sino_carotidien',
       contexte: 'Palpitations et dyspnée chez un BPCO',
       comment: '',
@@ -4643,7 +4661,7 @@ export default class extends BaseSeeder {
       tags: [290, 351, 352, 103, 148],
     },
     {
-      filename: '65a15f81bd4f5.png',
+      filename: '',
       title: 'Rythme_sinusal_avec_artefacts_mimant_une_FA',
       contexte: 'ECG préop réalisé avant une fermeture de FOP ',
       comment: '',
@@ -4660,7 +4678,7 @@ export default class extends BaseSeeder {
       tags: [157, 169],
     },
     {
-      filename: '65a451289710f.png',
+      filename: '',
       title: 'ESV_doublet_02',
       contexte: 'Patient de 52 ans, palpitations',
       comment: '',
@@ -4677,7 +4695,7 @@ export default class extends BaseSeeder {
       tags: [290, 583, 1271, 1273],
     },
     {
-      filename: '65a454fd75010.png',
+      filename: '',
       title: 'ESV_polymorphe_01',
       contexte: 'Palpitations',
       comment:
@@ -4695,7 +4713,7 @@ export default class extends BaseSeeder {
       tags: [290, 583, 1273, 843, 844, 845],
     },
     {
-      filename: '65a4592a20f36.png',
+      filename: '',
       title: 'ESV_polymorphes_2',
       contexte: 'Palpitations.',
       comment: 'RS lent avec possible sequelle V1V3 (onde Q ou r rabotée) et ESV bigéminées',
@@ -4712,7 +4730,7 @@ export default class extends BaseSeeder {
       tags: [290, 583, 1271, 822, 824],
     },
     {
-      filename: '65a461579c8f5.png',
+      filename: '',
       title: 'ESV_polymorphe_3',
       contexte: 'Palpitations.',
       comment:
@@ -4730,7 +4748,7 @@ export default class extends BaseSeeder {
       tags: [290, 583],
     },
     {
-      filename: '65a4632162b9b.png',
+      filename: '',
       title: 'ESV_doublet_3',
       contexte: 'Palpitations',
       comment: '',
@@ -4747,7 +4765,7 @@ export default class extends BaseSeeder {
       tags: [290, 432, 435, 583, 1273, 603, 843, 844, 845, 847],
     },
     {
-      filename: '65aed7f8961de.png',
+      filename: '',
       title: 'TVNS_janv24_01',
       contexte: 'Palpitations',
       comment: 'TVNS car un triplet (au moins) est l&#039;équivalent d&#039;une TV',
@@ -4764,7 +4782,7 @@ export default class extends BaseSeeder {
       tags: [290, 537, 583, 1274, 1275],
     },
     {
-      filename: '65aedcffe7ce8.png',
+      filename: '',
       title: 'TVNS_janv24_02',
       contexte: 'Perte de connaissance',
       comment:
@@ -4782,7 +4800,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 292, 537, 538, 843, 851, 852],
     },
     {
-      filename: '65aee4281b691.png',
+      filename: '',
       title: 'TVNS_(Takotsubo)_janv_24_2023',
       contexte: 'Douleur thoracique. Contexte de Takotsubo',
       comment: 'RS avec BAV1 puis salves de TVNS (avec changement d&#039;axe et repos post TV). ',
@@ -4799,7 +4817,7 @@ export default class extends BaseSeeder {
       tags: [171, 173, 220, 237, 290, 537, 538, 808, 809, 818],
     },
     {
-      filename: '65b6612397d97.png',
+      filename: '',
       title: 'ESV_malignes',
       contexte: 'Syncope',
       comment: '',
@@ -4816,7 +4834,7 @@ export default class extends BaseSeeder {
       tags: [290, 583, 1272, 740, 1551, 745, 698],
     },
     {
-      filename: '65c25d1d194cb.png',
+      filename: '',
       title: 'Pause_post_régularisation',
       contexte: 'Syncopes à répétition et palpitations',
       comment: '',
@@ -4833,7 +4851,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 182, 198, 290, 432, 434, 583, 796, 801],
     },
     {
-      filename: '65c2621d36127.png',
+      filename: '',
       title: 'Pause_post_régularisation_(2)',
       contexte: 'Syncope et palpitations',
       comment: '',
@@ -4850,7 +4868,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 182, 198, 290, 351, 352, 353, 356, 796, 801, 3138],
     },
     {
-      filename: '65c26b2d7b817.png',
+      filename: '',
       title: 'Artéfacts_(2)',
       contexte: 'Patient asymptomatique, Parkinson',
       comment: '',
@@ -4867,7 +4885,7 @@ export default class extends BaseSeeder {
       tags: [157, 169, 1237],
     },
     {
-      filename: '65c3351df41bf.png',
+      filename: '',
       title: 'BSA_2_type_2',
       contexte: 'Femme 73 ans, essoufflement, fatigue.',
       comment:
@@ -4885,7 +4903,7 @@ export default class extends BaseSeeder {
       tags: [173, 182, 188],
     },
     {
-      filename: '65c33d1051452.png',
+      filename: '',
       title: 'HAG,_HVG,_BFAG',
       contexte: 'Homme 73 ans, rétrécissement aortique',
       comment:
