@@ -1,11 +1,12 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column, manyToMany } from '@adonisjs/lucid/orm'
+import { BaseModel, beforeCreate, column, manyToMany } from '@adonisjs/lucid/orm'
 import Tag from '#models/tag'
 import type { ManyToMany } from '@adonisjs/lucid/types/relations'
+import { v4 as uuidv4 } from 'uuid'
 
 export default class Ecg extends BaseModel {
   @column({ isPrimary: true })
-  declare id: number
+  declare id: string
 
   @column()
   declare filename: string
@@ -57,4 +58,9 @@ export default class Ecg extends BaseModel {
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   declare updatedAt: DateTime
+
+  @beforeCreate()
+  static assignUuid(ecg: Ecg) {
+    if (ecg.id === undefined) ecg.id = uuidv4()
+  }
 }
