@@ -25,10 +25,10 @@ export default class TagsController {
       if (tag) {
         return response.status(201).json({ description: 'Tag created', content: tag })
       } else {
-        return response.status(400).json({ description: 'Tag not created', content: null })
+        return response.status(500).json({ description: 'Tag not created', content: null })
       }
     } else {
-      return response.status(400).json({ description: 'Missing required fields', content: null })
+      return response.status(406).json({ description: 'Missing required fields', content: null })
     }
   }
 
@@ -57,7 +57,7 @@ export default class TagsController {
       if (tag) {
         return response.status(200).json({ description: 'Tag updated', content: tag })
       } else {
-        return response.status(400).json({ description: 'Tag not updated', content: null })
+        return response.status(500).json({ description: 'Tag not updated', content: null })
       }
     } else {
       return response.status(404).json({ description: 'Tag not found', content: null })

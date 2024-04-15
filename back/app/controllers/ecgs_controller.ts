@@ -13,7 +13,7 @@ export default class EcgsController {
     if (ecgs) {
       return response.status(200).json({ description: 'Ecg records found', content: ecgs })
     } else {
-      return response.status(404).json({ description: 'No Ecg found', content: null })
+      return response.status(404).json({ description: 'No Ecg records found', content: null })
     }
   }
 
@@ -22,35 +22,50 @@ export default class EcgsController {
    */
   async store({ request, response }: HttpContext) {
     if (
-      request.input('filename') &&
-      request.input('title') &&
-      request.input('contexte') &&
-      request.input('comment') &&
-      request.input('age') &&
-      request.input('sexe') &&
-      request.input('posted_by') &&
-      request.input('validated_by') &&
-      request.input('created') &&
-      request.input('validated') &&
-      request.input('pixels_cm') &&
-      request.input('speed') &&
-      request.input('gain') &&
-      request.input('quality')
+      request.input('filename') !== null &&
+      request.input('filename') !== undefined &&
+      request.input('title') !== null &&
+      request.input('title') !== undefined &&
+      request.input('contexte') !== null &&
+      request.input('contexte') !== undefined &&
+      request.input('comment') !== null &&
+      request.input('comment') !== undefined &&
+      request.input('age') !== null &&
+      request.input('age') !== undefined &&
+      request.input('sexe') !== null &&
+      request.input('sexe') !== undefined &&
+      request.input('posted_by') !== null &&
+      request.input('posted_by') !== undefined &&
+      request.input('validated_by') !== null &&
+      request.input('validated_by') !== undefined &&
+      request.input('created') !== null &&
+      request.input('created') !== undefined &&
+      request.input('validated') !== null &&
+      request.input('validated') !== undefined &&
+      request.input('pixels_cm') !== null &&
+      request.input('pixels_cm') !== undefined &&
+      request.input('speed') !== null &&
+      request.input('speed') !== undefined &&
+      request.input('gain') !== null &&
+      request.input('gain') !== undefined &&
+      request.input('quality') !== null &&
+      request.input('quality') !== undefined
     ) {
       const ecg = await Ecg.create(request.body())
       if (request.input('tags') !== undefined) {
         await ecg.related('tags').attach(request.input('tags'))
       }
+
       if (ecg) {
         const ecgToReturn = await Ecg.query().preload('tags').where('id', ecg.id).firstOrFail()
         return response
           .status(201)
           .json({ description: 'Ecg record created', content: ecgToReturn })
       } else {
-        return response.status(400).json({ description: 'Ecg record not created', content: null })
+        return response.status(500).json({ description: 'Ecg record not created', content: null })
       }
     } else {
-      return response.status(400).json({ description: 'Missing required fields', content: null })
+      return response.status(406).json({ description: 'Missing required fields', content: null })
     }
   }
 
@@ -85,7 +100,7 @@ export default class EcgsController {
           .status(200)
           .json({ description: 'Ecg record updated', content: ecgToReturn })
       } else {
-        return response.status(400).json({ description: 'Ecg record not updated', content: null })
+        return response.status(500).json({ description: 'Ecg record not updated', content: null })
       }
     } else {
       return response.status(404).json({ description: 'Ecg record not found', content: null })
@@ -109,9 +124,9 @@ export default class EcgsController {
   /**
    * Display how many records are in the database
    */
-  async count({}: HttpContext) {
+  async count({ response }: HttpContext) {
     const ecgs = await Ecg.query()
-    return ecgs.length
+    return response.status(200).json(ecgs.length)
   }
 
   async uploadFile({ request, response }: HttpContext) {

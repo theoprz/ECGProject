@@ -66,7 +66,7 @@ test.group('Ecg add', () => {
   test('Create one missing required field', async ({ client }) => {
     const response = await client.post('/api/v1/ecg')
 
-    response.assertStatus(400)
+    response.assertStatus(406)
     response.assertBody({
       description: 'Missing required fields',
       content: null,

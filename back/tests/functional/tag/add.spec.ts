@@ -29,7 +29,7 @@ test.group('Tag add', () => {
   test('Create one missing required field', async ({ client }) => {
     const response = await client.post('/api/v1/tag')
 
-    response.assertStatus(400)
+    response.assertStatus(406)
     response.assertBodyContains({
       description: 'Missing required fields',
     })
