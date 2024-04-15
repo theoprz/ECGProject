@@ -1,7 +1,10 @@
 import 'dart:convert';
-
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:path/path.dart';
+import 'package:async/async.dart';
+
 import 'package:front/widgets/tag_utils.dart';
 import '../classes/ECG_class.dart';
 import '../classes/Tag.dart';
@@ -26,6 +29,33 @@ class _TagSelectionPageState extends State<TagSelectionPage> {
   void initState() {
     super.initState();
     loadTagsFuture = tagSelector.loadTags();
+  }
+
+  Future<void> uploadPhoto(File imageFile, String ecgId) async {
+    var uri = Uri.parse('http://173.212.207.124:3333/api/v1/ecg/upload/file');
+    var request = http.MultipartRequest('POST', uri);
+
+    var stream = http.ByteStream(DelegatingStream.typed(imageFile.openRead()));
+    var length = await imageFile.length();
+
+    var multipartFile = http.MultipartFile(
+      'image',
+      stream,
+      length,
+      filename: basename(imageFile.path),
+    );
+
+    request.files.add(multipartFile);
+    request.fields['ecgId'] = ecgId;
+
+    var response = await http.Response.fromStream(await request.send());
+
+    if (response.statusCode == 200) {
+      print('Photo uploaded successfully');
+      print('Response: ${response.body}');
+    } else {
+      print('Failed to upload photo. Status code: ${response.statusCode}');
+    }
   }
 
 
@@ -164,28 +194,12 @@ Widget build(BuildContext context) {
           print('Erreur lors de la requête : $error');
           // Gérer l'erreur en conséquence
         }
-/*
-          // Créer une requête multipart
-          var request = http.MultipartRequest('POST', Uri.parse('http://173.212.207.124:3333/api/v1/ecg/upload/file'));
 
-          // Ajouter le fichier à la requête
-          var fileStream = http.ByteStream(widget.ecg.photo.openRead());
-          var length = await widget.ecg.photo.length();
-          var multipartFile = http.MultipartFile('file', fileStream, length,
-              filename: widget.ecg.photo.path.split('/').last); // Déterminez le nom du fichier à partir du chemin
+        // Envoi de la photo
+        if (widget.ecg.photo.path != 'assets/images/noimg.jpg') {
+          await uploadPhoto(widget.ecg.photo, widget.ecg.id);
+        }
 
-          request.files.add(multipartFile);
-
-          // Envoyer la requête
-          var response = await request.send();
-
-          // Lire la réponse
-          if (response.statusCode == 200) {
-            print('File uploaded successfully');
-          } else {
-            print('Error uploading file: ${response.statusCode}');
-          }
-          */
       },
       label: Row(
         children: [
