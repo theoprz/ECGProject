@@ -5,40 +5,67 @@ export default class TagsController {
   /**
    * Display a list of resource
    */
-  async index({}: HttpContext) {
-    return Tag.query()
+  async index({ response }: HttpContext) {
+    const tags = await Tag.query()
+
+    if (tags) {
+      return response.status(200).json({ description: 'Tags found', content: tags })
+    } else {
+      return response.status(404).json({ description: 'No tags found', content: null })
+    }
   }
 
   /**
    * Handle form submission for the create action
    */
-  async store({ request }: HttpContext) {
-    return await Tag.create(request.body())
+  async store({ request, response }: HttpContext) {
+    const tag = await Tag.create(request.body())
+
+    if (tag) {
+      return response.status(201).json({ description: 'Tag created', content: tag })
+    } else {
+      return response.status(400).json({ description: 'Tag not created', content: null })
+    }
   }
 
   /**
    * Show individual record
    */
-  async show({ params }: HttpContext) {
-    return Tag.query().where('id', params.id).firstOrFail()
+  async show({ params, response }: HttpContext) {
+    const tag = await Tag.query().where('id', params.id).firstOrFail()
+
+    if (tag) {
+      return response.status(200).json({ description: 'Tag found', content: tag })
+    } else {
+      return response.status(404).json({ description: 'Tag not found', content: null })
+    }
   }
 
   /**
    * Handle form submission for the edit action
    */
-  async update({ params, request }: HttpContext) {
+  async update({ params, request, response }: HttpContext) {
     const tag = await Tag.findOrFail(params.id)
     tag.merge(request.body())
     await tag.save()
-    return tag
+    if (tag) {
+      return response.status(200).json({ description: 'Tag updated', content: tag })
+    } else {
+      return response.status(400).json({ description: 'Tag not updated', content: null })
+    }
   }
 
   /**
    * Delete record
    */
-  async destroy({ params }: HttpContext) {
+  async destroy({ params, response }: HttpContext) {
     const tag = await Tag.findOrFail(params.id)
-    await tag.delete()
-    return tag
+
+    if (tag !== null) {
+      await tag.delete()
+      return response.status(200).json({ description: 'Tag deleted', content: null })
+    } else {
+      return response.status(404).json({ description: 'Tag not found', content: null })
+    }
   }
 }

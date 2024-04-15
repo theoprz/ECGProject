@@ -5,7 +5,7 @@ export default class extends BaseSchema {
 
   async up() {
     this.schema.createTable(this.tableName, (table) => {
-      table.increments('id').primary()
+      table.string('id', 36).primary()
       table.string('filename', 128).notNullable()
       table.string('title', 256)
       table.text('contexte').notNullable()
