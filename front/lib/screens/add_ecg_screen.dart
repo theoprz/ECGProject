@@ -23,6 +23,7 @@ class AddECGScreen extends StatefulWidget {
 class _AddECGScreenState extends State<AddECGScreen> {
   late CameraController _controller;
   File? _selectedImage;
+  bool _isDisposed = false; // Ajoute cette variable
 
   @override
   void initState() {
@@ -30,16 +31,24 @@ class _AddECGScreenState extends State<AddECGScreen> {
     _initializeCamera();
   }
 
+  @override
+  void dispose() {
+    _isDisposed = true; // Indique que le widget est disposé
+    _controller.dispose();
+    super.dispose();
+  }
+
   Future<void> _initializeCamera() async {
     _controller = CameraController(
       widget.camera,
       ResolutionPreset.ultraHigh,
     );
+    await Future.delayed(const Duration(milliseconds: 300));
     await _controller.initialize();
-    if (mounted) {
+    if (mounted && !_isDisposed) { // Vérifie si le widget est monté et non disposé
       setState(() {});
     }
-    WidgetsBinding.instance.addPostFrameCallback((_) {
+    WidgetsBinding.instance!.addPostFrameCallback((_) {
       _showWelcomePopup(context);
     });
   }
@@ -160,12 +169,6 @@ class _AddECGScreenState extends State<AddECGScreen> {
         );
       }
     }
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
   }
 }
 
@@ -322,7 +325,6 @@ class _PhotoPreviewPageState extends State<PhotoPreviewPage> {
                   return;
                 }
                 ECG tmpECG = ECG.withQualitySpeedGain(titleController.text, descriptionController.text, ageController.text.isEmpty ? 0 : int.parse(ageController.text), _selectedSex ?? "Inconnu", [], "0", _imageQuality ?? "Non renseignée", int.parse(vitesseController.text), int.parse(gainController.text), widget.imageFile);
-
                 Navigator.push(
                   context,
                   MaterialPageRoute(

@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:http/http.dart' as http;
+import 'package:path_provider/path_provider.dart';
 import 'Tag.dart';
 
 class ECG {
@@ -28,6 +29,22 @@ class ECG {
     return 'ECG{title: $title, description: $description, patientAge: $patientAge, patientSex: $patientSex, tags: $tags, id: $id, quality: $quality, vitesse: $vitesse, gain: $gain}';
   }
 
+  Future<File> downloadImage(String ecgId) async {
+    final response = await http.get(Uri.parse('http://173.212.207.124:3333/api/v1/ecg/image?ecgId=$ecgId'));
+
+    if (response.statusCode == 200) {
+      final List<int> imageData = response.bodyBytes;
+      final tempDir = await getTemporaryDirectory();
+      final File imageFile = File('${tempDir.path}/$ecgId.jpg');
+
+      await imageFile.writeAsBytes(imageData);
+
+      return imageFile;
+    } else {
+      throw Exception('Failed to download image: ${response.statusCode}');
+    }
+  }
+
   Future<void> setECGFromQuery(i) async {
     var url = Uri.parse('http://173.212.207.124:3333/api/v1/ecg');
 
@@ -37,6 +54,7 @@ class ECG {
       if (response.statusCode == 200) {
         List<dynamic> dataList = jsonDecode(response.body)['content'];
 
+        id = dataList[i]['id'];
         title = dataList[i]['title'];
         description = dataList[i]['comment'];
         patientAge = dataList[i]['age'];
@@ -49,7 +67,7 @@ class ECG {
         if(dataList[i]['filename'] == ""){
           photo = File('assets/images/noimg.jpg');
         } else {
-          photo = File(dataList[i]['filename']);
+          photo = await downloadImage(dataList[i]['id']);
         }
 
         vitesse = dataList[i]['speed'];

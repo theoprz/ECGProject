@@ -23,6 +23,8 @@ export default class EcgsController {
    */
   async store({ request, response }: HttpContext) {
     if (
+      request.input('id') !== null &&
+      request.input('id') !== undefined &&
       request.input('filename') !== null &&
       request.input('filename') !== undefined &&
       request.input('title') !== null &&

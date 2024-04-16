@@ -65,10 +65,13 @@ class ECGDetailsPage extends StatelessWidget {
                         return GestureDetector(
                           onTap: () {
                             Navigator.push(context, MaterialPageRoute(builder: (_) {
-                              return FullscreenImage(imagePath: 'assets/images/noimg.jpg'); //TODO SET ECG IMAGE PATH
+                              print(ecg.photo.path);
+                              return FullscreenImage(imagePath: ecg.photo.path); //TODO SET ECG IMAGE PATH
                             }));
                           },
-                          child: Image.asset('assets/images/noimg.jpg', width: 300, height: 200),
+                          child: ecg.photo.path == 'assets/images/noimg.jpg'
+                              ? Image.asset('assets/images/noimg.jpg', width: 300, height: 200)
+                              : Image.network('http://173.212.207.124:3333/imgECGs/${ecg.id}.jpg', width: 300, height: 200),
                         );
                       } else {
                         // Otherwise, return the TagDisplayer

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:path/path.dart';
 import 'package:async/async.dart';
+import 'package:uuid/uuid.dart';
 
 import 'package:front/widgets/tag_utils.dart';
 import '../classes/ECG_class.dart';
@@ -149,19 +150,49 @@ Widget build(BuildContext context) {
         // Fonction pour confirmer les tags sélectionnés
         List<Tag> tagList = globalSelectedTags.map((tagNode) => tagNode.tag).toList();
         widget.ecg.setTags(tagList);
+        var uuid = const Uuid();
+        widget.ecg.id = uuid.v4();
 
         globalSelectedTags.clear();
         globalSelectedTagsController.add(globalSelectedTags);
 
         // Création de l'objet Ecg à envoyer
 
+        int handleQuality(String quality) {
+          switch (quality) {
+            case "Mauvaise":
+              return 1;
+            case "Moyenne":
+              return 2;
+            case "Bonne":
+              return 3;
+            case "Très bonne":
+              return 4;
+            default:
+              return 0;
+          }
+        }
+
+        int transformSexe(String sexe){
+          if (sexe == "Masculin"){
+            return 0;
+          } else if (sexe == "Féminin"){
+            return 1;
+          } else {
+            return 3;
+          }
+
+        }
+
+
         Map<String, dynamic> ecgData = {
+          "id": widget.ecg.id,
           "title": widget.ecg.title,
           "contexte": widget.ecg.description,
           "comment": "No comment yet.",
           "age": widget.ecg.patientAge,
-          "sexe": widget.ecg.patientSexId,
-          "filename": "test.jpg",
+          "sexe": transformSexe(widget.ecg.patientSex),
+          "filename": "${widget.ecg.id}.jpg",
           "posted_by": "1",
           "validated_by": "1",
           "created": "e28ec3a5-25b3-4d82-a5cc-dfc0cd91cd33",
@@ -169,7 +200,7 @@ Widget build(BuildContext context) {
           "pixels_cm": "0",
           "speed": widget.ecg.vitesse,
           "gain": widget.ecg.gain,
-          "quality": widget.ecg.qualityId,
+          "quality": handleQuality(widget.ecg.quality),
           "tags": tagList.map((tag) => tag.id).toList(), // Supposant que l'id de chaque tag est requis
         };
 

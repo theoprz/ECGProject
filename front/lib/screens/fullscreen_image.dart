@@ -6,6 +6,7 @@ class FullscreenImage extends StatelessWidget {
 
   FullscreenImage({required this.imagePath});
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,7 +14,9 @@ class FullscreenImage extends StatelessWidget {
         child: Center(
           child: Hero(
             tag: 'imageHero',
-            child: Image.asset(imagePath),
+            child: imagePath.startsWith("/data/")
+                ? Image.network('http://173.212.207.124:3333/imgECGs/${imagePath.split('/').last}')
+                : Image.asset(imagePath),
           ),
         ),
         onTap: () {
