@@ -1,3 +1,4 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'components/compte_screen.dart';
 import 'components/informations_screen.dart';
@@ -5,8 +6,9 @@ import 'components/profile_menu.dart';
 import 'components/profile_pic.dart';
 class ProfileScreen extends StatelessWidget {
   static String routeName = "/profile";
+  final CameraDescription camera;
 
-  const ProfileScreen({super.key});
+  ProfileScreen({super.key, required this.camera});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

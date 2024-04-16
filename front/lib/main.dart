@@ -87,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           const HomeScreen(),
           AddECGScreen(camera: widget.camera),
-          const ProfileScreen(),
+          ProfileScreen(camera: widget.camera),
         ],
       ),
       bottomNavigationBar: BottomNavBar(
