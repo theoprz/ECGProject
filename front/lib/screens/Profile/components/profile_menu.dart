@@ -43,3 +43,45 @@ class ProfileMenu extends StatelessWidget {
     );
   }
 }
+
+
+
+
+class ProfileMenu2 extends StatelessWidget {
+  const ProfileMenu2({
+    super.key,
+    required this.text,
+    required this.icon,
+    this.press,
+  });
+
+  final String text, icon;
+  final VoidCallback? press;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      child: TextButton(
+        style: TextButton.styleFrom(
+          foregroundColor: kPrimaryColor2, padding: const EdgeInsets.all(30),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+          backgroundColor: const Color(0xFFF5F6F9),
+        ),
+        onPressed: press,
+        child: Row(
+          children: [
+            SvgPicture.asset(
+              icon,
+              color: kPrimaryColor2,
+              width: 22,
+            ),
+            const SizedBox(width: 50),
+            Expanded(child: Text(text)),
+          ],
+        ),
+      ),
+    );
+  }
+}

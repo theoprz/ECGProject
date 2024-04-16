@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
-
+import 'package:flutter_svg/svg.dart';
+import '../../../widgets/constant.dart';
 class CompteScreen extends StatelessWidget {
   const CompteScreen({Key? key}) : super(key: key);
 
@@ -15,6 +16,7 @@ class CompteScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        child:SingleChildScrollView(
         child: Column(
           children: [
             const SizedBox(height: 80),
@@ -34,21 +36,22 @@ class CompteScreen extends StatelessWidget {
          ],
         ),
       ),
+    )
     );
   }
 
-  itemProfile(String title, String subtitle, IconData iconData) {
+  Widget itemProfile(String title, String subtitle, IconData iconData) {
     return Container(
       decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(30),
+          color: Color.fromARGB(255, 239, 239, 239),
+          borderRadius: BorderRadius.circular(10),
           boxShadow: [
-            BoxShadow(
-                offset: Offset(0, 5),
-                color: Color.fromARGB(255, 46, 0, 253).withOpacity(.2),
+              BoxShadow(
+               offset: Offset(0, 5),
+             color: Color.fromARGB(255, 255, 255, 255).withOpacity(.2),
                 spreadRadius: 2,
-                blurRadius: 10
-            )
+               blurRadius: 10
+             )
           ]
       ),
       child: ListTile(
@@ -60,3 +63,4 @@ class CompteScreen extends StatelessWidget {
     );
   }
 }
+
