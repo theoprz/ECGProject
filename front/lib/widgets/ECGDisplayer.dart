@@ -8,7 +8,7 @@ import '../screens/ecg_details_page.dart';
 class ECGDisplayer extends StatefulWidget {
   final ECG ecg;
 
-  const ECGDisplayer({Key? key, required this.ecg}) : super(key: key);
+  const ECGDisplayer({super.key, required this.ecg});
 
   @override
   _ECGDisplayerState createState() => _ECGDisplayerState();
@@ -43,7 +43,7 @@ class _ECGDisplayerState extends State<ECGDisplayer> {
     });
 
     // Récupérer la hauteur de la bordure
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       if (_borderKey.currentContext != null) {
         final RenderBox renderBox = _borderKey.currentContext!.findRenderObject() as RenderBox;
         final size = renderBox.size;
@@ -103,7 +103,7 @@ class _ECGDisplayerState extends State<ECGDisplayer> {
                         height: _borderHeight,
                         decoration: BoxDecoration(
                           color: getQualityColor(widget.ecg.quality),
-                          borderRadius: BorderRadius.vertical(
+                          borderRadius: const BorderRadius.vertical(
                             top: Radius.circular(50),
                             bottom: Radius.circular(50),
                           ),
@@ -148,7 +148,7 @@ class _ECGDisplayerState extends State<ECGDisplayer> {
                                 child: Center(
                                   child: Text(
                                     widget.ecg.getListOfAllTagsNamesAsStrings()[itemIndex],
-                                    style: TextStyle(fontSize: 13),
+                                    style: const TextStyle(fontSize: 13),
                                   ),
                                 ),
                               ),

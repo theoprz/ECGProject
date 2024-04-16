@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<List<ECG>> generateFakeECGList() async {
 
-    var url = Uri.parse('http://173.212.207.124:3333/api/v1/ecg/count');
+    var url = Uri.parse('http://173.212.207.124:3333/api/v1/ecg/info/count');
 
     List<ECG> ecgList = [];
 
@@ -72,9 +72,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(50.0),
+        preferredSize: const Size.fromHeight(50.0),
         child: AppBar(
-          title: Text('Électrocardiogrammes'),
+          title: const Text('Électrocardiogrammes'),
           centerTitle: true,
           backgroundColor: Colors.white,
           scrolledUnderElevation: 0,
@@ -99,9 +99,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           controller: _controller,
                           decoration: InputDecoration(
                             labelText: 'Rechercher un ECG',
-                            prefixIcon: Icon(Icons.search),
+                            prefixIcon: const Icon(Icons.search),
                             suffixIcon: IconButton(
-                              icon: Icon(Icons.clear),
+                              icon: const Icon(Icons.clear),
                               onPressed: () {
                                 _controller.clear();
                               },
@@ -151,10 +151,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     future: generateFakeECGList(),
                     builder: (BuildContext context, AsyncSnapshot<List<ECG>> snapshot) {
                       if (snapshot.connectionState == ConnectionState.waiting) {
-                        return Center(
+                        return const Center(
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
+                            children: [
                               CircularProgressIndicator(),
                               SizedBox(height: 20),
                               Text('Chargement'),
@@ -162,7 +162,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         );
                       } else if (snapshot.hasError) {
-                        return Center(
+                        return const Center(
                           child: Text('Erreur de chargement'),
                         );
                       } else {

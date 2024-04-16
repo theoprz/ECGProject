@@ -14,9 +14,9 @@ import 'TagSelector.dart';
 
 
 class TagSelectionPage extends StatefulWidget {
-  ECG ecg;
+  final ECG ecg;
 
-  TagSelectionPage({required this.ecg});
+  const TagSelectionPage({super.key, required this.ecg});
 
   @override
   _TagSelectionPageState createState() => _TagSelectionPageState();
@@ -65,7 +65,7 @@ class _TagSelectionPageState extends State<TagSelectionPage> {
 Widget build(BuildContext context) {
   return Scaffold(
     appBar: AppBar(
-      title: Text('Sélection de tags'),
+      title: const Text('Sélection de tags'),
       backgroundColor: Colors.white,
       scrolledUnderElevation: 0,
     ),
@@ -73,9 +73,9 @@ Widget build(BuildContext context) {
       future: loadTagsFuture,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         } else if (snapshot.hasError) {
-          return Center(child: Text('Erreur de chargement des tags'));
+          return const Center(child: Text('Erreur de chargement des tags'));
         } else {
           List<TagNode> roots = tagSelector.buildTagTree(tagSelector.tags);
           roots.sort((a, b) => a.tag.name.toLowerCase().compareTo(b.tag.name.toLowerCase())); //Tri alphabétique des racines
@@ -86,7 +86,7 @@ Widget build(BuildContext context) {
                 stream: globalSelectedTagsController.stream,
                 builder: (context, snapshot) {
                   return ConstrainedBox(
-                    constraints: BoxConstraints(maxHeight: 180), //Hauteur maximale de la liste
+                    constraints: const BoxConstraints(maxHeight: 180), //Hauteur maximale de la liste
                     child: SingleChildScrollView(
                       child: Container(
                         padding: const EdgeInsets.only(top: 0, left: 8, right: 8, bottom: 8),
@@ -111,8 +111,8 @@ Widget build(BuildContext context) {
                                 ),
                                 child: Center(
                                   child: Text(
-                                    '${tagNode.tag.name}',
-                                    style: TextStyle(fontSize: 14),
+                                    tagNode.tag.name,
+                                    style: const TextStyle(fontSize: 14),
                                   ),
                                 ),
                               ),
@@ -240,14 +240,14 @@ Widget build(BuildContext context) {
       },
       label: Row(
         children: [
-          Text('Confirmer les'),
-          SizedBox(width: 5), //Espace entre texte et cercle
+          const Text('Confirmer les'),
+          const SizedBox(width: 5), //Espace entre texte et cercle
           StreamBuilder<List<TagNode>>(
             stream: globalSelectedTagsController.stream,
             builder: (context, snapshot) {
               return Container(
-                padding: EdgeInsets.all(4),
-                decoration: BoxDecoration(
+                padding: const EdgeInsets.all(4),
+                decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   color: Colors.white, //Couleur du cercle
                 ),
@@ -255,8 +255,8 @@ Widget build(BuildContext context) {
               );
             },
           ),
-          SizedBox(width: 5), //Espace entre texte et cercle
-          Text('tags'),
+          const SizedBox(width: 5), //Espace entre texte et cercle
+          const Text('tags'),
         ],
       ),
     ),

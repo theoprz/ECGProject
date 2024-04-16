@@ -23,36 +23,21 @@ export default class EcgsController {
    */
   async store({ request, response }: HttpContext) {
     if (
-      request.input('id') !== null &&
-      request.input('id') !== undefined &&
-      request.input('filename') !== null &&
-      request.input('filename') !== undefined &&
-      request.input('title') !== null &&
-      request.input('title') !== undefined &&
-      request.input('contexte') !== null &&
-      request.input('contexte') !== undefined &&
-      request.input('comment') !== null &&
-      request.input('comment') !== undefined &&
-      request.input('age') !== null &&
-      request.input('age') !== undefined &&
-      request.input('sexe') !== null &&
-      request.input('sexe') !== undefined &&
-      request.input('posted_by') !== null &&
-      request.input('posted_by') !== undefined &&
-      request.input('validated_by') !== null &&
-      request.input('validated_by') !== undefined &&
-      request.input('created') !== null &&
-      request.input('created') !== undefined &&
-      request.input('validated') !== null &&
-      request.input('validated') !== undefined &&
-      request.input('pixels_cm') !== null &&
-      request.input('pixels_cm') !== undefined &&
-      request.input('speed') !== null &&
-      request.input('speed') !== undefined &&
-      request.input('gain') !== null &&
-      request.input('gain') !== undefined &&
-      request.input('quality') !== null &&
-      request.input('quality') !== undefined
+      'id' in request.body() &&
+      'filename' in request.body() &&
+      'title' in request.body() &&
+      'contexte' in request.body() &&
+      'comment' in request.body() &&
+      'age' in request.body() &&
+      'sexe' in request.body() &&
+      'posted_by' in request.body() &&
+      'validated_by' in request.body() &&
+      'created' in request.body() &&
+      'validated' in request.body() &&
+      'pixels_cm' in request.body() &&
+      'speed' in request.body() &&
+      'gain' in request.body() &&
+      'quality' in request.body()
     ) {
       const ecg = await Ecg.create(request.body())
       if (request.input('tags') !== undefined) {
@@ -60,14 +45,16 @@ export default class EcgsController {
       }
 
       if (ecg) {
-        const ecgToReturn = await Ecg.query().preload('tags').where('id', ecg.id).firstOrFail()
+        const ecgToReturn = await Ecg.query().preload('tags').where('id', ecg.id).first()
         return response
           .status(201)
           .json({ description: 'Ecg record created', content: ecgToReturn })
       } else {
+        console.log('Ecg record not created')
         return response.status(500).json({ description: 'Ecg record not created', content: null })
       }
     } else {
+      console.log('Missing required fields')
       return response.status(406).json({ description: 'Missing required fields', content: null })
     }
   }

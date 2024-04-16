@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:front/widgets/tag_utils.dart';
 
@@ -7,7 +6,7 @@ import '../classes/TagNode.dart';
 class ChildTagSelectionPage extends StatelessWidget {
   final TagNode parent;
 
-  ChildTagSelectionPage({required this.parent});
+  const ChildTagSelectionPage({super.key, required this.parent});
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +20,9 @@ class ChildTagSelectionPage extends StatelessWidget {
         scrolledUnderElevation: 0,
         actions: <Widget>[
           Padding(
-            padding: EdgeInsets.only(right: 8.0), // Ajoutez une marge à droite de l'icône
+            padding: const EdgeInsets.only(right: 8.0), // Ajoutez une marge à droite de l'icône
             child: IconButton(
-              icon: Icon(Icons.check),
+              icon: const Icon(Icons.check),
               iconSize: 30,
               onPressed: () {
                 //FUNCTION TO ADD FROM THIS TAG WITHOUT CHILDREN

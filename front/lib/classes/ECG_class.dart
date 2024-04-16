@@ -32,7 +32,7 @@ class ECG {
   }
 
   Future<File> downloadImage(String ecgId) async {
-    final response = await http.get(Uri.parse('http://173.212.207.124:3333/api/v1/ecg/image?ecgId=$ecgId'));
+    final response = await http.get(Uri.parse('http://173.212.207.124:3333/api/v1/ecg/info/image?ecgId=$ecgId'));
 
     if (response.statusCode == 200) {
       final List<int> imageData = response.bodyBytes;
