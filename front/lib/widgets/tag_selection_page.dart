@@ -152,6 +152,7 @@ Widget build(BuildContext context) {
         widget.ecg.setTags(tagList);
         var uuid = const Uuid();
         widget.ecg.id = uuid.v4();
+        widget.ecg.date = (DateTime.now().millisecondsSinceEpoch ~/ 1000).toString();
 
         globalSelectedTags.clear();
         globalSelectedTagsController.add(globalSelectedTags);
@@ -195,8 +196,8 @@ Widget build(BuildContext context) {
           "filename": "${widget.ecg.id}.jpg",
           "posted_by": "1",
           "validated_by": "1",
-          "created": "e28ec3a5-25b3-4d82-a5cc-dfc0cd91cd33",
-          "validated": "e28ec3a5-25b3-4d82-a5cc-dfc0cd91cd33",
+          "created": widget.ecg.date,
+          "validated": "0",
           "pixels_cm": "0",
           "speed": widget.ecg.vitesse,
           "gain": widget.ecg.gain,

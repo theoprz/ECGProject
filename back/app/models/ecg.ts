@@ -1,4 +1,3 @@
-import { DateTime } from 'luxon'
 import { BaseModel, column, manyToMany } from '@adonisjs/lucid/orm'
 import Tag from '#models/tag'
 import type { ManyToMany } from '@adonisjs/lucid/types/relations'
@@ -51,10 +50,4 @@ export default class Ecg extends BaseModel {
 
   @manyToMany(() => Tag)
   declare tags: ManyToMany<typeof Tag>
-
-  @column.dateTime({ autoCreate: true })
-  declare createdAt: DateTime
-
-  @column.dateTime({ autoCreate: true, autoUpdate: true })
-  declare updatedAt: DateTime
 }

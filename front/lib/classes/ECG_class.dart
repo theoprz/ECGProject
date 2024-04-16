@@ -2,6 +2,8 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:http/http.dart' as http;
+import 'package:intl/date_symbol_data_file.dart';
+import 'package:intl/intl.dart';
 import 'package:path_provider/path_provider.dart';
 import 'Tag.dart';
 
@@ -54,6 +56,17 @@ class ECG {
       if (response.statusCode == 200) {
         List<dynamic> dataList = jsonDecode(response.body)['content'];
 
+        List<int> data = dataList[i]['created']['data'].cast<int>();
+        String dateString = utf8.decode(data);
+
+        String formattedDate = epochToFrenchDate(int.parse(dateString));
+
+        if(int.parse(dateString) == 0){
+           formattedDate = "Non renseignée";
+        }
+
+        print(formattedDate);
+
         id = dataList[i]['id'];
         title = dataList[i]['title'];
         title = title.replaceAll('_', ' ');//On retire tous les underscores et on les remplace par des espaces
@@ -63,7 +76,7 @@ class ECG {
         patientSex = transformSexe(dataList[i]['sexe']);
         patientSexId = dataList[i]['sexe'];
         id = dataList[i]['id'];
-        date = '4\nseptembre\n2024';
+        date = formattedDate;
         quality = handleQuality(dataList[i]['quality']);
         qualityId = dataList[i]['quality'];
         if(dataList[i]['filename'] == ""){
