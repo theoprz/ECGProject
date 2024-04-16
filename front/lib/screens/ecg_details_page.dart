@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:front/screens/fullscreen_image.dart';
 import '../classes/ECG_class.dart';
 import '../widgets/TagDisplayer.dart';
