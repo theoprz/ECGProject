@@ -67,6 +67,12 @@ class _AddECGScreenState extends State<AddECGScreen> {
 
   @override
   Widget build(BuildContext context) {
+    //Bloquer la rotation de l'écran
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Ajouter un ECG"),
