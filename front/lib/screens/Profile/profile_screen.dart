@@ -50,7 +50,15 @@ class ProfileScreen extends StatelessWidget {
               icon: "assets/icons/Log out.svg",
               next: const Icon(Icons.navigate_next),
               press: () {
-                Navigator.push(context,MaterialPageRoute(builder:(context)=> LoginScreen(camera: camera,)) );
+                Navigator.pushAndRemoveUntil(//On va sur l'écran d'accueil, on supprime toutes les routes précédentes pour éviter de revenir en arrière
+                  context,
+                  MaterialPageRoute(//On créer une nouvelle racine,
+                    builder: (context) => LoginScreen(camera: camera,),
+                    settings: RouteSettings(name: '/'), //Définit la route vers la racine
+                  ),
+                      (Route<dynamic> route) => false,
+                );
+                //Navigator.push(context,MaterialPageRoute(builder:(context)=> LoginScreen(camera: camera,)) );
               },
             ),
           ],

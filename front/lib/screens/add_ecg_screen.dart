@@ -1,6 +1,4 @@
 import 'dart:io';
-import 'package:http/http.dart' as http;
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/services.dart';
@@ -14,7 +12,7 @@ import '../widgets/tag_selection_page.dart';
 class AddECGScreen extends StatefulWidget {
   final CameraDescription camera;
 
-  const AddECGScreen({Key? key, required this.camera}) : super(key: key);
+  const AddECGScreen({super.key, required this.camera});
 
   @override
   _AddECGScreenState createState() => _AddECGScreenState();
@@ -83,12 +81,12 @@ class _AddECGScreenState extends State<AddECGScreen> {
                     child: CameraPreview(_controller),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 ElevatedButton.icon(
                   onPressed: () {
                     _takePicture();
                   },
-                  icon: Icon(Icons.camera_alt),
+                  icon: const Icon(Icons.camera_alt),
                   label: const Text("Prendre une photo", style: TextStyle(fontSize: 20)),
                   style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.resolveWith<Color>(
@@ -100,20 +98,20 @@ class _AddECGScreenState extends State<AddECGScreen> {
                 },
               ),
               foregroundColor: MaterialStateProperty.all<Color>(Colors.white), // Couleur du texte
-              padding: MaterialStateProperty.all<EdgeInsetsGeometry>(EdgeInsets.all(10)), // Espacement intérieur du bouton
+              padding: MaterialStateProperty.all<EdgeInsetsGeometry>(const EdgeInsets.all(10)), // Espacement intérieur du bouton
               shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                 RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(18.0), // Bord arrondi
                   // Facultatif : ajoute une ombre au bouton
-                  side: BorderSide(color: Colors.blue, width: 2),
+                  side: const BorderSide(color: Colors.blue, width: 2),
                 ),
               ),
             ),
           ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
         ],
       )
-          : Center(
+          : const Center(
             child: CircularProgressIndicator(),
       ),
     );
@@ -129,7 +127,7 @@ class _AddECGScreenState extends State<AddECGScreen> {
     } catch (e) {
       print("Error taking picture: $e");
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+        const SnackBar(
           content: Text("Erreur lors de la prise de photo"),
         ),
       );
@@ -154,7 +152,7 @@ class _AddECGScreenState extends State<AddECGScreen> {
         });
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
+          const SnackBar(
             content: Text("Aucune image sélectionnée"),
             duration: Duration(seconds: 3),
           ),
@@ -173,7 +171,7 @@ class _AddECGScreenState extends State<AddECGScreen> {
 class PhotoPreviewPage extends StatefulWidget {
   final File imageFile;
 
-  PhotoPreviewPage({Key? key, required this.imageFile}) : super(key: key);
+  const PhotoPreviewPage({Key? key, required this.imageFile}) : super(key: key);
 
   @override
   _PhotoPreviewPageState createState() => _PhotoPreviewPageState();
@@ -275,12 +273,12 @@ class _PhotoPreviewPageState extends State<PhotoPreviewPage> {
               ],
             ),
 
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
 
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Container(
                   width: 140,
                   child: TextField(
@@ -294,7 +292,7 @@ class _PhotoPreviewPageState extends State<PhotoPreviewPage> {
                   maxLength: 4,
                   ),
                 ),
-              SizedBox(width: 50),
+              const SizedBox(width: 50),
                 Container(
                   width: 140,
                   child: TextField(
@@ -340,7 +338,7 @@ class _PhotoPreviewPageState extends State<PhotoPreviewPage> {
                 );
                 */
               },
-              child: Text("Ajouter des tags"),
+              child: const Text("Ajouter des tags"),
             ),
           ],
         ),
@@ -370,7 +368,7 @@ class AddInfoPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Ajouter des tags"),
       ),
-      body: Center(
+      body: const Center(
         child: Text("Ajoutez ici des informations sur l'ECG"),
       ),
     );
