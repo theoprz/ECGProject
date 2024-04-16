@@ -72,7 +72,7 @@ class ECGDetailsPage extends StatelessWidget {
                           onTap: () {
                             Navigator.push(context, MaterialPageRoute(builder: (_) {
                               print(ecg.photo.path);
-                              return FullscreenImage(imagePath: ecg.photo.path);
+                              return FullscreenImage(imagePath: ecg.photo.path, vitesseEcg: ecg.vitesse, gainEcg: ecg.gain);
                             }));
                           },
                           child: ecg.photo.path == 'assets/images/noimg.jpg'

@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 
 class FullscreenImage extends StatelessWidget {
   final String imagePath;
-  //final int gainEcg;
-  //final int vitesseEcg;
+  final int gainEcg;
+  final int vitesseEcg;
 
-  FullscreenImage({required this.imagePath});
+  FullscreenImage({required this.imagePath, required this.gainEcg, required this.vitesseEcg});
 
   @override
   Widget build(BuildContext context) {
@@ -36,10 +36,10 @@ class FullscreenImage extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    'Nous allons afficher le gain et la vitesse ici',
+                    'Vitesse : ${vitesseEcg} mm/s    Gain : ${gainEcg} mm/mV',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 24.0,
+                      fontSize: 20.0,
                     ),
                     textAlign: TextAlign.center,
                   ),
