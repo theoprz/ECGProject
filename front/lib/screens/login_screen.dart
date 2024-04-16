@@ -35,19 +35,6 @@ class LoginScreen extends StatelessWidget {
                 );
               },
             ),
-            MaterialButton(
-              color: Colors.green,
-              textColor: Colors.white,
-              child: Text('Page de test'),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => TagSelectionPage(ecg: ECG("Titre", "Description", 0, "Masculin", [], "0", File(''))),
-                  ),
-                );
-              },
-            ),
           ],
         ),
       ),
