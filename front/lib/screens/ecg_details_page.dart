@@ -8,15 +8,15 @@ import '../widgets/TagDisplayer.dart';
 class ECGDetailsPage extends StatelessWidget {
   final ECG ecg;
 
-  const ECGDetailsPage({Key? key, required this.ecg}) : super(key: key);
+  const ECGDetailsPage({super.key, required this.ecg});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(50.0),
+        preferredSize: const Size.fromHeight(50.0),
         child: AppBar(
-          title: Text('${ecg.title}'),
+          title: Text(ecg.title),
           centerTitle: true,
           backgroundColor: Colors.white,
           scrolledUnderElevation: 0,

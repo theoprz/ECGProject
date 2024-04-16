@@ -31,8 +31,8 @@ Widget buildTagNode(BuildContext context, TagNode node) {
       ),
     ),
     child:ListTile(
-      title: Text('${node.tag.name}'),
-      trailing: node.children.isNotEmpty ? Icon(Icons.arrow_forward_ios) : null,
+      title: Text(node.tag.name),
+      trailing: node.children.isNotEmpty ? const Icon(Icons.arrow_forward_ios) : null,
       onTap: () {
         if (node.children.isEmpty) {
           List<TagNode> selectedTags = selectTagAndAncestors(node);

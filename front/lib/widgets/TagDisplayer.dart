@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import '../classes/Tag.dart';
 
 
 class TagDisplayer extends StatefulWidget {
   final Tag tag;
 
-  const TagDisplayer({Key? key, required this.tag}) : super(key: key);
+  const TagDisplayer({super.key, required this.tag});
 
   @override
   _TagDisplayerState createState() => _TagDisplayerState();
@@ -34,7 +33,7 @@ class _TagDisplayerState extends State<TagDisplayer> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text("${widget.tag.name}",
+              Text(widget.tag.name,
                   style: const TextStyle(
                       fontSize: 18, fontWeight: FontWeight.bold)),
               const SizedBox(height: 5),
