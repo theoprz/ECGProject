@@ -167,15 +167,23 @@ class _HomeScreenState extends State<HomeScreen> {
                         );
                       } else {
                         items = snapshot.data!;
-                        return ListView.separated(
-                          padding: const EdgeInsets.only(top: 10, bottom: 10),
-                          itemCount: filteredItems.length,
-                          itemBuilder: (context, index) {
-                            return ECGDisplayer(ecg: filteredItems[index]);
+                        return GestureDetector(
+                          onVerticalDragDown: (_) {
+                            FocusScope.of(context).unfocus();
                           },
-                          separatorBuilder: (context, index) {
-                            return const SizedBox(height: 10);
+                          onTap: () {
+                            FocusScope.of(context).unfocus();
                           },
+                          child: ListView.separated(
+                            padding: const EdgeInsets.only(top: 10, bottom: 10),
+                            itemCount: filteredItems.length,
+                            itemBuilder: (context, index) {
+                              return ECGDisplayer(ecg: filteredItems[index]);
+                            },
+                            separatorBuilder: (context, index) {
+                              return const SizedBox(height: 10);
+                            },
+                          ),
                         );
                       }
                     },
@@ -189,6 +197,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
-//TODO WHEN USER SCROLLS, REMOVE KEYBOARD
-//TODO WHEN USER CLICKS, REMOVE KEYBOARD

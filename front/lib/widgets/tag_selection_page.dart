@@ -154,8 +154,6 @@ Widget build(BuildContext context) {
         widget.ecg.id = uuid.v4();
         widget.ecg.date = (DateTime.now().millisecondsSinceEpoch ~/ 1000).toString();
 
-        globalSelectedTags.clear();
-        globalSelectedTagsController.add(globalSelectedTags);
 
         // Création de l'objet Ecg à envoyer
 
@@ -219,7 +217,10 @@ Widget build(BuildContext context) {
           if (response.statusCode == 201) {
             print('Ecg envoyé avec succès');
             print('Réponse: ${response.body}');
-            // Naviguer vers l'écran d'accueil ou effectuer toute autre action nécessaire
+            // Naviguer vers l'écran d'accueil et vider la liste des tags
+            globalSelectedTags.clear();
+            globalSelectedTagsController.add(globalSelectedTags);
+
             Navigator.popUntil(context, ModalRoute.withName('/'));
           } else {
             print('Erreur lors de l\'envoi de l\'Ecg : ${response.statusCode} ${response.body}');
@@ -263,6 +264,3 @@ Widget build(BuildContext context) {
 }
 
 }
-
-
-//TODO VALIDATING SELECTION ADD ALL TAGS SELECTED TO THE ECG OBJECT, GOES FORWARD IN SCREENS AND THEN EMPTY TAG LIST

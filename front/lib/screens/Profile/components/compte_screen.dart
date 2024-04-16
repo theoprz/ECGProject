@@ -60,5 +60,3 @@ class CompteScreen extends StatelessWidget {
     );
   }
 }
-
-//TODO : METTRE UNE APPBAR AVEC UN BOUTON DE RETOUR

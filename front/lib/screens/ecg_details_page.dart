@@ -33,6 +33,9 @@ class ECGDetailsPage extends StatelessWidget {
                 child: Text('Contexte : ${ecg.description}'),
               ),
               Container(
+                child: Text('Date de publication: ${ecg.date?.replaceAll("\n", " ")}'),
+              ),
+              Container(
                 decoration: BoxDecoration(
                   border: Border(
                     bottom: BorderSide(
@@ -51,7 +54,7 @@ class ECGDetailsPage extends StatelessWidget {
                       child: Text('Sexe: ${ecg.patientSex}', style: const TextStyle(fontSize: 14))
                     ),
                     Padding(padding: EdgeInsets.only(right: 10),
-                        child: Text('Qualité de l\'ECG: ${ecg.quality}', style: const TextStyle(fontSize: 14))
+                        child: Text('Qualité: ${ecg.quality}', style: const TextStyle(fontSize: 14))
                     ),
                   ],
                 ),
@@ -69,7 +72,7 @@ class ECGDetailsPage extends StatelessWidget {
                           onTap: () {
                             Navigator.push(context, MaterialPageRoute(builder: (_) {
                               print(ecg.photo.path);
-                              return FullscreenImage(imagePath: ecg.photo.path); //TODO SET ECG IMAGE PATH
+                              return FullscreenImage(imagePath: ecg.photo.path);
                             }));
                           },
                           child: ecg.photo.path == 'assets/images/noimg.jpg'
