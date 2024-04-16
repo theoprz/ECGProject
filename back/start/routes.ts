@@ -30,10 +30,10 @@ router
     router.get('/ecg/:id', [EcgsController, 'show'])
     router.put('/ecg/:id', [EcgsController, 'update'])
     router.delete('/ecg/:id', [EcgsController, 'destroy'])
-    router.get('/ecg/count', [EcgsController, 'count'])
-    router.get('/ecg/image', [EcgsController, 'getImage'])
+    router.get('/ecg/info/count', [EcgsController, 'count'])
+    router.get('/ecg/info/image', [EcgsController, 'getImage'])
     router.post('/ecg/upload/file', [EcgsController, 'uploadFile'])
-    router.get('/ecg/:user', [EcgsController, 'indexByUser'])
+    router.get('/ecg/info/:user', [EcgsController, 'indexByUser'])
     router.get('/auth/callback', [AuthController, 'authCallback'])
 
     router.resource('/tag', TagsController).apiOnly()
