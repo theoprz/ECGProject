@@ -184,8 +184,8 @@ class _PhotoPreviewPageState extends State<PhotoPreviewPage> {
   final titleController = TextEditingController();
   final descriptionController = TextEditingController();
   final ageController = TextEditingController();
-  final vitesseController = TextEditingController();
-  final gainController = TextEditingController();
+  final vitesseController = TextEditingController(text: "25");
+  final gainController = TextEditingController(text: "10");
   String? _imageQuality;
   //TODO appliquer filtre anti injection sql sur les champs de texte
 
