@@ -23,19 +23,11 @@ class AddECGScreen extends StatefulWidget {
 class _AddECGScreenState extends State<AddECGScreen> {
   late CameraController _controller;
   File? _selectedImage;
-  bool _isDisposed = false; // Ajoute cette variable
 
   @override
   void initState() {
     super.initState();
     _initializeCamera();
-  }
-
-  @override
-  void dispose() {
-    _isDisposed = true; // Indique que le widget est disposé
-    _controller.dispose();
-    super.dispose();
   }
 
   Future<void> _initializeCamera() async {
@@ -45,10 +37,10 @@ class _AddECGScreenState extends State<AddECGScreen> {
     );
     await Future.delayed(const Duration(milliseconds: 300));
     await _controller.initialize();
-    if (mounted && !_isDisposed) { // Vérifie si le widget est monté et non disposé
+    if (mounted) {
       setState(() {});
     }
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       _showWelcomePopup(context);
     });
   }
@@ -169,6 +161,12 @@ class _AddECGScreenState extends State<AddECGScreen> {
         );
       }
     }
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 }
 

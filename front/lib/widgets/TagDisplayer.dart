@@ -38,10 +38,6 @@ class _TagDisplayerState extends State<TagDisplayer> {
                   style: const TextStyle(
                       fontSize: 18, fontWeight: FontWeight.bold)),
               const SizedBox(height: 5),
-              Text("id :${widget.tag.id}"),
-              const SizedBox(height: 5),
-              Text("parentId :${widget.tag.parentId}"),
-              const SizedBox(height: 5),
             ],
           ),
         ),

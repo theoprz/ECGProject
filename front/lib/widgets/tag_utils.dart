@@ -32,7 +32,6 @@ Widget buildTagNode(BuildContext context, TagNode node) {
     ),
     child:ListTile(
       title: Text('${node.tag.name}'),
-      subtitle: Text('ID: ${node.tag.id}, Parent ID: ${node.tag.parentId}'),
       trailing: node.children.isNotEmpty ? Icon(Icons.arrow_forward_ios) : null,
       onTap: () {
         if (node.children.isEmpty) {

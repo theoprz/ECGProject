@@ -138,7 +138,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 decoration: BoxDecoration(
                   border: Border(
                     bottom: BorderSide(
-                      color: Colors.grey.shade600, //Couleur de la bordure
+                      color: Colors.blue.shade300, //Couleur de la bordure
                       width: 2.0, // Largeur de la bordure
                     ),
                   ),
@@ -151,11 +151,22 @@ class _HomeScreenState extends State<HomeScreen> {
                     future: generateFakeECGList(),
                     builder: (BuildContext context, AsyncSnapshot<List<ECG>> snapshot) {
                       if (snapshot.connectionState == ConnectionState.waiting) {
-                        return const CircularProgressIndicator(); // Show loading spinner while waiting for data
+                        return Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [
+                              CircularProgressIndicator(),
+                              SizedBox(height: 20),
+                              Text('Chargement'),
+                            ],
+                          ),
+                        );
                       } else if (snapshot.hasError) {
-                        return Text('Error: ${snapshot.error}'); // Show error message if something went wrong
+                        return Center(
+                          child: Text('Erreur de chargement'),
+                        );
                       } else {
-                        items = snapshot.data!; // Assign the data to items when it's loaded
+                        items = snapshot.data!;
                         return ListView.separated(
                           padding: const EdgeInsets.only(top: 10, bottom: 10),
                           itemCount: filteredItems.length,

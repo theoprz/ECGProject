@@ -30,13 +30,13 @@ class ECGDetailsPage extends StatelessWidget {
             children: [
               Container(
                 padding: const EdgeInsets.only(top: 4, left: 8, right: 8),
-                child: Text('${ecg.description}'),
+                child: Text('Contexte : ${ecg.description}'),
               ),
               Container(
                 decoration: BoxDecoration(
                   border: Border(
                     bottom: BorderSide(
-                      color: Colors.grey.shade600, // Change this color to change the color of the border
+                      color: Colors.blue.shade300, //Change this color to change the color of the border
                       width: 2.0, // Change this value to change the width of the border
                     ),
                   ),
@@ -49,6 +49,9 @@ class ECGDetailsPage extends StatelessWidget {
                     ),
                     Padding(padding: EdgeInsets.only(right: 10),
                       child: Text('Sexe: ${ecg.patientSex}', style: const TextStyle(fontSize: 14))
+                    ),
+                    Padding(padding: EdgeInsets.only(right: 10),
+                        child: Text('Qualité de l\'ECG: ${ecg.quality}', style: const TextStyle(fontSize: 14))
                     ),
                   ],
                 ),

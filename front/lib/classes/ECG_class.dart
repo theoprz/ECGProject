@@ -56,12 +56,14 @@ class ECG {
 
         id = dataList[i]['id'];
         title = dataList[i]['title'];
-        description = dataList[i]['comment'];
+        title = title.replaceAll('_', ' ');//On retire tous les underscores et on les remplace par des espaces
+        description = dataList[i]['contexte'];
+        description = description.replaceAll('&#039;', '\'');
         patientAge = dataList[i]['age'];
         patientSex = transformSexe(dataList[i]['sexe']);
         patientSexId = dataList[i]['sexe'];
         id = dataList[i]['id'];
-        date = "test";
+        date = '4\nseptembre\n2024';
         quality = handleQuality(dataList[i]['quality']);
         qualityId = dataList[i]['quality'];
         if(dataList[i]['filename'] == ""){

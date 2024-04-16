@@ -3,21 +3,44 @@ import 'package:flutter/material.dart';
 
 class FullscreenImage extends StatelessWidget {
   final String imagePath;
+  //final int gainEcg;
+  //final int vitesseEcg;
 
   FullscreenImage({required this.imagePath});
-
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: GestureDetector(
-        child: Center(
-          child: Hero(
-            tag: 'imageHero',
-            child: imagePath.startsWith("/data/")
-                ? Image.network('http://173.212.207.124:3333/imgECGs/${imagePath.split('/').last}')
-                : Image.asset(imagePath),
-          ),
+        child: Stack(
+          children: <Widget>[
+            Center(
+              child: Hero(
+                tag: 'imageHero',
+                child: imagePath.startsWith("/data/")
+                    ? Image.network('http://173.212.207.124:3333/imgECGs/${imagePath.split('/').last}')
+                    : Image.asset(imagePath),
+              ),
+            ),
+            Positioned(
+              bottom: 0.0,
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                color: Colors.black.withOpacity(0.5),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'Nous allons afficher le gain et la vitesse ici',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24.0,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
         onTap: () {
           Navigator.pop(context);
