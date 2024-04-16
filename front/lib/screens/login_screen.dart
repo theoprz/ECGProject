@@ -54,7 +54,16 @@ class LoginScreen extends StatelessWidget {
               color: Colors.blue,
               textColor: Colors.white,
               child: Text('Connexion'),
-              onPressed: () => login(),
+              onPressed: () {
+                Navigator.pushAndRemoveUntil(//On va sur l'écran d'accueil, on supprime toutes les routes précédentes pour éviter de revenir en arrière
+                  context,
+                  MaterialPageRoute(//On créer une nouvelle racine,
+                    builder: (context) => MyHomePage(title: 'ECG APP', camera: camera),
+                    settings: RouteSettings(name: '/'), //Définit la route vers la racine
+                  ),
+                      (Route<dynamic> route) => false,
+                );
+              },
             ),
           ],
         ),

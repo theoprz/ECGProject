@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<List<ECG>> generateFakeECGList() async {
 
-    var url = Uri.parse('http://173.212.207.124:3333/api/v1/ecg/count');
+    var url = Uri.parse('http://173.212.207.124:3333/api/v1/ecg/info/count');
 
     List<ECG> ecgList = [];
 
