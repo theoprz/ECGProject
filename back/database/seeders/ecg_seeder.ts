@@ -1,5 +1,6 @@
 import { BaseSeeder } from '@adonisjs/lucid/seeders'
 import Ecg from '#models/ecg'
+import { v4 as uuidv4 } from 'uuid'
 
 export default class extends BaseSeeder {
   datas = [
@@ -22,6 +23,7 @@ export default class extends BaseSeeder {
       tags: [999999],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Stim_atriale_et_ventriculaire',
       contexte: '',
@@ -39,6 +41,7 @@ export default class extends BaseSeeder {
       tags: [755, 756, 758, 759, 773, 778, 779, 781, 831, 964],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Tachycardie_sinusale_162_bpm,_homme_65_ans',
       contexte: 'Sepsis',
@@ -56,6 +59,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 292, 2045],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Hyperkaliémie_8,7_mmol/l',
       contexte: 'Femme 68 ans, ne va plus en dialyse, état de choc froid, confusion',
@@ -73,6 +77,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 205, 831, 964, 1069],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BAV_3_et_QT_long',
       contexte: 'Dysfonction de pacemaker',
@@ -90,6 +95,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 204, 215, 796, 801, 966, 1009, 1010, 1011, 1029, 1030, 35],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'SCA_ST+_antérieur_1._Pardee_antéro_septo_apical',
       contexte: '',
@@ -107,6 +113,7 @@ export default class extends BaseSeeder {
       tags: [866, 867, 872, 873, 913, 945, 139],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Hypothermie_sévère',
       contexte: 'Hypothermie',
@@ -124,6 +131,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 796, 804, 964, 1080, 1085],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Infarctus_non_ST+',
       contexte: 'Douleur thoracique',
@@ -141,6 +149,7 @@ export default class extends BaseSeeder {
       tags: [173, 182, 796, 801, 913, 914, 916, 920],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: "Tachycardie_RP'_supérieur_P'R_et_épanchement_péricardique",
       contexte: 'Femme 50 ans, dyspnée, cancer du sein',
@@ -158,6 +167,7 @@ export default class extends BaseSeeder {
       tags: [290, 423, 424, 843, 851, 852, 1232, 1233],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Maladie_pulmonaire_(emphysème)',
       contexte: 'Emphysème pulmonaire',
@@ -175,6 +185,7 @@ export default class extends BaseSeeder {
       tags: [169, 173, 220, 221, 290, 562, 563, 583, 2860, 11, 1196],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Fibrillation_atriale_avec_ischémie_fonctionnelle',
       contexte: 'Douleur thoracique et palpitation',
@@ -192,6 +203,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 432, 2045, 103],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Artefacts_électriques_rapides',
       contexte: 'ECG de repos, asymptomatique',
@@ -209,6 +221,7 @@ export default class extends BaseSeeder {
       tags: [157],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'QT_long_(498_ms,_QTcF_505_ms)',
       contexte: 'ECG après syncope ',
@@ -226,6 +239,7 @@ export default class extends BaseSeeder {
       tags: [1029, 1046],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Repolarisation_masculine._1',
       contexte: 'ECG annuel',
@@ -243,6 +257,7 @@ export default class extends BaseSeeder {
       tags: [857, 858, 1025],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'RIVA',
       contexte: 'Palpitations, coeur sain',
@@ -260,6 +275,7 @@ export default class extends BaseSeeder {
       tags: [290, 550, 20],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Ischémie_coronaire_(T_inversées)',
       contexte: 'Angor',
@@ -278,6 +294,7 @@ export default class extends BaseSeeder {
       tags: [966, 1007, 989],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'SCA_non_ST+_diffus_à_haut_risque',
       contexte: 'Fond douloureux rétrosternale prolongée au repos',
@@ -295,6 +312,7 @@ export default class extends BaseSeeder {
       tags: [913, 3321, 914],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'SCA_ST+_inférieur',
       contexte: 'Douleur thoracique postérieure',
@@ -312,6 +330,7 @@ export default class extends BaseSeeder {
       tags: [866, 3509, 867],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Séquelle_de_nécrose_inféro-latérale',
       contexte: 'ECG 2 jours après angioplastie',
@@ -329,6 +348,7 @@ export default class extends BaseSeeder {
       tags: [822, 826, 828, 866, 3507, 3509, 1014, 1021],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'SuperWolf_(Fibrillation_atriale_+_préexcitation)',
       contexte: '',
@@ -346,6 +366,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 338, 347],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Tachycardie_jonctionnelle_type_RIN',
       contexte: 'Palpitations\r\nECG avant adénosine',
@@ -363,6 +384,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 295, 443, 444, 445],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'FA_préexcitée_-_Super_Wolf',
       contexte: 'Palpitations puis perte de connaissance chez un patient de 23 ans.',
@@ -380,6 +402,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 338, 347],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Fibrillation_atriale',
       contexte: 'Palpitations.',
@@ -397,6 +420,7 @@ export default class extends BaseSeeder {
       tags: [290, 432, 2860, 14, 103],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Fibrillation_atriale_et_trouble_conductif_de_haut_grade',
       contexte: 'Syncope',
@@ -414,6 +438,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 204, 215, 290, 432, 435, 796, 804],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: "Inversion_d'électrodes",
       contexte: 'non précisé',
@@ -431,6 +456,7 @@ export default class extends BaseSeeder {
       tags: [158, 159],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Flutter_atrial,_conduction_lente_et_variable',
       contexte: "Bilan systématique d'AIT",
@@ -448,6 +474,7 @@ export default class extends BaseSeeder {
       tags: [290, 351, 352, 353, 356, 357, 2860, 14, 103],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'HVG,_HAG,_HAD',
       contexte: '',
@@ -465,6 +492,7 @@ export default class extends BaseSeeder {
       tags: [808, 809, 812, 843, 844, 845, 847, 966, 980, 984],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Bloc_fasciculaire_antérieur_gauche',
       contexte: '',
@@ -482,6 +510,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 227],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Hypokaliémie._1',
       contexte: '',
@@ -499,6 +528,7 @@ export default class extends BaseSeeder {
       tags: [1029, 1030, 1034, 1065],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Amylose_cardiaque_-_Microvoltage',
       contexte: '',
@@ -516,6 +546,7 @@ export default class extends BaseSeeder {
       tags: [290, 562, 563, 822, 843, 851, 855, 1140],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Péricardite_aiguë',
       contexte: '',
@@ -533,6 +564,7 @@ export default class extends BaseSeeder {
       tags: [866, 879, 881, 882, 883, 884, 885, 886, 112],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Hyperkaliémie_6.9',
       contexte: 'Asthénie, dyspnée, pâleur',
@@ -550,6 +582,7 @@ export default class extends BaseSeeder {
       tags: [290, 432, 831, 1069],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Anévrysme_ventriculaire_antéroseptal',
       contexte: 'Patient vu en consultation 3 mois après un SCA ST sus sur l&#039;IVA. ',
@@ -567,6 +600,7 @@ export default class extends BaseSeeder {
       tags: [822, 824, 825, 866, 901, 903, 904],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Anévrysme_ventriculaire_antéro-septal',
       contexte: 'J5 d&#039;un infarctus antérieur revascularisé à h+24h',
@@ -584,6 +618,7 @@ export default class extends BaseSeeder {
       tags: [822, 824, 825, 866, 3505, 3506, 901, 966, 1008, 1009, 989],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Arythmie_respiratoire',
       contexte: 'ECG réalisé dans le cadre d&#039;un dépistage à l&#039;institut Pasteur',
@@ -601,6 +636,7 @@ export default class extends BaseSeeder {
       tags: [9],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Arythmie_respiratoire_(2)',
       contexte:
@@ -619,6 +655,7 @@ export default class extends BaseSeeder {
       tags: [9],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Arythmie_respiratoire_T_neg_V1-V3',
       contexte: 'Douleur thoracique atypique',
@@ -636,6 +673,7 @@ export default class extends BaseSeeder {
       tags: [966, 1008, 1009, 9],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BAV1_BBDt_HBPG',
       contexte: 'Patiente consultant aux urgences pour syncope',
@@ -653,6 +691,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 205, 220, 225, 231, 964],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BAV1_BBDt_HBAG',
       contexte: 'Patient avec BPCO asymptomatique',
@@ -670,6 +709,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 205, 220, 225, 227],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BAV_1_BBG',
       contexte: 'Patient ayant présenté 2 lipothymies récentes',
@@ -687,6 +727,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 205, 220, 237, 964],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Tachycardie_à_QRS_fins_type_TRIN_(suite)_cardioversion_par_adénosine',
       contexte: 'Palpitations (voir ECG précédent)\r\nECG per adénosine ',
@@ -704,6 +745,7 @@ export default class extends BaseSeeder {
       tags: [290, 443, 444, 445, 148],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Artéfacts',
       contexte: 'Consultation anesthésie. Pas de pathologie cardiaque connue.',
@@ -721,6 +763,7 @@ export default class extends BaseSeeder {
       tags: [157, 169],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BAV_2_conduction_3/1',
       contexte: 'Asthénie ',
@@ -738,6 +781,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 204, 213, 220, 225, 227],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BAV_complet_avec_échappement_jonctionnel',
       contexte: 'Syncope et asthénie intense',
@@ -755,6 +799,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 204, 215, 796, 801, 966, 1008, 1009, 1010, 35],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Syndrome_de_Brugada',
       contexte: 'Dépistage chez un cardiologue avant le sport',
@@ -772,6 +817,7 @@ export default class extends BaseSeeder {
       tags: [866, 889, 890],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ECG_normal',
       contexte: 'Consultation pour une douleur thoracique à type de pointe passant en un éclair',
@@ -789,6 +835,7 @@ export default class extends BaseSeeder {
       tags: [1237],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'QT_long_hypokaliémie',
       contexte: "Diurétique de l'anse et diarrhée",
@@ -806,6 +853,7 @@ export default class extends BaseSeeder {
       tags: [1027, 1029, 1030, 1034, 1065],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'QT_long_sur_hypokaliémie',
       contexte: 'Perte de connaissance avec traumatisme',
@@ -823,6 +871,7 @@ export default class extends BaseSeeder {
       tags: [966, 998, 1029, 1030, 1031, 1065],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Repolarisation_masculine._2',
       contexte: 'Asymptomatique',
@@ -840,6 +889,7 @@ export default class extends BaseSeeder {
       tags: [857, 858, 1025],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'QT_long_avec_T_inversées',
       contexte: 'douleur thoracique régressive chez un homme de 55 ans',
@@ -857,6 +907,7 @@ export default class extends BaseSeeder {
       tags: [843, 855, 966, 1007, 989, 1029, 1183],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Repolarisation_précoce_discrete_homme_jeune',
       contexte: 'ECG systématique',
@@ -875,6 +926,7 @@ export default class extends BaseSeeder {
       tags: [861, 2685],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Repolarisation_précoce_typique',
       contexte: '',
@@ -892,6 +944,7 @@ export default class extends BaseSeeder {
       tags: [857, 861, 2685],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'RIVA_en_salve_sur_cœur_sain',
       contexte: '',
@@ -909,6 +962,7 @@ export default class extends BaseSeeder {
       tags: [290, 550],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'RIVA_en_compétition_avec_rythme_sinusal_avec_dissociation_AV',
       contexte: 'Pas de contexte particulier, palpitations',
@@ -926,6 +980,7 @@ export default class extends BaseSeeder {
       tags: [290, 550],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Rythme_du_sinus_coronaire_1.',
       contexte: 'asymptomatique',
@@ -944,6 +999,7 @@ export default class extends BaseSeeder {
       tags: [173, 249, 290, 583, 603, 818, 819],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Rythme_du_sinus_coronaire_2.',
       contexte: 'asymptomatique',
@@ -962,6 +1018,7 @@ export default class extends BaseSeeder {
       tags: [818, 819],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'SCA_ondes_T_inversées_1.',
       contexte: 'Gêne thoracique à l&#039;effort et au repos',
@@ -980,6 +1037,7 @@ export default class extends BaseSeeder {
       tags: [966, 1011, 989],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'SCA_avec_ST-_diffus_et_ST+_aVR',
       contexte: 'œdème pulmonaire avec oppression thoracique',
@@ -998,6 +1056,7 @@ export default class extends BaseSeeder {
       tags: [913, 3322, 3326, 3327, 914],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'SCA_ondes_T_inversees_profondes_QT_long_ischemie_ou_takotsubo',
       contexte: 'ECG post syncope, tableau d&#039;insuffisance cardiaque à bas débit',
@@ -1016,6 +1075,7 @@ export default class extends BaseSeeder {
       tags: [966, 1003, 1029, 1030],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'SCA_ondes_T_inversées_3._diffuses',
       contexte: 'Douleur thoracique infarctoïde il y a 48. ECG de suivi post angioplastie',
@@ -1034,6 +1094,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 175, 966, 1007, 1008, 1009, 1010, 1011, 989],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Dysfonction_sinusale',
       contexte: 'Exploration d&#039;une bradycardie chez un homme de 60 ans',
@@ -1052,6 +1113,7 @@ export default class extends BaseSeeder {
       tags: [173, 182, 183, 796, 801],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'SCA_ondes_T_inversées_3._syndrome_de_Wellens',
       contexte: 'Suspicion d&#039;angor d&#039;effort depuis plusieurs jours',
@@ -1070,6 +1132,7 @@ export default class extends BaseSeeder {
       tags: [966, 1007, 1008, 1009, 989],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'SCA_ST+_antérieur_3._étendu_avec_miroir_inférieur',
       contexte: 'Douleur thoracique antérieur avec irradiation postérieure',
@@ -1088,6 +1151,7 @@ export default class extends BaseSeeder {
       tags: [822, 866, 3504, 3508, 867, 913, 3327, 945, 139],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'SCA_ST+_antérieur_3._V1-V4_et_DI-VL',
       contexte: 'Douleur thoracique H6',
@@ -1106,6 +1170,7 @@ export default class extends BaseSeeder {
       tags: [817, 866, 3505, 3506, 3508, 867, 913, 945],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'SCA_ST+_inférieur_et_V3-V6_avec_bradycardie_sévère',
       contexte: 'Douleur thoracique infarctoïde, état de choc froid',
@@ -1127,6 +1192,7 @@ export default class extends BaseSeeder {
       ],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'SCA_ST+_inférieur_avec_ondes_Q_inféro-latérales',
       contexte: 'Malaise médio-nocturne avec sueurs, angoisse peristant jusqu&#039;au matin (H6)',
@@ -1145,6 +1211,7 @@ export default class extends BaseSeeder {
       tags: [822, 826, 828, 866, 3509, 867, 913, 3326, 945],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Séquelle_de_nécrose_antéroseptale',
       contexte: 'Diabétique. Examen annuel',
@@ -1163,6 +1230,7 @@ export default class extends BaseSeeder {
       tags: [822, 824, 825, 838],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Séquelles_de_nécrose_inferobasale',
       contexte: 'Coronarien. Bilan annuel',
@@ -1181,6 +1249,7 @@ export default class extends BaseSeeder {
       tags: [822, 828],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'FA_préexcitée_(super-Wolff)',
       contexte: 'Palpitations, malaise',
@@ -1199,6 +1268,7 @@ export default class extends BaseSeeder {
       tags: [173, 249, 255, 290, 291, 338, 347, 432],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Stimulation_atriale_permanente',
       contexte:
@@ -1218,6 +1288,7 @@ export default class extends BaseSeeder {
       tags: [755, 756, 7],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Stimulation_duale_atriale_et_ventriculaire',
       contexte:
@@ -1237,6 +1308,7 @@ export default class extends BaseSeeder {
       tags: [755, 756, 758, 759, 7, 8],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Stimulation_atriale_et_ventriculaire_à_gros_spikes',
       contexte: 'Consultation de suivi d&#039;un patient porteur d&#039;un stimulateur cardiaque.',
@@ -1254,6 +1326,7 @@ export default class extends BaseSeeder {
       tags: [755, 756, 758, 759],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Stimulation_ventriculaire_en_FA',
       contexte:
@@ -1273,6 +1346,7 @@ export default class extends BaseSeeder {
       tags: [290, 432, 435, 755, 758],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Stimulation_atriale_et_ventriculaire_bipolaire',
       contexte: 'Consultation de suivi de son stimulateur cardiaque.',
@@ -1291,6 +1365,7 @@ export default class extends BaseSeeder {
       tags: [755, 756, 758, 759, 7, 8],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Tachycardie_sinusale_1',
       contexte: 'Fièvre.',
@@ -1309,6 +1384,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 292],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Tachycardie_sinusale_2',
       contexte: 'Crise d&#039;angoisse.',
@@ -1327,6 +1403,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 292],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Tachycardie_sinusale_3',
       contexte: 'Fièvre.',
@@ -1345,6 +1422,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 292],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Tachycardie_QRS_fins_TRIN_avant_adenosine',
       contexte: 'Palpitations.',
@@ -1363,6 +1441,7 @@ export default class extends BaseSeeder {
       tags: [290, 443, 444, 445, 145],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Tachycardie_QRS_fins_TRIN_suite_avec_cardioversion_par_adenosine',
       contexte: 'Cardioversion par adénosine d&#039;une TSV type TRIN (suite)',
@@ -1380,6 +1459,7 @@ export default class extends BaseSeeder {
       tags: [290, 443, 444, 445, 755, 770, 145, 148],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Tachycardie_QRS_fins_2_TRIN_fast_slow',
       contexte: 'Palpitations',
@@ -1398,6 +1478,7 @@ export default class extends BaseSeeder {
       tags: [290, 443, 444, 447, 103],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Tachycardie_QRS_fins_3a_TRIN_slow_fast_avant_ATP_1',
       contexte: '',
@@ -1416,6 +1497,7 @@ export default class extends BaseSeeder {
       tags: [290, 443, 444, 445],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Tachycardie_QRS_fins_3b_TRIN_slow-fast_cardioversion_adénosine',
       contexte: 'Administration d&#039;adenosine IV pour une TSV ',
@@ -1434,6 +1516,7 @@ export default class extends BaseSeeder {
       tags: [290, 443, 444, 445, 755, 770, 148],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Tachycardie_QRS_fins_4a_TRIN_slow_fast_140_bpm',
       contexte: 'Palpitations.',
@@ -1452,6 +1535,7 @@ export default class extends BaseSeeder {
       tags: [290, 443, 444, 445, 145],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Tachycardie_QRS_fins_4b_TRIN_manoeuvres_vagales_et_debut_cardioversion_dernier_QRS',
       contexte: 'Tachycardie régulière à QRS fins. Manoeuvre vagale en cours.',
@@ -1470,6 +1554,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 295, 443, 444, 445, 755, 770],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Tachycardie_à_QRS_fins_4c_TRIN_cardioversion_par_adénosine',
       contexte: '',
@@ -1488,6 +1573,7 @@ export default class extends BaseSeeder {
       tags: [290, 443, 444, 445, 755, 770, 71],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: "Tachycardie_régulière_à_QRS_fins_avec_RP'_sup._90_ms",
       contexte: 'Palpitations',
@@ -1506,6 +1592,7 @@ export default class extends BaseSeeder {
       tags: [290, 443, 460, 145],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Tachycardie_sinusale',
       contexte: '',
@@ -1523,6 +1610,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 292, 857, 858, 859],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Tachycardie_QRS_larges_1_BBD',
       contexte: '',
@@ -1541,6 +1629,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 225, 290, 291, 308],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Tachycardie_QRS_larges_2_BBG_flutter_1_pour_1_sous_flécainide',
       contexte: 'Homme 65 ans traité pour des accès de fibrillation atriale par flécaïnide',
@@ -1559,6 +1648,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 237, 290, 291, 308, 56],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BAV_1_et_BBG',
       contexte: '',
@@ -1576,6 +1666,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 205, 220, 237, 964],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Séquelle_de_nécrose_V1V2',
       contexte: 'Dyspnée d&#039;effort',
@@ -1594,6 +1685,7 @@ export default class extends BaseSeeder {
       tags: [822, 824, 843, 855, 913, 3327, 966, 1010, 1183],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BAV_1',
       contexte: '',
@@ -1611,6 +1703,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 205],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BAV_1_(2)',
       contexte: '',
@@ -1628,6 +1721,7 @@ export default class extends BaseSeeder {
       tags: [157, 173, 204, 205, 290, 291, 292, 293],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BAV_1_(3)',
       contexte: '',
@@ -1645,6 +1739,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 205, 290, 562, 563],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BAV_2_de_type_1',
       contexte: 'Asthénie',
@@ -1662,6 +1757,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 206],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BAV_2_mobitz_1_et_BFAG',
       contexte: '',
@@ -1679,6 +1775,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 206, 220, 831, 2860, 13],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BAV_2_pour_1',
       contexte: '',
@@ -1696,6 +1793,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 209],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BAV_2_pour_1_(2)',
       contexte: '',
@@ -1713,6 +1811,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 209, 220, 225],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BAV_2_pour_1_(3)',
       contexte: '',
@@ -1730,6 +1829,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 209],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BAV_complet',
       contexte: '',
@@ -1747,6 +1847,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 204, 215, 796, 801, 35],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BAV_complet_avec_échappement_purkinje_gauche',
       contexte: 'Asthénie sévère',
@@ -1764,6 +1865,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 204, 215, 796, 804, 964, 35],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BAV_complet_avec_échappement_jonctionnel_(2)',
       contexte: '',
@@ -1781,6 +1883,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 204, 215, 796, 801],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BAV_1_(4)',
       contexte: '',
@@ -1798,6 +1901,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 205],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BAV_1_BBG_(2)',
       contexte: '',
@@ -1815,6 +1919,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 205, 220, 237, 964],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BBDt_et_HVD',
       contexte: 'BPCO sévère',
@@ -1832,6 +1937,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 225, 808, 812, 843, 850, 964],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BBDt_et_BFAG',
       contexte: '',
@@ -1849,6 +1955,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 225, 227, 2860, 13, 964],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BBDt_complet',
       contexte: '',
@@ -1866,6 +1973,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 221],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BBDt_et_BFAG_(2)',
       contexte: 'Patient asymptomatique',
@@ -1883,6 +1991,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 225, 227, 964],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BBDt_BFAG_BAV_1_et_ESA_bigéminées',
       contexte: 'consultation chez les cardiologue pour palpitations',
@@ -1900,6 +2009,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 205, 220, 225, 227, 290, 562, 563, 1322, 964],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BBDt_HBAG_PR_très_long',
       contexte: 'Asthénie',
@@ -1917,6 +2027,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 205, 220, 225, 227, 964],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BBDt_et_BFAG_(3)',
       contexte: 'Asymptomatique',
@@ -1934,6 +2045,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 225, 227],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BBDt_BFPG',
       contexte: 'Syncope',
@@ -1951,6 +2063,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 225, 231],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BBDt_et_BFPG_et_BAV_1_(2)',
       contexte: 'syncope',
@@ -1968,6 +2081,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 205, 220, 225, 231],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BBDt_incomplet',
       contexte: 'Asymptomatique',
@@ -1985,6 +2099,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 221],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BBDt_incomplet_(2)',
       contexte: 'Asymptomatique',
@@ -2002,6 +2117,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 221],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BBDt_incomplet_(3)',
       contexte: 'Aymptomatique',
@@ -2019,6 +2135,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 221],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BBDt_complet_(2)',
       contexte: 'BPCO',
@@ -2036,6 +2153,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 225],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BBG_(2)',
       contexte: 'Essouflement et OMI',
@@ -2053,6 +2171,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 237],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BBG',
       contexte: 'Syncope',
@@ -2070,6 +2189,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 237],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BBG_(3)',
       contexte: 'Fatigue',
@@ -2087,6 +2207,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 237],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BBDt_complet_(3)',
       contexte: 'ATCD tuberculose',
@@ -2104,6 +2225,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 225],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Bradycardie_sinusale_et_aspect_rsr',
       contexte: 'Patient très sportif',
@@ -2121,6 +2243,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 175],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Bradycardie_sinusale',
       contexte: 'Asthénie',
@@ -2138,6 +2261,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 175],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Bradycardie_sinusale_(2)',
       contexte: 'Asthénie',
@@ -2155,6 +2279,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 175],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Brugada_(2)',
       contexte: 'asymtomatique',
@@ -2172,6 +2297,7 @@ export default class extends BaseSeeder {
       tags: [866, 889, 890],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Brugada_(3)',
       contexte: 'Hyperthermie aux urgences',
@@ -2189,6 +2315,7 @@ export default class extends BaseSeeder {
       tags: [866, 889, 890],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'FA_et_BAV_3',
       contexte: 'Patient de 84 ans, admis aux urgences pour syncope',
@@ -2207,6 +2334,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 204, 215, 290, 432, 435, 796, 804],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'FA,_BBD_et_BFPG',
       contexte:
@@ -2225,6 +2353,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 225, 231, 290, 432, 2],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Fibrillation_atriale_et_BBG',
       contexte:
@@ -2244,6 +2373,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 237, 290, 432],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Fibrillation_atriale_87/min',
       contexte: 'Patiente de 58 ans hypertendu, consulte pour palpitations.',
@@ -2261,6 +2391,7 @@ export default class extends BaseSeeder {
       tags: [290, 432, 435, 822, 823],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Fibrillation_atriale_148/min',
       contexte:
@@ -2280,6 +2411,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 302, 432, 435],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Fibrillation_atriale_rapide',
       contexte: 'Patient de 72 ans, hospitalisé pour insuffisance cardiaque.',
@@ -2297,6 +2429,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 302, 432],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: "Brugada_test_à_l'ajmaline",
       contexte: 'Test à l&#039;ajmaline dans le cadre d&#039;un dépistage après une syncope',
@@ -2314,6 +2447,7 @@ export default class extends BaseSeeder {
       tags: [866, 889, 890],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Fibrillation_atriale_et_BAV_III_(3)',
       contexte:
@@ -2332,6 +2466,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 204, 215, 290, 423, 427, 796, 801],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Fibrillation_atriale_et_bloc_de_branche',
       contexte: 'Patiente de 81 ans, consulte aux urgences pour dyspnée.',
@@ -2350,6 +2485,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 220, 225, 290, 432, 435],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Fibrillation_atriale,_QRS_fins,_fréquence_cardiaque_normale',
       contexte: 'Palpitations.',
@@ -2367,6 +2503,7 @@ export default class extends BaseSeeder {
       tags: [290, 432, 435],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'FA_rapidement_conduite',
       contexte: 'Patient de 83 ans, hospitalisé pour un épisode de décompensation cardiaque.',
@@ -2384,6 +2521,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 302, 432, 434, 2860, 11],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Fibrillation_atriale_et_BBD',
       contexte: 'Palpitations',
@@ -2401,6 +2539,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 220, 225, 290, 432, 435],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Fibrillation_atriale_et_BBG_2',
       contexte:
@@ -2420,6 +2559,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 237, 290, 291, 323, 432],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Fibrillation_ventriculaire',
       contexte: 'Patient qui s&#039;écroule aux urgences',
@@ -2437,6 +2577,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 338, 345],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Fibrillation_ventriculaire_2',
       contexte: 'Perte de connaissance durant la réalisation de l&#039;ECG',
@@ -2455,6 +2596,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 338, 345],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Fluttet_atrial_1',
       contexte: 'Palpitations',
@@ -2473,6 +2615,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 351, 352, 353, 355, 583],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Flutter_atrial_2',
       contexte: 'Patient de 61 ans, consulte pour palpitations',
@@ -2490,6 +2633,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 351, 352, 353, 355],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Flutter_atrial_et_BAV_complet',
       contexte: 'Patient amené aux urgences par les pompiers. Syncope au domicile.',
@@ -2507,6 +2651,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 290, 351, 379, 383, 796, 804, 964, 966],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Flutter_atrial_à_conduction_variable',
       contexte: 'ECG réalisé devant une découverte fortuite d&#039;irrégularité du pouls.',
@@ -2525,6 +2670,7 @@ export default class extends BaseSeeder {
       tags: [290, 351, 352, 353, 356],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Flutter_atrial_3',
       contexte: 'Patiente ayant fait un AVC récemment. ECG lors de l&#039;hospitalisation.',
@@ -2542,6 +2688,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 351, 352, 353, 355],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Flutter_atrial_4',
       contexte: 'Palpitations.',
@@ -2559,6 +2706,7 @@ export default class extends BaseSeeder {
       tags: [290, 351, 352, 353, 357],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Flutter_atrial_5',
       contexte: 'Patient consultant pour palpitations.',
@@ -2576,6 +2724,7 @@ export default class extends BaseSeeder {
       tags: [290, 351, 352, 353, 356, 357],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Flutter_atrial_6',
       contexte: 'Découverte d&#039;insuffisance cardiaque',
@@ -2593,6 +2742,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 351, 352, 353, 355],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BFAG_2',
       contexte:
@@ -2611,6 +2761,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 227],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BFAG_3',
       contexte: 'ECG en suivi de dyslipidémie traitée.',
@@ -2628,6 +2779,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 205, 220, 227, 964, 966],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'HVD_HAD',
       contexte: 'Pathologie pulmonaire chronique. Palpitations.',
@@ -2646,6 +2798,7 @@ export default class extends BaseSeeder {
       tags: [808, 812, 843, 850, 2860, 11, 966, 1009],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'HVD_HTAP',
       contexte:
@@ -2665,6 +2818,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 292, 583, 808, 812, 843, 850],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'HVD_2',
       contexte: 'Bilan de dyspnée chronique',
@@ -2683,6 +2837,7 @@ export default class extends BaseSeeder {
       tags: [169, 843, 850, 2860, 11],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'HVD_3',
       contexte: 'Bilan de dyspnée chronique.',
@@ -2700,6 +2855,7 @@ export default class extends BaseSeeder {
       tags: [169, 173, 220, 225, 843, 850, 964, 966, 9],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'HVD_4',
       contexte: 'Femme de 82 ans, bronchopneumopathie chronique obstructive',
@@ -2718,6 +2874,7 @@ export default class extends BaseSeeder {
       tags: [169, 843, 850],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Hyperexcitabilité_atriale',
       contexte: 'Palpitations',
@@ -2735,6 +2892,7 @@ export default class extends BaseSeeder {
       tags: [169, 290, 562],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'HVG_2',
       contexte: 'Bilan de dyspnée',
@@ -2753,6 +2911,7 @@ export default class extends BaseSeeder {
       tags: [169, 843, 844, 913, 935],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Hypokaliémie_2',
       contexte:
@@ -2771,6 +2930,7 @@ export default class extends BaseSeeder {
       tags: [169, 913, 936, 1029, 1030, 1034, 1065],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Hypokaliémie_3',
       contexte: 'Perte de connaissance. ECG réalisé aux urgences',
@@ -2789,6 +2949,7 @@ export default class extends BaseSeeder {
       tags: [169, 913, 936, 1029, 1030, 1034, 1065],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ECG_normal_(2)',
       contexte: 'ECG réalisé au centre pasteur pour bilan de santé',
@@ -2806,6 +2967,7 @@ export default class extends BaseSeeder {
       tags: [1237],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ECG_normal_(3)',
       contexte: 'ECG pour douleur thoracique atypique du jeune ',
@@ -2823,6 +2985,7 @@ export default class extends BaseSeeder {
       tags: [1237],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Tachycardie_sinusale_(3)',
       contexte: 'Hyperthermie à 40',
@@ -2840,6 +3003,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 292, 293],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Hyperkaliémie_6.7',
       contexte: 'Patient avec anurie depuis 72h',
@@ -2857,6 +3021,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 182, 796, 801, 820, 1069],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Microvoltage_1',
       contexte: 'Patient de 81 ans, vient aux urgences pour dyspnée d&#039;aggravation rapide.',
@@ -2875,6 +3040,7 @@ export default class extends BaseSeeder {
       tags: [169, 808, 809, 822, 828, 843, 851, 852],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Microvoltage_2',
       contexte: 'Patiente de 77 ans, adressée pour tableau d&#039;insuffisance cardiaque.',
@@ -2892,6 +3058,7 @@ export default class extends BaseSeeder {
       tags: [169, 843, 851, 852, 855],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Pause_post_réductionnelle',
       contexte:
@@ -2910,6 +3077,7 @@ export default class extends BaseSeeder {
       tags: [173, 182, 198, 220, 225, 290, 432, 434],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Péricardite_1',
       contexte: 'Patiente de 19 ans, douleur thoracique.',
@@ -2927,6 +3095,7 @@ export default class extends BaseSeeder {
       tags: [169, 866, 879, 112],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Péricardite_phase_tardive',
       contexte:
@@ -2946,6 +3115,7 @@ export default class extends BaseSeeder {
       tags: [169, 966, 1007, 1004],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Péricardite_2',
       contexte: 'Douleur thoracique aiguë.',
@@ -2963,6 +3133,7 @@ export default class extends BaseSeeder {
       tags: [822, 824, 866, 879, 881, 886],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Péricardite_3',
       contexte: 'Patient de 21 ans, douleur thoracique depuis quelques heures.',
@@ -2981,6 +3152,7 @@ export default class extends BaseSeeder {
       tags: [866, 879, 112],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Preexcitation_ventriculaire',
       contexte:
@@ -3000,6 +3172,7 @@ export default class extends BaseSeeder {
       tags: [173, 249, 255, 267],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Preexcitation_2',
       contexte: 'Patient de 27 ans ayant fait une syncope à l&#039;effort',
@@ -3018,6 +3191,7 @@ export default class extends BaseSeeder {
       tags: [173, 249, 255],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Préexcitation_3',
       contexte: 'Patient consultant pour palpitations',
@@ -3036,6 +3210,7 @@ export default class extends BaseSeeder {
       tags: [173, 249, 255, 263],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'TVNS_et_BAV3',
       contexte: 'Syncope.',
@@ -3053,6 +3228,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 215, 290, 291, 338, 346, 537, 583, 1273, 1029, 1030],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'TVNS',
       contexte: 'Palpitations. Antécédent de cardiopathie dilatée.',
@@ -3070,6 +3246,7 @@ export default class extends BaseSeeder {
       tags: [171, 290, 537, 808, 809, 2860, 13],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'HTA_sévère_Strain_Pattern',
       contexte: 'Crise hypertensive',
@@ -3087,6 +3264,7 @@ export default class extends BaseSeeder {
       tags: [843, 844],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ECG_normal_20_mV_par_mm',
       contexte:
@@ -3105,6 +3283,7 @@ export default class extends BaseSeeder {
       tags: [1237],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ECG_normal_défilé_50_mm_sec',
       contexte: 'Externe qui fait son ECG pour la première fois lui même',
@@ -3122,6 +3301,7 @@ export default class extends BaseSeeder {
       tags: [1237],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ECG_normal_avec_défilement_de_50_mm/seconde',
       contexte: 'Infirmière intérimaire qui utilise pour la première fois l&#039;appareil à ECG',
@@ -3139,6 +3319,7 @@ export default class extends BaseSeeder {
       tags: [1237],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ESSV',
       contexte: 'Sensations de raté du coeur',
@@ -3156,6 +3337,7 @@ export default class extends BaseSeeder {
       tags: [290, 562],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ESV_bigéminées_(4)',
       contexte: 'Sensation de pause cardiaque ',
@@ -3173,6 +3355,7 @@ export default class extends BaseSeeder {
       tags: [290, 583, 744, 749],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Inversion_electrodes_1_BG_et_BD',
       contexte: 'Asymptomatique',
@@ -3191,6 +3374,7 @@ export default class extends BaseSeeder {
       tags: [158, 161],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Inversion_electrodes_2._BD_et_JD',
       contexte: 'palpitations, dyspnée',
@@ -3209,6 +3393,7 @@ export default class extends BaseSeeder {
       tags: [158, 162, 290, 291, 302, 432, 435],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Inversion_electrodes_des_poignets._3',
       contexte: 'Cardiopathie ischémique',
@@ -3227,6 +3412,7 @@ export default class extends BaseSeeder {
       tags: [158, 161],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Torsade_de_pointes_1._typique_QT_long.png',
       contexte: 'Pertes de connaissance itératives',
@@ -3245,6 +3431,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 338, 346, 1029, 1030],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Torsade_de_pointes_2',
       contexte: 'Surdosage neuroleptique',
@@ -3263,6 +3450,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 338, 346, 1027, 1029, 1030, 1031, 1130],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Torsades_de_pointes_3',
       contexte: 'Perte de connaissance',
@@ -3281,6 +3469,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 338, 346, 1029, 1046],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Hyperkaliémie_9.2_et_pacemaker',
       contexte: 'Tétraparésie, acidose 7.10 mtabolique sur IRA avec capnie 40. Patient comateux',
@@ -3298,6 +3487,7 @@ export default class extends BaseSeeder {
       tags: [755, 758, 759, 1069, 7, 8],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: "Dissociation_d'une_oreillette_de_l'autre_et_du_ventricule",
       contexte: 'asthénie',
@@ -3315,6 +3505,7 @@ export default class extends BaseSeeder {
       tags: [173, 182, 35],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ECG_normal_(4)',
       contexte: 'Bilan à pasteur',
@@ -3332,6 +3523,7 @@ export default class extends BaseSeeder {
       tags: [1237],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ESV_bigéminées',
       contexte: 'sensation de raté du coeur',
@@ -3349,6 +3541,7 @@ export default class extends BaseSeeder {
       tags: [290, 583, 584, 1276],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ESV_bigéminées_(2)',
       contexte: 'Asthénie',
@@ -3366,6 +3559,7 @@ export default class extends BaseSeeder {
       tags: [290, 583, 1271],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ESV_bigéminées_(3)',
       contexte: 'Dyspnée d&#039;effort',
@@ -3383,6 +3577,7 @@ export default class extends BaseSeeder {
       tags: [290, 583, 1271, 584],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ESV_isolée_monomorphe_(2)',
       contexte: 'sensation de raté du coeur',
@@ -3400,6 +3595,7 @@ export default class extends BaseSeeder {
       tags: [290, 583],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ESV_isolée_monomorphe_(3)',
       contexte: 'Sensation de raté du coeur',
@@ -3417,6 +3613,7 @@ export default class extends BaseSeeder {
       tags: [290, 583, 584],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ESV_trigéminée',
       contexte: 'sensation de raté du coeur, ATCD d&#039;infarctus',
@@ -3434,6 +3631,7 @@ export default class extends BaseSeeder {
       tags: [290, 583, 822, 824, 825, 866, 3505, 3506, 901],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ESV_Triplet',
       contexte: 'Palpitation et syncope',
@@ -3451,6 +3649,7 @@ export default class extends BaseSeeder {
       tags: [290, 583, 1274],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ESV_et_bradycardie',
       contexte: 'asthénie',
@@ -3468,6 +3667,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 175, 290, 583],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'TV_avec_dissociation_AV',
       contexte: 'Choc cardiogénique',
@@ -3485,6 +3685,7 @@ export default class extends BaseSeeder {
       tags: [290, 472, 522, 524, 528, 530],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Tachycardie_ventriculaire_avec_fusion_captures',
       contexte: 'choc cardiogénique.',
@@ -3502,6 +3703,7 @@ export default class extends BaseSeeder {
       tags: [290, 472, 20, 21, 35],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ECG_normal_20_mm_par_mV',
       contexte: '',
@@ -3519,6 +3721,7 @@ export default class extends BaseSeeder {
       tags: [1237],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ECG_normal_20_mm_par_mV_(2)',
       contexte: 'RAS',
@@ -3536,6 +3739,7 @@ export default class extends BaseSeeder {
       tags: [1237],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ECG_normal_avec_défilement_de_50_mm/seconde_(2)',
       contexte: 'Asymptomatique',
@@ -3553,6 +3757,7 @@ export default class extends BaseSeeder {
       tags: [1237],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Tachycardie_par_réentrée_électronique',
       contexte: 'Palpitions, pose récente de pace maker',
@@ -3570,6 +3775,7 @@ export default class extends BaseSeeder {
       tags: [773, 774, 775, 820],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Tachycardie_QRS_large',
       contexte: 'pré-syncopal',
@@ -3587,6 +3793,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 308],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Tachycardie_QRS_large_(2)',
       contexte: 'palpitations',
@@ -3604,6 +3811,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 225, 227, 290, 443, 444, 831],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'TJ_à_QRS_larges',
       contexte: 'Palpitations et dyspnée',
@@ -3621,6 +3829,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 237, 290, 443],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Tachycardie_jonctionnelle_QRS_large_arrêt_sur_manoeuvres_vagale_/_adénosine',
       contexte: 'palpitation  =&gt; adénosine',
@@ -3638,6 +3847,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 237, 290, 443, 148, 3138],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'TV_sur_coeur_sain',
       contexte: 'Palpiations bien tolérées depuis plusieurs heures',
@@ -3655,6 +3865,7 @@ export default class extends BaseSeeder {
       tags: [290, 472, 483],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Embolie_pulmonaire_1_typique_FC_110',
       contexte:
@@ -3674,6 +3885,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 292, 293, 562, 563, 2860, 11, 966, 1005, 10],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Embolie_pulmonaire_2',
       contexte: 'Homme 73 ans, malaises x 2 avec dyspnée et saturation O2 à 95%',
@@ -3692,6 +3904,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 292, 293, 295, 966, 1005, 10],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Embolie_pulmonaire_3',
       contexte:
@@ -3711,6 +3924,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 292, 293, 913, 3327, 966, 1008, 1009, 1005],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Bradycardie_sinusale_2',
       contexte:
@@ -3729,6 +3943,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 175, 204, 205, 220, 239],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ESA_bigéminées',
       contexte: 'Palpitations',
@@ -3746,6 +3961,7 @@ export default class extends BaseSeeder {
       tags: [290, 562, 563, 1322],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Extrasystoles_trigéminées_et_en_courtes_salves',
       contexte: 'Palpitations',
@@ -3763,6 +3979,7 @@ export default class extends BaseSeeder {
       tags: [290, 562, 563, 1323, 1326],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Salve_supraventriculaire',
       contexte: 'Palpitations',
@@ -3780,6 +3997,7 @@ export default class extends BaseSeeder {
       tags: [169, 290, 562, 563, 1326, 583],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ESA_isolées_2',
       contexte: 'Palpitations',
@@ -3797,6 +4015,7 @@ export default class extends BaseSeeder {
       tags: [169, 290, 562, 563],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Salves_ESA_2',
       contexte: 'Palpitations',
@@ -3814,6 +4033,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 239, 290, 562, 563, 1326, 808, 809],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Doublets_ESA_3',
       contexte: 'Palpitations',
@@ -3831,6 +4051,7 @@ export default class extends BaseSeeder {
       tags: [290, 562, 563, 1324],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ESA_4',
       contexte: 'Palpitations',
@@ -3848,6 +4069,7 @@ export default class extends BaseSeeder {
       tags: [290, 562, 563],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BSA_échappement_jonctionnel',
       contexte: 'Asthénie',
@@ -3865,6 +4087,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 182, 191, 796, 801, 820],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BSA_avec_échappement_ventriculaire',
       contexte: 'Fatigue',
@@ -3882,6 +4105,7 @@ export default class extends BaseSeeder {
       tags: [173, 182, 191, 796, 804, 820],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Tachychardie_atriale_focale',
       contexte: 'Essouflé',
@@ -3899,6 +4123,7 @@ export default class extends BaseSeeder {
       tags: [290, 423, 426, 103],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Inversion_électrodes_231210',
       contexte: 'Certificat de non contre-indication à la course à pied',
@@ -3916,6 +4141,7 @@ export default class extends BaseSeeder {
       tags: [158],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BAV_2_de_type_1_(LW)',
       contexte: 'Venu aux urgences après une syncope.',
@@ -3934,6 +4160,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 206, 220, 225, 227, 2860, 13],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Bloc_alternant',
       contexte: 'Syncope.',
@@ -3951,6 +4178,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 225, 237, 246],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BSA_avec_echappement_jonctionnel_231210',
       contexte: 'Dyspnée.',
@@ -3968,6 +4196,7 @@ export default class extends BaseSeeder {
       tags: [171, 173, 182, 191, 796],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Cmh_septale_et_syncope',
       contexte: 'Syncope.',
@@ -3986,6 +4215,7 @@ export default class extends BaseSeeder {
       tags: [843, 844, 847, 966, 1007, 1010],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'FA_et_BAV3_231210',
       contexte: 'Syncope.',
@@ -4004,6 +4234,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 213, 220, 227, 290, 432, 434, 436, 822, 824, 825, 2860, 13],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'FV_unipiste_231210',
       contexte: 'Adressé aux urgences pour syncope',
@@ -4022,6 +4253,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 338, 345],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'FV_unipiste_231210-2',
       contexte: 'Revue d&#039;un tracé d&#039;un patient ayant fait une mort subite',
@@ -4040,6 +4272,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 338, 345],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Anevrisme_ST+_et_T-_en_V4-V6',
       contexte: 'F 93 ans, découverte fortuite d&#039;un vieil infarctus avec anevrisme',
@@ -4057,6 +4290,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 227, 290, 291, 292, 822, 823, 866, 3504, 901],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Doublet_ESV_(cardiopathie_ischémique)',
       contexte: '',
@@ -4074,6 +4308,7 @@ export default class extends BaseSeeder {
       tags: [],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Sous-décalage_de_ST_(SCA)._2',
       contexte: 'Homme 81 ans, ECG préoperatoire ',
@@ -4092,6 +4327,7 @@ export default class extends BaseSeeder {
       tags: [913, 3322, 914],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Sous_décalage_de_ST._3',
       contexte: 'Homme 81 ans, HTA, gêne thoracique à l&#039;effort (ST- 2) puis gêne connue',
@@ -4110,6 +4346,7 @@ export default class extends BaseSeeder {
       tags: [822, 828, 913, 3322, 914],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Repolarisation_précoce_3._typique',
       contexte: 'H 28 ans, origine africaine. Patient asymptomatique',
@@ -4127,6 +4364,7 @@ export default class extends BaseSeeder {
       tags: [861],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Rythme_du_sinus_coronaire_3.',
       contexte:
@@ -4146,6 +4384,7 @@ export default class extends BaseSeeder {
       tags: [818, 819],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Epanchement_péricardique_1._Néoplasie',
       contexte:
@@ -4164,6 +4403,7 @@ export default class extends BaseSeeder {
       tags: [290, 432, 435, 843, 851, 852, 866, 3504, 879, 881, 1201],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Repolarisation_masculine._3',
       contexte: 'Homme jeune, fièvre inexpliquée',
@@ -4182,6 +4422,7 @@ export default class extends BaseSeeder {
       tags: [857, 858, 1025],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Epanchement_péricardique_2._Traumatique',
       contexte: 'Homme 50 ans, Trauma thoracique. Douleur dyspnée',
@@ -4199,6 +4440,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 292, 293, 843, 851, 852, 1201],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Pause_sinusale_2',
       contexte: 'Massage sino-carotidien',
@@ -4216,6 +4458,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 175, 182, 194, 3789],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ESA_bloquée_1',
       contexte: 'Asymptomatique',
@@ -4233,6 +4476,7 @@ export default class extends BaseSeeder {
       tags: [290, 562, 563, 1327],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ESA_bloquée_2',
       contexte: 'Asthénie',
@@ -4250,6 +4494,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 175, 290, 562, 1321, 563],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ESA_bloquée_3',
       contexte: 'Asymptomatique',
@@ -4267,6 +4512,7 @@ export default class extends BaseSeeder {
       tags: [290, 562, 1321, 563],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Pause_sinusale_4',
       contexte: 'Syncope',
@@ -4284,6 +4530,7 @@ export default class extends BaseSeeder {
       tags: [173, 182, 194],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Pause_sinusale_5',
       contexte: 'Syncope',
@@ -4301,6 +4548,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 175, 182, 194],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Epanchement_péricardique_3._Lymphome',
       contexte: 'Lymphome, dyspnée',
@@ -4319,6 +4567,7 @@ export default class extends BaseSeeder {
       tags: [843, 851, 852, 1026, 1201],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BSA_2_type_1',
       contexte: 'Femme 75 ans, sensations lipothymiques',
@@ -4337,6 +4586,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 182, 183, 188],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BSA_2_type_2_FC_42_bpm',
       contexte: 'malaise, syncope',
@@ -4354,6 +4604,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 175, 182, 188],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BSA_2_(infarctus)',
       contexte: 'Douleur thoracique (SCA)',
@@ -4372,6 +4623,7 @@ export default class extends BaseSeeder {
       tags: [173, 182, 188, 204, 205, 866, 3509, 867],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Bloc_de_branche_alternant_(Mobitz_2)',
       contexte: '',
@@ -4389,6 +4641,7 @@ export default class extends BaseSeeder {
       tags: [],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Tachy_QRS_fins_et_manoeuvres_vagales',
       contexte: 'Palpitations et dyspnée',
@@ -4406,6 +4659,7 @@ export default class extends BaseSeeder {
       tags: [173, 204, 209, 290, 291, 295, 2045, 71, 148, 3138],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BAV_2_de_type_2',
       contexte: 'Syncope et asthénie',
@@ -4423,6 +4677,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 204, 211, 220, 237, 964],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BAV_2_de_type_2_avec_BAV_3_parox',
       contexte: 'Syncope',
@@ -4440,6 +4695,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 204, 211, 215, 220, 237, 964],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'FA_et_BAV_3_(2)',
       contexte: 'Asthénie, dyspnée',
@@ -4457,6 +4713,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 204, 215, 290, 432, 796, 801],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'FA_et_BAV_3_(3)',
       contexte: 'Dyspnée',
@@ -4474,6 +4731,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 204, 215, 290, 432, 796, 804],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Salve_atriale_(2)',
       contexte: 'Palpitations',
@@ -4491,6 +4749,7 @@ export default class extends BaseSeeder {
       tags: [290, 562, 1320, 563],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ESA_en_salve_(3)',
       contexte: 'Asymptomatique',
@@ -4508,6 +4767,7 @@ export default class extends BaseSeeder {
       tags: [290, 562, 1320, 563, 1326],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Stimulation_ventriculaire_bipolaire',
       contexte: 'Porteur d&#039;un stimulateur cardiaque',
@@ -4525,6 +4785,7 @@ export default class extends BaseSeeder {
       tags: [755, 758, 759, 964, 8],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Stimulation_ventriculaire_(2)',
       contexte: 'Porteur d&#039;un stimulateur cardiaque',
@@ -4542,6 +4803,7 @@ export default class extends BaseSeeder {
       tags: [755, 758, 759, 964, 8],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Bloc_alternant_(2)',
       contexte: 'Syncope',
@@ -4559,6 +4821,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 246, 964],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Bloc_alternant_(3)',
       contexte: 'Syncope',
@@ -4576,6 +4839,7 @@ export default class extends BaseSeeder {
       tags: [173, 220, 246, 964],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Tachycardie_et_adénosine',
       contexte: 'Palpitations',
@@ -4593,6 +4857,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 295, 443, 148],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'TV_avec_manœuvres_vagales',
       contexte: 'Palpitations mal tolérées chez un homme avec séquelle d&#039;infarctus',
@@ -4610,6 +4875,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 308, 35, 148],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Tachy_QRS_fin_et_adénosine',
       contexte: 'Palpitations',
@@ -4627,6 +4893,7 @@ export default class extends BaseSeeder {
       tags: [290, 443, 148],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'SCA_avec_sous_ST',
       contexte: 'Douleur thoracique',
@@ -4644,6 +4911,7 @@ export default class extends BaseSeeder {
       tags: [913, 3324, 3325, 3326, 3327, 914],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Flutter_2_pour_1_et_Massage_sino_carotidien',
       contexte: 'Palpitations et dyspnée chez un BPCO',
@@ -4661,6 +4929,7 @@ export default class extends BaseSeeder {
       tags: [290, 351, 352, 103, 148],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Rythme_sinusal_avec_artefacts_mimant_une_FA',
       contexte: 'ECG préop réalisé avant une fermeture de FOP ',
@@ -4678,6 +4947,7 @@ export default class extends BaseSeeder {
       tags: [157, 169],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ESV_doublet_02',
       contexte: 'Patient de 52 ans, palpitations',
@@ -4695,6 +4965,7 @@ export default class extends BaseSeeder {
       tags: [290, 583, 1271, 1273],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ESV_polymorphe_01',
       contexte: 'Palpitations',
@@ -4713,6 +4984,7 @@ export default class extends BaseSeeder {
       tags: [290, 583, 1273, 843, 844, 845],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ESV_polymorphes_2',
       contexte: 'Palpitations.',
@@ -4730,6 +5002,7 @@ export default class extends BaseSeeder {
       tags: [290, 583, 1271, 822, 824],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ESV_polymorphe_3',
       contexte: 'Palpitations.',
@@ -4748,6 +5021,7 @@ export default class extends BaseSeeder {
       tags: [290, 583],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ESV_doublet_3',
       contexte: 'Palpitations',
@@ -4765,6 +5039,7 @@ export default class extends BaseSeeder {
       tags: [290, 432, 435, 583, 1273, 603, 843, 844, 845, 847],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'TVNS_janv24_01',
       contexte: 'Palpitations',
@@ -4782,6 +5057,7 @@ export default class extends BaseSeeder {
       tags: [290, 537, 583, 1274, 1275],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'TVNS_janv24_02',
       contexte: 'Perte de connaissance',
@@ -4800,6 +5076,7 @@ export default class extends BaseSeeder {
       tags: [290, 291, 292, 537, 538, 843, 851, 852],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'TVNS_(Takotsubo)_janv_24_2023',
       contexte: 'Douleur thoracique. Contexte de Takotsubo',
@@ -4817,6 +5094,7 @@ export default class extends BaseSeeder {
       tags: [171, 173, 220, 237, 290, 537, 538, 808, 809, 818],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'ESV_malignes',
       contexte: 'Syncope',
@@ -4834,6 +5112,7 @@ export default class extends BaseSeeder {
       tags: [290, 583, 1272, 740, 1551, 745, 698],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Pause_post_régularisation',
       contexte: 'Syncopes à répétition et palpitations',
@@ -4851,6 +5130,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 182, 198, 290, 432, 434, 583, 796, 801],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Pause_post_régularisation_(2)',
       contexte: 'Syncope et palpitations',
@@ -4868,6 +5148,7 @@ export default class extends BaseSeeder {
       tags: [173, 174, 182, 198, 290, 351, 352, 353, 356, 796, 801, 3138],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'Artéfacts_(2)',
       contexte: 'Patient asymptomatique, Parkinson',
@@ -4885,6 +5166,7 @@ export default class extends BaseSeeder {
       tags: [157, 169, 1237],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'BSA_2_type_2',
       contexte: 'Femme 73 ans, essoufflement, fatigue.',
@@ -4903,6 +5185,7 @@ export default class extends BaseSeeder {
       tags: [173, 182, 188],
     },
     {
+      id: uuidv4(),
       filename: '',
       title: 'HAG,_HVG,_BFAG',
       contexte: 'Homme 73 ans, rétrécissement aortique',
