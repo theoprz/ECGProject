@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
       if (response.statusCode == 200) {
         for(int i = 0; i < int.parse(response.body); i++){
-          ECG ecg = ECG("Titre", "Description", 0, "1", [], "0", File(''));
+          ECG ecg = ECG("Titre", "Description", 0, "1", [], "0", File(''), []);
           await ecg.setECGFromQuery(i);
           ecgList.add(ecg);
         }

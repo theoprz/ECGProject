@@ -188,10 +188,49 @@ class _PhotoPreviewPageState extends State<PhotoPreviewPage> {
   final titleController = TextEditingController();
   final descriptionController = TextEditingController();
   final ageController = TextEditingController();
-  final vitesseController = TextEditingController(text: "25");
-  final gainController = TextEditingController(text: "10");
+  String? _speedECG = '25';
+  String? _gainECG = '10';
   String? _imageQuality;
   //TODO appliquer filtre anti injection sql sur les champs de texte
+
+  // ** PARTIE SYMPTOMES **
+  List<String> selectedSymptoms = [];
+
+  void toggleSelection(String item) {
+    setState(() {
+      if (selectedSymptoms.contains(item)) {
+        selectedSymptoms.remove(item);
+      } else {
+        selectedSymptoms.add(item);
+      }
+    });
+  }
+
+  //Widget pour les éléments sélectionnables
+  Widget buildSelectableItem(String item) {
+    bool isSelected = selectedSymptoms.contains(item);
+    Color color = isSelected ? Colors.blue.shade300 : Colors.white;
+
+    return GestureDetector(
+      onTap: () => toggleSelection(item),
+      child: Container(
+        width: 150,
+        height: 50,
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: Colors.blue.shade300, width: 2),
+        ),
+        child: Center(
+          child: Text(
+            item,
+            style: TextStyle(color: color = !isSelected ? Colors.black : Colors.white, fontWeight: FontWeight.bold),
+          ),
+        ),
+      ),
+    );
+  }
+// ** FIN PARTIE SYMPTOMES **
 
   @override
   Widget build(BuildContext context) {
@@ -204,12 +243,6 @@ class _PhotoPreviewPageState extends State<PhotoPreviewPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              height: MediaQuery.of(context).size.height * 0.51,
-              width: MediaQuery.of(context).size.width * 0.9,
-              child: Image.file(widget.imageFile, fit: BoxFit.contain), // Change BoxFit.cover to BoxFit.contain
-            ),
-            const SizedBox(height: 20),
             TextField(
               controller: titleController,
               decoration: const InputDecoration(
@@ -218,7 +251,7 @@ class _PhotoPreviewPageState extends State<PhotoPreviewPage> {
               ),
               maxLength: 24,//Limite de caractères, potientiellement à ajuster
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 2),
             TextField(
               controller: descriptionController,
               decoration: const InputDecoration(
@@ -226,6 +259,11 @@ class _PhotoPreviewPageState extends State<PhotoPreviewPage> {
                 labelText: "Contexte",
               ),
               maxLength: 400,//Limite de caractères, potientiellement à ajuster
+            ),
+            Container(
+              height: MediaQuery.of(context).size.height * 0.51,
+              width: MediaQuery.of(context).size.width * 0.9,
+              child: Image.file(widget.imageFile, fit: BoxFit.contain), // Change BoxFit.cover to BoxFit.contain
             ),
             const SizedBox(height: 10),
             Row(
@@ -245,80 +283,148 @@ class _PhotoPreviewPageState extends State<PhotoPreviewPage> {
                   ),
                 ),
                 const Padding(padding: EdgeInsets.only(left: 30)),
-                DropdownButton<String>(
-                  hint: const Text('Sexe'),
-                  value: _selectedSex,
-                  items: <String>['Masculin', 'Féminin', 'Inconnu'].map((String value) {
-                    return DropdownMenuItem<String>(
-                      value: value,
-                      child: Text(value),
-                    );
-                  }).toList(),
-                  onChanged: (newValue) {
-                    setState(() {
-                      _selectedSex = newValue;
-                    });
-                  },
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      "Sexe",
+                      style: TextStyle(fontSize: 12, color: Colors.grey),
+                    ),
+                      DropdownButton<String>(
+                        hint: const Text('Sexe'),
+                        value: _selectedSex,
+                        items: <String>['Masculin', 'Féminin', 'Inconnu'].map((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList(),
+                        onChanged: (newValue) {
+                          setState(() {
+                            _selectedSex = newValue;
+                          });
+                        },
+                     ),
+                  ],
                 ),
                 const Padding(padding: EdgeInsets.only(left: 30)),
-                DropdownButton<String>(
-                  hint: const Text('Qualité ECG'),
-                  value: _imageQuality,
-                  items: <String>['Mauvaise', 'Moyenne', 'Bonne', 'Très bonne'].map((String value) {
-                    return DropdownMenuItem<String>(
-                      value: value,
-                      child: Text(value),
-                    );
-                  }).toList(),
-                  onChanged: (newValue) {
-                    setState(() {
-                      _imageQuality = newValue;
-                    });
-                  },
-                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      "Qualité de l'ECG",
+                      style: TextStyle(fontSize: 12, color: Colors.grey),
+                    ),
+                    DropdownButton<String>(
+                      hint: const Text('Qualité ECG'),
+                      value: _imageQuality,
+                      items: <String>['Mauvaise', 'Moyenne', 'Bonne', 'Très bonne'].map((String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );
+                      }).toList(),
+                      onChanged: (newValue) {
+                        setState(() {
+                          _imageQuality = newValue;
+                        });
+                      },
+                    ),
+                ],
+              ),
+
               ],
             ),
 
-            const SizedBox(height: 10),
+            const SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
 
                 const SizedBox(width: 10),
-                Container(
-                  width: 140,
-                  child: TextField(
-                  controller: vitesseController,
-                  decoration: const InputDecoration(
-                  hintText: "Vitesse (mm/s)",
-                  labelText: "Vitesse (mm/s)",
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    "Vitesse (mm/s)",
+                    style: TextStyle(fontSize: 12, color: Colors.grey),
                   ),
-                  keyboardType: TextInputType.number, //Clavier numérique
-                    inputFormatters: [FilteringTextInputFormatter.digitsOnly], //Permet de filtrer les caractères pour n'avoir que des chiffres
-                  maxLength: 4,
+                  DropdownButton<String>(
+                    hint: const Text('Vitesse (mm/s)'),
+                    value: _speedECG,
+                    items: <String>['12.5', '25', '50', '100', '200'].map((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                    onChanged: (newValue) {
+                      setState(() {
+                        _speedECG = newValue;
+                      });
+                    },
                   ),
-                ),
+                ],
+              ),
               const SizedBox(width: 50),
-                Container(
-                  width: 140,
-                  child: TextField(
-                    controller: gainController,
-                    decoration: const InputDecoration(
-                      hintText: "Gain (mm/mV)",
-                      labelText: "Gain (mm/mV)",
-                    ),
-                    keyboardType: TextInputType.number, //Clavier numérique
-                    inputFormatters: [FilteringTextInputFormatter.digitsOnly], //Permet de filtrer les caractères pour n'avoir que des chiffres
-                    maxLength: 4,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    "Gain (mm/mV)",
+                    style: TextStyle(fontSize: 12, color: Colors.grey),
                   ),
-                ),
+                  DropdownButton<String>(
+                    hint: const Text('Gain (mm/mV)'),
+                    value: _gainECG,
+                    items: <String>['5', '10', '20'].map((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                    onChanged: (newValue) {
+                      setState(() {
+                        _gainECG = newValue;
+                      });
+                    },
+                  ),
+                ],
+              ),
               ],
             ),
+            const SizedBox(height: 20),
+              Text("Symptômes", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+              const SizedBox(height: 10),
+              Container(
+                height: 200, // Adjust this value as needed
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        buildSelectableItem('Douleur thoracique'),
+                        SizedBox(width: 8),
+                        buildSelectableItem('Dyspnée'),
+                      ],
+                    ),
+                    SizedBox(height: 8),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        buildSelectableItem('Palpitations'),
+                        SizedBox(width: 8),
+                        buildSelectableItem('Syncope'),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
 
             const SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {
-                if(titleController.text.isEmpty || _imageQuality == null || vitesseController.text.isEmpty || gainController.text.isEmpty) {
+                if(titleController.text.isEmpty || _imageQuality == null || _speedECG == null || _gainECG == null) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
                       content: Text("Veuillez entrer au moins un titre, la qualité de l'image, la vitesse et le gain de l'ECG"),
@@ -326,13 +432,14 @@ class _PhotoPreviewPageState extends State<PhotoPreviewPage> {
                   );
                   return;
                 }
-                ECG tmpECG = ECG.withQualitySpeedGain(titleController.text, descriptionController.text, ageController.text.isEmpty ? 0 : int.parse(ageController.text), _selectedSex ?? "Inconnu", [], "0", _imageQuality ?? "Non renseignée", int.parse(vitesseController.text), int.parse(gainController.text), widget.imageFile);
+                ECG tmpECG = ECG.withQualitySpeedGain(titleController.text, descriptionController.text, ageController.text.isEmpty ? 0 : int.parse(ageController.text), _selectedSex ?? "Inconnu", [], "0", _imageQuality ?? "Non renseignée", _speedECG ?? "0", _gainECG ?? "0", widget.imageFile, selectedSymptoms);
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => TagSelectionPage(ecg: tmpECG),
                   ),
                 );
+                print(tmpECG);
 
 
                 /*Ancien code de Paul, je garde pour le moment pour me souvenir de ce qu'il a fait
@@ -345,12 +452,32 @@ class _PhotoPreviewPageState extends State<PhotoPreviewPage> {
                 */
               },
               child: const Text("Ajouter des tags"),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.resolveWith<Color>(
+                      (Set<MaterialState> states) {
+                    if (states.contains(MaterialState.pressed)) {
+                      return Colors.greenAccent; //Couleur quand le bouton est pressé
+                    }
+                    return Colors.green.shade300; //Couleur par défaut
+                  },
+                ),
+                foregroundColor: MaterialStateProperty.all<Color>(Colors.white), //Couleur du texte
+                padding: MaterialStateProperty.all<EdgeInsetsGeometry>(EdgeInsets.all(10)), //Espacement intérieur du bouton
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18.0), //Bord arrondi
+                  ),
+                ),
+              ),
             ),
           ],
         ),
       ),
     );
+
   }
+
+
 
 
   @override
