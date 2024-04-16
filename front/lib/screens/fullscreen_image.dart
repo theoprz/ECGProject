@@ -18,7 +18,13 @@ class FullscreenImage extends StatelessWidget {
               child: Hero(
                 tag: 'imageHero',
                 child: imagePath.startsWith("/data/")
-                    ? Image.network('http://173.212.207.124:3333/imgECGs/${imagePath.split('/').last}')
+                    ? Image.network(
+                      'http://173.212.207.124:3333/imgECGs/${imagePath.split('/').last}',
+                      errorBuilder: (BuildContext context, Object exception, StackTrace? stackTrace) {
+                      //Retourne une image de secours en cas d'erreur
+                      return Image.asset('assets/images/noimg.jpg');
+                  },
+                )
                     : Image.asset(imagePath),
               ),
             ),

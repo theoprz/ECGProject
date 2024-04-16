@@ -62,6 +62,7 @@ class _ECGDisplayerState extends State<ECGDisplayer> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        print(widget.ecg.getStringOfAllTags());
         Navigator.push(
           context,
           MaterialPageRoute(

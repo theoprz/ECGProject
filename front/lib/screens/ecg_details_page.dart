@@ -77,7 +77,11 @@ class ECGDetailsPage extends StatelessWidget {
                           },
                           child: ecg.photo.path == 'assets/images/noimg.jpg'
                               ? Image.asset('assets/images/noimg.jpg', width: 300, height: 200)
-                              : Image.network('http://173.212.207.124:3333/imgECGs/${ecg.id}.jpg', width: 300, height: 200),
+                              : Image.network('http://173.212.207.124:3333/imgECGs/${ecg.id}.jpg', width: 300, height: 200, errorBuilder: (BuildContext context, Object exception, StackTrace? stackTrace) {
+                                //Retourne une image de secours en cas d'erreur
+                                return Image.asset('assets/images/noimg.jpg', width: 300, height: 200);
+                            },
+                          ),
                         );
                       } else {
                         // Otherwise, return the TagDisplayer
