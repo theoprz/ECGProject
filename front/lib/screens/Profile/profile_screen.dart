@@ -1,5 +1,6 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:front/screens/login_screen.dart';
 import 'components/compte_screen.dart';
 import 'components/informations_screen.dart';
 import 'components/profile_menu.dart';
@@ -41,14 +42,16 @@ class ProfileScreen extends StatelessWidget {
               icon: "assets/icons/Mail.svg",
               next: const Icon(Icons.navigate_next),
               press: () async {
-                //TODO :  REDIRIGER VERS UNE PAGE DE CONTACT AVEC UN MAILTO DEDANS
+                
                 },
             ),
              ProfileMenu(
               text: "Déconnexion",
               icon: "assets/icons/Log out.svg",
               next: const Icon(Icons.navigate_next),
-              press: () {},
+              press: () {
+                Navigator.push(context,MaterialPageRoute(builder:(context)=> LoginScreen(camera: camera,)) );
+              },
             ),
           ],
         ),
