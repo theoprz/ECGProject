@@ -184,4 +184,14 @@ export default class EcgsController {
     // Retourne le chemin d'accès de l'image dans la réponse
     return response.download(imagePath)
   }
+
+  async indexByUser({ params, response }: HttpContext) {
+    const ecgs = await Ecg.query().preload('tags').where('posted_by', params.user)
+
+    if (ecgs) {
+      return response.status(200).json({ description: 'Ecg records found', content: ecgs })
+    } else {
+      return response.status(404).json({ description: 'No Ecg records found', content: null })
+    }
+  }
 }
