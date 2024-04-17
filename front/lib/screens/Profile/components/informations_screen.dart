@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:front/widgets/constant.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -12,7 +11,7 @@ class InformationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("A propos de nous"),
+        title: Text("À propos"),
         backgroundColor: Colors.white,
         scrolledUnderElevation: 0,
       ),
@@ -21,63 +20,68 @@ class InformationScreen extends StatelessWidget {
         child:SingleChildScrollView(
         child: Column(
           children: [
-            itemProfile3("Nous sommes des étudiants de Junia ISEN. Nous avons réalisé ce projet avec beaucoup de passion et de nuits blanches"),
+            itemProfile3("Cette application a été réalisée dans le cadre de notre projet de M1 à l'ISEN Lille. Nous sommes une équipe de 6 étudiants ingénieurs en informatique."),
             const SizedBox(height: 20),
             ProfileMenu4(
-             text: "THEO PORZIO",
-             subtitle: "Cliquer pour acceder au profil linkdin",
+             text: "Théo PORZIO",
+             subtitle: "Cliquer pour accéder au profil LinkedIn",
              imagePath: "assets/images/Theo.jpeg",
              press: () {
                launchUrl(Uri.parse("https://www.linkedin.com/in/th%C3%A9o-porzio-6537b11a4/"));
               },
+              titleSize: 22,
              ),
-             
             const SizedBox(height: 20),
-            
             ProfileMenu4(
-              text: "AURELIEN ROGE",
-             subtitle: "Cliquer pour acceder au profil linkdin",
+              text: "Aurélien ROGÉ",
+             subtitle: "Cliquer pour accéder au profil LinkedIn",
              imagePath: "assets/images/Aurelien.jpeg",
              press: () {
-               launchUrl(Uri.parse("https://www.linkedin.com/in/aurelien-roge-0b5b9b1b6/"));
+               launchUrl(Uri.parse("www.linkedin.com/in/aurelienroge"));
               },
+              titleSize: 22,
              ),
             const SizedBox(height: 20),
             ProfileMenu4(
-              text: "ALEXANDRE DEPREZ", 
-            subtitle: "Cliquer pour acceder au profil linkdin",
+              text: "Alexandre DEPREZ",
+            subtitle: "Cliquer pour accéder au profil LinkedIn",
             imagePath:"assets/images/ALEXANDRE.jpeg",
              press: () {
                launchUrl(Uri.parse("https://www.linkedin.com/in/alexandre-deprez/"));
               },
+              titleSize: 22,
             ),
             const SizedBox(height: 20),
             ProfileMenu4(
-              text: "AHOLOU MELCHIOR", 
-            subtitle: "Cliquer pour acceder au profil linkdin",
+              text: "Melchior AHOLOU",
+            subtitle: "Cliquer pour accéder au profil LinkedIn",
             imagePath:"assets/images/Melchior.JPG",
             press: () {
               launchUrl(Uri.parse("https://www.linkedin.com/in/melchior-aholou/"));
-              },),
+              },
+              titleSize: 22,
+            ),
+            const SizedBox(height: 20),
+            ProfileMenu4(
+              text: "Paul MAERTEN",
+              subtitle: "Cliquer pour accéder au profil LinkedIn",
+              imagePath: 'assets/images/img_avatar.png',
+              press: () {
+                launchUrl(Uri.parse('https://www.linkedin.com/in/paul-maerten-a8876b20b/'));
+              },
+              titleSize: 22,
+            ),
             const SizedBox(height: 20),
              ProfileMenu4(
-              text: "SEDRICK FRANCK DEH TAGOU", 
-            subtitle: "Cliquer pour acceder au profil linkdin",
+              text: "Sedrick Franck DEH TAGOU",
+            subtitle: "Cliquer pour accéder au profil LinkedIn",
             imagePath:"assets/images/deh.jpg",
             press: () {
               launchUrl(Uri.parse("https://www.linkedin.com/in/sedrick-frank-deh-tagou/"));
               },
+               titleSize: 18,
             ),
             const SizedBox(height: 20),
-             ProfileMenu4(
-              text: "PAUL MAERTEN", 
-            subtitle: "Cliquer pour acceder au profil linkdin",
-            imagePath:"assets/images/noimg.jpg",
-            press: () {
-            launchUrl(Uri.parse('https://github.com/theoprz/ECGProject'));
-              },
-            ),
-            const SizedBox(height: 20)
          ],
         )
       ),
@@ -123,17 +127,12 @@ class InformationScreen extends StatelessWidget {
 
   class ProfileMenu4 extends StatelessWidget {
   final String text;
-  final String subtitle; 
+  final String subtitle;
   final String imagePath;
+  final double titleSize;
   final VoidCallback? press;
 
-  const ProfileMenu4({
-    Key? key,
-    required this.text,
-    required this.subtitle,
-    required this.imagePath,
-    this.press,
-  }) : super(key: key);
+  const ProfileMenu4({Key? key, required this.text, required this.subtitle, required this.imagePath, this.press, required this.titleSize,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -145,7 +144,7 @@ class InformationScreen extends StatelessWidget {
       child: TextButton(
         style: TextButton.styleFrom(
           foregroundColor: kPrimaryColor,
-          padding: const EdgeInsets.all(30),
+          padding: const EdgeInsets.only(left: 15, right: 15, top: 15, bottom: 15),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
           backgroundColor: const  Color(0xFFF5F6F9),
         ),
@@ -153,8 +152,8 @@ class InformationScreen extends StatelessWidget {
         child: Row(
           children: [
             Container(
-            width: 55,
-            height: 55,
+            width: 80,
+            height: 80,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(25),
               image: DecorationImage(
@@ -163,26 +162,26 @@ class InformationScreen extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(width: 30),
+          SizedBox(width:10),
 
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                child: 
-                Text(
-                  text,
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                ),
+                child:
+                  Text(
+                    text,
+                    style: TextStyle(fontSize: titleSize, fontWeight: FontWeight.bold),
+                  ),
                 ),
                 SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                child: 
-                Text(
-                  subtitle,
-                  style: TextStyle(fontSize: 12, color: Color.fromARGB(255, 164, 164, 164)),
-                ),
+                child:
+                  Text(
+                    "Cliquez pour accéder au profil LinkedIn",
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.blue.shade700),
+                  ),
                 ),
               ],
             ),
