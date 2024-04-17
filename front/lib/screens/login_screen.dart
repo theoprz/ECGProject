@@ -73,6 +73,21 @@ class LoginScreen extends StatelessWidget {
                 });
               },
             ),
+            MaterialButton(
+                color: Colors.red.shade900,
+                textColor: Colors.white,
+                child: Text('AUTH BYPASS'),
+                onPressed: () {
+                Navigator.pushAndRemoveUntil(//On va sur l'écran d'accueil, on supprime toutes les routes précédentes pour éviter de revenir en arrière
+                context,
+                MaterialPageRoute(//On créer une nouvelle racine,
+                builder: (context) => MyHomePage(title: 'ECG APP', camera: camera),
+                settings: RouteSettings(name: '/'), //Définit la route vers la racine
+                ),
+                (Route<dynamic> route) => false,
+                );
+              },
+            ),
           ],
         ),
       ),
