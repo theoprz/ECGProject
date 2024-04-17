@@ -21,18 +21,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    generateFakeECGList().then((value) {
-      items = value;
-      filteredItems = List.from(items);
-    });
     _controller.addListener(() {
       setState(() {
-        filteredItems = items
-            .where((ecg) =>
-            ecg.title.toLowerCase().contains(_controller.text.toLowerCase()) ||//Recherche par titre
-            ecg.tags.any((tag) => tag.name.toLowerCase().contains(_controller.text.toLowerCase()))//Recherche par tag
-          )
-            .toList();
+
       });
     });
   }
@@ -57,13 +48,14 @@ class _HomeScreenState extends State<HomeScreen> {
           ECG ecg = ECG("Titre", "Description", 0, "1", [], "0", File(''), []);
           await ecg.setECGFromQuery(i);
           ecgList.add(ecg);
+          print("génération de l'objet : $ecg");
         }
 
       } else {
-        print('Erreur: ${response.statusCode}');
+        print('Erreur generateFakeECGList : ${response.statusCode}');
       }
     } catch (e) {
-      print('Exception lors de la requête: $e');
+      print('Exception lors de la requête generateFakeECGList: $e');
     }
     return ecgList;
   }
@@ -162,11 +154,20 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         );
                       } else if (snapshot.hasError) {
+                        print('Erreur FutureBuilder : ${snapshot.error}');
                         return const Center(
                           child: Text('Erreur de chargement'),
                         );
                       } else {
                         items = snapshot.data!;
+                        filteredItems = items
+                            .where((ecg) =>
+                            ecg.title.toLowerCase().contains(_controller.text.toLowerCase()) ||//Recherche par titre
+                            ecg.tags.any((tag) => tag.name.toLowerCase().contains(_controller.text.toLowerCase()))//Recherche par tag
+                        )
+                            .toList();
+                        print('Nombre d\'items : ${items.length}');
+                        print('Nombre d\'items filtrés : ${filteredItems.length}'); //nombre d'items filtrés
                         return GestureDetector(
                           onVerticalDragDown: (_) {
                             FocusScope.of(context).unfocus();
