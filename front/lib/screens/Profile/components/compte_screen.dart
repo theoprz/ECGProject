@@ -27,8 +27,6 @@ class CompteScreen extends StatelessWidget {
             const SizedBox(height: 20),
             itemProfile('Nom', 'Nom Prénom', CupertinoIcons.person),
             const SizedBox(height: 10),
-            itemProfile('Téléphone', '0123456789', CupertinoIcons.phone),
-            const SizedBox(height: 10),
             itemProfile('Email', 'nomprénom@institution.com', CupertinoIcons.mail),
             const SizedBox(height: 10),
             itemProfile('Statut', 'Médécin', CupertinoIcons.location),

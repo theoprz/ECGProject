@@ -31,7 +31,7 @@ class ProfileScreen extends StatelessWidget {
               },
             ),
             ProfileMenu(
-              text: "Informations",
+              text: "A propos de nous",
               icon: "assets/icons/Question mark.svg",
               next: const Icon(Icons.navigate_next),
               press: () {

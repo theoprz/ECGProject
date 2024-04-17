@@ -17,21 +17,14 @@ class ContactScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 10),
         child: Column(
           children: [
-            itemProfile2("Nous sommes des étudiants de Junia ISEN Lille et sommes heureux d'avoir travaillé sur ce projet. Vous pouvez nous joindre avec les informations ci-dessous:"),
-             const SizedBox(height: 30),
+            itemProfile2("Vous pouvez nous joindre avec les informations ci-dessous:"),
+             const SizedBox(height: 70),
             ProfileMenu4(
               text: "GitHUB",
               subtitle: "https://github.com/theoprz/ECGProject",
               icon: "assets/icons/Github.svg",
               press: () {
                launchUrl(Uri.parse('https://github.com/theoprz/ECGProject'));
-               final Uri _url = Uri.parse('https://flutter.dev');
-               Future<void> _launchUrl() async {
-  if (!await launchUrl(_url)) {
-    throw Exception('Could not launch $_url');
-  }
-               
-              } 
               },
             ),
             ProfileMenu4(
@@ -57,7 +50,7 @@ class ContactScreen extends StatelessWidget {
             ),
             ProfileMenu4(
               text: "localisation",
-              subtitle: "40 Boulevard Vauban, 59000 Lille",
+              subtitle: "41 Boulevard Vauban, 59000 Lille",
               icon: "assets/icons/Location.svg",
               press: () {
                 },
@@ -109,7 +102,7 @@ class ProfileMenu4 extends StatelessWidget {
             SvgPicture.asset(
               icon,
               color: kPrimaryColor,
-              width: 22,
+              width: 40,
             ),
             const SizedBox(width: 40),
             Column(
