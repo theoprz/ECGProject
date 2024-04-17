@@ -18,6 +18,7 @@ class ECG {
   String vitesse = "0";
   String  gain = "0";
   File photo;
+  String photopath = "";
   List<String> listeSymptomes = [];
 
   ECG(this.title, this.description, this.patientAge, this.patientSex, this.tags, this.id, this.photo, this.listeSymptomes);//Constructeur de base
@@ -75,13 +76,14 @@ class ECG {
         date = formattedDate;
         quality = handleQuality(dataList[i]['quality']);
         qualityId = dataList[i]['quality'];
-        /*
         if(dataList[i]['filename'] == ""){
-          photo = File('assets/images/noimg.jpg');
+          photopath = 'valeurpardefaut';
+          //photo = File('assets/images/noimg.jpg');
         } else {
-          photo = await downloadImage(dataList[i]['id']);
+          photopath = dataList[i]['filename'];
+          //photo = await downloadImage(dataList[i]['id']);
         }
-        */
+
 
         vitesse = dataList[i]['speed'].toString();
         gain = dataList[i]['gain'].toString();
