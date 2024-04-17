@@ -116,10 +116,9 @@ class ECGDetailsPage extends StatelessWidget {
       if (response.statusCode == 200) {
         final url = Uri.parse('http://173.212.207.124:3333/pdfs/${ecg.id}.pdf');
         final response = await http.get(url);
-        print(response.body);
-        print(response.statusCode);
-        print(response.bodyBytes);
-        final Directory? directory = await getExternalStorageDirectory();
+        final Directory? directory = Platform.isAndroid
+            ? await getExternalStorageDirectory() //FOR ANDROID
+            : await getApplicationSupportDirectory(); //FOR iOS
         final String filePath = '${directory?.path}/${ecg.id}.pdf';
         final File file = File(filePath);
         await file.writeAsBytes(response.bodyBytes);
