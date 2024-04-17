@@ -1,5 +1,6 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:front/screens/Profile/components/contact_screen.dart';
 import 'package:front/screens/login_screen.dart';
 import 'components/compte_screen.dart';
 import 'components/informations_screen.dart';
@@ -42,13 +43,12 @@ class ProfileScreen extends StatelessWidget {
               icon: "assets/icons/Mail.svg",
               next: const Icon(Icons.navigate_next),
               press: () async {
-                
+                Navigator.push(context,MaterialPageRoute(builder:(context)=> const ContactScreen()) );
                 },
             ),
-             ProfileMenu(
+             ProfileMenu2(
               text: "Déconnexion",
               icon: "assets/icons/Log out.svg",
-              next: const Icon(Icons.navigate_next),
               press: () {
                 Navigator.pushAndRemoveUntil(//On va sur l'écran d'accueil, on supprime toutes les routes précédentes pour éviter de revenir en arrière
                   context,
@@ -58,7 +58,6 @@ class ProfileScreen extends StatelessWidget {
                   ),
                       (Route<dynamic> route) => false,
                 );
-                //Navigator.push(context,MaterialPageRoute(builder:(context)=> LoginScreen(camera: camera,)) );
               },
             ),
           ],

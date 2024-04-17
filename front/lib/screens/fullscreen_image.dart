@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class FullscreenImage extends StatelessWidget {
   final String imagePath;
-  final int gainEcg;
-  final int vitesseEcg;
+  final String gainEcg;
+  final String vitesseEcg;
 
   const FullscreenImage({super.key, required this.imagePath, required this.gainEcg, required this.vitesseEcg});
 
