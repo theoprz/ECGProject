@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/svg.dart';
-import '../../../widgets/constant.dart';
 class CompteScreen extends StatelessWidget {
   const CompteScreen({Key? key}) : super(key: key);
 
@@ -27,8 +25,9 @@ class CompteScreen extends StatelessWidget {
             const SizedBox(height: 20),
             itemProfile('Nom', 'Nom Prénom', CupertinoIcons.person),
             const SizedBox(height: 10),
+            const SizedBox(height: 20),
             itemProfile('Email', 'nomprénom@institution.com', CupertinoIcons.mail),
-            const SizedBox(height: 10),
+            const SizedBox(height: 20),
             itemProfile('Statut', 'Médécin', CupertinoIcons.location),
             const SizedBox(height: 20,),
          ],

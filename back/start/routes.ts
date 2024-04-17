@@ -30,6 +30,7 @@ router
     router.get('/ecg/:id', [EcgsController, 'show'])
     router.put('/ecg/:id', [EcgsController, 'update'])
     router.delete('/ecg/:id', [EcgsController, 'destroy'])
+    router.get('/ecg/:id/pdf', [EcgsController, 'uploadPdf'])
     router.get('/ecg/info/count', [EcgsController, 'count'])
     router.get('/ecg/info/image', [EcgsController, 'getImage'])
     router.post('/ecg/upload/file', [EcgsController, 'uploadFile'])

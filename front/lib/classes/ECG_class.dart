@@ -1,9 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:flutter/services.dart' show rootBundle;
 import 'package:http/http.dart' as http;
-import 'package:intl/date_symbol_data_file.dart';
-import 'package:intl/intl.dart';
 import 'package:path_provider/path_provider.dart';
 import 'Tag.dart';
 
@@ -18,17 +15,18 @@ class ECG {
   String? date;
   String quality = "Non renseignée";
   int qualityId = 0;
-  int vitesse = 0;
-  int gain = 0;
+  String vitesse = "0";
+  String  gain = "0";
   File photo;
+  List<String> listeSymptomes = [];
 
-  ECG(this.title, this.description, this.patientAge, this.patientSex, this.tags, this.id, this.photo);//Constructeur de base
+  ECG(this.title, this.description, this.patientAge, this.patientSex, this.tags, this.id, this.photo, this.listeSymptomes);//Constructeur de base
 
-  ECG.withQualitySpeedGain(this.title, this.description, this.patientAge, this.patientSex, this.tags, this.id, this.quality, this.vitesse, this.gain, this.photo);//Constructeur avec les paramètres de qualité, vitesse et gain
+  ECG.withQualitySpeedGain(this.title, this.description, this.patientAge, this.patientSex, this.tags, this.id, this.quality, this.vitesse, this.gain, this.photo, this.listeSymptomes);//Constructeur avec les paramètres de qualité, vitesse et gain
 
   @override
   String toString() {
-    return 'ECG{title: $title, description: $description, patientAge: $patientAge, patientSex: $patientSex, tags: $tags, id: $id, quality: $quality, vitesse: $vitesse, gain: $gain}';
+    return 'ECG{title: $title, description: $description, patientAge: $patientAge, patientSex: $patientSex, tags: $tags, id: $id, quality: $quality, vitesse: $vitesse, gain: $gain, listeSymptomes: $listeSymptomes}';
   }
 
   Future<File> downloadImage(String ecgId) async {
@@ -65,8 +63,6 @@ class ECG {
            formattedDate = "Non renseignée";
         }
 
-        print(formattedDate);
-
         id = dataList[i]['id'];
         title = dataList[i]['title'];
         title = title.replaceAll('_', ' ');//On retire tous les underscores et on les remplace par des espaces
@@ -85,8 +81,8 @@ class ECG {
           photo = await downloadImage(dataList[i]['id']);
         }
 
-        vitesse = dataList[i]['speed'];
-        gain = dataList[i]['gain'];
+        vitesse = dataList[i]['speed'].toString();
+        gain = dataList[i]['gain'].toString();
 
         tags.clear();
         int tagLength = dataList[i]['tags'].length;
@@ -140,11 +136,11 @@ String epochToFrenchDate(int epochTime) {
   DateTime date = DateTime.fromMillisecondsSinceEpoch(epochTime * 1000);//En dart l'epoch fonctionne en ms et pas en s donc je multiplie par 1000
 
 
-  List<String> monthNames = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];//On définit le nom des mois
+  //List<String> monthNames = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];//On définit le nom des mois
 
-  String monthName = monthNames[date.month - 1];//On récupère le nom du mois
+  //String monthName = monthNames[date.month - 1];//On récupère le nom du mois
 
-  return '${date.day}\n$monthName\n${date.year}';
+  return '${date.year}';
 }
 
 String handleQuality(int quality) {

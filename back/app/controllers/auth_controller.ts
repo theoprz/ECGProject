@@ -4,8 +4,10 @@ import { HttpContext } from '@adonisjs/core/http'
 
 export default class AuthController {
   async authCallback({ request, response }: HttpContext) {
-    console.log(request.url())
+    const code = request.input('code')
+    const state = request.input('state')
+    const redirectUri = 'com.group40.front://login-callback?code=' + code + '&state=' + state;
 
-    return response.status(200).json({ description: 'Auth callback', content: null })
+    return response.redirect(redirectUri)
   }
 }

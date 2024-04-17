@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:share/share.dart';
 import 'package:front/screens/fullscreen_image.dart';
+import 'package:http/http.dart' as http;
+import 'dart:io';
+import 'package:path_provider/path_provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../classes/ECG_class.dart';
 import '../widgets/TagDisplayer.dart';
 
@@ -31,7 +36,7 @@ class ECGDetailsPage extends StatelessWidget {
                 child: Text('Contexte : ${ecg.description}'),
               ),
               Container(
-                child: Text('Date de publication: ${ecg.date?.replaceAll("\n", " ")}'),
+                child: Text('Année de publication: ${ecg.date?.replaceAll("\n", " ")}'),
               ),
               Container(
                 decoration: BoxDecoration(
@@ -69,7 +74,6 @@ class ECGDetailsPage extends StatelessWidget {
                         return GestureDetector(
                           onTap: () {
                             Navigator.push(context, MaterialPageRoute(builder: (_) {
-                              print(ecg.photo.path);
                               return FullscreenImage(imagePath: ecg.photo.path, vitesseEcg: ecg.vitesse, gainEcg: ecg.gain);
                             }));
                           },
@@ -92,12 +96,54 @@ class ECGDetailsPage extends StatelessWidget {
                   ),
                 ),
               ),
+              ElevatedButton(
+                onPressed: () {
+                  sharePDF(context);
+                },
+                child: Text('Partager'),
+              ),
             ],
           ),
         ),
       ),
     );
   }
-}
+  Future<void> sharePDF(BuildContext context) async {
+    final url = Uri.parse('http://173.212.207.124:3333/api/v1/ecg/${ecg.id}/pdf');
 
+    try {
+      final response = await http.get(url);
+      if (response.statusCode == 200) {
+        final url = Uri.parse('http://173.212.207.124:3333/pdfs/${ecg.id}.pdf');
+        final response = await http.get(url);
+        print(response.body);
+        print(response.statusCode);
+        print(response.bodyBytes);
+        final Directory? directory = await getExternalStorageDirectory();
+        final String filePath = '${directory?.path}/${ecg.id}.pdf';
+        final File file = File(filePath);
+        await file.writeAsBytes(response.bodyBytes);
+        Share.shareFiles([filePath], text: 'Partage de PDF');
+      } else {
+        throw Exception('Erreur lors du partage du PDF');
+      }
+    } catch (e) {
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text('Erreur'),
+          content: Text('Une erreur est survenue lors du partage du PDF: $e'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('OK'),
+            ),
+          ],
+        ),
+      );
+    }
+  }
+}
 //TODO ENHANCE TOPBAR
