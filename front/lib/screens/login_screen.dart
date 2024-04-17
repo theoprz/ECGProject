@@ -59,14 +59,13 @@ class LoginScreen extends StatelessWidget {
               onPressed: () {
                 login(context).then((value) {
                   if (value != null) {
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(//On va sur l'écran d'accueil, on supprime toutes les routes précédentes pour éviter de revenir en arrière
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => ReceiveCodeAndStatePage(
-                          code: value,
-                          state: 'state',
-                        ),
+                      MaterialPageRoute(//On créer une nouvelle racine,
+                        builder: (context) => MyHomePage(title: 'ECG APP', camera: camera),
+                        settings: RouteSettings(name: '/'), //Définit la route vers la racine
                       ),
+                          (Route<dynamic> route) => false,
                     );
                   } else {
                     // Gérer les erreurs ou les cas d'annulation

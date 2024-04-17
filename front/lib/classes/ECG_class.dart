@@ -81,8 +81,8 @@ class ECG {
           photo = await downloadImage(dataList[i]['id']);
         }
 
-        vitesse = dataList[i]['speed'];
-        gain = dataList[i]['gain'];
+        vitesse = dataList[i]['speed'].toString();
+        gain = dataList[i]['gain'].toString();
 
         tags.clear();
         int tagLength = dataList[i]['tags'].length;
