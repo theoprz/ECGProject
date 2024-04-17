@@ -1,11 +1,43 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 
-class FullscreenImage extends StatelessWidget {
-  final String imagePath;
+class FullscreenImage extends StatefulWidget {
+  final ImageProvider image;
   final String gainEcg;
   final String vitesseEcg;
 
-  const FullscreenImage({super.key, required this.imagePath, required this.gainEcg, required this.vitesseEcg});
+  const FullscreenImage({Key? key, required this.image, required this.gainEcg, required this.vitesseEcg}) : super(key: key);
+
+  @override
+  _FullscreenImageState createState() => _FullscreenImageState();
+}
+
+class _FullscreenImageState extends State<FullscreenImage> with WidgetsBindingObserver {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight,
+    ]);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+    super.dispose();
+  }
+
+  @override
+  Future<bool> didPopRoute() {
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+    return super.didPopRoute();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,15 +48,7 @@ class FullscreenImage extends StatelessWidget {
             Center(
               child: Hero(
                 tag: 'imageHero',
-                child: imagePath.startsWith("/data/")
-                    ? Image.network(
-                      'http://173.212.207.124:3333/imgECGs/${imagePath.split('/').last}',
-                      errorBuilder: (BuildContext context, Object exception, StackTrace? stackTrace) {
-                      //Retourne une image de secours en cas d'erreur
-                      return Image.asset('assets/images/noimg.jpg');
-                  },
-                )
-                    : Image.asset(imagePath),
+                child: Image(image: widget.image),
               ),
             ),
             Positioned(
@@ -35,7 +59,7 @@ class FullscreenImage extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    'Vitesse : $vitesseEcg mm/s    Gain : $gainEcg mm/mV',
+                    'Vitesse : ${widget.vitesseEcg} mm/s    Gain : ${widget.gainEcg} mm/mV',
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 20.0,

@@ -1,5 +1,6 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:front/screens/add_ecg_screen.dart';
 import 'package:front/screens/home_screen.dart';
 import 'package:front/screens/Profile/profile_screen.dart';
@@ -10,7 +11,10 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final cameras = await availableCameras();
   final firstCamera = cameras.first;
-  runApp(MainApp(camera: firstCamera));
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((_) {
+    runApp(MainApp(camera: firstCamera));
+  });
 }
 
 //Gestion du popup de la caméra

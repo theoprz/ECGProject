@@ -73,8 +73,16 @@ class ECGDetailsPage extends StatelessWidget {
                         // If it's the first item, return the image
                         return GestureDetector(
                           onTap: () {
+                            ImageProvider imageProvider;
+                            print('path:${ecg.photopath}iiiiiiiiiiii');
+                            if (ecg.photopath == 'assets/images/noimg.jpg' || ecg.photopath == '' || ecg.photopath == 'valeurpardefaut') {
+                              imageProvider = AssetImage('assets/images/noimg.jpg');
+                              print('No image');
+                            } else {
+                              imageProvider = NetworkImage('http://173.212.207.124:3333/imgECGs/${ecg.id}.jpg');
+                            }
                             Navigator.push(context, MaterialPageRoute(builder: (_) {
-                              return FullscreenImage(imagePath: ecg.photo.path, vitesseEcg: ecg.vitesse, gainEcg: ecg.gain);
+                              return FullscreenImage(image: imageProvider, vitesseEcg: ecg.vitesse, gainEcg: ecg.gain);
                             }));
                           },
                           child: ecg.photo.path == 'assets/images/noimg.jpg'
