@@ -69,7 +69,6 @@ class ECGDetailsPage extends StatelessWidget {
                         return GestureDetector(
                           onTap: () {
                             Navigator.push(context, MaterialPageRoute(builder: (_) {
-                              print(ecg.photo.path);
                               return FullscreenImage(imagePath: ecg.photo.path, vitesseEcg: ecg.vitesse, gainEcg: ecg.gain);
                             }));
                           },

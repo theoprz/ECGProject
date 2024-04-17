@@ -65,8 +65,6 @@ class ECG {
            formattedDate = "Non renseignée";
         }
 
-        print(formattedDate);
-
         id = dataList[i]['id'];
         title = dataList[i]['title'];
         title = title.replaceAll('_', ' ');//On retire tous les underscores et on les remplace par des espaces
