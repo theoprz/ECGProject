@@ -36,7 +36,7 @@ class ECGDetailsPage extends StatelessWidget {
                 child: Text('Contexte : ${ecg.description}'),
               ),
               Container(
-                child: Text('Date de publication: ${ecg.date?.replaceAll("\n", " ")}'),
+                child: Text('Année de publication: ${ecg.date?.replaceAll("\n", " ")}'),
               ),
               Container(
                 decoration: BoxDecoration(

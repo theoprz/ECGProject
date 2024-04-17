@@ -75,7 +75,7 @@ class _ECGDisplayerState extends State<ECGDisplayer> {
           width: MediaQuery.of(context).size.width * 0.96,
           child: Container(
             key: _borderKey,
-            padding: const EdgeInsets.only(top: 20, left: 6, right: 6, bottom: 20),//TODO PADDING PLUS PETIT, BORDS UN PEU ARRONDIS
+            padding: const EdgeInsets.only(top: 8, left: 6, right: 6, bottom: 8),//TODO PADDING PLUS PETIT, BORDS UN PEU ARRONDIS
             decoration: const BoxDecoration(
               color: Colors.white,
             ),
@@ -85,20 +85,8 @@ class _ECGDisplayerState extends State<ECGDisplayer> {
                   padding: const EdgeInsets.only(right: 5),
                   child: Row(
                     children: [
-                      /* Encadré de date
-                      Container(
-                        width: 60,
-                        child: Column(
-                          children: [
-                            Text(
-                              widget.ecg.date ?? '',
-                              style: const TextStyle(fontSize: 10),
-                              textAlign: TextAlign.center,
-                            ),
-                          ],
-                        ),
-                      ),*/
                       //BORDURE DE QUALITÉ DE L ECG
+                      SizedBox(width: 5),
                       Container(
                         width: 3,
                         height: _borderHeight,
