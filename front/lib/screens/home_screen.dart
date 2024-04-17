@@ -17,15 +17,15 @@ class _HomeScreenState extends State<HomeScreen> {
   late List<ECG> items;
   final TextEditingController _controller = TextEditingController();
   List<ECG> filteredItems = [];
+  Future<List<ECG>>? _ecgListFuture;
 
   @override
   void initState() {
     super.initState();
     _controller.addListener(() {
-      setState(() {
-
-      });
+      setState(() {});
     });
+    _ecgListFuture = generateFakeECGList();
   }
 
   @override
@@ -48,7 +48,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ECG ecg = ECG("Titre", "Description", 0, "1", [], "0", File(''), []);
           await ecg.setECGFromQuery(i);
           ecgList.add(ecg);
-          print("génération de l'objet : $ecg");
         }
 
       } else {
@@ -140,7 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Container(
                   color: Colors.grey.shade200, //Background color
                   child: FutureBuilder(
-                    future: generateFakeECGList(),
+                    future: _ecgListFuture,
                     builder: (BuildContext context, AsyncSnapshot<List<ECG>> snapshot) {
                       if (snapshot.connectionState == ConnectionState.waiting) {
                         return const Center(
@@ -166,8 +165,6 @@ class _HomeScreenState extends State<HomeScreen> {
                             ecg.tags.any((tag) => tag.name.toLowerCase().contains(_controller.text.toLowerCase()))//Recherche par tag
                         )
                             .toList();
-                        print('Nombre d\'items : ${items.length}');
-                        print('Nombre d\'items filtrés : ${filteredItems.length}'); //nombre d'items filtrés
                         return GestureDetector(
                           onVerticalDragDown: (_) {
                             FocusScope.of(context).unfocus();

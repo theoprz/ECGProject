@@ -75,11 +75,13 @@ class ECG {
         date = formattedDate;
         quality = handleQuality(dataList[i]['quality']);
         qualityId = dataList[i]['quality'];
+        /*
         if(dataList[i]['filename'] == ""){
           photo = File('assets/images/noimg.jpg');
         } else {
           photo = await downloadImage(dataList[i]['id']);
         }
+        */
 
         vitesse = dataList[i]['speed'].toString();
         gain = dataList[i]['gain'].toString();
