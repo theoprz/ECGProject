@@ -4,7 +4,7 @@ import 'package:front/screens/fullscreen_image.dart';
 import 'package:http/http.dart' as http;
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
-import 'package:url_launcher/url_launcher.dart';
+// import 'package:url_launcher/url_launcher.dart';
 import '../classes/ECG_class.dart';
 import '../widgets/TagDisplayer.dart';
 
@@ -119,7 +119,9 @@ class ECGDetailsPage extends StatelessWidget {
         print(response.body);
         print(response.statusCode);
         print(response.bodyBytes);
-        final Directory? directory = await getExternalStorageDirectory();
+        final Directory? directory = Platform.isAndroid
+            ? await getExternalStorageDirectory() //FOR ANDROID
+            : await getApplicationSupportDirectory(); //FOR iOS
         final String filePath = '${directory?.path}/${ecg.id}.pdf';
         final File file = File(filePath);
         await file.writeAsBytes(response.bodyBytes);
