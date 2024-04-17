@@ -17,24 +17,15 @@ class _HomeScreenState extends State<HomeScreen> {
   late List<ECG> items;
   final TextEditingController _controller = TextEditingController();
   List<ECG> filteredItems = [];
+  Future<List<ECG>>? _ecgListFuture;
 
   @override
   void initState() {
     super.initState();
-    generateFakeECGList().then((value) {
-      items = value;
-      filteredItems = List.from(items);
-    });
     _controller.addListener(() {
-      setState(() {
-        filteredItems = items
-            .where((ecg) =>
-            ecg.title.toLowerCase().contains(_controller.text.toLowerCase()) ||//Recherche par titre
-            ecg.tags.any((tag) => tag.name.toLowerCase().contains(_controller.text.toLowerCase()))//Recherche par tag
-          )
-            .toList();
-      });
+      setState(() {});
     });
+    _ecgListFuture = generateFakeECGList();
   }
 
   @override
@@ -60,10 +51,10 @@ class _HomeScreenState extends State<HomeScreen> {
         }
 
       } else {
-        print('Erreur: ${response.statusCode}');
+        print('Erreur generateFakeECGList : ${response.statusCode}');
       }
     } catch (e) {
-      print('Exception lors de la requête: $e');
+      print('Exception lors de la requête generateFakeECGList: $e');
     }
     return ecgList;
   }
@@ -148,7 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Container(
                   color: Colors.grey.shade200, //Background color
                   child: FutureBuilder(
-                    future: generateFakeECGList(),
+                    future: _ecgListFuture,
                     builder: (BuildContext context, AsyncSnapshot<List<ECG>> snapshot) {
                       if (snapshot.connectionState == ConnectionState.waiting) {
                         return const Center(
@@ -162,11 +153,18 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         );
                       } else if (snapshot.hasError) {
+                        print('Erreur FutureBuilder : ${snapshot.error}');
                         return const Center(
                           child: Text('Erreur de chargement'),
                         );
                       } else {
                         items = snapshot.data!;
+                        filteredItems = items
+                            .where((ecg) =>
+                            ecg.title.toLowerCase().contains(_controller.text.toLowerCase()) ||//Recherche par titre
+                            ecg.tags.any((tag) => tag.name.toLowerCase().contains(_controller.text.toLowerCase()))//Recherche par tag
+                        )
+                            .toList();
                         return GestureDetector(
                           onVerticalDragDown: (_) {
                             FocusScope.of(context).unfocus();

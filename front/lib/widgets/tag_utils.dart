@@ -4,6 +4,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../classes/Tag.dart';
 import '../classes/TagNode.dart';
 import 'child_tag_selection_page.dart';
 
@@ -22,8 +23,31 @@ List<TagNode> selectTagAndAncestors(TagNode node) {
   return selectedTags;
 }
 
+List<TagNode> selectTag(TagNode node) {
+  List<TagNode> selectedTags = [node];
 
-Widget buildTagNode(BuildContext context, TagNode node) {
+  return selectedTags;
+}
+
+List<TagNode> generateTagNodesFromTags(List<Tag> tags) {
+  var uniqueTagNames = <String>{};
+  var uniqueTags = <Tag>[];
+
+  for (var tag in tags) {
+    if (!uniqueTagNames.contains(tag.name)) {
+      uniqueTagNames.add(tag.name);
+      uniqueTags.add(tag);
+    }
+  }
+
+  var tagNodes = uniqueTags.map((tag) => TagNode(tag)).toList();
+  tagNodes.sort((a, b) => a.tag.name.compareTo(b.tag.name));
+
+  return tagNodes;
+}
+
+
+Widget buildTagNode(BuildContext context, TagNode node, [TextEditingController? searchController]) {//Le controller est optionnel, cela permet de vider la barre de recherche lors de la sélection d'un tag
   return Container(
       decoration: BoxDecoration(
       border: Border(
@@ -35,7 +59,16 @@ Widget buildTagNode(BuildContext context, TagNode node) {
       trailing: node.children.isNotEmpty ? const Icon(Icons.arrow_forward_ios) : null,
       onTap: () {
         if (node.children.isEmpty) {
-          List<TagNode> selectedTags = selectTagAndAncestors(node);
+          List<TagNode> selectedTags = selectTag(node);
+          int nbParents = selectTagAndAncestors(node).length;
+
+          // Vider le champ de recherche si un contrôleur est fourni
+          if (searchController != null) {
+            searchController.text = '';
+          }
+
+          // Fermer le clavier
+          FocusScope.of(context).unfocus();
 
           //Add selected tags to globalSelectedTags if they are not already in the list
           for (TagNode tag in selectedTags) {
@@ -50,7 +83,7 @@ Widget buildTagNode(BuildContext context, TagNode node) {
           globalSelectedTagsController.add(globalSelectedTags);
 
           // Retour à l'écran des tags racine
-          for(int i = 0; i < selectedTags.length -1; i++){
+          for(int i = 0; i < nbParents -1; i++){
           Navigator.pop(context);
         }
 

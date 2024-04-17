@@ -25,11 +25,29 @@ class TagSelectionPage extends StatefulWidget {
 class _TagSelectionPageState extends State<TagSelectionPage> {
   TagSelector tagSelector = TagSelector();
   Future<void>? loadTagsFuture;
+  final TextEditingController _searchcontroller = TextEditingController();
+  List<Tag> filteredTags = [];
 
   @override
   void initState() {
     super.initState();
     loadTagsFuture = tagSelector.loadTags();
+    _searchcontroller.addListener(searchListener);
+  }
+
+  void searchListener() {
+    String searchText = _searchcontroller.text;
+    if (searchText.isEmpty) {
+      setState(() {
+        filteredTags = tagSelector.tags;
+      });
+    } else {
+      setState(() {
+        filteredTags = tagSelector.tags.where((tag) {
+          return tag.name.toLowerCase().contains(searchText.toLowerCase());
+        }).toList();
+      });
+    }
   }
 
   Future<void> uploadPhoto(File imageFile, String ecgId) async {
@@ -60,6 +78,13 @@ class _TagSelectionPageState extends State<TagSelectionPage> {
     }
   }
 
+  @override
+  void dispose() {
+    _searchcontroller.removeListener(searchListener);
+    _searchcontroller.dispose();
+    super.dispose();
+  }
+
 
 @override
 Widget build(BuildContext context) {
@@ -77,16 +102,40 @@ Widget build(BuildContext context) {
         } else if (snapshot.hasError) {
           return const Center(child: Text('Erreur de chargement des tags'));
         } else {
-          List<TagNode> roots = tagSelector.buildTagTree(tagSelector.tags);
+          List<TagNode> roots = tagSelector.buildTagTree(filteredTags.isEmpty ? tagSelector.tags : filteredTags);
           roots.sort((a, b) => a.tag.name.toLowerCase().compareTo(b.tag.name.toLowerCase())); //Tri alphabétique des racines
           return Column(//Sous l'appbar
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Container(
+                padding: const EdgeInsets.all(8),
+                height: 70,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 0, right: 10, bottom: 10),
+                  child: TextField(
+                    controller: _searchcontroller,
+                    decoration: InputDecoration(
+                      labelText: 'Rechercher un tag',
+                      prefixIcon: const Icon(Icons.search),
+                      suffixIcon: IconButton(
+                        icon: const Icon(Icons.clear),
+                        onPressed: () {
+                          _searchcontroller.clear();
+                        },
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+
               StreamBuilder<List<TagNode>>(
                 stream: globalSelectedTagsController.stream,
                 builder: (context, snapshot) {
                   return ConstrainedBox(
-                    constraints: const BoxConstraints(maxHeight: 180), //Hauteur maximale de la liste
+                    constraints: const BoxConstraints(maxHeight: 110), //Hauteur maximale de la liste
                     child: SingleChildScrollView(
                       child: Container(
                         padding: const EdgeInsets.only(top: 0, left: 8, right: 8, bottom: 8),
@@ -136,9 +185,9 @@ Widget build(BuildContext context) {
               ),
               Expanded(
                 child: ListView(
-                  children: roots.map((root) => buildTagNode(context, root)).toList(),
+                    children: _searchcontroller.text.isEmpty ? roots.map((root) => buildTagNode(context, root, _searchcontroller)).toList() : generateTagNodesFromTags(filteredTags).map((node) => buildTagNode(context, node, _searchcontroller)).toList(),
+                  ),
                 ),
-              ),
             ],
           );
         }

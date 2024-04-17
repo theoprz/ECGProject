@@ -4,7 +4,7 @@ import 'package:front/screens/fullscreen_image.dart';
 import 'package:http/http.dart' as http;
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
-import 'package:url_launcher/url_launcher.dart';
+// import 'package:url_launcher/url_launcher.dart';
 import '../classes/ECG_class.dart';
 import '../widgets/TagDisplayer.dart';
 
@@ -36,7 +36,7 @@ class ECGDetailsPage extends StatelessWidget {
                 child: Text('Contexte : ${ecg.description}'),
               ),
               Container(
-                child: Text('Date de publication: ${ecg.date?.replaceAll("\n", " ")}'),
+                child: Text('Année de publication: ${ecg.date?.replaceAll("\n", " ")}'),
               ),
               Container(
                 decoration: BoxDecoration(
