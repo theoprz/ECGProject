@@ -12,7 +12,7 @@ import '../widgets/tag_selection_page.dart';
 class AddECGScreen extends StatefulWidget {
   final CameraDescription camera;
 
-  const AddECGScreen({super.key, required this.camera});
+  const AddECGScreen({super.key, required this.camera, required credentials});
 
   @override
   _AddECGScreenState createState() => _AddECGScreenState();

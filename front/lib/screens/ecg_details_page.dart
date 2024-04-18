@@ -74,7 +74,6 @@ class ECGDetailsPage extends StatelessWidget {
                         return GestureDetector(
                           onTap: () {
                             ImageProvider imageProvider;
-                            print('path:${ecg.photopath}iiiiiiiiiiii');
                             if (ecg.photopath == 'assets/images/noimg.jpg' || ecg.photopath == '' || ecg.photopath == 'valeurpardefaut') {
                               imageProvider = AssetImage('assets/images/noimg.jpg');
                               print('No image');

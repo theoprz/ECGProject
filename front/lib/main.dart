@@ -1,3 +1,4 @@
+import 'package:auth0_flutter_platform_interface/src/credentials.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -45,8 +46,9 @@ class MainApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   final String title;
   final CameraDescription camera;
+  final Credentials credentials;
 
-  const MyHomePage({super.key, required this.title, required this.camera});
+  const MyHomePage({super.key, required this.title, required this.camera, required this.credentials});
 
 
   @override
@@ -89,8 +91,8 @@ class _MyHomePageState extends State<MyHomePage> {
         }, // Mettre à jour l'index lorsque la page change
         children: [
           const HomeScreen(),
-          AddECGScreen(camera: widget.camera),
-          ProfileScreen(camera: widget.camera),
+          AddECGScreen(camera: widget.camera, credentials: widget.credentials),
+          ProfileScreen(camera: widget.camera, credentials: widget.credentials),
         ],
       ),
       bottomNavigationBar: BottomNavBar(

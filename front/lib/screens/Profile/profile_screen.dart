@@ -1,3 +1,4 @@
+import 'package:auth0_flutter_platform_interface/src/credentials.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:front/screens/Profile/components/contact_screen.dart';
@@ -9,8 +10,9 @@ import 'components/profile_pic.dart';
 class ProfileScreen extends StatelessWidget {
   static String routeName = "/profile";
   final CameraDescription camera;
+  final Credentials credentials;
 
-  ProfileScreen({super.key, required this.camera});
+  ProfileScreen({super.key, required this.camera, required this.credentials});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +29,7 @@ class ProfileScreen extends StatelessWidget {
               icon: "assets/icons/User Icon.svg",
               next: const Icon(Icons.navigate_next),
               press: () => {
-                Navigator.push(context,MaterialPageRoute(builder:(context)=> const CompteScreen()) )
+                Navigator.push(context,MaterialPageRoute(builder:(context)=> CompteScreen(credentials: credentials)) )
               },
             ),
             ProfileMenu(

@@ -209,9 +209,12 @@ export default class EcgsController {
     // Créer un nouveau document PDF
     const doc = new PDFKit.default()
 
-    // Ajouter l'image de l'ECG à la première page
+    // Ajouter une nouvelle page pour afficher l'image de l'ECG
+    doc.addPage()
+    doc.font('Helvetica-Bold').fontSize(18).fillColor('blue').text('INFORMATIONS SUR L\'ECG', {align: 'center', underline: true})
+    doc.moveDown().font('Helvetica-Bold').fontSize(16).fillColor('blue').text('Photo de l\'ECG', {align: 'center', underline: true})
     doc.image(imagePath, {
-      fit: [250, 250], // Taille de l'image dans le PDF
+      fit: [doc.page.width, doc.page.height], // Taille de l'image dans le PDF
       align: 'center',
       valign: 'center',
     })
@@ -233,24 +236,25 @@ export default class EcgsController {
     doc.on('data', buffers.push.bind(buffers))
     const thestream = doc.pipe(blobStream())
 
-    // Ajouter une nouvelle page pour afficher les données de l'ECG
+    // Ajouter une nouvelle page pour afficher les détails de l'ECG
     doc.addPage()
-
+    doc.font('Helvetica-Bold').fontSize(18).fillColor('blue').text('Détails sur l\'ECG', {align: 'center', underline: true})
+    doc.moveDown()
     // Ajouter les données de l'ECG à la deuxième page
-    doc.fontSize(12).text('ID: ' + ecg.id)
-    doc.fontSize(12).text('Title: ' + ecg.title)
-    doc.fontSize(12).text('Contexte: ' + ecg.contexte)
-    doc.fontSize(12).text('Comment: ' + ecg.comment)
-    doc.fontSize(12).text('Age: ' + ecg.age)
-    doc.fontSize(12).text('Sexe: ' + ecg.sexe)
-    doc.fontSize(12).text('Posted by: ' + ecg.postedBy)
-    doc.fontSize(12).text('Validated by: ' + ecg.validatedBy)
-    doc.fontSize(12).text('Created: ' + ecg.created)
-    doc.fontSize(12).text('Validated: ' + ecg.validated)
-    doc.fontSize(12).text('Pixels per cm: ' + ecg.pixelsCm)
-    doc.fontSize(12).text('Speed: ' + ecg.speed)
-    doc.fontSize(12).text('Gain: ' + ecg.gain)
-    doc.fontSize(12).text('Quality: ' + ecg.quality)
+    doc.fontSize(14).fillColor('blue').text('Titre ECG: ' + ecg.title)
+    doc.moveDown()
+    doc.fontSize(14).fillColor('blue').text('Contexte: ' + ecg.contexte)
+    doc.moveDown()
+    doc.fontSize(14).fillColor('blue').text('Âge: ' + ecg.age + ' ans')
+    doc.moveDown()
+    doc.fontSize(14).fillColor('blue').text('Sexe: ' + ecg.sexe + ' (Soit 1 pour Masculin, 2 pour Féminin et 3 pour inconnu)')
+    doc.moveDown()
+    doc.fontSize(14).fillColor('blue').text('Vitesse: ' + ecg.speed + ' mm/s')
+    doc.moveDown()
+    doc.fontSize(14).fillColor('blue').text('Gain: ' + ecg.gain + 'mm/mv')
+    doc.moveDown()
+    doc.fontSize(14).fillColor('blue').text('Qualité image: ' + ecg.quality + ' (Soit 1 pour Mauvaise, 2 pour Moyenne, 3 pour Bonne et 4 pour très bonne)')
+
     await doc.end()
 
     thestream.on('finish', () => {

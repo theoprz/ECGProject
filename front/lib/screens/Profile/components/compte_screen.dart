@@ -1,8 +1,12 @@
+import 'package:auth0_flutter/auth0_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
+
 class CompteScreen extends StatelessWidget {
-  const CompteScreen({Key? key}) : super(key: key);
+  final Credentials credentials;
+
+  const CompteScreen({Key? key, required this.credentials}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,15 +24,17 @@ class CompteScreen extends StatelessWidget {
             const SizedBox(height: 80),
             CircleAvatar(
               radius: 90,
-              backgroundImage: AssetImage('assets/images/img_avatar.png'),
+              backgroundImage: credentials.user.pictureUrl != null
+                  ? NetworkImage(credentials.user.pictureUrl.toString()) as ImageProvider<Object>?
+                  : AssetImage('assets/images/img_avatar.png'),
             ),
             const SizedBox(height: 20),
-            itemProfile('Nom', 'Nom Prénom', CupertinoIcons.person),
+            itemProfile('Nom', credentials.user.sub.toString(), CupertinoIcons.person),
             const SizedBox(height: 10),
             const SizedBox(height: 20),
-            itemProfile('Email', 'nomprénom@institution.com', CupertinoIcons.mail),
+            itemProfile('Email', credentials.user.email.toString(), CupertinoIcons.mail),
             const SizedBox(height: 20),
-            itemProfile('Statut', 'Médécin', CupertinoIcons.location),
+            itemProfile('Statut', "Inconnu", CupertinoIcons.location),
             const SizedBox(height: 20,),
          ],
         ),
