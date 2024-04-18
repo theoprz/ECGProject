@@ -41,9 +41,7 @@ android {
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
-        manifestPlaceholders += [
-                'appAuthRedirectScheme': 'http://173.212.207.124:3333/api/v1/auth/callback'
-        ]
+        manifestPlaceholders += [auth0Domain: "dev-hbsfg1yxwpptxje3.us.auth0.com", auth0Scheme: "com.group40.front"]
     }
 
     buildTypes {
