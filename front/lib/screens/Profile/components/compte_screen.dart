@@ -29,7 +29,7 @@ class CompteScreen extends StatelessWidget {
                   : AssetImage('assets/images/img_avatar.png'),
             ),
             const SizedBox(height: 20),
-            itemProfile('Nom', credentials.user.sub.toString(), CupertinoIcons.person),
+            itemProfile('Nom', credentials.user.name.toString(), CupertinoIcons.person),
             const SizedBox(height: 10),
             const SizedBox(height: 20),
             itemProfile('Email', credentials.user.email.toString(), CupertinoIcons.mail),
