@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:auth0_flutter/auth0_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:front/widgets/ECGDisplayer.dart';
 import 'package:http/http.dart' as http;
@@ -7,7 +8,8 @@ import 'package:http/http.dart' as http;
 import '../classes/ECG_class.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  final Credentials credentials;
+  const HomeScreen({super.key, required this.credentials});
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -18,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final TextEditingController _controller = TextEditingController();
   List<ECG> filteredItems = [];
   Future<List<ECG>>? _ecgListFuture;
-  late bool myEcgFilter = false;
+  late bool myEcgFilter = true;
 
   @override
   void initState() {
@@ -46,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
       if (response.statusCode == 200) {
         for(int i = 0; i < int.parse(response.body); i++){
-          ECG ecg = ECG("Titre", "Description", 0, "1", [], "0", File(''), []);
+          ECG ecg = ECG("Titre", "Description", 0, "1", [], "0", File(''), [], "0");
           await ecg.setECGFromQuery(i);
           ecgList.add(ecg);
         }
@@ -163,6 +165,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         );
                       } else {
                         items = snapshot.data!;
+                        if(myEcgFilter){
+                          items = items.where((ecg) => ecg.postedby == widget.credentials.toString()).toList();
+                        }
                         filteredItems = items
                             .where((ecg) =>
                             ecg.title.toLowerCase().contains(_controller.text.toLowerCase()) ||//Recherche par titre

@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:auth0_flutter/auth0_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/services.dart';
@@ -11,8 +12,9 @@ import '../widgets/tag_selection_page.dart';
 
 class AddECGScreen extends StatefulWidget {
   final CameraDescription camera;
+  final Credentials credentials;
 
-  const AddECGScreen({super.key, required this.camera, required credentials});
+  const AddECGScreen({super.key, required this.camera, required this.credentials});
 
   @override
   _AddECGScreenState createState() => _AddECGScreenState();
@@ -152,7 +154,7 @@ class _AddECGScreenState extends State<AddECGScreen> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => PhotoPreviewPage(imageFile: _selectedImage!),
+              builder: (context) => PhotoPreviewPage(imageFile: _selectedImage!, credentials: widget.credentials),
             ),
           );
         });
@@ -176,8 +178,9 @@ class _AddECGScreenState extends State<AddECGScreen> {
 
 class PhotoPreviewPage extends StatefulWidget {
   final File imageFile;
+  final Credentials credentials;
 
-  const PhotoPreviewPage({Key? key, required this.imageFile}) : super(key: key);
+  const PhotoPreviewPage({Key? key, required this.imageFile, required this.credentials}) : super(key: key);
 
   @override
   _PhotoPreviewPageState createState() => _PhotoPreviewPageState();
@@ -432,11 +435,11 @@ class _PhotoPreviewPageState extends State<PhotoPreviewPage> {
                   );
                   return;
                 }
-                ECG tmpECG = ECG.withQualitySpeedGain(titleController.text, descriptionController.text, ageController.text.isEmpty ? 0 : int.parse(ageController.text), _selectedSex ?? "Inconnu", [], "0", _imageQuality ?? "Non renseignée", _speedECG ?? "0", _gainECG ?? "0", widget.imageFile, selectedSymptoms);
+                ECG tmpECG = ECG.withQualitySpeedGain(titleController.text, descriptionController.text, ageController.text.isEmpty ? 0 : int.parse(ageController.text), _selectedSex ?? "Inconnu", [], "0", _imageQuality ?? "Non renseignée", _speedECG ?? "0", _gainECG ?? "0", widget.imageFile, selectedSymptoms, widget.credentials.user.sub);
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => TagSelectionPage(ecg: tmpECG),
+                    builder: (context) => TagSelectionPage(ecg: tmpECG, credentials: widget.credentials),
                   ),
                 );
                 print(tmpECG);

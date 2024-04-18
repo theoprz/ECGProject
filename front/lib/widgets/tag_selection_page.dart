@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:ffi';
 import 'dart:io';
+import 'package:auth0_flutter/auth0_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:path/path.dart';
@@ -16,8 +17,9 @@ import 'TagSelector.dart';
 
 class TagSelectionPage extends StatefulWidget {
   final ECG ecg;
+  final Credentials credentials;
 
-  const TagSelectionPage({super.key, required this.ecg});
+  const TagSelectionPage({super.key, required this.ecg, required this.credentials});
 
   @override
   _TagSelectionPageState createState() => _TagSelectionPageState();
@@ -263,7 +265,7 @@ Widget build(BuildContext context) {
           "age": widget.ecg.patientAge,
           "sexe": transformSexe(widget.ecg.patientSex),
           "filename": "${widget.ecg.id}.jpg",
-          "posted_by": "1",
+          "posted_by": widget.credentials.user.sub,
           "validated_by": "1",
           "created": widget.ecg.date,
           "validated": "0",

@@ -90,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
           });
         }, // Mettre à jour l'index lorsque la page change
         children: [
-          const HomeScreen(),
+          HomeScreen(credentials: widget.credentials,),
           AddECGScreen(camera: widget.camera, credentials: widget.credentials),
           ProfileScreen(camera: widget.camera, credentials: widget.credentials),
         ],

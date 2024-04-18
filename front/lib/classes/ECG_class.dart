@@ -13,6 +13,7 @@ class ECG {
   List<Tag> tags = [];
   String id;
   String? date;
+  String postedby;
   String quality = "Non renseignée";
   int qualityId = 0;
   String vitesse = "0";
@@ -21,9 +22,9 @@ class ECG {
   String photopath = "";
   List<dynamic> listeSymptomes = [];
 
-  ECG(this.title, this.description, this.patientAge, this.patientSex, this.tags, this.id, this.photo, this.listeSymptomes);//Constructeur de base
+  ECG(this.title, this.description, this.patientAge, this.patientSex, this.tags, this.id, this.photo, this.listeSymptomes, this.postedby);//Constructeur de base
 
-  ECG.withQualitySpeedGain(this.title, this.description, this.patientAge, this.patientSex, this.tags, this.id, this.quality, this.vitesse, this.gain, this.photo, this.listeSymptomes);//Constructeur avec les paramètres de qualité, vitesse et gain
+  ECG.withQualitySpeedGain(this.title, this.description, this.patientAge, this.patientSex, this.tags, this.id, this.quality, this.vitesse, this.gain, this.photo, this.listeSymptomes, this.postedby);//Constructeur avec les paramètres de qualité, vitesse et gain
 
   @override
   String toString() {
@@ -73,6 +74,7 @@ class ECG {
         patientSex = transformSexe(dataList[i]['sexe']);
         patientSexId = dataList[i]['sexe'];
         id = dataList[i]['id'];
+        postedby = dataList[i]['postedBy'].toString();
         date = formattedDate;
         quality = handleQuality(dataList[i]['quality']);
         qualityId = dataList[i]['quality'];
@@ -83,9 +85,7 @@ class ECG {
           photopath = dataList[i]['filename'];
           //photo = await downloadImage(dataList[i]['id']);
         }
-        if(dataList[i]['symptoms'].length > 0){
-          print(dataList[i]['symptoms'][0]['name']);
-        }
+        print(postedby);
         listeSymptomes = transformSymptomes(dataList[i]['symptoms']);
 
 
