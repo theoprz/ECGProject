@@ -1,6 +1,7 @@
 import { BaseModel, column, manyToMany } from '@adonisjs/lucid/orm'
 import Tag from '#models/tag'
 import type { ManyToMany } from '@adonisjs/lucid/types/relations'
+import Symptom from "#models/symptom";
 
 export default class Ecg extends BaseModel {
   @column({ isPrimary: true })
@@ -47,6 +48,9 @@ export default class Ecg extends BaseModel {
 
   @column()
   declare quality: number
+
+  @manyToMany(() => Symptom)
+  declare symptoms: ManyToMany<typeof Symptom>
 
   @manyToMany(() => Tag)
   declare tags: ManyToMany<typeof Tag>
