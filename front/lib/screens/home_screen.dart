@@ -18,6 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final TextEditingController _controller = TextEditingController();
   List<ECG> filteredItems = [];
   Future<List<ECG>>? _ecgListFuture;
+  late bool myEcgFilter = false;
 
   @override
   void initState() {
@@ -109,11 +110,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: OutlinedButton(
                         onPressed: () {
                           // TODO:AJOUTER FILTRAGE PAR UTILISATEUR
+                          setState(() {
+                            myEcgFilter = !myEcgFilter;
+                          });
                         },
                         style: OutlinedButton.styleFrom(
                           foregroundColor: Colors.black,
-                          backgroundColor: Colors.blue.shade300,
-                          side: BorderSide(color: Colors.blue.shade300, width: 2),
+                          backgroundColor: myEcgFilter ? Colors.green.shade300 : Colors.blue.shade300,
+                          side: BorderSide(color: myEcgFilter ? Colors.green.shade300 : Colors.blue.shade300, width: 2),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),
@@ -129,7 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 decoration: BoxDecoration(
                   border: Border(
                     bottom: BorderSide(
-                      color: Colors.blue.shade300, //Couleur de la bordure
+                      color: myEcgFilter ? Colors.green.shade300 : Colors.blue.shade300, //Couleur de la bordure
                       width: 2.0, // Largeur de la bordure
                     ),
                   ),

@@ -36,6 +36,10 @@ class ECGDetailsPage extends StatelessWidget {
                 child: Text('Contexte : ${ecg.description}'),
               ),
               Container(
+                padding: const EdgeInsets.only(top: 4, left: 8, right: 8),
+                child: Text('Symptomes : ${ecg.listeSymptomes.isNotEmpty ? ecg.listeSymptomes.join(', ') : 'Non renseigné'}'),
+              ),
+              Container(
                 child: Text('Année de publication: ${ecg.date?.replaceAll("\n", " ")}'),
               ),
               Container(
