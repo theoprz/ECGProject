@@ -18,6 +18,7 @@ export default class EcgsController {
   }
 
   async store({ request, response }: HttpContext) {
+    console.log(request.body())
     if (
       'id' in request.body() &&
       'filename' in request.body() &&
@@ -39,9 +40,16 @@ export default class EcgsController {
       if (request.input('tags') !== undefined) {
         await ecg.related('tags').attach(request.input('tags'))
       }
+      if (request.input('symptoms') !== undefined) {
+        await ecg.related('symptoms').attach(request.input('symptoms'))
+      }
 
       if (ecg) {
-        const ecgToReturn = await Ecg.query().preload('tags').where('id', ecg.id).first()
+        const ecgToReturn = await Ecg.query()
+          .preload('tags')
+          .preload('symptoms')
+          .where('id', ecg.id)
+          .first()
         return response
           .status(201)
           .json({ description: 'Ecg record created', content: ecgToReturn })
@@ -55,7 +63,7 @@ export default class EcgsController {
     }
   }
   async show({ params, response }: HttpContext) {
-    const ecg = await Ecg.query().preload('tags').where('id', params.id).first()
+    const ecg = await Ecg.query().preload('tags').preload('symptoms').where('id', params.id).first()
 
     if (ecg) {
       return response.status(200).json({ description: 'Ecg record found', content: ecg })
@@ -72,9 +80,16 @@ export default class EcgsController {
       if (request.input('tags') !== undefined) {
         await ecg.related('tags').sync(request.input('tags'))
       }
+      if (request.input('symptoms') !== undefined) {
+        await ecg.related('symptoms').sync(request.input('symptoms'))
+      }
 
       if (ecg) {
-        const ecgToReturn = await Ecg.query().preload('tags').where('id', ecg.id).firstOrFail()
+        const ecgToReturn = await Ecg.query()
+          .preload('tags')
+          .preload('symptoms')
+          .where('id', ecg.id)
+          .firstOrFail()
         return response
           .status(200)
           .json({ description: 'Ecg record updated', content: ecgToReturn })
@@ -210,14 +225,14 @@ export default class EcgsController {
     const doc = new PDFKit.default()
 
     // Ajouter une nouvelle page pour afficher l'image de l'ECG
-    doc.addPage()
-    doc.font('Helvetica-Bold').fontSize(18).fillColor('blue').text('INFORMATIONS SUR L\'ECG', {align: 'center', underline: true})
-    doc.moveDown().font('Helvetica-Bold').fontSize(16).fillColor('blue').text('Photo de l\'ECG', {align: 'center', underline: true})
     doc.image(imagePath, {
       fit: [doc.page.width, doc.page.height], // Taille de l'image dans le PDF
       align: 'center',
       valign: 'center',
-    })
+      coverX: false, // Ne pas couper l'image horizontalement
+      coverY: false, // Ne pas couper l'image verticalement
+  })
+
 
     // Définir le nom du fichier PDF
     const pdfPath = join(
@@ -247,13 +262,55 @@ export default class EcgsController {
     doc.moveDown()
     doc.fontSize(14).fillColor('blue').text('Âge: ' + ecg.age + ' ans')
     doc.moveDown()
-    doc.fontSize(14).fillColor('blue').text('Sexe: ' + ecg.sexe + ' (Soit 1 pour Masculin, 2 pour Féminin et 3 pour inconnu)')
+
+    let sexeString;
+
+    switch (ecg.sexe) {
+        case 1:
+            sexeString = 'Masculin';
+            break;
+        case 2:
+            sexeString = 'Féminin';
+            break;
+        case 3:
+            sexeString = 'Inconnu';
+            break;
+        default:
+            sexeString = 'Inconnu';
+    }
+
+
+    doc.fontSize(14).fillColor('blue').text('Sexe: ' + sexeString)
     doc.moveDown()
     doc.fontSize(14).fillColor('blue').text('Vitesse: ' + ecg.speed + ' mm/s')
     doc.moveDown()
     doc.fontSize(14).fillColor('blue').text('Gain: ' + ecg.gain + 'mm/mv')
     doc.moveDown()
-    doc.fontSize(14).fillColor('blue').text('Qualité image: ' + ecg.quality + ' (Soit 1 pour Mauvaise, 2 pour Moyenne, 3 pour Bonne et 4 pour très bonne)')
+
+
+
+    let qualityString;
+
+    switch (ecg.quality) {
+        case 1:
+          qualityString = 'Mauvaise';
+            break;
+        case 2:
+          qualityString = 'Moyenne';
+            break;
+        case 3:
+          qualityString = 'Bonne';
+            break;
+        case 4:
+          qualityString = 'Très bonne';
+          break;
+        default:
+          qualityString = 'Inconnu';
+    }
+
+
+
+    doc.fontSize(14).fillColor('blue').text('Qualité image: ' + qualityString)
 
     await doc.end()
 
