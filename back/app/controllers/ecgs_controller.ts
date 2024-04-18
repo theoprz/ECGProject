@@ -8,7 +8,7 @@ import blobStream from 'blob-stream'
 
 export default class EcgsController {
   async index({ response }: HttpContext) {
-    const ecgs = await Ecg.query().preload('tags')
+    const ecgs = await Ecg.query().preload('tags').preload('symptoms')
 
     if (ecgs) {
       return response.status(200).json({ description: 'Ecg records found', content: ecgs })
@@ -228,8 +228,7 @@ export default class EcgsController {
       valign: 'center',
       coverX: false, // Ne pas couper l'image horizontalement
       coverY: false, // Ne pas couper l'image verticalement
-  })
-
+    })
 
     // Définir le nom du fichier PDF
     const pdfPath = join(
@@ -250,64 +249,84 @@ export default class EcgsController {
 
     // Ajouter une nouvelle page pour afficher les détails de l'ECG
     doc.addPage()
-    doc.font('Helvetica-Bold').fontSize(18).fillColor('blue').text('Détails sur l\'ECG', {align: 'center', underline: true})
+    doc
+      .font('Helvetica-Bold')
+      .fontSize(18)
+      .fillColor('blue')
+      .text("Détails sur l'ECG", { align: 'center', underline: true })
     doc.moveDown()
     // Ajouter les données de l'ECG à la deuxième page
-    doc.fontSize(14).fillColor('blue').text('Titre ECG: ' + ecg.title)
+    doc
+      .fontSize(14)
+      .fillColor('blue')
+      .text('Titre ECG: ' + ecg.title)
     doc.moveDown()
-    doc.fontSize(14).fillColor('blue').text('Contexte: ' + ecg.contexte)
+    doc
+      .fontSize(14)
+      .fillColor('blue')
+      .text('Contexte: ' + ecg.contexte)
     doc.moveDown()
-    doc.fontSize(14).fillColor('blue').text('Âge: ' + ecg.age + ' ans')
+    doc
+      .fontSize(14)
+      .fillColor('blue')
+      .text('Âge: ' + ecg.age + ' ans')
     doc.moveDown()
 
-    let sexeString;
+    let sexeString
 
     switch (ecg.sexe) {
-        case 1:
-            sexeString = 'Masculin';
-            break;
-        case 2:
-            sexeString = 'Féminin';
-            break;
-        case 3:
-            sexeString = 'Inconnu';
-            break;
-        default:
-            sexeString = 'Inconnu';
+      case 1:
+        sexeString = 'Masculin'
+        break
+      case 2:
+        sexeString = 'Féminin'
+        break
+      case 3:
+        sexeString = 'Inconnu'
+        break
+      default:
+        sexeString = 'Inconnu'
     }
 
-
-    doc.fontSize(14).fillColor('blue').text('Sexe: ' + sexeString)
+    doc
+      .fontSize(14)
+      .fillColor('blue')
+      .text('Sexe: ' + sexeString)
     doc.moveDown()
-    doc.fontSize(14).fillColor('blue').text('Vitesse: ' + ecg.speed + ' mm/s')
+    doc
+      .fontSize(14)
+      .fillColor('blue')
+      .text('Vitesse: ' + ecg.speed + ' mm/s')
     doc.moveDown()
-    doc.fontSize(14).fillColor('blue').text('Gain: ' + ecg.gain + 'mm/mv')
+    doc
+      .fontSize(14)
+      .fillColor('blue')
+      .text('Gain: ' + ecg.gain + 'mm/mv')
     doc.moveDown()
 
-
-
-    let qualityString;
+    let qualityString
 
     switch (ecg.quality) {
-        case 1:
-          qualityString = 'Mauvaise';
-            break;
-        case 2:
-          qualityString = 'Moyenne';
-            break;
-        case 3:
-          qualityString = 'Bonne';
-            break;
-        case 4:
-          qualityString = 'Très bonne';
-          break;
-        default:
-          qualityString = 'Inconnu';
+      case 1:
+        qualityString = 'Mauvaise'
+        break
+      case 2:
+        qualityString = 'Moyenne'
+        break
+      case 3:
+        qualityString = 'Bonne'
+        break
+      case 4:
+        qualityString = 'Très bonne'
+        break
+      default:
+        qualityString = 'Inconnu'
     }
 
-
-
-    doc.fontSize(14).fillColor('blue').text('Qualité image: ' + qualityString)
+    doc
+      .fontSize(14)
+      .fillColor('blue')
+      .text('Qualité image: ' + qualityString)
 
     await doc.end()
 
