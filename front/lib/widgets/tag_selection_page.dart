@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:ffi';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -232,6 +233,27 @@ Widget build(BuildContext context) {
 
         }
 
+        List<int> transformSymptoms(List<dynamic> symptoms){
+          List<int> result = [];
+          for (String symptom in symptoms){
+            switch (symptom){
+              case "Douleur thoracique":
+                result.add(1);
+                break;
+              case "Dyspnée":
+                result.add(2);
+                break;
+              case "Palpitations":
+                result.add(3);
+                break;
+              case "Syncope":
+                result.add(4);
+                break;
+            }
+          }
+          return result;
+        }
+
 
         Map<String, dynamic> ecgData = {
           "id": widget.ecg.id,
@@ -250,6 +272,7 @@ Widget build(BuildContext context) {
           "gain": widget.ecg.gain,
           "quality": handleQuality(widget.ecg.quality),
           "tags": tagList.map((tag) => tag.id).toList(), // Supposant que l'id de chaque tag est requis
+          "symptoms": transformSymptoms(widget.ecg.listeSymptomes),
         };
 
         Uri url = Uri.parse('http://173.212.207.124:3333/api/v1/ecg');

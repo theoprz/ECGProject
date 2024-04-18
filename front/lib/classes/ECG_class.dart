@@ -19,7 +19,7 @@ class ECG {
   String  gain = "0";
   File photo;
   String photopath = "";
-  List<String> listeSymptomes = [];
+  List<dynamic> listeSymptomes = [];
 
   ECG(this.title, this.description, this.patientAge, this.patientSex, this.tags, this.id, this.photo, this.listeSymptomes);//Constructeur de base
 
@@ -83,6 +83,10 @@ class ECG {
           photopath = dataList[i]['filename'];
           //photo = await downloadImage(dataList[i]['id']);
         }
+        if(dataList[i]['symptoms'].length > 0){
+          print(dataList[i]['symptoms'][0]['name']);
+        }
+        listeSymptomes = transformSymptomes(dataList[i]['symptoms']);
 
 
         vitesse = dataList[i]['speed'].toString();
@@ -134,6 +138,16 @@ String transformSexe(int sexe){
   }
 
 }
+
+List<String> transformSymptomes(List<dynamic> symptomes){
+  List<String> result = [];
+  for (int i = 0; i < symptomes.length; i++){
+    print(symptomes[i]);
+    result.add(symptomes[i]['name']);
+  }
+  return result;
+}
+
 
 String epochToFrenchDate(int epochTime) {
   // Convert epoch time to DateTime
