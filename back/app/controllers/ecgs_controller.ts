@@ -18,7 +18,6 @@ export default class EcgsController {
   }
 
   async store({ request, response }: HttpContext) {
-    console.log(request.body())
     if (
       'id' in request.body() &&
       'filename' in request.body() &&
@@ -54,11 +53,9 @@ export default class EcgsController {
           .status(201)
           .json({ description: 'Ecg record created', content: ecgToReturn })
       } else {
-        console.log('Ecg record not created')
         return response.status(500).json({ description: 'Ecg record not created', content: null })
       }
     } else {
-      console.log('Missing required fields')
       return response.status(406).json({ description: 'Missing required fields', content: null })
     }
   }

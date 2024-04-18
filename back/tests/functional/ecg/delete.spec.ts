@@ -1,5 +1,6 @@
 import { test } from '@japa/runner'
 import Ecg from '#models/ecg'
+import { v4 as uuidv4 } from 'uuid'
 
 test.group('Ecg delete', () => {
   test('Delete one', async ({ client }) => {
@@ -13,6 +14,7 @@ test.group('Ecg delete', () => {
     })
   }).setup(async () => {
     const ecg = await Ecg.create({
+      id: uuidv4(),
       filename: 'Test filename',
       title: 'Test ECG',
       contexte: 'Test context',

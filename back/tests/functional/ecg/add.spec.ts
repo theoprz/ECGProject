@@ -1,9 +1,11 @@
 import { test } from '@japa/runner'
 import Ecg from '#models/ecg'
+import { v4 as uuidv4 } from 'uuid'
 
 test.group('Ecg add', () => {
   test('Create one success', async ({ client }) => {
     const response = await client.post('/api/v1/ecg').json({
+      id: uuidv4(),
       title: 'new_one',
       filename: 'new_one',
       contexte: 'new_one',
