@@ -1,0 +1,763 @@
+---
+openapi: 3.0.0
+info:
+  title: ecg-api
+  description: The API for the M1 Ecg Project
+  version: 1.0.0
+servers:
+- url: https://virtserver.swaggerhub.com/DPRZALEX_1/ecg/1.0.0
+  description: SwaggerHub API Auto Mocking
+- url: http://173.212.207.124:3333/api/v1/
+paths:
+  /:
+    get:
+      description: Return a test message
+      operationId: test
+      responses:
+        "200":
+          description: Return a test message
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+  /ecg:
+    get:
+      tags:
+      - Ecg
+      description: Returns all registered ecg
+      operationId: getEcgs
+      responses:
+        "200":
+          description: Ecg records found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_1'
+        "404":
+          description: No Ecg found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_404'
+    post:
+      tags:
+      - Ecg
+      description: Create one ecg record
+      operationId: postEcg
+      parameters:
+      - name: filename
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: title
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: contexte
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: comment
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: age
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: number
+      - name: sexe
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: number
+      - name: posted_by
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: number
+      - name: validated_by
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: number
+      - name: created
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: number
+      - name: validated
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: number
+      - name: pixels_cm
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: number
+      - name: speed
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: number
+      - name: gain
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: number
+      - name: quality
+        in: query
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: number
+      - name: tags
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: array
+          items:
+            type: number
+      responses:
+        "201":
+          description: Ecg record created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_201'
+        "406":
+          description: Missing required fields
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_406'
+        "500":
+          description: Ecg record not created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_500'
+  /ecg/{id}:
+    get:
+      tags:
+      - Ecg
+      description: Return one registered ecg
+      operationId: getEcgById
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Ecg record found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_2'
+        "404":
+          description: Ecg record not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_404_1'
+    put:
+      tags:
+      - Ecg
+      description: Update one ecg record
+      operationId: putEcg
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: filename
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: title
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: contexte
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: comment
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: age
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: number
+      - name: sexe
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: number
+      - name: posted_by
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: number
+      - name: validated_by
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: number
+      - name: created
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: number
+      - name: validated
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: number
+      - name: pixels_cm
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: number
+      - name: speed
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: number
+      - name: gain
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: number
+      - name: quality
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: number
+      - name: tags
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: array
+          items:
+            type: number
+      responses:
+        "200":
+          description: Ecg record updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_3'
+        "500":
+          description: Ecg record not updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_500_1'
+        "404":
+          description: Ecg record not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_404_1'
+    delete:
+      tags:
+      - Ecg
+      description: Delete one ecg
+      operationId: deleteEcg
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "204":
+          description: Ecg record deleted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_204'
+        "404":
+          description: Ecg record not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_404_1'
+  /ecg/count:
+    get:
+      tags:
+      - Ecg
+      description: Return the number of ecg records
+      operationId: countEcg
+      responses:
+        "200":
+          description: Return the number of ecg records
+          content:
+            application/json:
+              schema:
+                type: number
+                example: 123
+  /tag:
+    get:
+      tags:
+      - Tag
+      description: Returns all registered tag
+      operationId: getTags
+      responses:
+        "200":
+          description: Tags found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_4'
+        "404":
+          description: No Tag found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_404_2'
+    post:
+      tags:
+      - Tag
+      description: Create one tag
+      operationId: postTag
+      responses:
+        "201":
+          description: Tag created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_201_1'
+        "500":
+          description: Tag not created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_500_2'
+        "406":
+          description: Missing required fields
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_406'
+  /tag/{id}:
+    get:
+      tags:
+      - Tag
+      description: Return one registered tag
+      operationId: getTagById
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Tag found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_5'
+        "404":
+          description: Tag not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_404_3'
+    put:
+      tags:
+      - Tag
+      description: Update one tag
+      operationId: putTag
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Tag updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_6'
+        "500":
+          description: Tag not updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_500_3'
+        "404":
+          description: Tag not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_404_3'
+    delete:
+      tags:
+      - Tag
+      description: Delete one tag
+      operationId: deleteTag
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "204":
+          description: Tag deleted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_204_1'
+        "404":
+          description: Tag not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_404_3'
+components:
+  schemas:
+    Ecg:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: 01901107-504b-4837-b39a-e9362678e7f7
+        filename:
+          type: string
+          format: path
+          example: 64b408229b9cf.png
+        title:
+          type: string
+        contexte:
+          type: string
+        comment:
+          type: string
+        age:
+          type: number
+          example: 18
+        sexe:
+          type: number
+          example: 1
+        postedBy:
+          type: number
+          format: id
+          example: 0
+        validatedBy:
+          type: number
+          format: id
+          example: 0
+        created:
+          $ref: '#/components/schemas/Ecg_created'
+        validated:
+          $ref: '#/components/schemas/Ecg_created'
+        pixelsCm:
+          type: number
+          example: 128
+        speed:
+          type: number
+          example: 25
+        gain:
+          type: number
+          example: 10
+        quality:
+          type: number
+          example: 4
+        createdAt:
+          type: string
+          format: datetime
+          example: 2024-04-12T13:14:34.000+00:00
+        validatedAt:
+          type: string
+          format: datetime
+          example: 2024-04-12T13:14:34.000+00:00
+        tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/Tag'
+    Tag:
+      type: object
+      properties:
+        id:
+          type: number
+          example: 14
+        name:
+          type: string
+          example: Axe normal
+        parentId:
+          type: number
+          example: 2860
+        main:
+          type: number
+          example: 1
+        refTagId:
+          type: string
+        weight:
+          type: number
+          example: 1.5
+    inline_response_200:
+      type: object
+      properties:
+        description:
+          type: string
+          example: Welcome to the ECG API
+        content:
+          type: string
+    inline_response_200_1:
+      type: object
+      properties:
+        description:
+          type: string
+          example: Ecg records found
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/Ecg'
+    inline_response_404:
+      type: object
+      properties:
+        description:
+          type: string
+          example: No Ecg found
+        content:
+          type: string
+    inline_response_201:
+      type: object
+      properties:
+        description:
+          type: string
+          example: Ecg record created
+        content:
+          $ref: '#/components/schemas/Ecg'
+    inline_response_406:
+      type: object
+      properties:
+        description:
+          type: string
+          example: Missing required fields
+        content:
+          type: string
+    inline_response_500:
+      type: object
+      properties:
+        description:
+          type: string
+          example: Ecg record not created
+        content:
+          type: string
+    inline_response_200_2:
+      type: object
+      properties:
+        description:
+          type: string
+          example: Ecg record found
+        content:
+          $ref: '#/components/schemas/Ecg'
+    inline_response_404_1:
+      type: object
+      properties:
+        description:
+          type: string
+          example: Ecg record not found
+        content:
+          type: string
+    inline_response_200_3:
+      type: object
+      properties:
+        description:
+          type: string
+          example: Ecg record updated
+        content:
+          $ref: '#/components/schemas/Ecg'
+    inline_response_500_1:
+      type: object
+      properties:
+        description:
+          type: string
+          example: Ecg record not updated
+        content:
+          type: string
+    inline_response_204:
+      type: object
+      properties:
+        description:
+          type: string
+          example: Ecg record deleted
+        content:
+          type: string
+    inline_response_200_4:
+      type: object
+      properties:
+        description:
+          type: string
+          example: Tags found
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/Tag'
+    inline_response_404_2:
+      type: object
+      properties:
+        description:
+          type: string
+          example: No Tag found
+        content:
+          type: string
+    inline_response_201_1:
+      type: object
+      properties:
+        description:
+          type: string
+          example: Tag created
+        content:
+          $ref: '#/components/schemas/Tag'
+    inline_response_500_2:
+      type: object
+      properties:
+        description:
+          type: string
+          example: Tag not created
+        content:
+          type: string
+    inline_response_200_5:
+      type: object
+      properties:
+        description:
+          type: string
+          example: Tag found
+        content:
+          $ref: '#/components/schemas/Tag'
+    inline_response_404_3:
+      type: object
+      properties:
+        description:
+          type: string
+          example: Tag not found
+        content:
+          type: string
+    inline_response_200_6:
+      type: object
+      properties:
+        description:
+          type: string
+          example: Ecg updated
+        content:
+          $ref: '#/components/schemas/Tag'
+    inline_response_500_3:
+      type: object
+      properties:
+        description:
+          type: string
+          example: Tag not updated
+        content:
+          type: string
+    inline_response_204_1:
+      type: object
+      properties:
+        description:
+          type: string
+          example: Tag deleted
+        content:
+          $ref: '#/components/schemas/Tag'
+    Ecg_created:
+      type: object
+      properties:
+        type:
+          type: string
+          example: Buffer
+        data:
+          type: array
+          items:
+            type: number
+            example: 48

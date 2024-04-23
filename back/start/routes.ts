@@ -25,16 +25,12 @@ router
       return response.status(200).json({ description: 'Welcome to the ECG API', content: null })
     })
 
-    router.get('/ecg', [EcgsController, 'index'])
-    router.post('/ecg', [EcgsController, 'store'])
-    router.get('/ecg/:id', [EcgsController, 'show'])
-    router.put('/ecg/:id', [EcgsController, 'update'])
-    router.delete('/ecg/:id', [EcgsController, 'destroy'])
+    router.resource('/ecg', EcgsController).apiOnly()
     router.get('/ecg/:id/pdf', [EcgsController, 'uploadPdf'])
     router.get('/ecg/info/count', [EcgsController, 'count'])
+    router.get('/ecg/info/:user', [EcgsController, 'indexByUser'])
     router.get('/ecg/info/image', [EcgsController, 'getImage'])
     router.post('/ecg/upload/file', [EcgsController, 'uploadFile'])
-    router.get('/ecg/info/:user', [EcgsController, 'indexByUser'])
     router.get('/auth/callback', [AuthController, 'authCallback'])
 
     router.resource('/tag', TagsController).apiOnly()
